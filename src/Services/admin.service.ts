@@ -1,9 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Branches } from 'src/Models/branches';
 import { User } from 'src/Models/user';
+import { EnvironmenturlService } from './environmenturl.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import { User } from 'src/Models/user';
 export class AdminService {
   baseUrl = environment.ApiUrl
 
-constructor(private http: HttpClient) { }
+constructor(private http: HttpClient, private envUrl: EnvironmenturlService) { }
 
 getUserWithRoles(){
   return this.http.get<Partial<User[]>>(this.baseUrl + 'Dean/users-with-roles');
@@ -33,5 +34,16 @@ public getBranch(id: number): Observable<Branches>{
 }
 public getUserforbranchSupervisor():Observable<User[]>{
   return this.http.get<User[]>(this.baseUrl + 'User/admins');
+}
+public getBranchDetails = (route: string) => {
+  return this.http.get<Branches>(this.createCompleteRoute(route, this.envUrl.urlAddress));
+}
+private createCompleteRoute = (route: string, envAddress: string) => {
+  return `${envAddress}${route}`;
+}
+private generateHeaders = () => {
+  return {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  }
 }
 }

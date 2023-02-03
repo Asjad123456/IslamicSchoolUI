@@ -19,13 +19,12 @@
           <div class="row" id="hero-row">
               <!-- </div> -->
               <div class="col" id="hero-col">
-                  <h1>Branch A </h1>
+                  <h1>{{branch?.branchName}}</h1>
                   <span><i class="fa fa-globe" aria-hidden="true"></i>
-                      <b> Street A Home
-                      # 302</b>
+                      <b>{{branch?.address}}</b>
                   </span>
                   <p>Current Supervisor </p>
-                  <b>User A</b>
+                  <b>{{branch?.branchAdminId}}</b>
               </div>
               <div class="col" id="hero-icon-col">
                   <i class="fa fa-circle-info" aria-hidden="true"  type="button" data-bs-toggle="offcanvas"
