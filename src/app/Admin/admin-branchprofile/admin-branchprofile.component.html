@@ -24,7 +24,7 @@
                       <b>{{branch?.address}}</b>
                   </span>
                   <p>Current Supervisor </p>
-                  <b>{{branch?.branchAdminId}}</b>
+                  <b>{{branch?.userName}}</b>
               </div>
               <div class="col" id="hero-icon-col">
                   <i class="fa fa-circle-info" aria-hidden="true"  type="button" data-bs-toggle="offcanvas"
@@ -147,8 +147,8 @@
                       <div class="col" id="offcanves-name-col">
 
                           <h5 class="offcanvas-title" id="offcanvas-header">Supervisor</h5>
-                          <h2>Stefan Garlson</h2>
-                          <p>Stefan123@gmail.com
+                          <h2>{{branch?.userName}}</h2>
+                          <p>{{branch?.email}}
                           </p>
                       </div>
                       <div class="col" id="offcanves-edit-col">
@@ -161,15 +161,15 @@
                   <div class="row" id="offcanvas-main">
                       <div class="col">
                           <h3>Father name</h3>
-                          <p>Harnandaz</p>
+                          <p>{{branch?.fatherName}}</p>
                       </div>
                       <div class="col">
                           <h3>Contact #</h3>
-                          <p>+51 000 000</p>
+                          <p>{{branch?.phoneNumber}}</p>
                       </div>
                       <div class="col">
                           <h3>Teaching</h3>
-                          <p>Branch A</p>
+                          <p>{{branch?.branchName}}</p>
                       </div>
                       <div class="col">
                           <h3>Socials</h3>

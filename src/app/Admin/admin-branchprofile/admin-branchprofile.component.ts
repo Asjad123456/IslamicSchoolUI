@@ -15,15 +15,18 @@ export class AdminBranchprofileComponent {
   constructor(private router: Router, private service:AdminService, private route: ActivatedRoute){}
 
   ngOnInit(): void{
-    this.getOwnerDetails();
+    this.getBranchDetails();
     // this.getBranchData(this.branch.id);
   }
-  getOwnerDetails = () => {
+  getBranchDetails = () => {
     const id: string = this.route.snapshot.params['id'];
     const apiUrl: string = `Branch/${id}`;
     this.service.getBranchDetails(apiUrl)
     .subscribe({
-      next: (own: Branches) => this.branch = own,
+      next: (own: Branches) => {
+        this.branch = own;
+        console.log(own);
+      },
     })
   }
   // getBranchData(id: number){

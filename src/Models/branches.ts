@@ -4,5 +4,10 @@ export interface Branches {
   city: string;
   address: string;
   branchCode: number;
+  //BranchAdminDataFields
   branchAdminId: number;
+  userName: string;
+  fatherName: string;
+  email: string;
+  phoneNumber: number;
 }
