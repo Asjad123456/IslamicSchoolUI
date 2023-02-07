@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { Branches } from 'src/Models/branches';
 import { AdminService } from 'src/Services/admin.service';
@@ -13,29 +14,44 @@ export class AdminBranchprofileComponent {
   branch: Branches;
 
   constructor(private router: Router, private service:AdminService, private route: ActivatedRoute){}
+  editBranchForm: FormGroup;
 
   ngOnInit(): void{
+    this.editBranchForm= new FormGroup({
+      branchName: new FormControl(''),
+      city: new FormControl(''),
+      address: new FormControl(''),
+      branchCode: new FormControl(''),
+    })
     this.getBranchDetails();
+    console.log(this.route.snapshot.params['id']);
+    this.editBranch();
     // this.getBranchData(this.branch.id);
   }
   getBranchDetails = () => {
-    const id: string = this.route.snapshot.params['id'];
-    const apiUrl: string = `Branch/${id}`;
-    this.service.getBranchDetails(apiUrl)
-    .subscribe({
-      next: (own: Branches) => {
-        this.branch = own;
-        console.log(own);
-      },
+    const id =+this.route.snapshot.params['id'];
+    this.service.getBranchById(id).subscribe((res) =>{
+      this.branch = res;
+      console.log(res);
     })
   }
-  // getBranchData(id: number){
-  //   this.service.getBranch(id).subscribe(
-  //     response =>{
-  //       console.log(response);
-  //     },error =>{
-  //       console.log(error);
-  //     }
-  //   );
-  // }
+  editBranch(){
+    const id =+this.route.snapshot.params['id'];
+    this.service.getBranchById(id).subscribe((res) =>{
+      this.editBranchForm= new FormGroup({
+        branchName: new FormControl(res['branchName']),
+        city: new FormControl(res['city']),
+        address: new FormControl(res['address']),
+        branchCode: new FormControl(res['branchCode']),
+      })
+    })
+  }
+  editBranchData(){
+    const id =+this.route.snapshot.params['id'];
+    this.service.updateBranch(id, this.editBranchForm.value).subscribe(() =>{
+      this.getBranchDetails();
+      this.editBranch();
+      console.warn('done');
+    })
+  }
 }

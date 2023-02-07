@@ -10,4 +10,9 @@ export interface Branches {
   fatherName: string;
   email: string;
   phoneNumber: number;
+  //BranchClassListDetails
+  studyClasses: Array<{
+    className: string;
+    classTime: Date;
+  }>;
 }

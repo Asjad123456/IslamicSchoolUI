@@ -35,15 +35,35 @@ public getBranch(id: number): Observable<Branches>{
 public getUserforbranchSupervisor():Observable<User[]>{
   return this.http.get<User[]>(this.baseUrl + 'User/admins');
 }
-public getBranchDetails = (route: string) => {
-  return this.http.get<Branches>(this.createCompleteRoute(route, this.envUrl.urlAddress));
+getBranchById(id: number) {
+  const url = `${this.baseUrl}Branch/${id}`;
+  return this.http.get<Branches>(url);
 }
-private createCompleteRoute = (route: string, envAddress: string) => {
-  return `${envAddress}${route}`;
+getBranchdetailsforclasslist(id: number) {
+  const url = `${this.baseUrl}Branch/${id}`;
+  return this.http.get<Branches[]>(url);
 }
-private generateHeaders = () => {
-  return {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  }
+updateBranch(id: number, branch: Branches) {
+  const url = `${this.baseUrl}Branch/${id}`;
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
+
+  return this.http.put<Branches>(url, branch, httpOptions);
 }
+private httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+};
+// private createCompleteRoute = (route: string, envAddress: string) => {
+//   return `${envAddress}${route}`;
+// }
+// private generateHeaders = () => {
+//   return {
+//     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+//   }
+// }
 }

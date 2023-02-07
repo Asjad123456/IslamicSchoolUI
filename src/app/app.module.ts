@@ -21,6 +21,7 @@ import { TeacherPanelComponent } from './teacher/teacher-panel/teacher-panel.com
 import { RoleGuard } from 'src/guards/role.guard';
 import { SearchComponent } from './search/search.component';
 import { AdminBranchprofileComponent } from './Admin/admin-branchprofile/admin-branchprofile.component';
+import { AdminBranchClasslistComponent } from './Admin/admin-branch-classlist/admin-branch-classlist.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { AdminBranchprofileComponent } from './Admin/admin-branchprofile/admin-b
     TeacherPanelComponent,
     SearchComponent,
     AdminBranchprofileComponent,
+    AdminBranchClasslistComponent,
   ],
   imports: [
     BrowserModule,

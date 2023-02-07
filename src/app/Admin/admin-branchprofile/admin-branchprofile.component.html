@@ -35,39 +35,41 @@
 
       <!--top i button  offcanvas start here -->
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
-      aria-labelledby="offcanvasRightLabel">
+      aria-labelledby="offcanvasRightLabel" (click)="editBranch()">
       <div class="offcanvas-header" id="offcanvas-header">
-          <h5 id="offcanvasRightLabel">Edit Branch Data</h5>
+          <h5 id="offcanvasRightLabel" >Edit Branch Data</h5>
           <button type="button" id="btn-close" class="btn-close text-reset" data-bs-dismiss="offcanvas"
               aria-label="Close"></button>
       </div>
       <div class="offcanvas-body" id="offcanvas-body">
           <div class="row" id="offcanvas-input-row">
+            <form [formGroup]="editBranchForm" (ngSubmit)="editBranchData()">
               <div class="col" id="edit-branch-name-col">
-                  <label for="">
-                      <p>Branch Name</p>
-                  </label>
-                  <input type="text">
-              </div>
-              <div class="col" id="edit-branch-city-col">
-                  <label for="">City</label>
-                  <input type="text">
-              </div>
-              <div class="col" id="edit-branch-address-col">
-                  <label for="">Adress</label>
-                  <input type="text">
-              </div>
-              <div class="col" id="edit-branch-code-col">
-                  <label for="">Branch Code</label>
-                  <input type="text">
-              </div>
-          </div>
-          <div class="row" id="branch-offcanvas-btn">
+                <label for="">
+                    <p>Branch Name</p>
+                </label>
+                <input type="text" formControlName="branchName">
+            </div>
+            <div class="col" id="edit-branch-city-col">
+                <label for="">City</label>
+                <input type="text" formControlName="city">
+            </div>
+            <div class="col" id="edit-branch-address-col">
+                <label for="">Adress</label>
+                <input type="text" formControlName="address">
+            </div>
+            <div class="col" id="edit-branch-code-col">
+                <label for="">Branch Code</label>
+                <input type="text" formControlName="branchCode">
+            </div>
+            <div class="row" id="branch-offcanvas-btn">
               <div class="col">
-                  <button>Submit</button>
+                  <button type="submit" id="btn-close" class="text-reset" data-bs-dismiss="offcanvas"
+                  aria-label="Close">Submit</button>
               </div>
           </div>
-
+            </form>
+          </div>
           <div class="row" id="branche-offcanvas-footer-row">
               <div class="col">
                   <img src="/assets/image-15-2.png" alt="">
@@ -189,7 +191,7 @@
           <div class="row" id="main-sec-row2">
 
               <!------------- Branch Data start here --------------->
-              <div class="col" id="branch-box">
+              <div class="col" id="branch-box" [routerLink]="['class-list']">
                   <div class="row" id="branch-box-row-1">
                       <div class="col" id="branch-box-header-col-1">
                           <img src="/assets/boy.png" alt="">
