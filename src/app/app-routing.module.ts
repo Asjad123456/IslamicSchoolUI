@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RoleGuard } from 'src/guards/role.guard';
 import { AdminBranchClasslistComponent } from './Admin/admin-branch-classlist/admin-branch-classlist.component';
+import { AdminBranchClassprofileComponent } from './Admin/admin-branch-classprofile/admin-branch-classprofile.component';
 import { AdminBranchTeacherlistComponent } from './Admin/admin-branch-teacherlist/admin-branch-teacherlist.component';
 import { AdminBrancheslistComponent } from './Admin/admin-brancheslist/admin-brancheslist.component';
 import { AdminBranchprofileComponent } from './Admin/admin-branchprofile/admin-branchprofile.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path:'admin-branchprofile/:id',component:AdminBranchprofileComponent},
   {path:'admin-branchprofile/:id/teachers-list',component:AdminBranchTeacherlistComponent},
   {path:'admin-branchprofile/:id/class-list',component:AdminBranchClasslistComponent},
+  {path:'admin-branchprofile/:id/class-list/class-profile/:id',component:AdminBranchClassprofileComponent},
   //Supervisor Routes
   {path:'supervisor-panel', component:SupervisorPanelComponent, canActivate:[RoleGuard]},
   {path:'teacher-panel', component:TeacherPanelComponent}
