@@ -11,16 +11,23 @@ import { AdminService } from 'src/Services/admin.service';
 export class AdminBranchClasslistComponent {
   branch: Branches[];
   constructor(private router: Router, private service:AdminService, private route: ActivatedRoute){}
-
+  branchid = +this.route.snapshot.params['id'];
   ngOnInit(): void{
     this.getBranchDetails();
+    localStorage.setItem('branchID', JSON.stringify(this.branchid));
   }
-
   getBranchDetails = () => {
     const id =+this.route.snapshot.params['id'];
     this.service.getBranchdetailsforclasslist(id).subscribe((res) =>{
       this.branch = res;
       console.log(res);
     })
+  }
+  toClassProfile(id:number){
+    this.service.getClassById(id).subscribe(
+      response =>{
+        this.router.navigate(['admin-branchprofile/' + this.branchid + '/class-list/class-profile/'+ id])
+      }
+    );
   }
 }

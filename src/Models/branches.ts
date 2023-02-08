@@ -12,6 +12,7 @@ export interface Branches {
   phoneNumber: number;
   //BranchClassListDetails
   studyClasses: Array<{
+    id: number;
     className: string;
     classTime: Date;
   }>;

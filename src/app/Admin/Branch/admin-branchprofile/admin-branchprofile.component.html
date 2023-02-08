@@ -18,24 +18,24 @@
       <section id="hero-section"> <!---------Hero Section start here--------->
           <div class="row" id="hero-row">
               <!-- </div> -->
-              <div class="col" id="hero-col">
-                  <h1>{{branch?.branchName}}</h1>
+              <div class="col" id="hero-col" *ngFor="let item of branch">
+                  <h1>{{item.branchName}}</h1>
                   <span><i class="fa fa-globe" aria-hidden="true"></i>
-                      <b>{{branch?.address}}</b>
+                      <b>{{item.address}}</b>
                   </span>
                   <p>Current Supervisor </p>
-                  <b>{{branch?.userName}}</b>
+                  <b>{{item.userName}}</b>
               </div>
               <div class="col" id="hero-icon-col">
                   <i class="fa fa-circle-info" aria-hidden="true"  type="button" data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
+                  data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" (click)="editBranch()"></i>
               </div>
           </div>
       </section> <!---------Hero Section ends here--------->
 
       <!--top i button  offcanvas start here -->
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
-      aria-labelledby="offcanvasRightLabel" (click)="editBranch()">
+      aria-labelledby="offcanvasRightLabel">
       <div class="offcanvas-header" id="offcanvas-header">
           <h5 id="offcanvasRightLabel" >Edit Branch Data</h5>
           <button type="button" id="btn-close" class="btn-close text-reset" data-bs-dismiss="offcanvas"
@@ -146,11 +146,11 @@
 
                   <!-- offcanvas name details start -->
                   <div class="row" id="offcanvas-hero">
-                      <div class="col" id="offcanves-name-col">
+                      <div class="col" id="offcanves-name-col" *ngFor="let item of branch">
 
                           <h5 class="offcanvas-title" id="offcanvas-header">Supervisor</h5>
-                          <h2>{{branch?.userName}}</h2>
-                          <p>{{branch?.email}}
+                          <h2>{{item.userName}}</h2>
+                          <p>{{item.email}}
                           </p>
                       </div>
                       <div class="col" id="offcanves-edit-col">
@@ -160,18 +160,18 @@
                       </div>
                   </div> <!-- offcanvas name details start -->
 
-                  <div class="row" id="offcanvas-main">
+                  <div class="row" id="offcanvas-main" *ngFor="let item of branch">
                       <div class="col">
                           <h3>Father name</h3>
-                          <p>{{branch?.fatherName}}</p>
+                          <p>{{item.fatherName}}</p>
                       </div>
                       <div class="col">
                           <h3>Contact #</h3>
-                          <p>{{branch?.phoneNumber}}</p>
+                          <p>{{item.phoneNumber}}</p>
                       </div>
                       <div class="col">
                           <h3>Teaching</h3>
-                          <p>{{branch?.branchName}}</p>
+                          <p>{{item.branchName}}</p>
                       </div>
                       <div class="col">
                           <h3>Socials</h3>

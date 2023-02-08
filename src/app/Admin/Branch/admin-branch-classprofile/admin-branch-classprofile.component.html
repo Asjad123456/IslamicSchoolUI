@@ -9,10 +9,10 @@
   </section>
 
   <section id="hero-section"><!-- hero section start here -->
-      <div class="row" id="hero-section-row">
+      <div class="row" id="hero-section-row" *ngFor="let item of class">
           <div class="col" id="hero-section-col">
-              <h1>Class Name</h1>
-              <p>Teacher : Alison</p>
+              <h1>{{item.className}}</h1>
+              <p>Teacher: {{item.userName}}</p>
           </div>
       </div>
   </section>
@@ -33,7 +33,7 @@
                   </div>
               </div>
 
-              <div class="row" id="student-box-main-row">
+              <div class="row" id="student-box-main-row" [routerLink]="['student-list']">
                   <div class="col" id="student-box-main-col">
                       <h1>67+</h1>
                       <p>Students</p>
@@ -72,40 +72,28 @@
               <div class="offcanvas-body">
                   <!-- Header section start here -->
                   <section id="header-heading-sec">
-                      <div class="row" id="header-heading-row">
+                      <div class="row" id="header-heading-row" (click)="editClass()">
                           <div class="col">
-                              <h1>Edit Branch Data</h1>
+                              <h1>Edit Class Data</h1>
                           </div>
                       </div>
                   </section>
 
                   <!-- input-field section start here -->
-                  <section id="input-field-section">
-                      <form action="">
+                  <form [formGroup]="editClassForm" (ngSubmit)="editClassData()">
+                    <section id="input-field-section">
+
                           <div class="row" id="input-field-row">
                               <div class="col" id="name-col">
-                                  <p>Branch name</p>
-                                  <input type="text">
+                                  <p>Class Name</p>
+                                  <input type="text" formControlName="className">
                               </div>
                               <div class="col" id="name-col">
-                                  <p>Brampton</p>
-                                  <input type="text">
-                              </div>
-                              <div class="col" id="address-col">
-                                  <p>352 Circle Ave.
-                                      Long Branch, NJ 07740</p>
-                                  <input type="text">
-                              </div>
-                              <div class="col" id="city-col">
-                                  <p>Nijerea</p>
-                                  <input type="text">
-                              </div>
-                              <div class="col" id="contact-col">
-                                  <p>Contact</p>
-                                  <input type="text">
+                                  <p>Class Time</p>
+                                  <input type="text" formControlName="classTime">
                               </div>
                           </div>
-                      </form>
+
                   </section>
 
                   <section id="footer-btn-section">
@@ -114,10 +102,12 @@
                               <button class="btn">cancel</button>
                           </div>
                           <div class="col" id="footer-btn-col-2">
-                              <button class="btn">Save</button>
+                              <button type="submit" class="btn text-reset" data-bs-dismiss="offcanvas"
+                              aria-label="Close">Save</button>
                           </div>
                       </div>
                   </section>
+                </form>
               </div>
           </div>
 
@@ -159,11 +149,11 @@
 
               <!-- offcanvas name details start -->
               <div class="row" id="offcanvas-hero">
-                  <div class="col" id="offcanves-name-col">
+                  <div class="col" id="offcanves-name-col" *ngFor="let item of class">
 
                       <h5 class="offcanvas-title" id="offcanvas-header">Teacher</h5>
-                      <h2>Stefan Garlson</h2>
-                      <p>Stefan123@gmail.com
+                      <h2>{{item.userName}}</h2>
+                      <p>{{item.email}}
                       </p>
                   </div>
                   <div class="col" id="offcanves-edit-col">
@@ -173,18 +163,18 @@
                   </div>
               </div> <!-- offcanvas name details start -->
 
-              <div class="row" id="offcanvas-main">
+              <div class="row" id="offcanvas-main" *ngFor="let item of class">
                   <div class="col">
                       <h3>Father name</h3>
-                      <p>Harada</p>
+                      <p>{{item.fatherName}}</p>
                   </div>
                   <div class="col">
                       <h3>Contact #</h3>
-                      <p>+51 000 000</p>
+                      <p>{{item.phoneNumber}}</p>
                   </div>
                   <div class="col">
                       <h3>Teaching</h3>
-                      <p>Branch A</p>
+                      <p>{{item.className}}</p>
                   </div>
                   <div class="col">
                       <h3>Socials</h3>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { Branches } from 'src/Models/branches';
 import { AdminService } from 'src/Services/admin.service';
@@ -11,17 +11,17 @@ import { AdminService } from 'src/Services/admin.service';
 })
 export class AdminBranchprofileComponent {
   public branchId: number;
-  branch: Branches;
-
-  constructor(private router: Router, private service:AdminService, private route: ActivatedRoute){}
+  branch: Branches[];
   editBranchForm: FormGroup;
 
+  constructor(private router: Router, private service:AdminService, private route: ActivatedRoute, private fb:FormBuilder){}
+
   ngOnInit(): void{
-    this.editBranchForm= new FormGroup({
-      branchName: new FormControl(''),
-      city: new FormControl(''),
-      address: new FormControl(''),
-      branchCode: new FormControl(''),
+    this.editBranchForm= this.fb.group({
+      branchName: [''],
+      city: [''],
+      address: [''],
+      branchCode: [''],
     })
     this.getBranchDetails();
     console.log(this.route.snapshot.params['id']);
@@ -32,18 +32,17 @@ export class AdminBranchprofileComponent {
     const id =+this.route.snapshot.params['id'];
     this.service.getBranchById(id).subscribe((res) =>{
       this.branch = res;
-      console.log(res);
+      console.warn(res);
     })
   }
   editBranch(){
     const id =+this.route.snapshot.params['id'];
     this.service.getBranchById(id).subscribe((res) =>{
-      this.editBranchForm= new FormGroup({
-        branchName: new FormControl(res['branchName']),
-        city: new FormControl(res['city']),
-        address: new FormControl(res['address']),
-        branchCode: new FormControl(res['branchCode']),
-      })
+        this.editBranchForm.controls['branchName'].setValue(res[0]?.branchName);
+        this.editBranchForm.controls['city'].setValue(res[0]?.city);
+        this.editBranchForm.controls['address'].setValue(res[0]?.address);
+        this.editBranchForm.controls['branchCode'].setValue(res[0]?.branchCode);
+      console.warn(res)
     })
   }
   editBranchData(){

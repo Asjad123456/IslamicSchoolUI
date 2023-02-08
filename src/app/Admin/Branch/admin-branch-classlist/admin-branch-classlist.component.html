@@ -76,8 +76,8 @@
 
           <!-- main section list start here -->
           <div class="row" id="main-list-row" *ngFor="let item of branch">
-            <div class="col" id="list-parent-col">
-              <div class="row" id="list-row" *ngFor="let studyClass of item.studyClasses">
+            <div class="col" id="list-parent-col" *ngFor="let studyClass of item.studyClasses">
+              <div class="row" id="list-row" (click)="toClassProfile(studyClass.id)">
                 <div class="col" id="list-inner-col">
                   <h1>{{studyClass.className}}</h1>
                   <p>{{studyClass.classTime}}</p>

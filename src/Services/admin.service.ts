@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Branches } from 'src/Models/branches';
+import { Student } from 'src/Models/students';
+import { StudyClass } from 'src/Models/StudyClass';
 import { User } from 'src/Models/user';
 import { EnvironmenturlService } from './environmenturl.service';
 
@@ -37,6 +39,18 @@ public getUserforbranchSupervisor():Observable<User[]>{
 }
 getBranchById(id: number) {
   const url = `${this.baseUrl}Branch/${id}`;
+  return this.http.get<Branches[]>(url);
+}
+getClassById(id: number) {
+  const url = `${this.baseUrl}StudyClass/${id}`;
+  return this.http.get<StudyClass[]>(url);
+}
+getStudentById(id: number) {
+  const url = `${this.baseUrl}Student/${id}`;
+  return this.http.get<Student[]>(url);
+}
+getBranchDetailsForEdit(id: number) {
+  const url = `${this.baseUrl}Branch/${id}`;
   return this.http.get<Branches>(url);
 }
 getBranchdetailsforclasslist(id: number) {
@@ -52,6 +66,16 @@ updateBranch(id: number, branch: Branches) {
   };
 
   return this.http.put<Branches>(url, branch, httpOptions);
+}
+updateClass(id: number, studyclass: StudyClass) {
+  const url = `${this.baseUrl}StudyClass/${id}`;
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
+
+  return this.http.put<StudyClass>(url, studyclass, httpOptions);
 }
 private httpOptions = {
   headers: new HttpHeaders({
