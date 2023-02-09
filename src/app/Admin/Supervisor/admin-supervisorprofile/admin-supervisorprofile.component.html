@@ -8,7 +8,7 @@
                 </div>
             </div>
         </section>
-  
+
         <section>
             <div class="row" id="main-img-row">
                 <div class="col">
@@ -16,42 +16,42 @@
                 </div>
             </div>
         </section>
-  
+
         <section>
             <div class="row" id="teacher-info-row">
-                <div class="col" id="teacher-info-col">
-                    <h2>Student</h2>
-                    <abbr>name</abbr>
-                    <p>Roll # rollNumber</p>
+                <div class="col" id="teacher-info-col" *ngFor="let item of user">
+                    <h2>Supervisor</h2>
+                    <abbr>{{item.userName}}</abbr>
+                    <p>{{item.email}}</p>
                 </div>
                 <div class="col" id="teacher-btn-col">
                     <button class="btn"><i class="fa-solid fa-phone-flip"></i></button>
                 </div>
             </div>
         </section>
-  
+
         <section>
-            <div class="row" id="teacher-details-row">
+            <div class="row" id="teacher-details-row" *ngFor="let item of user">
                 <div class="col" id="teacher-details-col-1">
                     <h2>Father name</h2>
-                    <p>fatherName</p>
+                    <p>{{item.fatherName}}</p>
                 </div>
                 <div class="col" id="teacher-details-col-2">
                     <h2>Contact #</h2>
-                    <p>contactNumber</p>
+                    <p>{{item.phoneNumber}}</p>
                 </div>
                 <div class="col" id="teacher-details-col-3">
-                    <h2>Registration #</h2>
-                    <p>regNumber</p>
+                    <h2>Address</h2>
+                    <p>{{item.address}}</p>
                 </div>
                 <div class="col" id="teacher-details-col-4">
-                    <h2>Address</h2>
-                    <p>address</p>
+                    <h2>Socials</h2>
+                    <p>Socials</p>
                 </div>
             </div>
         </section>
-  
-  
+
+
         <section>
             <div class="row" id="footer-btn-row">
                 <div class="col" id="footer-btn-col">
@@ -68,7 +68,7 @@
                     <button id="btn-close" type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
                 </div>
-  
+
                 <div class="offcanvas-body">
                     <section id="profile-section">
                         <div class="row" id="profile-img-row">
@@ -81,36 +81,19 @@
                             <hr id="hr">
                         </div>
                     </section>
-  
-                    <section id="Guardain-detail-section">
-                        <div class="row" id="Guardain-detail-row">
-                          <div class="col" id="Guardain-detail-col-1">
-                              <div class="col">
-                                  <h1>Father's Name</h1>
-                                  <p>guardianFatherName</p>
-                              </div>
-                          </div>
-                          <div class="col" id="Guardain-detail-col-2">
-                              <div class="col">
-                                  <h1>Contact #</h1>
-                                  <p>guardianContactNumber</p>
-                              </div>
-                          </div>
-                          <div class="col" id="Guardain-detail-col-3">
-                              <div class="col">
-                                  <h1>Address</h1>
-                                  <p>guardianAddress</p>
-                              </div>
-                          </div>
-                          <div class="col" id="Guardain-detail-col-4">
-                              <div class="col">
-                                  <h1>CNIC #</h1>
-                                  <p>cnic</p>
-                              </div>
-                          </div>
-                      </div>
-                    </section>
-  
+
+                    <div>
+                      <form [formGroup]="addBranchForm" (ngSubmit)="addsupervisorbranch()">
+                        <select class="form-control" formControlName="branchid" style="margin-top: 30px;">
+                          <option value="">Select Branch</option>
+                          <option *ngFor="let item of branch" value="{{item.id}}">
+                            {{item.branchName}}
+                          </option>
+                        </select>
+                        <button class="btn btn-primary" type="submit" style="margin-top: 10px;">Add</button>
+                      </form>
+                    </div>
+
                     <!-- footer img section start here -->
                     <section id="footer-img-section">
                         <div class="row" id="footer-img-row">
@@ -126,4 +109,3 @@
         </section>
     </section>
   </body>
-  

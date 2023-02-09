@@ -28,7 +28,7 @@ export class AdminBrancheslistComponent implements OnInit{
       city: new FormControl('', Validators.required),
       address: new FormControl('', Validators.required),
       branchCode: new FormControl('', Validators.required),
-      branchAdminId: new FormControl('', Validators.required)
+      AppUserId: new FormControl('', Validators.required)
     });
   }
   getbranches(){
@@ -38,6 +38,7 @@ export class AdminBrancheslistComponent implements OnInit{
     })
   }
   addBranch() {
+    console.log(this.addBranchForm.value);
     this.service.addBracnh(this.addBranchForm.value).subscribe(
       response => {
         this.getbranches();

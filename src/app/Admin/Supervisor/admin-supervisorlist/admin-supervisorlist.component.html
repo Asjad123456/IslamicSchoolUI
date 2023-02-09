@@ -9,7 +9,7 @@
             </div>
         </div>
     </div>
-  
+
     <div class="main-body">
         <div class="row" id="offcanva-main-row">
             <div class="col" id="offcanva-main-col-1">
@@ -20,7 +20,7 @@
                 <i class="fa fa-plus" aria-hidden="true"></i>
             </div>
         </div>
-  
+
         <!-- plus button to top offcanvas start here -->
         <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
             <div class="offcanvas-header">
@@ -39,7 +39,7 @@
                         <h2>Add New Class</h2>
                     </div>
                 </div>
-  
+
                 <!-- main inputs section -->
                 <div class="row" id="offcanvas-main-row">
                     <div class="col" id="offcanvas-main-col-1">
@@ -54,14 +54,14 @@
                 </div>
             </div>
         </div>
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
         <!-- offcanvas main section start here -->
         <section id="main-section-parent">
             <!-- offcanvas main section sort button start here -->
@@ -73,12 +73,12 @@
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </div>
             </div>
-  
+
             <!-- main section list start here -->
             <div class="row" id="main-list-row" >
               <div class="col" id="list-parent-col">
                 <div class="row" id="list-row" *ngFor="let item of user">
-                  <div class="col" id="list-inner-col">
+                  <div class="col" id="list-inner-col" (click)="toSupervisorprofileProfile(item.id)">
                     <h1>{{item.userName}}</h1>
                     <p>{{item.roles}}</p>
                   </div>
@@ -88,9 +88,8 @@
                 </div>
               </div>
             </div>
-  
+
         </section>
     </div>
   </div>
   <!-- Offcanvas for Gaurdain data ends here -->
-  

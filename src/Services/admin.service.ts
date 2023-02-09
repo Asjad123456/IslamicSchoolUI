@@ -49,6 +49,14 @@ getStudentById(id: number) {
   const url = `${this.baseUrl}Student/${id}`;
   return this.http.get<Student[]>(url);
 }
+getSupervisorById(id: string) {
+  const url = `${this.baseUrl}User/${id}`;
+  return this.http.get<User[]>(url);
+}
+getBranchForSupervisor(id: string) {
+  const url = `${this.baseUrl}User/${id}`;
+  return this.http.get<User>(url);
+}
 getBranchDetailsForEdit(id: number) {
   const url = `${this.baseUrl}Branch/${id}`;
   return this.http.get<Branches>(url);
@@ -56,6 +64,16 @@ getBranchDetailsForEdit(id: number) {
 getBranchdetailsforclasslist(id: number) {
   const url = `${this.baseUrl}Branch/${id}`;
   return this.http.get<Branches[]>(url);
+}
+AddBranchForSupervisor(id: string, user: User) {
+  const url = `${this.baseUrl}User/${id}`;
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
+
+  return this.http.put<Branches>(url, user, httpOptions);
 }
 updateBranch(id: number, branch: Branches) {
   const url = `${this.baseUrl}Branch/${id}`;

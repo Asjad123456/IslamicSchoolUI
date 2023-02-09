@@ -5,7 +5,7 @@ export interface Branches {
   address: string;
   branchCode: number;
   //BranchAdminDataFields
-  branchAdminId: number;
+  appUserId: number;
   userName: string;
   fatherName: string;
   email: string;
