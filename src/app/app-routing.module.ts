@@ -15,6 +15,8 @@ import { SupervisorPanelComponent } from './supervisor/supervisor-panel/supervis
 import { TeacherPanelComponent } from './teacher/teacher-panel/teacher-panel.component';
 import { WaitingComponent } from './waiting/waiting.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { AdminSupervisorlistComponent } from './Admin/Supervisor/admin-supervisorlist/admin-supervisorlist.component';
+import { AdminSupervisorprofileComponent } from './Admin/Supervisor/admin-supervisorprofile/admin-supervisorprofile.component';
 
 const routes: Routes = [
   {path:'welcome', component:WelcomeComponent},
@@ -31,6 +33,10 @@ const routes: Routes = [
   {path:'admin-branchprofile/:id/class-list/class-profile/:id',component:AdminBranchClassprofileComponent},
   {path:'admin-branchprofile/:id/class-list/class-profile/:id/student-list',component:AdminBranchClassStudentlistComponent},
   {path:'admin-branchprofile/:id/class-list/class-profile/:id/student-list/:id',component:AdminBranchClassStudentprofileComponent},
+
+  {path:'admin-supervisorlist', component:AdminSupervisorlistComponent},
+  {path:'admin-supervisorprofile/:id', component:AdminSupervisorprofileComponent},
+  
   //Supervisor Routes
   {path:'supervisor-panel', component:SupervisorPanelComponent, canActivate:[RoleGuard]},
   {path:'teacher-panel', component:TeacherPanelComponent}
