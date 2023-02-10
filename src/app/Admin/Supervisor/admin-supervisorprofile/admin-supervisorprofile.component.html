@@ -53,58 +53,14 @@
 
 
         <section>
-            <div class="row" id="footer-btn-row">
+            <div class="row" id="footer-btn-row" *ngFor="let item of user">
                 <div class="col" id="footer-btn-col">
-                    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
-                        aria-controls="offcanvasTop">View Gaurdain
-                        <i class="fa fa-angle-down"></i>
+                    <button class="btn" type="button" (click)="toSupervisorBranch(item.branchId)">Supervising {{item.branchName}}
+                        <i class="fa fa-angle-right"></i>
                     </button>
                 </div>
             </div>
-            <!-- Offcanvas for Gaurdain data start here -->
-            <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-                <div class="offcanvas-header">
-                    <!-- <h5 id="offcanvasTopLabel">Offcanvas top</h5> -->
-                    <button id="btn-close" type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
-
-                <div class="offcanvas-body">
-                    <section id="profile-section">
-                        <div class="row" id="profile-img-row">
-                            <div class="col" id="profile-img-col-1">
-                                <img src="/assets/headmaster.png" alt="">
-                            </div>
-                              <div class="col" id="profile-img-col-2">
-                                <h1>guardianName</h1>
-                              </div>
-                            <hr id="hr">
-                        </div>
-                    </section>
-
-                    <div>
-                      <form [formGroup]="addBranchForm" (ngSubmit)="addsupervisorbranch()">
-                        <select class="form-control" formControlName="branchid" style="margin-top: 30px;">
-                          <option value="">Select Branch</option>
-                          <option *ngFor="let item of branch" value="{{item.id}}">
-                            {{item.branchName}}
-                          </option>
-                        </select>
-                        <button class="btn btn-primary" type="submit" style="margin-top: 10px;">Add</button>
-                      </form>
-                    </div>
-
-                    <!-- footer img section start here -->
-                    <section id="footer-img-section">
-                        <div class="row" id="footer-img-row">
-                            <div class="col">
-                                <img src="/assets/home2_Flower.png" alt="">
-                            </div>
-                        </div>
-                    </section>
-                    <!-- footer img section start here -->
-                </div>
-            </div>
+           
             <!-- Offcanvas for Gaurdain data ends here -->
         </section>
     </section>

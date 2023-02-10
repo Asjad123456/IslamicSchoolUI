@@ -11,7 +11,7 @@ import { AdminService } from 'src/Services/admin.service';
   styleUrls: ['./admin-supervisorprofile.component.css']
 })
 export class AdminSupervisorprofileComponent {
-  user:User[];
+  user: User[];
   branch: Branches[];
   addBranchForm: FormGroup;
 
@@ -44,5 +44,8 @@ export class AdminSupervisorprofileComponent {
       console.warn('done',res);
     })
 
+  }
+  toSupervisorBranch(id: number){
+    this.router.navigate(['admin-branchprofile/'+ id]);
   }
 }

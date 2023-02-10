@@ -11,11 +11,7 @@ export interface User {
   address:string;
 
   //Supervisor Branch
-  branch: Array<{
-    id: number;
+    branchId: number;
     branchName: string;
     branchCode: string;
-    address: string;
-  }>;
-
 }
