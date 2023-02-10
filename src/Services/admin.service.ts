@@ -37,6 +37,9 @@ public getBranch(id: number): Observable<Branches>{
 public getUserforbranchSupervisor():Observable<User[]>{
   return this.http.get<User[]>(this.baseUrl + 'User/admins');
 }
+public getSupervisorsforlist():Observable<User[]>{
+  return this.http.get<User[]>(this.baseUrl + 'User/supervisors');
+}
 getBranchById(id: number) {
   const url = `${this.baseUrl}Branch/${id}`;
   return this.http.get<Branches[]>(url);
@@ -101,6 +104,9 @@ private httpOptions = {
   })
 };
 public getSupervisors():Observable<User[]>{
-  return this.http.get<User[]>(this.baseUrl + 'User/admins');
+  return this.http.get<User[]>(this.baseUrl + 'User/supervisors');
+}
+public getStudents(): Observable<Student[]>{
+  return this.http.get<Student[]>(this.baseUrl + 'Student')
 }
 }

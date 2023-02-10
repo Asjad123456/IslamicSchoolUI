@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RoleGuard } from 'src/guards/role.guard';
 import { AdminBranchClassStudentlistComponent } from './Admin/Branch/admin-branch-class-studentlist/admin-branch-class-studentlist.component';
@@ -17,6 +17,8 @@ import { WaitingComponent } from './waiting/waiting.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AdminSupervisorlistComponent } from './Admin/Supervisor/admin-supervisorlist/admin-supervisorlist.component';
 import { AdminSupervisorprofileComponent } from './Admin/Supervisor/admin-supervisorprofile/admin-supervisorprofile.component';
+import { AdminStudentlistComponent } from './Admin/Student/admin-studentlist/admin-studentlist.component';
+import { AdminStudentprofileComponent } from './Admin/Student/admin-studentprofile/admin-studentprofile.component';
 
 const routes: Routes = [
   {path:'welcome', component:WelcomeComponent},
@@ -36,7 +38,10 @@ const routes: Routes = [
 
   {path:'admin-supervisorlist', component:AdminSupervisorlistComponent},
   {path:'admin-supervisorprofile/:id', component:AdminSupervisorprofileComponent},
-  
+
+  {path:'admin-studentlist', component:AdminStudentlistComponent},
+  {path:'admin-studentlist/admin-studentprofile/:id', component:AdminStudentprofileComponent},
+
   //Supervisor Routes
   {path:'supervisor-panel', component:SupervisorPanelComponent, canActivate:[RoleGuard]},
   {path:'teacher-panel', component:TeacherPanelComponent}

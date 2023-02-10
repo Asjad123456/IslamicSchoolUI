@@ -27,6 +27,8 @@ import { AdminBranchClassStudentlistComponent } from './Admin/Branch/admin-branc
 import { AdminBranchClassStudentprofileComponent } from './Admin/Branch/admin-branch-class-studentprofile/admin-branch-class-studentprofile.component';
 import { AdminSupervisorlistComponent } from './Admin/Supervisor/admin-supervisorlist/admin-supervisorlist.component';
 import { AdminSupervisorprofileComponent } from './Admin/Supervisor/admin-supervisorprofile/admin-supervisorprofile.component';
+import { AdminStudentlistComponent } from './Admin/Student/admin-studentlist/admin-studentlist.component';
+import { AdminStudentprofileComponent } from './Admin/Student/admin-studentprofile/admin-studentprofile.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { AdminSupervisorprofileComponent } from './Admin/Supervisor/admin-superv
     AdminBranchClassStudentprofileComponent,
     AdminSupervisorlistComponent,
     AdminSupervisorprofileComponent,
+    AdminStudentlistComponent,
+    AdminStudentprofileComponent,
   ],
   imports: [
     BrowserModule,
