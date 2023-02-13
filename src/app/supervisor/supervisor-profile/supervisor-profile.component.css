@@ -149,26 +149,20 @@
     right: 16px;
     color: var(--color);
 }
-#offcanvas-profile-row{
-    display: grid;
-    grid-template-columns: 133px 250px;
-}
 #offcanvas-profile-sec{
-    position: relative;
-    top: 30px;
-}
-#offcanvas-profile-col-1{
+    height: 10vh;
     display: grid;
-    justify-content: center;
     align-content: center;
+    justify-content: center;
 }
-#offcanvas-profile-col-1 img{
-    width: 20vw;
-}
-#offcanvas-profile-col-2{
+#offcanvas-profile-col{
     display: grid;
     align-content: center;
     color: var(--color);
+}
+#offcanvas-profile-col strong{
+    font-size: 20px;
+    font-weight: 900;
 }
 #offcanvas-main-section{
     position: relative;
@@ -179,68 +173,82 @@
     grid-template-columns: 381px;
     row-gap: 10px;
 }
+label{
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--color);
+}
+input#name {
+    width: 85vw;
+}
+input[type = "text"]{
+    background: none;
+    border-bottom: 1px solid var(--color-1);
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    outline: none;
+}
 #offcanvas-main-col-1{
     height: 9vh;
     padding: 8px;
-}
-#offcanvas-main-col-1 h2{
-    color: var(--color);
-    font-size: 20px;
-}
-#offcanvas-main-col-1 p{
-    color: var(--color-1);
-    padding-top: 8px;
-}
-#offcanvas-main-col-1 div{
-    border-bottom: 1px solid var(--color);
-    opacity: 0.3;
+    display: grid;
+    justify-content: center;
+    align-content: center;
 }
 #offcanvas-main-col-2{
     height: 10vh;
     padding: 8px;
-}
-#offcanvas-main-col-2 h2{
-    color: var(--color);
-    font-size: 20px;
-}
-#offcanvas-main-col-2 p{
-    color: var(--color-1);
-    padding-top: 8px;
-}
-#offcanvas-main-col-2 div{
-    border-bottom: 1px solid var(--color);
-    opacity: 0.3;
+    display: grid;
+    justify-content: center;
+    align-content: center;
 }
 #offcanvas-main-col-3{
     height: 9vh;
     padding: 8px;
-}
-#offcanvas-main-col-3 h2{
-    color: var(--color);
-    font-size: 20px;
-}
-#offcanvas-main-col-3 p{
-    color: var(--color-1);
-    padding-top: 8px;
-}
-#offcanvas-main-col-3 div{
-    border-bottom: 1px solid var(--color);
-    opacity: 0.3;
+    display: grid;
+    justify-content: center;
+    align-content: center;
 }
 #offcanvas-main-col-4{
     height: 9vh;
     padding: 8px;
-}
-#offcanvas-main-col-4 h2{
-    color: var(--color);
-    font-size: 20px;
-}
-#offcanvas-main-col-4 p{
-    color: var(--color-1);
-    padding-top: 8px;
-}
-#offcanvas-main-col-4 div{
-    border-bottom: 1px solid var(--color);
-    opacity: 0.3;
+    display: grid;
+    justify-content: center;
+    align-content: center;
 }
 
+
+/* footer buttons section styling start here */
+#footer-btns-row{
+    height: 10vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+#footer-btns-col-1{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+#footer-btns-col-1 .btn{
+    width: 20vw;
+    height: 5vh;
+    background-color: var(--color-1);
+    color: var(--box-color);
+    font-size: 16px;
+    font-weight: 600;
+}
+#footer-btns-col-2{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+#footer-btns-col-2 .btn{
+    width: 20vw;
+    height: 5vh;
+    background-color: var(--color-1);
+    color: var(--box-color);
+    font-size: 16px;
+    font-weight: 600;
+}
