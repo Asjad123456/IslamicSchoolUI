@@ -15,10 +15,10 @@ id="offcanvasExample">
   <!-- offcanvas name details start -->
   <section id="name-section">
     <div class="row" id="name-section-row">
-      <div class="col" id="name-section-col-1">
+      <div class="col" id="name-section-col-1" *ngFor="let item of user">
         <h3>Supervisor</h3>
-        <strong>Stefan Garleson</strong>
-        <p>Stefan-backham@hotmail.com</p>
+        <strong>{{item.userName}}</strong>
+        <p>{{item.email}}</p>
       </div>
       <div class="col" id="name-section-col-2">
         <i class="fa-solid fa-pen-nib"
@@ -29,7 +29,7 @@ id="offcanvasExample">
     </div>
   </section>
 
-  
+
         <!-- Branch box offcanvas section start here -->
         <div
           class="offcanvas offcanvas-end"
@@ -91,22 +91,22 @@ id="offcanvasExample">
         </div>
 
   <section id="main-detail-section">
-    <div class="row" id="main-detail-row">
+    <div class="row" id="main-detail-row" *ngFor="let item of user">
       <div class="col" id="main-detail-col-1">
         <strong>Father name</strong>
-        <p>B-praak</p>
+        <p>{{item.fatherName}}</p>
       </div>
       <div class="col" id="main-detail-col-2">
         <strong>Supervising</strong>
-        <p>Branch-A</p>
+        <p>{{item.branchName}}</p>
       </div>
       <div class="col" id="main-detail-col-3">
         <strong>Contact</strong>
-        <p>+52 99 32 000</p>
+        <p>{{item.phoneNumber}}</p>
       </div>
       <div class="col" id="main-detail-col-4">
-        <strong>Socials</strong>
-        <p>B-praak</p>
+        <strong>Address</strong>
+        <p>{{item.address}}</p>
       </div>
     </div>
   </section>

@@ -45,7 +45,7 @@ const routes: Routes = [
 
   //Supervisor Routes
   {path:'supervisor-panel/:id', component:SupervisorPanelComponent},
-  {path:'supervisor-profile', component:SupervisorProfileComponent},
+  {path:'supervisor-profile/:id', component:SupervisorProfileComponent},
 
 
 

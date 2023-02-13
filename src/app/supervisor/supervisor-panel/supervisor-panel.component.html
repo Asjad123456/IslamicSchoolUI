@@ -15,9 +15,9 @@
           <div class="col" id="hero-col-inner-1">
           </div>
 
-          <div class="col" id="hero-col-inner-2">
-            <h1>Sup A</h1>
-            <p><i class="fas fa-location"></i>New Jersey</p>
+          <div class="col" id="hero-col-inner-2" *ngFor="let item of user">
+            <h1>{{item.userName}}</h1>
+            <p><i class="fas fa-location"></i>{{item.email}}</p>
           </div>
         </div>
       </div>
@@ -27,7 +27,7 @@
     </div>
 
     <!-- Supervisor data offcanvas start here -->
-    
+
     <!-- Supervisor data offcanvas start here -->
   </section>
 
