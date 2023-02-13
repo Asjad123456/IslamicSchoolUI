@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { map, ReplaySubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { User } from 'src/Models/user';
+import { UserForLogin } from 'src/Models/userforlogin';
 
 @Injectable({
   providedIn: 'root'
@@ -16,14 +17,15 @@ export class AccountService {
 
 constructor(private http: HttpClient, private router: Router) { }
 login(model: any){
-  return this.http.post<User>(this.baseUrl + 'Account/login', model).pipe(
-    map((response: User) =>{
+  return this.http.post<UserForLogin>(this.baseUrl + 'Account/login', model).pipe(
+    map((response: UserForLogin) =>{
       const user = response;
       if(user){
         localStorage.setItem('user', JSON.stringify(user));
         localStorage.setItem('token', JSON.stringify(user.token));
         localStorage.setItem('roles', JSON.stringify(user.roles));
-        this.setCurrentUser(user);
+        // this.setCurrentUser(user);
+        this.router.navigate(['supervisor-panel/' + user.appUser.id]);
       }
       return user;
     })
