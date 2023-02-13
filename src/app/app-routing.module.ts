@@ -43,7 +43,7 @@ const routes: Routes = [
   {path:'admin-studentlist/admin-studentprofile/:id', component:AdminStudentprofileComponent},
 
   //Supervisor Routes
-  {path:'supervisor-panel', component:SupervisorPanelComponent, canActivate:[RoleGuard]},
+  {path:'supervisor-panel', component:SupervisorPanelComponent},
   {path:'teacher-panel', component:TeacherPanelComponent}
 ];
 

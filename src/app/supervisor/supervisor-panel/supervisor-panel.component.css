@@ -56,12 +56,16 @@ body{
 }
 #hero-col-inner-1 i{
     font-size: 20px;
-    color: var(--color);
+    color: var(--color-1);
 }
 #hero-col-inner-2{
     display: grid;
     justify-content: center;
     color: var(--color);
+}
+#hero-col-inner-2 h1{
+    color: var(--color);
+    font-weight: 800;
 }
 #hero-col-2{
     display: grid;
@@ -74,52 +78,67 @@ body{
 /* Main section styling start here */
 #main-section{
     display: grid;
-    grid-template-columns: 100px 100px;
+    gap: 10px;
     position: relative;
     top: 143px;
     padding: 10px;
+    height: 55vh;
 }
 #main-sec-first-row{
     display: grid;
     grid-template-columns: 191px;
     row-gap: 1rem;
     width: 49vw;
+    height: 17vh;
 
 }
-/* teacher box styling  */
-#teacher-col{
-    max-width: 94%;
-    height: 31vh;
-    display: grid;
-    justify-content: center;
+
+
+/* Your branch section styling start here */
+#your-branch-row{
+    background-color: #fff5b8;
     border-radius: 10px;
-    background-color: #F5E6B7;
-    color: #eeb300;
-}
-#teacher-box-inner-row{
-    display: grid;
-    grid-template-columns: 160px;
-}
-#teacher-box-inner-col-1{
-    display: grid;
-    justify-content: flex-end;
-    align-content: center;
-    height: 32px;
-}
-#teacher-box-inner-col-2{
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    height: 24vh;
-    font-size: 25px;
-}
-#teacher-box-inner-col-3{
-    display: flex;
-    justify-content: flex-end;
-    align-content: center;
 }
 
+#your-profile-row{
+    background-color: #fff5b8;
+    border-radius: 10px;
+}
+#your-branch-col-1{
+    display: grid;
+    align-content: center;
+    padding-left: 10px;
+}
+#your-branch-col-1 h1{
+    color: var(--color-1);
+    font-weight: 800;
+    font-size: 20px;
+}
+#your-branch-col-2 i{
+    color: var(--color-1);
+    font-size: 20px;
+}
+#your-branch-col-2{
+    display: grid;
+    justify-content: center;
+    align-content: center; 
+}
+
+
+
+
+
+
+
+
+
+#footer-box-row{
+    width: 94vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 17vh;
+}
 
 /* massage box styling start here */
 #message-board-col{
@@ -151,8 +170,8 @@ body{
     grid-template-columns: 192px;
     row-gap: 1rem;
     position: relative;
-    left: 94px;
     width: 44vw;
+    height: 17vh;
 }
 
 /* Branch box section styling  */
@@ -294,42 +313,6 @@ body{
     border-bottom: 1px solid var(--color);
     opacity: 0.3;
 }
-/* Student box styling start here */
-#student-col{
-    max-width: 88%;
-    height: 31vh ;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    border-radius: 10px;
-    background-color: #F5DAB7;
-    color: #f99717;
-}
-#student-inner-row{
-    display: grid;
-    grid-template-columns: 155px;
-    grid-template-rows: 34px;
-}
-#student-inner-col-1{
-    display: grid;
-    justify-content: flex-end;
-    align-content: center;
-    height: 32px;
-}
-#student-inner-row-2{
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    height: 24vh;
-    font-size: 22px;
-}
-#student-inner-col-3{
-    display: flex;
-    justify-content: flex-end;
-    align-content: center;
-}
-
 
 /* i button offcanvas section styling start here*/
 #offcanvasExample{
