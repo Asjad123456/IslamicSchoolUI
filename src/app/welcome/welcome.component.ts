@@ -16,7 +16,7 @@ import { AccountService } from 'src/Services/account.service';
 export class WelcomeComponent implements OnInit {
   loginMode = false;
   registerMode = false;
-  user!: UserForLogin;
+  user: UserForLogin;
   errorMessage!: string;
 
   constructor(private accountsService: AccountService, private roleGuard: RoleGuard,
@@ -29,6 +29,8 @@ export class WelcomeComponent implements OnInit {
   onLogin() {
     this.accountsService.login(this.model).subscribe((res)=>{
       console.log(res);
+      this.user = res;
+      // this.router.navigate(['supervisor-profile/' + this.user.id]);
       if (window.localStorage) {
         console.log('local storage supported !!!');
       } else {
