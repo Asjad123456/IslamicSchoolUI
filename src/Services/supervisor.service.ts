@@ -1,6 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Branches } from 'src/Models/branches';
 import { SupervisorForEdit } from 'src/Models/supervisorForUpdate';
 import { User } from 'src/Models/user';
 
@@ -24,5 +26,12 @@ updateProfile(id: string, user: SupervisorForEdit) {
     })
   };
   return this.http.put<SupervisorForEdit>(url, user, httpOptions);
+}
+getBranchById(id: number) {
+  const url = `${this.baseUrl}Branch/${id}`;
+  return this.http.get<Branches[]>(url);
+}
+public getTeachersforlist(): Observable<User[]>{
+  return this.http.get<User[]>(this.baseUrl + 'User/teachers');
 }
 }

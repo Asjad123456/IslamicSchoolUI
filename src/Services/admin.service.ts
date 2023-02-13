@@ -40,6 +40,9 @@ public getUserforbranchSupervisor():Observable<User[]>{
 public getSupervisorsforlist():Observable<User[]>{
   return this.http.get<User[]>(this.baseUrl + 'User/supervisors');
 }
+public getTeachersforlist():Observable<User[]>{
+  return this.http.get<User[]>(this.baseUrl + 'User/teachers');
+}
 getBranchById(id: number) {
   const url = `${this.baseUrl}Branch/${id}`;
   return this.http.get<Branches[]>(url);
