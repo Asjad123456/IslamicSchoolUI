@@ -20,6 +20,7 @@ import { AdminSupervisorprofileComponent } from './Admin/Supervisor/admin-superv
 import { AdminStudentlistComponent } from './Admin/Student/admin-studentlist/admin-studentlist.component';
 import { AdminStudentprofileComponent } from './Admin/Student/admin-studentprofile/admin-studentprofile.component';
 import { SupervisorProfileComponent } from './supervisor/supervisor-profile/supervisor-profile.component';
+import { SupervisorBranchprofileComponent } from './supervisor/supervisor-branchprofile/supervisor-branchprofile.component';
 
 const routes: Routes = [
   {path:'welcome', component:WelcomeComponent},
@@ -46,6 +47,7 @@ const routes: Routes = [
   //Supervisor Routes
   {path:'supervisor-panel/:id', component:SupervisorPanelComponent},
   {path:'supervisor-profile/:id', component:SupervisorProfileComponent},
+  {path:'supervisor-profile/:id/supervisor-branchprofile', component:SupervisorBranchprofileComponent},
 
 
 
