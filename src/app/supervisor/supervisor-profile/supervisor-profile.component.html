@@ -59,35 +59,35 @@
 
         <!-- supervisor profile main section start here -->
         <section id="offcanvas-main-section">
-          <form action="">
+          <form [formGroup]="editSupervisorProfileForm" (ngSubmit)="editProfile()">
           <div class="row" id="offcanvas-main-row">
             <div class="col" id="offcanvas-main-col-1">
               <label for="name">Name:</label>
-              <input type="text" id="name" />
+              <input type="text" id="name" formControlName="userName"/>
             </div>
             <div class="col" id="offcanvas-main-col-2">
               <label for="name">father Name:</label>
-              <input type="text" id="name" />
+              <input type="text" id="name" formControlName="fatherName"/>
             </div>
             <div class="col" id="offcanvas-main-col-3">
               <label for="name">Email:</label>
-              <input type="text" id="name" />
+              <input type="text" id="name" formControlName="email"/>
             </div>
             <div class="col" id="offcanvas-main-col-4">
               <label for="name">Contact:</label>
-              <input type="text" id="name" />
+              <input type="text" id="name" formControlName="phoneNumber"/>
             </div>
-            <div class="col" id="offcanvas-main-col-5">
+            <!-- <div class="col" id="offcanvas-main-col-5">
               <label for="name">Address:</label>
-              <input type="text" id="name" />
-            </div>
+              <input type="text" id="name" formControlName="address"/>
+            </div> -->
           </div>
           <div class="row" id="footer-btns-row">
             <div class="col" id="footer-btns-col-1">
-              <button class="btn" type="button">Click</button>
+              <button class="btn" type="button">Cancel</button>
             </div>
             <div class="col" id="footer-btns-col-2">
-              <button class="btn" type="button">Click</button>
+              <button class="btn" type="submit">Submit</button>
             </div>
           </div>
         </form>
