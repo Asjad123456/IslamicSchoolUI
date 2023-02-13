@@ -1,0 +1,246 @@
+@import '~@fortawesome/fontawesome-free/css/all.css';
+@import '~@fortawesome/fontawesome-free/css/solid.css';
+@import '~@fortawesome/fontawesome-free/css/regular.css';
+@import '~@fortawesome/fontawesome-free/css/brands.css';
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  border: 1px solid transparent;
+}
+:host {
+  --color-1: #dba100;
+  --color: #586e6b;
+  --background: #fff;
+  --box-color: #D0EFC4;
+}
+
+
+#hero-col-inner-1 i{
+    font-size: 20px;
+    color: var(--color-1);
+}
+
+
+/* i button offcanvas section styling start here*/
+#offcanvasExample{
+    background-color: var(--box-color);
+}
+#teacher-offcanvas-body{
+    height: 99.8vh;
+}
+.supervisor-offcanvas-header{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 5vh;
+    padding: 5px;
+}
+.supervisor-offcanvas-header button{
+    font-size: 20px;
+    position: relative;
+    right: 7px;
+}
+#teacher-offcanvas-row .col img{
+    width: 97vw;
+}
+/* - - - ===== - - - */
+#name-section{
+    height: 19vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+#name-section-row{
+    display: grid;
+    grid-template-columns: 66% 40%;
+}
+#name-section-col-1{
+    display: grid;
+    justify-content: center;
+    padding: 7px;
+    color: var(--color);
+}
+#name-section-col-1 h3{
+    font-weight: 900;
+    color: #bbd5ab;
+}
+#name-section-col-2{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 33vw;
+}
+#name-section-col-2 i{
+    font-size: 30px;
+    color: var(--color);
+}
+/* =-=-=-=-=-=-=--=--== */
+#main-detail-section{
+    position: relative;
+    top: 23px;
+    padding: 4px;
+}
+#main-detail-row{
+    display: grid;
+    grid-template-columns: 51% 48%;
+    column-gap: 5px;
+    row-gap: 5px;
+    height: 28vh;
+}
+#main-detail-col-1{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background: #c7f3b5;
+    border-radius: 15px;
+    color: var(--color-1);
+}
+#main-detail-col-2{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background: #c7f3b5;
+    border-radius: 15px;
+    color: var(--color-1);
+}
+#main-detail-col-3{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background: #c7f3b5;
+    border-radius: 15px;
+    color: var(--color-1);
+}
+#main-detail-col-4{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background: #c7f3b5;
+    border-radius: 15px;
+    color: var(--color-1);
+}
+
+/* ------------------------------------- */
+/* Branch offcanvas section styling start here */
+#offcanvasRight{
+    background: linear-gradient(to top, #fff 0%, var(--box-color) 0%);
+}
+#offcanvas-btn-row{
+    position: relative;
+    top: 5px;
+    left: 0;
+}
+#offcanvas-btn-col{
+    width: 98vw;
+    display: grid;
+    height: 4vh;
+    justify-content: flex-end;
+    align-content: center;
+}
+#offcanvas-btn-col button{
+    position: relative;
+    right: 16px;
+    color: var(--color);
+}
+#offcanvas-profile-row{
+    display: grid;
+    grid-template-columns: 133px 250px;
+}
+#offcanvas-profile-sec{
+    position: relative;
+    top: 30px;
+}
+#offcanvas-profile-col-1{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+#offcanvas-profile-col-1 img{
+    width: 20vw;
+}
+#offcanvas-profile-col-2{
+    display: grid;
+    align-content: center;
+    color: var(--color);
+}
+#offcanvas-main-section{
+    position: relative;
+    top: 93px;
+}
+#offcanvas-main-row{
+    display: grid;
+    grid-template-columns: 381px;
+    row-gap: 10px;
+}
+#offcanvas-main-col-1{
+    height: 9vh;
+    padding: 8px;
+}
+#offcanvas-main-col-1 h2{
+    color: var(--color);
+    font-size: 20px;
+}
+#offcanvas-main-col-1 p{
+    color: var(--color-1);
+    padding-top: 8px;
+}
+#offcanvas-main-col-1 div{
+    border-bottom: 1px solid var(--color);
+    opacity: 0.3;
+}
+#offcanvas-main-col-2{
+    height: 10vh;
+    padding: 8px;
+}
+#offcanvas-main-col-2 h2{
+    color: var(--color);
+    font-size: 20px;
+}
+#offcanvas-main-col-2 p{
+    color: var(--color-1);
+    padding-top: 8px;
+}
+#offcanvas-main-col-2 div{
+    border-bottom: 1px solid var(--color);
+    opacity: 0.3;
+}
+#offcanvas-main-col-3{
+    height: 9vh;
+    padding: 8px;
+}
+#offcanvas-main-col-3 h2{
+    color: var(--color);
+    font-size: 20px;
+}
+#offcanvas-main-col-3 p{
+    color: var(--color-1);
+    padding-top: 8px;
+}
+#offcanvas-main-col-3 div{
+    border-bottom: 1px solid var(--color);
+    opacity: 0.3;
+}
+#offcanvas-main-col-4{
+    height: 9vh;
+    padding: 8px;
+}
+#offcanvas-main-col-4 h2{
+    color: var(--color);
+    font-size: 20px;
+}
+#offcanvas-main-col-4 p{
+    color: var(--color-1);
+    padding-top: 8px;
+}
+#offcanvas-main-col-4 div{
+    border-bottom: 1px solid var(--color);
+    opacity: 0.3;
+}
+

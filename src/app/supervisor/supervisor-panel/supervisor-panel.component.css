@@ -39,7 +39,7 @@ body{
 /* Hero-section styling start here  */
 #hero-section{
     position: relative;
-    top: 49px;
+    top: 85px;
 }
 #hero-col-1{
     display: grid;
@@ -80,7 +80,7 @@ body{
     display: grid;
     gap: 10px;
     position: relative;
-    top: 143px;
+    top: 181px;
     padding: 10px;
     height: 55vh;
 }
