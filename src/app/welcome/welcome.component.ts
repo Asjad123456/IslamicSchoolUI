@@ -28,6 +28,7 @@ export class WelcomeComponent implements OnInit {
   }
   onLogin() {
     this.accountsService.login(this.model).subscribe((res)=>{
+      console.log(res);
       if (window.localStorage) {
         console.log('local storage supported !!!');
       } else {
