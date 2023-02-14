@@ -31,6 +31,10 @@ import { AdminStudentlistComponent } from './Admin/Student/admin-studentlist/adm
 import { AdminStudentprofileComponent } from './Admin/Student/admin-studentprofile/admin-studentprofile.component';
 import { SupervisorProfileComponent } from './supervisor/supervisor-profile/supervisor-profile.component';
 import { SupervisorBranchprofileComponent } from './supervisor/supervisor-branchprofile/supervisor-branchprofile.component';
+import { SupervisorBranchClasslistComponent } from './supervisor/supervisor-branch-classlist/supervisor-branch-classlist.component';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SupervisorBranchClassprofileComponent } from './supervisor/supervisor-branch-classprofile/supervisor-branch-classprofile.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +60,8 @@ import { SupervisorBranchprofileComponent } from './supervisor/supervisor-branch
     AdminStudentprofileComponent,
     SupervisorProfileComponent,
     SupervisorBranchprofileComponent,
+    SupervisorBranchClasslistComponent,
+    SupervisorBranchClassprofileComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +70,8 @@ import { SupervisorBranchprofileComponent } from './supervisor/supervisor-branch
     FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
+    NgxMaterialTimepickerModule,
+    BrowserAnimationsModule,
     ModalModule.forRoot()
   ],
   providers: [

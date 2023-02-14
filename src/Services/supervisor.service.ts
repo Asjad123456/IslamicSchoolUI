@@ -2,7 +2,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { AddStudyClass } from 'src/Models/addStudyClass';
 import { Branches } from 'src/Models/branches';
+import { StudyClass } from 'src/Models/StudyClass';
 import { SupervisorForEdit } from 'src/Models/supervisorForUpdate';
 import { User } from 'src/Models/user';
 
@@ -33,5 +35,12 @@ getBranchById(id: number) {
 }
 public getTeachersforlist(): Observable<User[]>{
   return this.http.get<User[]>(this.baseUrl + 'User/teachers');
+}
+public addClass(studyclass: AddStudyClass): Observable<AddStudyClass>{
+  return this.http.post<AddStudyClass>(this.baseUrl + 'StudyClass', studyclass);
+}
+getClassById(id: number) {
+  const url = `${this.baseUrl}StudyClass/${id}`;
+  return this.http.get<StudyClass[]>(url);
 }
 }
