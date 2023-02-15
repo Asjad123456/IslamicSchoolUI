@@ -16,4 +16,13 @@ export interface Branches {
     className: string;
     classTime: Date;
   }>;
+  students: Array<{
+    id: number;
+    regNumber: number;
+    name: string;
+    fatherName: string;
+    contactNumber: number;
+    rollNumber: number;
+    address: string;
+  }>;
 }

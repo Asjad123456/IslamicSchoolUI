@@ -23,6 +23,10 @@ import { SupervisorProfileComponent } from './supervisor/supervisor-profile/supe
 import { SupervisorBranchprofileComponent } from './supervisor/supervisor-branchprofile/supervisor-branchprofile.component';
 import { SupervisorBranchClasslistComponent } from './supervisor/supervisor-branch-classlist/supervisor-branch-classlist.component';
 import { SupervisorBranchClassprofileComponent } from './supervisor/supervisor-branch-classprofile/supervisor-branch-classprofile.component';
+import { SupervisorBranchClassStudentprofileComponent } from './supervisor/supervisor-branch-class-studentprofile/supervisor-branch-class-studentprofile.component';
+import { SupervisorBranchStudentlistComponent } from './supervisor/supervisor-branch-studentlist/supervisor-branch-studentlist.component';
+import { SupervisorBranchStudentprofileComponent } from './supervisor/supervisor-branch-studentprofile/supervisor-branch-studentprofile.component';
+import { TeacherProfileComponent } from './teacher/teacher-profile/teacher-profile.component';
 
 const routes: Routes = [
   {path:'welcome', component:WelcomeComponent},
@@ -52,8 +56,13 @@ const routes: Routes = [
   {path:'supervisor-panel/:id/supervisor-branchprofile/:id', component:SupervisorBranchprofileComponent},
   {path:'supervisor-panel/:id/supervisor-branchprofile/:id/classlist', component:SupervisorBranchClasslistComponent},
   {path:'supervisor-panel/supervisor-branchprofile/:id/classprofile/:id', component:SupervisorBranchClassprofileComponent},
+  {path:'supervisor-panel/supervisor-branchprofile/classprofile/:id/student-profile/:id', component:SupervisorBranchClassStudentprofileComponent},
+  {path:'supervisor-panel/:id/supervisor-branchprofile/:id/studentlist', component:SupervisorBranchStudentlistComponent},
+  {path:'supervisor-panel/supervisor-branchprofile/:id/studentlist/studentprofile/:id', component:SupervisorBranchStudentprofileComponent},
 
-  {path:'teacher-panel', component:TeacherPanelComponent}
+  //teacher Routes
+  {path:'teacher-panel/:id', component:TeacherPanelComponent},
+  {path:'teacher-profile/:id', component:TeacherProfileComponent}
 ];
 
 @NgModule({

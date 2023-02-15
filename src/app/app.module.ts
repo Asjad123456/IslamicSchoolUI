@@ -35,6 +35,10 @@ import { SupervisorBranchClasslistComponent } from './supervisor/supervisor-bran
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SupervisorBranchClassprofileComponent } from './supervisor/supervisor-branch-classprofile/supervisor-branch-classprofile.component';
+import { SupervisorBranchClassStudentprofileComponent } from './supervisor/supervisor-branch-class-studentprofile/supervisor-branch-class-studentprofile.component';
+import { SupervisorBranchStudentlistComponent } from './supervisor/supervisor-branch-studentlist/supervisor-branch-studentlist.component';
+import { SupervisorBranchStudentprofileComponent } from './supervisor/supervisor-branch-studentprofile/supervisor-branch-studentprofile.component';
+import { TeacherProfileComponent } from './teacher/teacher-profile/teacher-profile.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +65,11 @@ import { SupervisorBranchClassprofileComponent } from './supervisor/supervisor-b
     SupervisorProfileComponent,
     SupervisorBranchprofileComponent,
     SupervisorBranchClasslistComponent,
-    SupervisorBranchClassprofileComponent
+    SupervisorBranchClassprofileComponent,
+    SupervisorBranchClassStudentprofileComponent,
+    SupervisorBranchStudentlistComponent,
+    SupervisorBranchStudentprofileComponent,
+    TeacherProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { AddStudyClass } from 'src/Models/addStudyClass';
 import { Branches } from 'src/Models/branches';
+import { Student } from 'src/Models/students';
 import { StudyClass } from 'src/Models/StudyClass';
 import { SupervisorForEdit } from 'src/Models/supervisorForUpdate';
 import { User } from 'src/Models/user';
@@ -42,5 +43,9 @@ public addClass(studyclass: AddStudyClass): Observable<AddStudyClass>{
 getClassById(id: number) {
   const url = `${this.baseUrl}StudyClass/${id}`;
   return this.http.get<StudyClass[]>(url);
+}
+getStudentById(id: number) {
+  const url = `${this.baseUrl}Student/${id}`;
+  return this.http.get<Student[]>(url);
 }
 }

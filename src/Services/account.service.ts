@@ -25,7 +25,7 @@ login(model: any){
         localStorage.setItem('token', JSON.stringify(user.token));
         localStorage.setItem('roles', JSON.stringify(user.roles));
         // this.setCurrentUser(user);
-        this.router.navigate(['supervisor-panel/' + user.appUser.id]);
+        this.router.navigate(['teacher-panel/' + user.appUser.id]);
       }
       return user;
     })

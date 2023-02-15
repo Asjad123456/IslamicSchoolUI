@@ -12,13 +12,13 @@
   <!-- hero section start  -->
   <section id="hero-section">
       <div class="row" id="hero-row">
-          <div class="col" id="hero-col-1">
+          <div class="col" id="hero-col-1" *ngFor="let item of studyclass">
               <div class="col" id="info-col">
                   <i class="fa fa-info-circle" aria-hidden="true" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"></i>
               </div>
               <div class="col">
-                  <h2>Class-Name</h2>
-              <p>B-Praak   <i class="fa fa-edit" aria-hidden="true"></i></p>
+                  <h2>{{item.className}}</h2>
+              <p>{{item.userName}}   <i class="fa fa-edit" aria-hidden="true"></i></p>
               </div>
           </div>
           <div class="col" id="hero-col-2">
@@ -52,11 +52,11 @@
 
     <!-- offcanvas name details start -->
     <div class="row" id="offcanvas-hero">
-        <div class="col" id="offcanves-name-col">
+        <div class="col" id="offcanves-name-col" *ngFor="let item of studyclass">
 
             <h5 class="offcanvas-title" id="offcanvas-header">Teacher</h5>
-            <h2>Stefan Garlson</h2>
-            <p>Stefan123@gmail.com
+            <h2>{{item.userName}}</h2>
+            <p>{{item.email}}
             </p>
         </div>
         <div class="col" id="offcanves-edit-col">
@@ -66,18 +66,18 @@
         </div>
     </div> <!-- offcanvas name details start -->
 
-    <div class="row" id="offcanvas-main">
+    <div class="row" id="offcanvas-main" *ngFor="let item of studyclass">
         <div class="col">
             <h3>Father name</h3>
-            <p>Harnandaz</p>
+            <p>{{item.fatherName}}</p>
         </div>
         <div class="col">
             <h3>Contact #</h3>
-            <p>+51 000 000</p>
+            <p>{{item.phoneNumber}}</p>
         </div>
         <div class="col">
-            <h3>Supervising</h3>
-            <p>Branch A</p>
+            <h3>Teaching</h3>
+            <p>{{item.className}}</p>
         </div>
         <div class="col">
             <h3>Socials</h3>
@@ -120,7 +120,7 @@
 
       <div class="row" id="student-heading-row">
           <div class="col" id="student-heading-col">
-              <h1>Student heading</h1>
+              <h1>Students</h1>
           </div>
       </div>
 
@@ -139,68 +139,15 @@
 
       <main id="student-list-parent-row">
 
-          <div class="row" id="student-list-row">
-              <div class="col" id="student-list-col-1">
-                  <h1>Student A</h1>
-                  <p>Lorem ipsum dolor sit amet.</p>
+          <div class="row" id="student-list-row" *ngFor="let item of studyclass">
+              <div class="col" id="student-list-col-1" *ngFor="let studentitem of item.students" (click)="toStudentProfile()">
+                  <h1>{{studentitem.name}}</h1>
+                  <p>{{studentitem.rollNumber}}</p>
               </div>
               <div class="col" id="student-list-col-2">
                   <i class="fa fa-trash" aria-hidden="true"></i>
               </div>
           </div>
-
-
-          <div class="row" id="student-list-row">
-              <div class="col" id="student-list-col-1">
-                  <h1>Student A</h1>
-                  <p>Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="col" id="student-list-col-2">
-                  <i class="fa fa-trash" aria-hidden="true"></i>
-              </div>
-          </div>
-
-
-          <div class="row" id="student-list-row">
-              <div class="col" id="student-list-col-1">
-                  <h1>Student A</h1>
-                  <p>Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="col" id="student-list-col-2">
-                  <i class="fa fa-trash" aria-hidden="true"></i>
-              </div>
-          </div>
-
-          <div class="row" id="student-list-row">
-              <div class="col" id="student-list-col-1">
-                  <h1>Student A</h1>
-                  <p>Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="col" id="student-list-col-2">
-                  <i class="fa fa-trash" aria-hidden="true"></i>
-              </div>
-          </div>
-
-          <div class="row" id="student-list-row">
-              <div class="col" id="student-list-col-1">
-                  <h1>Student A</h1>
-                  <p>Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="col" id="student-list-col-2">
-                  <i class="fa fa-trash" aria-hidden="true"></i>
-              </div>
-          </div>
-
-          <div class="row" id="student-list-row">
-              <div class="col" id="student-list-col-1">
-                  <h1>Student A</h1>
-                  <p>Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="col" id="student-list-col-2">
-                  <i class="fa fa-trash" aria-hidden="true"></i>
-              </div>
-          </div>
-
       </main>
   </section>
 </body>
