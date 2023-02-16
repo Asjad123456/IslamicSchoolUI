@@ -113,7 +113,70 @@ body {
   flex-wrap: wrap;
   align-content: center;
 }
+/* sort button offcanvas styling start here */
+#offcanvasRight{
+  background-color: var(--box-color);
+}
+.offcanvas-header .row{
+  width: 100vw;
+  height: 5vh;
+}
+.offcanvas-header .row .col{
+  display: grid;
+  justify-content: flex-end;
+  align-content: center;
+  padding-right: 23px;
+}
+#input-row{
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 100%;
+  padding: 20px;
+}
+#input-row .col{
+  padding: 10px;
+}
+#input-row .col label{
+  font-size: 20px;
+  color: var(--color-1);
+}
+input[type=text]{
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 1px solid rgb(61, 77, 69);
+  outline: none;
+  background: none;
+  width: 83vw;
+}
+#button-row{
+  height: 10vh;
 
+}
+#button-col-1{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+#button-col-2{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+#button-col-1 button{
+  border-radius: 5px;
+  background-color: var(--color);
+  color: var(--box-color);
+  width: 20vw;
+  height: 5vh;
+}
+#button-col-2 button{
+  border-radius: 5px;
+  background-color: var(--color);
+  color: var(--box-color);
+  width: 20vw;
+  height: 5vh;
+}
 /* student list styling start here  */
 #student-list-parent-row {
   height: 90%;
@@ -246,3 +309,7 @@ body {
 #offcanvas-main .col i {
   padding-left: 10px;
 }
+
+
+
+
