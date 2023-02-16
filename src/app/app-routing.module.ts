@@ -31,6 +31,7 @@ import { TeacherClasslistComponent } from './teacher/teacher-classlist/teacher-c
 import { TeacherClassprofileComponent } from './teacher/teacher-classprofile/teacher-classprofile.component';
 import { TeacherClassStudentprofileComponent } from './teacher/teacher-class-studentprofile/teacher-class-studentprofile.component';
 import { AdminBranchTeacherprofileComponent } from './Admin/Branch/admin-branch-teacherprofile/admin-branch-teacherprofile.component';
+import { SupervisorBranchTeacherprofileComponent } from './supervisor/supervisor-branch-teacherprofile/supervisor-branch-teacherprofile.component';
 
 const routes: Routes = [
   {path:'welcome', component:WelcomeComponent},
@@ -44,6 +45,7 @@ const routes: Routes = [
   {path:'admin-branchprofile/:id',component:AdminBranchprofileComponent},
   {path:'admin-branchprofile/:id/teachers-list',component:AdminBranchTeacherlistComponent},
   {path:'admin-branchprofile/:id/teacher-profile/:id',component:AdminBranchTeacherprofileComponent},
+  {path:'admin-branchprofile/teacher-profile/:id/class-profile/:id',component:AdminBranchClassprofileComponent},
   {path:'admin-branchprofile/:id/class-list',component:AdminBranchClasslistComponent},
   {path:'admin-branchprofile/:id/class-list/class-profile/:id',component:AdminBranchClassprofileComponent},
   {path:'admin-branchprofile/:id/class-list/class-profile/:id/student-list',component:AdminBranchClassStudentlistComponent},
@@ -59,6 +61,8 @@ const routes: Routes = [
   {path:'supervisor-panel/:id', component:SupervisorPanelComponent},
   {path:'supervisor-profile/:id', component:SupervisorProfileComponent},
   {path:'supervisor-panel/:id/supervisor-branchprofile/:id', component:SupervisorBranchprofileComponent},
+  {path:'supervisor-panel/:id/supervisor-branchprofile/:id/teacherlist', component:SupervisorBranchClasslistComponent},
+  {path:'supervisor-panel/supervisor-branchprofile/:id/teacher-profile/:id', component:SupervisorBranchTeacherprofileComponent},
   {path:'supervisor-panel/:id/supervisor-branchprofile/:id/classlist', component:SupervisorBranchClasslistComponent},
   {path:'supervisor-panel/supervisor-branchprofile/:id/classprofile/:id', component:SupervisorBranchClassprofileComponent},
   {path:'supervisor-panel/supervisor-branchprofile/classprofile/:id/student-profile/:id', component:SupervisorBranchClassStudentprofileComponent},

@@ -2,6 +2,7 @@ export interface StudyClass{
   id: number;
   className: string;
   classTime: Date;
+  branchId: number;
 
   //ClassTeacher Details
   appUserId: number;

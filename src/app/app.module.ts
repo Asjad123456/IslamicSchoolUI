@@ -32,7 +32,7 @@ import { AdminStudentprofileComponent } from './Admin/Student/admin-studentprofi
 import { SupervisorProfileComponent } from './supervisor/supervisor-profile/supervisor-profile.component';
 import { SupervisorBranchprofileComponent } from './supervisor/supervisor-branchprofile/supervisor-branchprofile.component';
 import { SupervisorBranchClasslistComponent } from './supervisor/supervisor-branch-classlist/supervisor-branch-classlist.component';
-// import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SupervisorBranchClassprofileComponent } from './supervisor/supervisor-branch-classprofile/supervisor-branch-classprofile.component';
 import { SupervisorBranchClassStudentprofileComponent } from './supervisor/supervisor-branch-class-studentprofile/supervisor-branch-class-studentprofile.component';
@@ -44,6 +44,8 @@ import { TeacherClassprofileComponent } from './teacher/teacher-classprofile/tea
 import { TeacherClassStudentprofileComponent } from './teacher/teacher-class-studentprofile/teacher-class-studentprofile.component';
 import { AdminBranchTeacherlistComponent } from './Admin/Branch/admin-branch-teacherlist/admin-branch-teacherlist.component';
 import { AdminBranchTeacherprofileComponent } from './Admin/Branch/admin-branch-teacherprofile/admin-branch-teacherprofile.component';
+import { SupervisorBranchTeacherslistComponent } from './supervisor/supervisor-branch-teacherslist/supervisor-branch-teacherslist.component';
+import { SupervisorBranchTeacherprofileComponent } from './supervisor/supervisor-branch-teacherprofile/supervisor-branch-teacherprofile.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +81,9 @@ import { AdminBranchTeacherprofileComponent } from './Admin/Branch/admin-branch-
     TeacherClassprofileComponent,
     TeacherClassStudentprofileComponent,
     AdminBranchTeacherlistComponent,
-    AdminBranchTeacherprofileComponent
+    AdminBranchTeacherprofileComponent,
+    SupervisorBranchTeacherslistComponent,
+    SupervisorBranchTeacherprofileComponent
   ],
   imports: [
     BrowserModule,
@@ -88,7 +92,7 @@ import { AdminBranchTeacherprofileComponent } from './Admin/Branch/admin-branch-
     FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
-    // NgxMaterialTimepickerModule,
+    NgxMaterialTimepickerModule,
     BrowserAnimationsModule,
     ModalModule.forRoot()
   ],

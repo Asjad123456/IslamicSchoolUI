@@ -1,6 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Student } from 'src/Models/students';
+import { StudyClass } from 'src/Models/StudyClass';
 import { Teacher } from 'src/Models/teacher';
 import { TeacherForEdit } from 'src/Models/teacherforedit';
 import { User } from 'src/Models/user';
@@ -29,5 +32,12 @@ updateProfile(id: string, user: TeacherForEdit) {
     })
   };
   return this.http.put<TeacherForEdit>(url, user, httpOptions);
+}
+getClassById(id: number) {
+  const url = `${this.baseUrl}StudyClass/${id}`;
+  return this.http.get<StudyClass[]>(url);
+}
+public addStudent(student: Student): Observable<Student>{
+  return this.http.post<Student>(this.baseUrl + 'Student', student);
 }
 }

@@ -4,11 +4,11 @@ import { Teacher } from 'src/Models/teacher';
 import { AdminService } from 'src/Services/admin.service';
 
 @Component({
-  selector: 'app-admin-branch-teacherprofile',
-  templateUrl: './admin-branch-teacherprofile.component.html',
-  styleUrls: ['./admin-branch-teacherprofile.component.css']
+  selector: 'app-supervisor-branch-teacherprofile',
+  templateUrl: './supervisor-branch-teacherprofile.component.html',
+  styleUrls: ['./supervisor-branch-teacherprofile.component.css']
 })
-export class AdminBranchTeacherprofileComponent {
+export class SupervisorBranchTeacherprofileComponent {
   teacher: Teacher[];
 
   constructor(private service: AdminService, private route: ActivatedRoute, private router: Router){}

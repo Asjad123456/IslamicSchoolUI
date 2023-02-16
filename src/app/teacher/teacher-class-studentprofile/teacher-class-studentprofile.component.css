@@ -211,7 +211,7 @@ body {
 }
 .offcanvas-header {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 #btn-close {
   position: relative;
@@ -371,4 +371,97 @@ body {
 }
 #footer-img-row .col img {
   max-width: 65%;
+}
+
+
+
+
+
+
+
+
+
+#header-heading-row{
+    height: 20vh;
+    padding: 8px;
+}
+#header-heading-row .col{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+#header-heading-row .col h1{
+    color: var(--color);
+}
+
+/* input field section styling start here */
+#input-field-row{
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 10px;
+    position: relative;
+    top: 0;
+}
+input[type=text]{
+    border-top:0;
+    border-right:0;
+    border-left: 0;
+    border-bottom: 1px solid ;
+    background: none;
+    outline: none;
+    width: 89vw;
+}
+#name-col{
+   height: 11vh;
+   padding: 15px;
+   color: var(--color-1);
+}
+#address-col{
+    height: 11vh;
+    padding: 15px;
+    color: var(--color-1);
+}
+#city-col{
+    height: 11vh;
+    padding: 15px;
+    color: var(--color-1);
+}
+#contact-col{
+    height: 11vh;
+    padding: 15px;
+    color: var(--color-1);
+}
+/* footer buttons section styling start here */
+#footer-btn-section{
+    position: relative;
+    top: 40px;
+}
+#footer-btn-row1{
+    position: absolute;
+  top: 78px;
+  left: 11px;
+  width: 94%;
+}
+#footer-btn-col-1{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+#footer-btn-col-1 button{
+    width: 20vw;
+    height: 5vh;
+    color: var(--box-color);
+    background-color: var(--color);
+}
+#footer-btn-col-2{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+#footer-btn-col-2 button{
+    width: 20vw;
+    color: var(--box-color);
+    height: 5vh;
+    background-color: var(--color);
 }

@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Branches } from 'src/Models/branches';
 import { Student } from 'src/Models/students';
 import { StudyClass } from 'src/Models/StudyClass';
+import { Teacher } from 'src/Models/teacher';
 import { User } from 'src/Models/user';
 import { EnvironmenturlService } from './environmenturl.service';
 
@@ -62,6 +63,10 @@ getStudentById(id: number) {
 getSupervisorById(id: string) {
   const url = `${this.baseUrl}User/${id}`;
   return this.http.get<User[]>(url);
+}
+getTeacherById(id: string) {
+  const url = `${this.baseUrl}User/${id}`;
+  return this.http.get<Teacher[]>(url);
 }
 getBranchForSupervisor(id: string) {
   const url = `${this.baseUrl}User/${id}`;
