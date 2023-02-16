@@ -5,17 +5,19 @@ export interface Branches {
   address: string;
   branchCode: number;
   //BranchAdminDataFields
-  appUserId: number;
-  userName: string;
-  fatherName: string;
-  email: string;
-  phoneNumber: number;
+  appUsers: Array<{
+    id: number;
+    userName: string;
+    fatherName: string;
+    email: string;
+    phoneNumber: number;
+  }>
   //BranchClassListDetails
   studyClasses: Array<{
     id: number;
     className: string;
     classTime: Date;
-  }>;
+  }>
   students: Array<{
     id: number;
     regNumber: number;
@@ -24,5 +26,5 @@ export interface Branches {
     contactNumber: number;
     rollNumber: number;
     address: string;
-  }>;
+  }>
 }

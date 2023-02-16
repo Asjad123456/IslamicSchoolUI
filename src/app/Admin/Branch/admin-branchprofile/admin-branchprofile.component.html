@@ -23,8 +23,10 @@
                   <span><i class="fa fa-globe" aria-hidden="true"></i>
                       <b>{{item.address}}</b>
                   </span>
-                  <p>Current Supervisor </p>
-                  <b>{{item.userName}}</b>
+                  <div *ngFor="let appuser of item.appUsers">
+                    <p>Current Supervisor </p>
+                    <b>{{appuser.userName}}</b>
+                  </div>
               </div>
               <div class="col" id="hero-icon-col">
                   <i class="fa fa-circle-info" aria-hidden="true"  type="button" data-bs-toggle="offcanvas"
@@ -147,11 +149,12 @@
                   <!-- offcanvas name details start -->
                   <div class="row" id="offcanvas-hero">
                       <div class="col" id="offcanves-name-col" *ngFor="let item of branch">
-
+                        <div *ngFor="let appuser of item.appUsers">
                           <h5 class="offcanvas-title" id="offcanvas-header">Supervisor</h5>
-                          <h2>{{item.userName}}</h2>
-                          <p>{{item.email}}
+                          <h2>{{appuser.userName}}</h2>
+                          <p>{{appuser.email}}
                           </p>
+                        </div>
                       </div>
                       <div class="col" id="offcanves-edit-col">
                           <div class="col">
@@ -161,26 +164,28 @@
                   </div> <!-- offcanvas name details start -->
 
                   <div class="row" id="offcanvas-main" *ngFor="let item of branch">
+                    <div *ngFor="let appuser of item.appUsers">
                       <div class="col">
-                          <h3>Father name</h3>
-                          <p>{{item.fatherName}}</p>
-                      </div>
-                      <div class="col">
-                          <h3>Contact #</h3>
-                          <p>{{item.phoneNumber}}</p>
-                      </div>
-                      <div class="col">
-                          <h3>Teaching</h3>
-                          <p>{{item.branchName}}</p>
-                      </div>
-                      <div class="col">
-                          <h3>Socials</h3>
-                          <p>
-                              <i class="fa-brands fa-instagram"></i>
-                              <i class="fa-brands fa-twitter"></i>
-                              <i class="fa-brands fa-facebook-f"></i>
-                          </p>
-                      </div>
+                        <h3>Father name</h3>
+                        <p>{{appuser.fatherName}}</p>
+                    </div>
+                    <div class="col">
+                        <h3>Contact #</h3>
+                        <p>{{appuser.phoneNumber}}</p>
+                    </div>
+                    <div class="col">
+                        <h3>Teaching</h3>
+                        <p>{{item.branchName}}</p>
+                    </div>
+                    <div class="col">
+                        <h3>Socials</h3>
+                        <p>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </p>
+                    </div>
+                    </div>
                   </div>
 
               </div> <!-- Supervisor data offcanvas start here -->

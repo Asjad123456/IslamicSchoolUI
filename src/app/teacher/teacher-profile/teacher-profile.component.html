@@ -11,10 +11,10 @@
   <!-- offcanvas name details start -->
   <section id="name-section">
       <div class="row" id="name-section-row">
-          <div class="col" id="name-section-col-1">
-              <h3>Supervisor</h3>
-              <strong>Stefan Garleson</strong>
-              <p>Stefan-bawa@hotmail.com</p>
+          <div class="col" id="name-section-col-1" *ngFor="let item of teacher">
+              <h3>Teacher</h3>
+              <strong>{{item.userName}}</strong>
+              <p>{{item.email}}</p>
           </div>
           <div class="col" id="name-section-col-2">
               <i class="fa-solid fa-pen-nib" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
@@ -41,40 +41,40 @@
                   <section id="input-field-section">
                       <form action="">
                           <div class="row" id="input-field-row">
+                            <form [formGroup]="editProfileForm" (ngSubmit)="editProfile()">
                               <div class="col" id="name-col">
-                                  <p>Branch name</p>
-                                  <input type="text">
+                                <p>User Name</p>
+                                <input type="text" formControlName="userName">
+                            </div>
+                            <div class="col" id="name-col">
+                                <p>Father Name</p>
+                                <input type="text" formControlName="fatherName">
+                            </div>
+                            <div class="col" id="address-col">
+                                <p>email</p>
+                                <input type="text" formControlName="email">
+                            </div>
+                            <div class="col" id="city-col">
+                                <p>Phone Number</p>
+                                <input type="text" formControlName="phoneNumber">
+                            </div>
+                            <div class="col" id="contact-col">
+                                <p>Address</p>
+                                <input type="text">
+                            </div>
+                            <section id="footer-btn-section">
+                              <div class="row" id="footer-btn-row">
+                                  <div class="col" id="footer-btn-col-1">
+                                      <button class="btn">cancel</button>
+                                  </div>
+                                  <div class="col" id="footer-btn-col-2">
+                                      <button class="btn">Save</button>
+                                  </div>
                               </div>
-                              <div class="col" id="name-col">
-                                  <p>Brampton</p>
-                                  <input type="text">
-                              </div>
-                              <div class="col" id="address-col">
-                                  <p>352 Circle Ave.
-                                      Long Branch, NJ 07740</p>
-                                  <input type="text">
-                              </div>
-                              <div class="col" id="city-col">
-                                  <p>Nijerea</p>
-                                  <input type="text">
-                              </div>
-                              <div class="col" id="contact-col">
-                                  <p>Contact</p>
-                                  <input type="text">
-                              </div>
+                          </section>
+                            </form>
                           </div>
                       </form>
-                  </section>
-
-                  <section id="footer-btn-section">
-                      <div class="row" id="footer-btn-row">
-                          <div class="col" id="footer-btn-col-1">
-                              <button class="btn">cancel</button>
-                          </div>
-                          <div class="col" id="footer-btn-col-2">
-                              <button class="btn">Save</button>
-                          </div>
-                      </div>
                   </section>
               </div>
           </div>
@@ -106,18 +106,18 @@
   </section>
 
   <section id="main-detail-section">
-      <div class="row" id="main-detail-row">
+      <div class="row" id="main-detail-row" *ngFor="let item of teacher">
           <div class="col" id="main-detail-col-1">
               <strong>Father name</strong>
-              <p>B-praak</p>
+              <p>{{item.fatherName}}</p>
           </div>
           <div class="col" id="main-detail-col-2">
-              <strong>Supervising</strong>
-              <p>Branch-A</p>
+              <strong>Address</strong>
+              <p>StreetA</p>
           </div>
           <div class="col" id="main-detail-col-3">
               <strong>Contact</strong>
-              <p>+52 99 32 000</p>
+              <p>{{item.phoneNumber}}</p>
           </div>
           <div class="col" id="main-detail-col-4">
               <strong>Socials</strong>

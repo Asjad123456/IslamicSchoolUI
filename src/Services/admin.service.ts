@@ -47,6 +47,10 @@ getBranchById(id: number) {
   const url = `${this.baseUrl}Branch/${id}`;
   return this.http.get<Branches[]>(url);
 }
+getBranchWithOnlyTeachers(id: number){
+  const url = `${this.baseUrl}Branch/teachers/${id}`;
+  return this.http.get<Branches[]>(url);
+}
 getClassById(id: number) {
   const url = `${this.baseUrl}StudyClass/${id}`;
   return this.http.get<StudyClass[]>(url);

@@ -39,6 +39,11 @@ import { SupervisorBranchClassStudentprofileComponent } from './supervisor/super
 import { SupervisorBranchStudentlistComponent } from './supervisor/supervisor-branch-studentlist/supervisor-branch-studentlist.component';
 import { SupervisorBranchStudentprofileComponent } from './supervisor/supervisor-branch-studentprofile/supervisor-branch-studentprofile.component';
 import { TeacherProfileComponent } from './teacher/teacher-profile/teacher-profile.component';
+import { TeacherClasslistComponent } from './teacher/teacher-classlist/teacher-classlist.component';
+import { TeacherClassprofileComponent } from './teacher/teacher-classprofile/teacher-classprofile.component';
+import { TeacherClassStudentprofileComponent } from './teacher/teacher-class-studentprofile/teacher-class-studentprofile.component';
+import { AdminBranchTeacherlistComponent } from './Admin/Branch/admin-branch-teacherlist/admin-branch-teacherlist.component';
+import { AdminBranchTeacherprofileComponent } from './Admin/Branch/admin-branch-teacherprofile/admin-branch-teacherprofile.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +74,12 @@ import { TeacherProfileComponent } from './teacher/teacher-profile/teacher-profi
     SupervisorBranchClassStudentprofileComponent,
     SupervisorBranchStudentlistComponent,
     SupervisorBranchStudentprofileComponent,
-    TeacherProfileComponent
+    TeacherProfileComponent,
+    TeacherClasslistComponent,
+    TeacherClassprofileComponent,
+    TeacherClassStudentprofileComponent,
+    AdminBranchTeacherlistComponent,
+    AdminBranchTeacherprofileComponent
   ],
   imports: [
     BrowserModule,
