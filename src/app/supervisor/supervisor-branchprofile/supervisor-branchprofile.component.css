@@ -15,10 +15,13 @@
 
 :host {
   --box1-color: #bd6868;
+  --light-green: #55913e;
+  --light-yellow : #F5DAB4;
+  --extra-light : #C6EE9E;
 }
 
 body {
-  background-image: linear-gradient(to right, #ffffff, #ffffff);
+  background-image: linear-gradient(to top, #ffffff 100%, var(--light-green) 0%);
 }
 #parent-section {
   /* background-image: linear-gradient(to right, #d0efc4, #93ab8a); */
