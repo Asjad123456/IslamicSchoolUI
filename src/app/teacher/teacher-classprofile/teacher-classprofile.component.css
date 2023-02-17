@@ -60,10 +60,10 @@ body {
   font-size: 16px;
   font-weight: 500;
 }
-#info-col{
-    display: grid;
-    justify-content: flex-end;
-    color: var(--color-1);
+#info-col {
+  display: grid;
+  justify-content: flex-end;
+  color: var(--color-1);
 }
 #hero-col-2 {
   display: flex;
@@ -114,33 +114,33 @@ body {
   align-content: center;
 }
 /* sort button offcanvas styling start here */
-#offcanvasRight{
+#offcanvasRight {
   background-color: var(--box-color);
 }
-.offcanvas-header .row{
+.offcanvas-header .row {
   width: 100vw;
   height: 5vh;
 }
-.offcanvas-header .row .col{
+.offcanvas-header .row .col {
   display: grid;
   justify-content: flex-end;
   align-content: center;
   padding-right: 23px;
 }
-#input-row{
+#input-row {
   display: grid;
   gap: 20px;
   grid-template-columns: 100%;
   padding: 20px;
 }
-#input-row .col{
+#input-row .col {
   padding: 10px;
 }
-#input-row .col label{
-  font-size: 20px;
+#input-row .col label {
+  font-size: 15px;
   color: var(--color-1);
 }
-input[type=text]{
+input[type="text"] {
   border-top: 0;
   border-right: 0;
   border-left: 0;
@@ -149,34 +149,65 @@ input[type=text]{
   background: none;
   width: 83vw;
 }
-#button-row{
+#button-row {
   height: 10vh;
+}
+#button-col-1 {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+#button-col-2 {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+#button-col-1 button {
+  border-radius: 5px;
+  background-color: #d0d598;
+  color: #9f977d;
+  width: 20vw;
+  height: 5vh;
+}
+#button-col-2 button {
+  border-radius: 5px;
+  background-color: #d0d598;
+  color: #9f977d;
+  width: 20vw;
+  height: 5vh;
+}
 
-}
-#button-col-1{
+/* accordion styling  start here*/
+#student-accor {
   display: grid;
-  justify-content: center;
-  align-content: center;
+  grid-template-columns: 100%;
 }
-#button-col-2{
+#guardain-accor {
   display: grid;
-  justify-content: center;
-  align-content: center;
+  grid-template-columns: 100%;
 }
-#button-col-1 button{
-  border-radius: 5px;
-  background-color: var(--color);
-  color: var(--box-color);
-  width: 20vw;
-  height: 5vh;
+.accordion-body {
+  background: none;
 }
-#button-col-2 button{
-  border-radius: 5px;
-  background-color: var(--color);
-  color: var(--box-color);
-  width: 20vw;
-  height: 5vh;
+.accordion-flush .accordion-item {
+  background: none;
 }
+
+.accordion-button {
+  height: 7vh;
+  padding: 12px;
+  font-size: 20px;
+  color: var(--color-1);
+  font-weight: 700;
+  background-color: #bbff9f;
+  border-radius: 7px;
+}
+.accordion-flush{
+  display: grid;
+  gap: 20px;
+}
+
+
 /* student list styling start here  */
 #student-list-parent-row {
   height: 90%;
@@ -211,15 +242,6 @@ input[type=text]{
   background-color: rgb(199 219 171);
   color: var(--color);
 }
-
-
-
-
-
-
-
-
-
 
 /* Supervisor offcanvas styling start here */
 .supervisor-offcanvas-header {
@@ -309,7 +331,3 @@ input[type=text]{
 #offcanvas-main .col i {
   padding-left: 10px;
 }
-
-
-
-

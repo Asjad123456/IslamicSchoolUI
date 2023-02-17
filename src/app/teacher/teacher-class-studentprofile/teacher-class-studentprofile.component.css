@@ -212,6 +212,8 @@ body {
 .offcanvas-header {
   display: flex;
   justify-content: flex-end;
+  height: 6vh;
+    padding-right: 22px;
 }
 #btn-close {
   position: relative;
@@ -392,7 +394,9 @@ body {
     justify-content: center;
 }
 #header-heading-row .col h1{
-    color: var(--color);
+  color: #c5ab2d;
+  font-weight: 700;
+  font-style: italic;
 }
 
 /* input field section styling start here */
@@ -464,4 +468,92 @@ input[type=text]{
     color: var(--box-color);
     height: 5vh;
     background-color: var(--color);
+}
+
+
+
+
+
+
+
+
+
+#input-row {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 100%;
+  padding: 20px;
+}
+#input-row .col {
+  padding: 10px;
+}
+#input-row .col label {
+  font-size: 15px;
+  color: var(--color-1);
+}
+input[type="text"] {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 1px solid rgb(61, 77, 69);
+  outline: none;
+  background: none;
+  width: 83vw;
+}
+#button-row {
+  height: 10vh;
+}
+#button-col-1 {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+#button-col-2 {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+#button-col-1 button {
+  border-radius: 5px;
+  background-color: #d0d598;
+  color: #9f977d;
+  width: 20vw;
+  height: 5vh;
+}
+#button-col-2 button {
+  border-radius: 5px;
+  background-color: #d0d598;
+  color: #9f977d;
+  width: 20vw;
+  height: 5vh;
+}
+
+/* accordion styling  start here*/
+#student-accor {
+  display: grid;
+  grid-template-columns: 100%;
+}
+#guardain-accor {
+  display: grid;
+  grid-template-columns: 100%;
+}
+.accordion-body {
+  background: none;
+}
+.accordion-flush .accordion-item {
+  background: none;
+}
+
+.accordion-button {
+  height: 7vh;
+  padding: 12px;
+  font-size: 20px;
+  color: var(--color-1);
+  font-weight: 700;
+  background-color: #bbff9f;
+  border-radius: 7px;
+}
+.accordion-flush{
+  display: grid;
+  gap: 20px;
 }
