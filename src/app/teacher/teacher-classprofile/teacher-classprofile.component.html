@@ -174,7 +174,7 @@
               <label for="username">Address</label>
               <input type="text" id="username" formControlName="address"/>
             </div>
-            <!-- <div class="col">
+            <div class="col">
               <label for="username">Name</label>
               <input type="text" id="username" formControlName="guardianName">
             </div>
@@ -193,7 +193,7 @@
             <div class="col">
               <label for="username">phone Number</label>
               <input type="text" id="username" formControlName="phoneNumber"/>
-            </div> -->
+            </div>
           </div>
 
           <div class="row" id="button-row">
@@ -210,13 +210,13 @@
 
     <!-- student list row -->
 
-    <main id="student-list-parent-row">
-      <div class="row" id="student-list-row" *ngFor="let item of studyclass">
+    <main id="student-list-parent-row"*ngFor="let item of studyclass">
+      <div class="row" id="student-list-row" *ngFor="let studentitem of item.students">
         <div
           class="col"
           id="student-list-col-1"
-          *ngFor="let studentitem of item.students"
-          (click)="toStudentProfile()"
+
+          (click)="toStudentProfile(studentitem.id)"
         >
           <h1>{{ studentitem.name }}</h1>
           <p>{{ studentitem.rollNumber }}</p>

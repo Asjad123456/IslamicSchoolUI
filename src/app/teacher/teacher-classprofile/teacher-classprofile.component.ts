@@ -26,11 +26,11 @@ export class TeacherClassprofileComponent {
       regNumber: new FormControl('', Validators.required),
       rollNumber: new FormControl('', Validators.required),
       contactNumber: new FormControl('', Validators.required),
-      // guardianName: new FormControl('', Validators.required),
-      // guardianFatherName: new FormControl('', Validators.required),
-      // cnic: new FormControl('', Validators.required),
-      // guardianAddress: new FormControl('', Validators.required),
-      // phoneNumber: new FormControl('', Validators.required),
+      guardianName: new FormControl('', Validators.required),
+      guardianFatherName: new FormControl('', Validators.required),
+      cnic: new FormControl('', Validators.required),
+      guardianAddress: new FormControl('', Validators.required),
+      phoneNumber: new FormControl('', Validators.required),
       branchId: new FormControl('', Validators.required),
       studyClassId: new FormControl('', Validators.required)
     });
@@ -50,12 +50,12 @@ export class TeacherClassprofileComponent {
       console.log(res);
     })
   }
-  toStudentProfile(){
+  toStudentProfile(studentId: number){
     const classId = +this.route.snapshot.params['id'];
     this.service.getClassById(classId).subscribe((res) =>{
       this.classtostudent = res[0];
       console.log(res);
-      this.router.navigate(['teacher-panel/classlist/classprofile/' + classId + '/studentprofile/' + this.classtostudent.students[0].id])
+      this.router.navigate(['teacher-panel/classlist/classprofile/' + classId + '/studentprofile/' + studentId])
     })
   }
   addStudent(){

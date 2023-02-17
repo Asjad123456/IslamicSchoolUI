@@ -40,4 +40,18 @@ getClassById(id: number) {
 public addStudent(student: Student): Observable<Student>{
   return this.http.post<Student>(this.baseUrl + 'Student', student);
 }
+getStudentById(id: number) {
+  const url = `${this.baseUrl}Student/${id}`;
+  return this.http.get<Student[]>(url);
+}
+updateStudent(id: number, student: Student) {
+  const url = `${this.baseUrl}Student/${id}`;
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
+
+  return this.http.put<Student>(url, student, httpOptions);
+}
 }
