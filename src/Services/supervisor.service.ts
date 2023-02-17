@@ -48,4 +48,14 @@ getStudentById(id: number) {
   const url = `${this.baseUrl}Student/${id}`;
   return this.http.get<Student[]>(url);
 }
+updateClass(id: number, studyclass: StudyClass) {
+  const url = `${this.baseUrl}StudyClass/${id}`;
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
+
+  return this.http.put<StudyClass>(url, studyclass, httpOptions);
+}
 }

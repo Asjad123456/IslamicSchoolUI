@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StudyClass } from 'src/Models/StudyClass';
 import { SupervisorService } from 'src/Services/supervisor.service';
@@ -14,11 +14,16 @@ export class SupervisorBranchClassprofileComponent {
   classtostudent: StudyClass;
   editClassForm: FormGroup;
 
-  constructor(private route: ActivatedRoute, private router: Router, private service: SupervisorService){}
+  constructor(private route: ActivatedRoute, private router: Router, private service: SupervisorService, private fb:FormBuilder){}
 
   ngOnInit(): void{
+    this.editClassForm= this.fb.group({
+      className: [''],
+      classTime: ['']
+  })
     console.log(+this.route.snapshot.params['id']);
     this.getClassDetail();
+    this.editClass()
   }
   getClassDetail(){
     const classId = +this.route.snapshot.params['id'];
@@ -35,5 +40,22 @@ export class SupervisorBranchClassprofileComponent {
       this.router.navigate(['supervisor-panel/supervisor-branchprofile/classprofile/' + classId + '/student-profile/' + this.classtostudent.students[0].id])
     })
   }
-  editClass(){}
+  editClass(){
+    const id =+this.route.snapshot.params['id'];
+    this.service.getClassById(id).subscribe((res) =>{
+        this.editClassForm.controls['className'].setValue(res[0]?.className);
+        this.editClassForm.controls['classTime'].setValue(res[0]?.classTime);
+      console.warn(res)
+    })
+  }
+  editClassData(){
+    const id =+this.route.snapshot.params['id'];
+    this.service.updateClass(id, this.editClassForm.value).subscribe(() =>{
+      this.getClassDetail();
+      this.editClass();
+      console.warn('done');
+    },error =>{
+      console.log(error);
+    })
+  }
 }

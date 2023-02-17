@@ -37,7 +37,7 @@
                 </div>
 
                 <!-- main inputs section -->
-                <form [formGroup]="editClassForm" (ngSubmit)="editClass()">
+                <form [formGroup]="editClassForm" (ngSubmit)="editClassData()">
                   <div class="row" id="offcanvas-main-row">
                     <div class="col" id="offcanvas-main-col-1">
                         <label>Class-Name <input type="text" formControlName="className"/></label>
@@ -46,7 +46,6 @@
                       <div class="ngx-timepicker-field-example">
                         <ngx-timepicker-field formControlName="classTime"></ngx-timepicker-field>
                     </div>
-                        <label><input type="date"/>Class-Time </label>
                     </div>
                     <div class="col" id="offcanvas-main-col-2">
                       <label>Class-Name</label>
