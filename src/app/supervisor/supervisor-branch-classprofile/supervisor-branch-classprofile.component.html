@@ -19,47 +19,43 @@
               </div>
 
               <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-                <div class="offcanvas-header">
-                    <div class="row" id="close-btn-row">
-                        <div class="col" id="close-btn-col">
-                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                <div class="offcanvas-header" >
+                    <div class="row" id="close-btn-row" >
+                        <div class="col" id="close-btn-col" >
+                            <button type="button" id="btn-close" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                                 aria-label="Close">
                             </button>
                         </div>
                     </div>
                 </div>
                 <div class="offcanvas-body">
-                    <!-- hero section -->
+                     <!-- hero section -->
+                <div class="row" id="offcanvas-hero-row">
+                    <div class="col" id="offcanvas-hero-col">
+                        <h2>Add New Class</h2>
+                    </div>
+                </div>
 
-                    <!-- main inputs section -->
-                    <!-- <form [formGroup]="addClassForm" (ngSubmit)="addClass()">
-                      <div class="row" id="offcanvas-main-row">
-                        <div class="col" id="offcanvas-main-col-1">
-                            <label>Class-Name <input type="text" formControlName="className"/></label>
-                        </div>
-                        <div class="col" id="offcanvas-main-col-2">
-                          <div class="ngx-timepicker-field-example">
-                            <ngx-timepicker-field formControlName="classTime"></ngx-timepicker-field>
-                        </div>
-                            <label><input type="date"/>Class-Time </label>
-                        </div>
-                        <div [hidden]="true" class="col" id="offcanvas-main-col-2">
-                          <label><input type="text" [value]="this.branchId" formControlName="branchId"/>branchId</label>
-                        </div>
-                        <div class="col" id="offcanvas-main-col-2">
-                          <label>Class-Name</label>
-                          <select class="form-control" formControlName="AppUserId">
-                            <option value="">Select teacher</option>
-                            <option *ngFor="let item of teacher" value="{{item.id}}">
-                              {{item.userName}}
-                            </option>
-                          </select>
-                      </div>
-                      </div>
-                        <div class="col" id="offcanvas-main-col-3">
-                            <button type="submit" class="btn">Add Class</button>
-                        </div>
-                    </form> -->
+                <!-- main inputs section -->
+                <form [formGroup]="editClassForm" (ngSubmit)="editClass()">
+                  <div class="row" id="offcanvas-main-row">
+                    <div class="col" id="offcanvas-main-col-1">
+                        <label>Class-Name <input type="text" formControlName="className"/></label>
+                    </div>
+                    <div class="col" id="offcanvas-main-col-2">
+                      <div class="ngx-timepicker-field-example">
+                        <ngx-timepicker-field formControlName="classTime"></ngx-timepicker-field>
+                    </div>
+                        <label><input type="date"/>Class-Time </label>
+                    </div>
+                    <div class="col" id="offcanvas-main-col-2">
+                      <label>Class-Name</label>
+                  </div>
+                  </div>
+                    <div class="col" id="offcanvas-main-col-3">
+                        <button type="submit" class="btn">Add Class</button>
+                    </div>
+                </form>
                 </div>
             </div>
 

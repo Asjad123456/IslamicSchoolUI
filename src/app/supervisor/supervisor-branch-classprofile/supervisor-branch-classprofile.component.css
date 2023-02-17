@@ -65,6 +65,86 @@ body {
     justify-content: flex-end;
     color: var(--color-1);
 }
+
+/* top i button styling start here */
+#offcanvasTop{
+  background-color: var(--box-color);
+  height: 50%;
+}
+.offcanvas-header{
+  height: 5vh;
+}
+#close-btn-row{
+  width: 100vw;
+}
+#close-btn-col{
+    display: grid;
+    height: 5vh;
+    align-content: center;
+    padding-left: 10px;
+}
+#btn-close{
+}
+#offcanvas-hero-row{
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  padding: 10px;
+}
+#offcanvas-hero-col{
+  padding: 7px;
+}
+#offcanvas-hero-col h2{
+  color: var(--color);
+}
+#offcanvas-main-row{
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: 10px;
+  justify-content: center;
+  height: 25vh;
+}
+#offcanvas-main-row label{
+  color: var(--color-1);
+}
+input[type=text]{
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 1px solid var(--color);
+  background: none;
+  outline: none;
+  width: 67vw;
+}
+
+#offcanvas-main-col-1{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  height: 7vh;
+}
+#offcanvas-main-col-2{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  height: 7vh;
+}
+#offcanvas-main-col-3{
+  display: grid;
+  justify-content: center;
+}
+#offcanvas-main-col-3 button{
+  background-color: var(--color-1);
+  width: 26vw;
+  color: var(--box-color);
+}
+
+
+
+
+
 #hero-col-2 {
   display: flex;
   justify-content: center;
