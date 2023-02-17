@@ -12,9 +12,9 @@
   /* border: 1px solid red; */
 }
 body {
-    position: relative;
-    top: 0;
-  background-color: #D0EFC4;
+  position: relative;
+  top: 0;
+  background-color: #d0efc4;
   height: 100vh;
   border: 1px solid transparent;
 }
@@ -23,64 +23,177 @@ body {
   top: 0;
 }
 #head-container {
-  margin-top: 20px;
   width: 100%;
 }
+#head-container .row {
+  height: 15vh;
+  display: grid;
+  align-content: center;
+}
+#head-container .col {
+  padding-left: 10px;
+}
 #head-container h1 {
-  position: relative;
-  top: 0;
-  left: 16px;
-  max-width: fit-content;
-
   color: #336342;
   text-align: left;
   font-size: 27px;
+  font-weight: 800;
   font-family: "Rubik", sans-serif;
-}
-#head-container p {
-  position: relative;
-  top: 0;
-  left: 16px;
-  max-width: fit-content;
-  font-family: "Rubik", sans-serif;
-  font-weight: 500;
-  color: #8fb793;
 }
 
+
+
+
+/* Main Section styling start here */
+.main-section{
+  padding: 10px;
+  display: grid;
+  gap: 10px;
+}
+#role-managment-row{
+  background-color: rgb(67, 78, 69);
+  height: 12vh;
+}
+#role-managment-col-1{
+  display: grid;
+  align-content: center;
+  /* justify-content: center; */
+  padding-left: 10px;
+}
+#role-managment-col-2{
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+
+#grid-row{
+  border: 1px solid red;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 8px 4px;
+}
+#branch-box{
+  height: 24vh;
+  display: grid;
+  align-content: center;
+  gap: 23px;
+  padding: 10px;
+}
+#dot-col{
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+}
+#supervisor-box{
+  height: 24vh;
+  display: grid;
+  align-content: center;
+  gap: 23px;
+  padding: 10px;
+}
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin: 1px;
+  display: inline-block;
+}
+#teacher-box{
+  height: 24vh;
+  display: grid;
+  align-content: center;
+  gap: 23px;
+  padding: 10px;
+}
+#student-box{
+  height: 24vh;
+  display: grid;
+  align-content: center;
+  gap: 23px;
+  padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ///////////////////////////////// */
-#main-container {
-  position: relative;
+/* #main-container {
   width: 378px;
-  top: 27px;
-  right: -4px;
   display: flex;
   background-color: #fff;
   border-radius: 35px 35px 30px 30px;
-}
-#main-row {
+} */
+/* #main-row {
   width: 100%;
   height: 78vh;
-}
-#parent-col {
+} */
+/* #parent-col {
   position: relative;
   border-radius: 5px;
-}
-#main-child-row {
+} */
+/* #main-child-row {
   display: block;
   position: absolute;
   top: 5%;
   right: 16px;
-}
-#main-child-col-1 {
-  position: relative;
-  left: 10px;
-  margin: 5px;
+} */
+/* #main-child-col-1 {
   width: 41vw;
   border-radius: 20px;
   background-color: #f1e3b5;
   height: 20vh;
-}
-#main-child-col-2 {
+} */
+/* #main-child-col-2 {
   position: relative;
   top: 10px;
   left: 10px;
@@ -89,8 +202,8 @@ body {
   border-radius: 20px;
   background-color: #d9f7ad;
   height: 20vh;
-}
-#main-child-col-3 {
+} */
+/* #main-child-col-3 {
   position: relative;
   top: 21px;
   margin: 5px;
@@ -125,59 +238,58 @@ body {
   border-radius: 20px;
   background-color: #d9d7d4;
   height: 20vh;
-}
-#inner-child-row {
+} */
+/* #inner-child-row {
   text-align: end;
   display: block;
-  height: 4vh;
-  position: relative;
-  top: 6px;
 }
 #inner-child-col {
   display: block;
   text-align: right;
-}
-#first-img-col {
+
+} */
+/* #first-img-col {
   display: flex;
   text-align: left;
-}
-#inner-child-col img {
+} */
+/* #inner-child-col img {
   width: 9vw;
-}
-#dot-col {
+} */
+/* #dot-col {
   position: relative;
   top: 4px;
   right: -50px;
   max-width: fit-content;
   text-align: end;
-}
+} */
 
 /* three dots styling start here */
-.dot {
+/* .dot {
   height: 6px;
   width: 6px;
-  margin-left: -15px;
+  border: 1px solid red;
   background-color: #a3a3a3;
   border-radius: 50%;
   display: inline-block;
-  text-align: right;
-}
+  padding: 3px;
+  margin: 2px;
+} */
 /* three dots styling ends here */
 
 /* students info section start here */
-#student-info {
+/* #student-info {
   height: 20vh;
   display: grid;
   color: #ecbe34;
   font-family: var(--main-family);
   text-align: center;
   align-content: center;
-}
-#student-info h1 {
+} */
+/* #student-info h1 {
   font-family: "Rubik", sans-serif;
   font-size: 36px;
-}
-#PO-student {
+} */
+/* #PO-student {
   display: grid;
   text-align: center;
   align-content: center;
@@ -189,8 +301,8 @@ body {
 #PO-student h2 {
   font-size: 16px;
   color: var(--White);
-}
-#project {
+} */
+/* #project {
   display: grid;
   text-align: center;
   align-content: center;
@@ -198,19 +310,19 @@ body {
   left: 0;
   border-radius: 15px;
   background-color: #ffd0c8;
-}
-#project h2 {
+} */
+/* #project h2 {
   font-size: 16px;
   color: var(--White);
-}
-#task-board-heading {
+} */
+/* #task-board-heading {
   display: grid;
   align-items: center;
   text-align: left;
   position: relative;
   left: 10px;
-}
-#task-board-icon {
+} */
+/* #task-board-icon {
   display: flex;
   text-align: center;
   justify-content: center;
@@ -221,55 +333,4 @@ body {
   font-family: var(--main-family);
   font-weight: 400;
   text-decoration: none;
-  position: relative;
-  left: -14px;
-  top: 11px;
-}
-/* ////////////////////////////////////// */
-#footer-parent-section {
-  position: relative;
-  color: #edcba1;
-  bottom: -50px;
-  right: -1px;
-  font-size: 20px;
-}
-#footer-row {
-  display: flex;
-  justify-content: space-between;
-}
-
-#footer-btn {
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  width: 30vw;
-  height: 5vh;
-  color: #edcba1;
-  position: relative;
-  top: 0;
-  left: 0;
-}
-#footer-btn button {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-content: center;
-  height: 38px;
-  width: 24vw;
-  border-radius: 8px;
-  font-family: var(--main-family);
-  color: #fdfeff;
-  font-size: 17px;
-  background-color: #7ac256;
-}
-#footer-btn span {
-  position: relative;
-  /* top: 0; */
-  right: -2px;
-}
-#footer-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #6d998c;
-}
+} */
