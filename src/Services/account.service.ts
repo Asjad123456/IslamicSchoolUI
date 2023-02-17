@@ -39,6 +39,7 @@ logout(){
   localStorage.removeItem('token');
   localStorage.removeItem('roles');
   this.currentUserSource.next(null!);
+  this.router.navigate(['welcome']);
 }
 register(model: any){
   return this.http.post<User>(this.baseUrl + 'Account/Registration', model)

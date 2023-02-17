@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StudyClass } from 'src/Models/StudyClass';
 import { SupervisorService } from 'src/Services/supervisor.service';
@@ -11,6 +12,7 @@ import { SupervisorService } from 'src/Services/supervisor.service';
 export class SupervisorBranchClassprofileComponent {
   studyclass: StudyClass[];
   classtostudent: StudyClass;
+  editClassForm: FormGroup;
 
   constructor(private route: ActivatedRoute, private router: Router, private service: SupervisorService){}
 
@@ -33,4 +35,5 @@ export class SupervisorBranchClassprofileComponent {
       this.router.navigate(['supervisor-panel/supervisor-branchprofile/classprofile/' + classId + '/student-profile/' + this.classtostudent.students[0].id])
     })
   }
+  editClass(){}
 }

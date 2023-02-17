@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AccountService } from 'src/Services/account.service';
 
 @Component({
   selector: 'app-waiting',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class WaitingComponent {
 
+  constructor(private router: Router, private service: AccountService){}
+
+  onLogout(){
+    this.service.logout();
+  }
 }
