@@ -1,4 +1,5 @@
 export interface UserForLogin {
+  id:string;
   isAuthSuccessful: boolean;
   errorMessage: string;
   token: string;

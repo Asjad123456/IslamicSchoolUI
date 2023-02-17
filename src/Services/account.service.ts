@@ -13,7 +13,7 @@ export class AccountService {
   baseUrl = environment.ApiUrl;
   private currentUserSource = new ReplaySubject<User>(1);
   currentUser$ = this.currentUserSource.asObservable();
-  user!: User;
+  user!: User[];
 
 constructor(private http: HttpClient, private router: Router) { }
 login(model: any){
@@ -24,8 +24,6 @@ login(model: any){
         localStorage.setItem('user', JSON.stringify(user));
         localStorage.setItem('token', JSON.stringify(user.token));
         localStorage.setItem('roles', JSON.stringify(user.roles));
-        // this.setCurrentUser(user);
-        this.router.navigate(['teacher-panel/' + user.appUser.id]);
       }
       return user;
     })

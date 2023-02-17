@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router} from '@angular/router';
 import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { RoleGuard } from 'src/guards/role.guard';
@@ -20,7 +21,7 @@ export class WelcomeComponent implements OnInit {
   errorMessage!: string;
 
   constructor(private accountsService: AccountService, private roleGuard: RoleGuard,
-    private route: ActivatedRoute, private router: Router) { }
+    private route: ActivatedRoute, private router: Router, private snackBar: MatSnackBar) { }
   model: any = {};
 
   ngOnInit(): void {
@@ -30,12 +31,29 @@ export class WelcomeComponent implements OnInit {
     this.accountsService.login(this.model).subscribe((res)=>{
       console.log(res);
       this.user = res;
-      // this.router.navigate(['supervisor-profile/' + this.user.id]);
+      if(this.user.roles.includes('DEAN')){
+        this.router.navigate(['admin-panel'])
+      }else if(this.user.roles.includes('ADMIN')){
+        this.router.navigate(['supervisor-panel/'+ this.user.appUser.id])
+      }else if(this.user.roles.includes('TEACHER')){
+        this.router.navigate(['teacher-panel/'+ this.user.appUser.id])
+      }else if(this.user.roles.includes('NEWENTRY')){
+        this.router.navigate(['waiting'])
+      }
+      this.snackBar.open('LoggedIn SuccessFully!', 'Close', {
+        duration: 3000,
+        panelClass: 'success-snackbar'
+      });
       if (window.localStorage) {
         console.log('local storage supported !!!');
       } else {
         console.log('local storage not supported  $$$ ');
       }
+    },error =>{
+      this.snackBar.open('An error occurred, Try Again!', 'Close', {
+        duration: 3000,
+        panelClass: 'error-snackbar'
+      });
     });
   }
 

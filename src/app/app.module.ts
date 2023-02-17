@@ -46,6 +46,7 @@ import { AdminBranchTeacherlistComponent } from './Admin/Branch/admin-branch-tea
 import { AdminBranchTeacherprofileComponent } from './Admin/Branch/admin-branch-teacherprofile/admin-branch-teacherprofile.component';
 import { SupervisorBranchTeacherslistComponent } from './supervisor/supervisor-branch-teacherslist/supervisor-branch-teacherslist.component';
 import { SupervisorBranchTeacherprofileComponent } from './supervisor/supervisor-branch-teacherprofile/supervisor-branch-teacherprofile.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -94,6 +95,7 @@ import { SupervisorBranchTeacherprofileComponent } from './supervisor/supervisor
     FontAwesomeModule,
     NgxMaterialTimepickerModule,
     BrowserAnimationsModule,
+    MatSnackBarModule,
     ModalModule.forRoot()
   ],
   providers: [
