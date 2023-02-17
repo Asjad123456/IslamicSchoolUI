@@ -45,7 +45,12 @@ body img {
   text-align: center;
   max-width: fit-content;
 }
-#heading-row .col h1 , p {
+#signup-heading{
+  color: var(--color);
+  font-style: italic;
+  font-weight: 700;
+}
+#heading-row .col p {
   color: var(--color);
 }
 
@@ -75,7 +80,7 @@ body img {
 }
 #main-field-col-1 label {
   font-size: medium;
-  color: var(--color);
+  color: #f5b05b;
 }
 #main-field-col-1 input[type="text"] {
   width: 85vw;
@@ -99,7 +104,7 @@ body img {
 }
 #main-field-col-2 label {
   font-size: medium;
-  color: var(--color);
+  color: #f5b05b;
 }
 #main-field-col-2 input[type="email"] {
   width: 85vw;
@@ -123,7 +128,7 @@ body img {
 }
 #main-field-col-3 label {
   font-size: medium;
-  color: var(--color);
+  color:#f5b05b;
 }
 #main-field-col-3 input[type="password"] {
   width: 85vw;
@@ -156,6 +161,10 @@ body img {
   width: 50vw;
   height: 4vh;
   background-color: var(--color-1);
+  border: none;
+  color: #6e5e4d;
+    font-weight: 900;
+    font-style: oblique;
 }
 
 /* ============ */

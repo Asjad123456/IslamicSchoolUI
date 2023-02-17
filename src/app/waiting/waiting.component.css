@@ -24,33 +24,31 @@ body {
 }
 
 /*   header section styling start here */
-#header-section {
-  position: relative;
-  top: 10px;
-  background-color:  bisque;
-}
 #header-row {
   max-width: 103%;
-  height: 4vh;
   display: grid;
+  height: 9vh;
   grid-template-columns: 2fr 88px;
 }
 #header-col-1 {
-  position: relative;
-  left: 0;
   display: flex;
-  justify-content: center;
-  max-width: 60%;
+  align-content: center;
+  padding-left: 10px;
+    flex-wrap: wrap;
 }
 #header-col-1 p {
   font-size: 20px;
   font-weight: 400;
+  color: var(--color);
+  font-weight: 800;
+  /* font-style: italic; */
 }
 #header-col-2 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-content: center;
+  color: var(--color);
 }
 /*   hero section styling start here */
 #hero-section {

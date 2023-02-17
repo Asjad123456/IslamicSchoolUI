@@ -1,7 +1,7 @@
-@import '~@fortawesome/fontawesome-free/css/all.css';
-@import '~@fortawesome/fontawesome-free/css/solid.css';
-@import '~@fortawesome/fontawesome-free/css/regular.css';
-@import '~@fortawesome/fontawesome-free/css/brands.css';
+@import "~@fortawesome/fontawesome-free/css/all.css";
+@import "~@fortawesome/fontawesome-free/css/solid.css";
+@import "~@fortawesome/fontawesome-free/css/regular.css";
+@import "~@fortawesome/fontawesome-free/css/brands.css";
 
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
 
@@ -28,7 +28,7 @@ body {
   top: 0px;
   height: 9vh;
 }
-.img-container{
+.img-container {
   background-color: transparent;
 }
 body img {
@@ -48,7 +48,12 @@ body img {
   text-align: center;
   max-width: fit-content;
 }
-#heading-row .col h1 , p {
+#login-heading {
+  color: var(--color);
+  font-weight: 700;
+  font-style: italic;
+}
+#heading-row .col p {
   color: var(--color);
 }
 
@@ -76,7 +81,7 @@ body img {
 }
 #main-field-col-1 label {
   font-size: medium;
-  color: var(--color);
+  color: #f5b05b;
 }
 #main-field-col-1 input[type="email"] {
   width: 85vw;
@@ -95,7 +100,7 @@ body img {
 }
 #main-field-col-2 label {
   font-size: medium;
-  color: var(--color);
+  color: #f5b05b;
 }
 #main-field-col-2 input[type="password"] {
   width: 85vw;
@@ -110,44 +115,29 @@ body img {
 /*  Sign up btn section styling start here */
 #btn-section {
   height: 15vh;
-  position: relative;
-  top: 80px;
 }
 #login-btn-row {
   height: 15vh;
   max-width: 104%;
 }
-#login-btn-row  {
+#login-btn-row {
   height: 15vh;
   display: flex;
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-between;
-  position: relative;
-  top: -42px;
-
-}
-#login-btn-row #login-col-1{
-  display: flex;
-  justify-content: flex-end;
-}
-#login-btn-row #login-col-1 button {
-  width: 29vw;
-  background-color: var(--color-1);
-  color: var(--color);
 }
 
-#login-btn-row #login-col-2{
+#login-btn-row #login-col-2 {
   display: flex;
-    justify-content: flex-start;
+  justify-content: center;
 }
 #login-btn-row #login-col-2 button {
-  position: relative;
-  top: -4vh;
-  left: 11vw;
-  width: 29vw;
+  width: 48vw;
   background-color: var(--color-1);
   color: var(--color);
+  font-weight: 600;
+  font-style: italic;
   height: 4vh;
 }
 
