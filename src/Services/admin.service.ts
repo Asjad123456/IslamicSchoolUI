@@ -121,4 +121,8 @@ public getSupervisors():Observable<User[]>{
 public getStudents(): Observable<Student[]>{
   return this.http.get<Student[]>(this.baseUrl + 'Student')
 }
+getAdminById(id: string) {
+  const url = `${this.baseUrl}User/admin/${id}`;
+  return this.http.get<User>(url);
+}
 }

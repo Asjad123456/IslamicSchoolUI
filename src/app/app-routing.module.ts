@@ -32,6 +32,7 @@ import { TeacherClassprofileComponent } from './teacher/teacher-classprofile/tea
 import { TeacherClassStudentprofileComponent } from './teacher/teacher-class-studentprofile/teacher-class-studentprofile.component';
 import { AdminBranchTeacherprofileComponent } from './Admin/Branch/admin-branch-teacherprofile/admin-branch-teacherprofile.component';
 import { SupervisorBranchTeacherprofileComponent } from './supervisor/supervisor-branch-teacherprofile/supervisor-branch-teacherprofile.component';
+import { AdminProfileComponent } from './Admin/admin-profile/admin-profile.component';
 
 const routes: Routes = [
   {path:'welcome', component:WelcomeComponent},
@@ -39,7 +40,8 @@ const routes: Routes = [
   {path:'signup', component:SignupComponent},
   {path:'waiting',component:WaitingComponent},
   //Admin Routes
-  {path:'admin-panel',component:AdminPanelComponent},
+  {path:'admin-panel/:id',component:AdminPanelComponent},
+  {path:'admin-profile/:id',component:AdminProfileComponent},
   {path:'role-managment', component:RoleManagmentComponent},
   {path:'admin-brancheslist', component:AdminBrancheslistComponent},
   {path:'admin-branchprofile/:id',component:AdminBranchprofileComponent},

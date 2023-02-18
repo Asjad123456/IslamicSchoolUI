@@ -32,7 +32,7 @@ export class WelcomeComponent implements OnInit {
       console.log(res);
       this.user = res;
       if(this.user.roles.includes('DEAN')){
-        this.router.navigate(['admin-panel'])
+        this.router.navigate(['admin-panel/' + this.user.appUser.id])
       }else if(this.user.roles.includes('ADMIN')){
         this.router.navigate(['supervisor-panel/'+ this.user.appUser.id])
       }else if(this.user.roles.includes('TEACHER')){
