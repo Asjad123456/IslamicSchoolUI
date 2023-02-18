@@ -33,6 +33,8 @@ import { TeacherClassStudentprofileComponent } from './teacher/teacher-class-stu
 import { AdminBranchTeacherprofileComponent } from './Admin/Branch/admin-branch-teacherprofile/admin-branch-teacherprofile.component';
 import { SupervisorBranchTeacherprofileComponent } from './supervisor/supervisor-branch-teacherprofile/supervisor-branch-teacherprofile.component';
 import { AdminProfileComponent } from './Admin/admin-profile/admin-profile.component';
+import { AdminTeacherslistComponent } from './Admin/teachers/admin-teacherslist/admin-teacherslist.component';
+import { AdminTeacherprofileComponent } from './Admin/teachers/admin-teacherprofile/admin-teacherprofile.component';
 
 const routes: Routes = [
   {path:'welcome', component:WelcomeComponent},
@@ -58,6 +60,9 @@ const routes: Routes = [
 
   {path:'admin-studentlist', component:AdminStudentlistComponent},
   {path:'admin-studentlist/admin-studentprofile/:id', component:AdminStudentprofileComponent},
+
+  {path:'admin-teacherslist', component:AdminTeacherslistComponent},
+  {path:'admin-teacherslist/admin-teacherprofile/:id', component:AdminTeacherprofileComponent},
 
   //Supervisor Routes
   {path:'supervisor-panel/:id', component:SupervisorPanelComponent},

@@ -4,14 +4,15 @@
     <div class="container" id="head-container">
       <div class="row">
         <div class="col">
-          <h1>My Dashboard</h1>
+          <h1>My <br> Dashboard</h1>
         </div>
+        <div class="col" (click)="logout()"><i class="fa-solid fa-right-from-bracket">LogOut</i></div>
       </div>
     </div>
 
     <div class="main-section">
       <div class="row" id="footer-buttons">
-        <div class="row" id="role-managment-row">
+        <div class="row" id="role-managment-row" (click)="toRoleManagment()">
           <div class="col-10" id="role-managment-col-1">
             <h1>User's Role</h1>
           </div>
@@ -39,8 +40,8 @@
             <span class="dot"></span>
           </div>
           <div class="col" id="branch-mid-col">
-            <h1>210+</h1>
-            <p>Students</p>
+            <h1>{{branchescount}}</h1>
+            <p>Branches</p>
           </div>
           <div class="col" id="branch-footer-arrow">
             <i class="fas fa-arrow-right"></i>
@@ -55,8 +56,8 @@
             <span class="dot"></span>
           </div>
           <div class="col" id="branch-mid-col">
-            <h1>210+</h1>
-            <p>Students</p>
+            <h1>{{admincount}}</h1>
+            <p>Supervisors</p>
           </div>
           <div class="col" id="branch-footer-arrow">
             <i class="fas fa-arrow-right"></i>
@@ -72,8 +73,8 @@
             <span class="dot"></span>
           </div>
           <div class="col" id="branch-mid-col">
-            <h1>210+</h1>
-            <p>Students</p>
+            <h1>{{teachercount}}</h1>
+            <p>Teachers</p>
           </div>
           <div class="col" id="branch-footer-arrow">
             <i class="fas fa-arrow-right"></i>
@@ -88,7 +89,7 @@
             <span class="dot"></span>
           </div>
           <div class="col" id="branch-mid-col">
-            <h1>210+</h1>
+            <h1>{{studentscount}}</h1>
             <p>Students</p>
           </div>
           <div class="col" id="branch-footer-arrow">

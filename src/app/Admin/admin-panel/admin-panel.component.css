@@ -36,13 +36,13 @@ body {
   height: 15vh;
   display: grid;
   align-content: center;
+  grid-template-columns: 60% 40%;
 }
 #head-container .col {
-  padding-left: 10px;
+  display: flex;
   align-content: center;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  flex-wrap: inherit;
+  justify-content: center;
 }
 #head-container h1 {
   color: #587a63;

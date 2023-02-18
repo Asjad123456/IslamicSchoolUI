@@ -125,4 +125,23 @@ getAdminById(id: string) {
   const url = `${this.baseUrl}User/admin/${id}`;
   return this.http.get<User>(url);
 }
+getSupervisorCount(){
+  const url = `${this.baseUrl}User/admins-count`;
+  return this.http.get<number>(url);
+}
+getTeachersCount(){
+  const url = `${this.baseUrl}User/teachers-count`;
+  return this.http.get<number>(url);
+}
+getBranchesCount(){
+  const url = `${this.baseUrl}Branch/count`;
+  return this.http.get<number>(url);
+}
+getStudentsCount(){
+  const url = `${this.baseUrl}Student/count`;
+  return this.http.get<number>(url);
+}
+public getTeachers():Observable<User[]>{
+  return this.http.get<User[]>(this.baseUrl + 'User/allteachers');
+}
 }

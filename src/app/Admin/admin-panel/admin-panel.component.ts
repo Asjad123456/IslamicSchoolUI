@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AccountService } from 'src/Services/account.service';
 import { AdminService } from 'src/Services/admin.service';
 
 @Component({
@@ -8,9 +9,16 @@ import { AdminService } from 'src/Services/admin.service';
   styleUrls: ['./admin-panel.component.css']
 })
 export class AdminPanelComponent {
-  constructor(private router: Router, private service: AdminService, private route: ActivatedRoute){}
+  admincount: number;
+  teachercount: number;
+  branchescount: number;
+  studentscount: number;
+
+  constructor(private router: Router, private service: AdminService, private route: ActivatedRoute, private accountService: AccountService){}
 
   ngOnInit(): void {
+    this.adminCount();
+    this.teachersCount();
   }
   toRoleManagmnent(){
     this.router.navigate(['role-managment'])
@@ -21,5 +29,45 @@ export class AdminPanelComponent {
   toAdminProfile(){
     const AdminId = this.route.snapshot.params['id'];
     this.router.navigate(['admin-profile/' + AdminId]);
+  }
+  adminCount(){
+    this.service.getSupervisorCount().subscribe((res) =>{
+      console.warn(res);
+      this.admincount = res;
+    })
+  }
+  teachersCount(){
+    this.service.getTeachersCount().subscribe((res) =>{
+      console.warn(res);
+      this.teachercount = res;
+    })
+  }
+  branchesCount(){
+    this.service.getBranchesCount().subscribe((res) =>{
+      this.branchescount = res;
+    })
+  }
+  studentCount(){
+    this.service.getStudentsCount().subscribe((res) =>{
+      this.studentscount = res;
+    })
+  }
+  toRoleManagment(){
+    this.router.navigate(['role-managment']);
+  }
+  logout(){
+    this.accountService.logout();
+  }
+  toBranches(){
+    this.router.navigate(['admin-brancheslist']);
+  }
+  toSupervisors(){
+    this.router.navigate(['admin-supervisorlist']);
+  }
+  toTeachers(){
+    this.router.navigate(['']);
+  }
+  toStudents(){
+    this.router.navigate(['admin-studentlist']);
   }
 }
