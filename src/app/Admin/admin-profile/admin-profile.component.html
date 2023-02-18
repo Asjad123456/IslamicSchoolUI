@@ -19,10 +19,10 @@
 
       <section>
           <div class="row" id="teacher-info-row" >
-              <div class="col" id="teacher-info-col" >
+              <div class="col" id="teacher-info-col" *ngFor="let item of user">
                   <h2>Admin</h2>
-                  <b>Johnson Doe</b>
-                  <!-- <p>Roll # 1234</p> -->
+                  <b>{{item.userName}}</b>
+                  <p>{{item.email}}</p>
               </div>
               <div class="col" id="teacher-btn-col" >
                   <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
@@ -32,22 +32,26 @@
       </section>
 
       <section>
-          <div class="row" id="teacher-details-row">
+          <div class="row" id="teacher-details-row" *ngFor="let item of user">
               <div class="col" id="teacher-details-col-1">
                   <h2>Father name</h2>
-                  <p>Ibn-e-Batoota</p>
+                  <p>{{item.fatherName}}</p>
               </div>
               <div class="col" id="teacher-details-col-1">
                   <h2>Contact #</h2>
-                  <p>+51 00 00 00</p>
-              </div>
-              <div class="col" id="teacher-details-col-1">
-                  <h2>Registration #</h2>
-                  <p>88 99 00 11 55</p>
+                  <p>{{item.phoneNumber}}</p>
               </div>
               <div class="col" id="teacher-details-col-1">
                   <h2>Address</h2>
-                  <p>Lane # 123 xyz New York</p>
+                  <p>{{item.address}}</p>
+              </div>
+              <div class="col" id="teacher-details-col-1">
+                <h3>Socials</h3>
+                <p >
+                    <i class="fa-brands fa-instagram" style="padding-left: 10px;"></i>
+                    <i class="fa-brands fa-twitter" style="padding-left: 10px;"></i>
+                    <i class="fa-brands fa-facebook-f" style="padding-left: 10px;"></i>
+                </p>
               </div>
           </div>
       </section>
@@ -75,41 +79,41 @@
 
                   <!-- input-field section start here -->
                   <section id="input-field-section">
-                      <form action="">
+                      <form [formGroup]="editProfileForm" (ngSubmit)="editProfile()">
                           <div class="row" id="input-field-row">
                               <div class="col" id="name-col" >
                                   <p>Name</p>
-                                  <input type="text">
+                                  <input type="text" formControlName="userName">
                               </div>
                               <div class="col" id="name-col" >
                                   <p>Email</p>
-                                  <input type="text">
+                                  <input type="text" formControlName="email">
                               </div>
                               <div class="col" id="address-col">
                                   <p>Father name</p>
-                                  <input type="text">
+                                  <input type="text" formControlName="fatherName">
                               </div>
                               <div class="col" id="city-col">
                                   <p>Address</p>
-                                  <input type="text">
+                                  <input type="text" formControlName="Address">
                               </div>
                               <div class="col" id="contact-col">
                                   <p>Contact</p>
-                                  <input type="text">
+                                  <input type="text" formControlName="phoneNumber">
                               </div>
                           </div>
-                      </form>
-                  </section>
 
                   <section id="footer-btn-section">
-                      <div class="row" id="footer-btn-row">
-                          <div class="col" id="footer-btn-col-1">
-                              <button class="btn">cancel</button>
-                          </div>
-                          <div class="col" id="footer-btn-col-2">
-                              <button class="btn">Save</button>
-                          </div>
-                      </div>
+                    <div class="row" id="footer-btn-row">
+                        <div class="col" id="footer-btn-col-1">
+                            <button class="btn">cancel</button>
+                        </div>
+                        <div class="col" id="footer-btn-col-2">
+                            <button class="submit">Save</button>
+                        </div>
+                    </div>
+                </section>
+                      </form>
                   </section>
               </body>
 

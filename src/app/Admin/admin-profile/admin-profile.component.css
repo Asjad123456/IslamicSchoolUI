@@ -68,6 +68,12 @@ body {
   font-size: 20px;
   font-weight: 900;
 }
+#teacher-info-col p {
+  color: var(--color);
+  font-size: 15px;
+  margin: 0;
+  font-weight: 400;
+}
 /* #teacher-info-col p {
   font-size: 15px;
   color: var(--color);

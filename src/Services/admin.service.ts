@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { AdminForEdit } from 'src/Models/AdminForEdit';
 import { Branches } from 'src/Models/branches';
 import { Student } from 'src/Models/students';
 import { StudyClass } from 'src/Models/StudyClass';
@@ -123,7 +124,7 @@ public getStudents(): Observable<Student[]>{
 }
 getAdminById(id: string) {
   const url = `${this.baseUrl}User/admin/${id}`;
-  return this.http.get<User>(url);
+  return this.http.get<User[]>(url);
 }
 getSupervisorCount(){
   const url = `${this.baseUrl}User/admins-count`;
@@ -143,5 +144,14 @@ getStudentsCount(){
 }
 public getTeachers():Observable<User[]>{
   return this.http.get<User[]>(this.baseUrl + 'User/allteachers');
+}
+updateProfile(id: string, user: AdminForEdit) {
+  const url = `${this.baseUrl}User/profile/${id}`;
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
+  return this.http.put<AdminForEdit>(url, user, httpOptions);
 }
 }
