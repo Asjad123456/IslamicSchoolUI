@@ -50,6 +50,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AdminProfileComponent } from './Admin/admin-profile/admin-profile.component';
 import { AdminTeacherslistComponent } from './Admin/teachers/admin-teacherslist/admin-teacherslist.component';
 import { AdminTeacherprofileComponent } from './Admin/teachers/admin-teacherprofile/admin-teacherprofile.component';
+import { AdminTeacherClassprofileComponent } from './Admin/teachers/admin-teacher-classprofile/admin-teacher-classprofile.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +91,8 @@ import { AdminTeacherprofileComponent } from './Admin/teachers/admin-teacherprof
     SupervisorBranchTeacherprofileComponent,
     AdminProfileComponent,
     AdminTeacherslistComponent,
-    AdminTeacherprofileComponent
+    AdminTeacherprofileComponent,
+    AdminTeacherClassprofileComponent
   ],
   imports: [
     BrowserModule,

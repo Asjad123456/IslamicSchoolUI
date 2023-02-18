@@ -72,7 +72,7 @@
               <div class="offcanvas-body">
                 <div class="row" id="footer-btn-row" style="top: 10vh;" *ngFor="let item of teacher">
                   <div class="col" id="footer-btn-col" *ngFor="let class of item.studyClasses">
-                      <button class="btn" type="button" (click)="toClassProfile()">{{class.className}}
+                      <button class="btn" type="button" (click)="toClassProfile(class.id)">{{class.className}}
                           <i class="fa fa-angle-down"></i>
                       </button>
                   </div>

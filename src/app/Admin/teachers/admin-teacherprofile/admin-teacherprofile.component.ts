@@ -23,12 +23,8 @@ export class AdminTeacherprofileComponent {
       console.log(res);
     })
   }
-  toClassProfile(){
-    const teacherId = this.route.snapshot.params['id'];
-    this.service.getTeacherById(teacherId).subscribe((res) =>{
-      this.teacher = res;
-      console.log(res);
-      this.router.navigate(['admin-branchprofile/teacher-profile/' + teacherId + '/class-profile/' + this.teacher[0].studyClasses[0].id])
-    })
+  toClassProfile(id: number){
+      this.router.navigate(['admin-teacherslist/admin-teacherprofile/class-profile/' + id]);
+
   }
 }

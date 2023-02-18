@@ -63,6 +63,7 @@ const routes: Routes = [
 
   {path:'admin-teacherslist', component:AdminTeacherslistComponent},
   {path:'admin-teacherslist/admin-teacherprofile/:id', component:AdminTeacherprofileComponent},
+  {path:'admin-teacherslist/admin-teacherprofile/class-profile/:id', component:AdminTeacherprofileComponent},
 
   //Supervisor Routes
   {path:'supervisor-panel/:id', component:SupervisorPanelComponent},
