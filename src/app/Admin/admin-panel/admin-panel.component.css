@@ -23,7 +23,7 @@ body {
   background-color: #d0efc4;
   height: 100vh;
   border: 1px solid transparent;
-  background: linear-gradient(to top, #ffffff 0%, #d2ffbe 145%);
+  background: linear-gradient(to top, #ffffff 0%, #d2ffbe 81%);
 }
 .section {
   position: relative;
@@ -43,9 +43,10 @@ body {
   align-content: center;
   flex-wrap: inherit;
   justify-content: center;
+  color: #586e6b;
 }
 #head-container h1 {
-  color: #587a63;
+  color: #586e6b;
   text-align: left;
   font-size: 27px;
   font-weight: 800;
