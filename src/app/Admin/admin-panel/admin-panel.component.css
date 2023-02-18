@@ -9,7 +9,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border: 1px solid red; */
+  
+}
+:host {
+  --color-1: #bc9c00;
+  --color: #586e6b;
+  --background: #fff;
+  --box-color: #daf1d0;
 }
 body {
   position: relative;
@@ -17,6 +23,7 @@ body {
   background-color: #d0efc4;
   height: 100vh;
   border: 1px solid transparent;
+  background: linear-gradient(to top, #ffffff 0%, #d2ffbe 79%);
 }
 .section {
   position: relative;
@@ -32,9 +39,13 @@ body {
 }
 #head-container .col {
   padding-left: 10px;
+  align-content: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 #head-container h1 {
-  color: #336342;
+  color: #587a63;
   text-align: left;
   font-size: 27px;
   font-weight: 800;
@@ -49,53 +60,75 @@ body {
   padding: 10px;
   display: grid;
   gap: 10px;
-}
-#role-managment-row{
-  background-color: rgb(67, 78, 69);
-  height: 12vh;
-}
-#role-managment-col-1{
-  display: grid;
-  align-content: center;
-  /* justify-content: center; */
-  padding-left: 10px;
-}
-#role-managment-col-2{
-  display: grid;
-  align-content: center;
-  justify-content: center;
+  height: 82vh;
 }
 
 
 #grid-row{
-  border: 1px solid red;
+/* border: 1px solid red; */
   display: grid;
   grid-template-columns: 50% 50%;
   gap: 8px 4px;
+  height: 53vh;
+  align-content: center;
 }
+/* branch box styling start here */
 #branch-box{
   height: 24vh;
   display: grid;
   align-content: center;
-  gap: 23px;
+  gap: 32px;
   padding: 10px;
+  background-color: #c9e393;
+  border-radius: 10px;
+  width: 45vw;
+  /* border: 1px solid red; */
+  
+}
+#branch-mid-col{
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+/* border: 1px solid red; */
+}
+#branch-mid-col h1{
+  font-size: 37px;
+  font-weight: 700;
+  color: var(--color-1);
+}#branch-mid-col p{
+  font-size: 21px;
+  font-weight: 200;
+  color: var(--color-1);
+}
+#branch-footer-arrow{
+  display: grid;
+  justify-content: flex-end;
+  align-content: center;
+  color: #bc9c00;
+/* border: 1px solid red; */
 }
 #dot-col{
   display: flex;
   justify-content: flex-end;
   align-content: center;
+/* border: 1px solid red; */
 }
 #supervisor-box{
   height: 24vh;
   display: grid;
   align-content: center;
-  gap: 23px;
+  gap: 32px;
   padding: 10px;
+  background-color: #ffd9ba;
+  border-radius: 10px;
+  width: 45vw;
+  /* border: 1px solid red; */
 }
 .dot {
-  height: 10px;
-  width: 10px;
-  background-color: #bbb;
+  height: 6px;
+  width: 7px;
+  background-color: var(--color);
   border-radius: 50%;
   margin: 1px;
   display: inline-block;
@@ -104,233 +137,62 @@ body {
   height: 24vh;
   display: grid;
   align-content: center;
-  gap: 23px;
+  gap: 32px;
   padding: 10px;
+  background-color: #ffd9ba;
+  border-radius: 10px;
+  width: 45vw;
 }
 #student-box{
   height: 24vh;
   display: grid;
   align-content: center;
-  gap: 23px;
+  gap: 32px;
   padding: 10px;
+  background-color: #c9e393;
+  border-radius: 10px;
+  width: 45vw;
+  
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ///////////////////////////////// */
-/* #main-container {
-  width: 378px;
-  display: flex;
-  background-color: #fff;
-  border-radius: 35px 35px 30px 30px;
-} */
-/* #main-row {
-  width: 100%;
-  height: 78vh;
-} */
-/* #parent-col {
-  position: relative;
-  border-radius: 5px;
-} */
-/* #main-child-row {
-  display: block;
-  position: absolute;
-  top: 5%;
-  right: 16px;
-} */
-/* #main-child-col-1 {
-  width: 41vw;
-  border-radius: 20px;
-  background-color: #f1e3b5;
-  height: 20vh;
-} */
-/* #main-child-col-2 {
-  position: relative;
-  top: 10px;
-  left: 10px;
-  margin: 5px;
-  width: 41vw;
-  border-radius: 20px;
-  background-color: #d9f7ad;
-  height: 20vh;
-} */
-/* #main-child-col-3 {
-  position: relative;
-  top: 21px;
-  margin: 5px;
-  width: 41vw;
-  border-radius: 20px;
-  height: 20vh;
-}
-#main-child-col-4 {
-  position: relative;
-  top: 2px;
-  margin: 5px;
-  width: 41vw;
-  border-radius: 20px;
-  height: 20vh;
-}
-#main-child-col-5 {
-  position: relative;
-  top: 12px;
-  left: 0;
-  margin: 5px;
-  width: 41vw;
-  border-radius: 20px;
-  background-color: #ffd0c8;
-  height: 20vh;
-}
-#main-child-col-6 {
-  position: relative;
-  top: 21px;
-  left: 0;
-  margin: 5px;
-  width: 41vw;
-  border-radius: 20px;
-  background-color: #d9d7d4;
-  height: 20vh;
-} */
-/* #inner-child-row {
-  text-align: end;
-  display: block;
-}
-#inner-child-col {
-  display: block;
-  text-align: right;
-
-} */
-/* #first-img-col {
-  display: flex;
-  text-align: left;
-} */
-/* #inner-child-col img {
-  width: 9vw;
-} */
-/* #dot-col {
-  position: relative;
-  top: 4px;
-  right: -50px;
-  max-width: fit-content;
-  text-align: end;
-} */
-
-/* three dots styling start here */
-/* .dot {
-  height: 6px;
-  width: 6px;
+/* -------------------------------- */
+/* #footer-buttons{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 10px;
   border: 1px solid red;
-  background-color: #a3a3a3;
-  border-radius: 50%;
-  display: inline-block;
-  padding: 3px;
-  margin: 2px;
 } */
-/* three dots styling ends here */
-
-/* students info section start here */
-/* #student-info {
-  height: 20vh;
-  display: grid;
-  color: #ecbe34;
-  font-family: var(--main-family);
-  text-align: center;
+#role-managment-row{
+  background-color: #fff5b8;
+  height: 10vh;
+  border-radius: 10px;
   align-content: center;
-} */
-/* #student-info h1 {
-  font-family: "Rubik", sans-serif;
-  font-size: 36px;
-} */
-/* #PO-student {
-  display: grid;
-  text-align: center;
-  align-content: center;
-  position: relative;
-  left: 10px;
-  border-radius: 15px;
-  background-color: #d9f7ad;
 }
-#PO-student h2 {
-  font-size: 16px;
-  color: var(--White);
-} */
-/* #project {
+#role-managment-col-1{
   display: grid;
-  text-align: center;
   align-content: center;
-  position: relative;
-  left: 0;
-  border-radius: 15px;
-  background-color: #ffd0c8;
-} */
-/* #project h2 {
-  font-size: 16px;
-  color: var(--White);
-} */
-/* #task-board-heading {
+  /* align-self: center; */
+  padding-left: 10px;
+}
+#role-managment-col-1 h1{
+  font-size: 23px;
+  font-weight: 500;
+  color: var(--color-1);
+  max-width: 60%;
+}
+#role-managment-col-2{
   display: grid;
-  align-items: center;
-  text-align: left;
-  position: relative;
-  left: 10px;
-} */
-/* #task-board-icon {
-  display: flex;
-  text-align: center;
+  align-content: center;
   justify-content: center;
-  align-items: center;
-  color: #336342;
 }
-#view-more {
-  font-family: var(--main-family);
-  font-weight: 400;
-  text-decoration: none;
-} */
+#role-managment-col-2 i{
+  color: var(--color-1);
+}
+
+#dean-box{
+  background-color: #fff5b8;
+  height: 10vh;
+  border-radius: 10px;
+}
+
