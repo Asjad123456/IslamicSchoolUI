@@ -5,6 +5,7 @@ import { Branches } from 'src/Models/branches';
 import { User } from 'src/Models/user';
 import { AdminService } from 'src/Services/admin.service';
 
+
 @Component({
   selector: 'app-admin-brancheslist',
   templateUrl: './admin-brancheslist.component.html',
@@ -75,4 +76,5 @@ export class AdminBrancheslistComponent implements OnInit{
     this.searchText = searchValue;
     console.log(this.searchText);
   }
+
 }

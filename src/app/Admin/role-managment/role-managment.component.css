@@ -3,110 +3,103 @@
 @import "~@fortawesome/fontawesome-free/css/regular.css";
 @import "~@fortawesome/fontawesome-free/css/brands.css";
 
-
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
-*{
-    font-family: var(--main-family);
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+* {
+  font-family: var(--main-family);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-:host{
-    --mainHalfGreen: #D0EFC4;
-    --mainGreen: #586E6B;
-    --main-family :'Rubik', sans-serif;
-    --text-color : #D6C7B8;
+:host {
+  --mainHalfGreen: #d0efc4;
+  --mainGreen: #586e6b;
+  --main-family: "Rubik", sans-serif;
+  --text-color: #d6c7b8;
 }
-#parent-section{
-    height: 100vh;
-    width: 100vw;
+#parent-section {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to top, var(--mainHalfGreen) 50%, #586e6b 100%);
 }
-.section{
-    background-color: var(--mainGreen);
+#header-row {
+  height: 10vh;
 }
-#header-row{
-    width: 102vw;
-    height: 10vh;
+#header-icon {
+  display: grid;
+  text-align: center;
+  align-content: center;
+  color: goldenrod;
+  text-decoration: none;
 }
-#header-icon{
-    display: grid;
-    text-align: center;
-    align-content: center;
-    color: var(--text-color);
+#header-heading {
+  display: grid;
+  text-align: center;
+  align-items: center;
 }
-#header-heading{
-    display: grid;
-    text-align: center;
-    align-items: center;
+#header-heading h2 {
+  font-size: 20px;
+  color: #b8c7a0;
+  font-family: var(--main-family);
+  margin: 0;
+  font-weight: 900;
 }
-#header-heading h2{
-    font-size: 20px;
-    color: var(--mainHalfGreen);
-    font-family: var(--main-family);
+#header-user-icon {
+  width: 23vw;
+  display: grid;
+  text-align: center;
+  align-content: center;
+  color: goldenrod;
 }
-#header-user-icon{
-    width: 23vw;
-    display: grid;
-    text-align: center;
-    align-content: center;
-    color: var(--text-color);
-}
-
 
 /* main section styling here */
-.main-section{
-    height: 90vh;
-    border: 1px solid transparent;
+.main-section {
+  height: 90vh;
+  padding: 20px;
 }
-#main-section-row{
-    position: relative;
-    left: 30px;
-    background-color: var(--mainHalfGreen);
-    width: 88vw;
-    border-radius: 15px;
+#main-section-row {
+  background-color: var(--mainHalfGreen);
+  border-radius: 15px;
+  height: 11vh;
+  margin-bottom: 15px;
 }
-#main-first-icon{
-    color: var(--mainGreen);
-    width: 22%;
-    display: grid;
-    text-align: center;
-    align-content: center;
-    height: 10vh;
-    font-size: 43px;
+#main-first-icon {
+  color: var(--mainGreen);
+  width: 22%;
+  display: grid;
+  align-content: center;
+  font-size: 43px;
+  justify-content: center;
 }
-#main-section-heading{
-    display: grid;
-    align-content: center;
-    color: var(--mainGreen);
+#main-section-heading {
+  display: grid;
+  align-content: center;
+  color: var(--mainGreen);
+  padding: 9px;
 }
-#main-section-heading h1{
-    height: 3vh;
-    width: 50vw;
-    display: grid;
-    align-content: end;
-    font-size: 17px;
-    font-weight: 900;
-    font-family: var(--main-family);
-    right: 7px;
-    top: 10px;
-    position: relative;
+#main-section-heading h1 {
+  display: grid;
+  align-content: end;
+  font-size: 17px;
+  font-weight: 900;
+  margin: 0;
+  font-family: var(--main-family);
+  font-variant-caps: small-caps;
 }
-#main-section-heading p{
-    height: 4vh;
-    width: 50vw;
-    display: grid;
-    align-content: end;
-    font-size: 17px;
-    font-weight: 500;
-    font-family: var(--main-family);
-    position: relative;
-    right: 7px;
+#main-section-heading p {
+  display: grid;
+  align-content: end;
+  font-weight: 500;
+  color: goldenrod;
+  font-family: var(--main-family);
+  margin: 0;
+  font-size: x-small;
 }
-#main-section-icon2{
-    width: 28%;
-    display: grid;
-    text-align: center;
-    align-content: center;
-    height: 10vh;
-    font-size: 17px;
-    font-family: var(--main-family);
-    color: var(--mainGreen);
+#main-section-icon2 {
+  width: 28%;
+  display: grid;
+  text-align: center;
+  align-content: center;
+  font-size: 17px;
+  font-family: var(--main-family);
+  color: var(--mainGreen);
 }
-

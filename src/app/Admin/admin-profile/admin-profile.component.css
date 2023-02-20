@@ -46,7 +46,6 @@ body {
   max-width: 89%;
 }
 
-
 /* Teacher name data section start here */
 #teacher-info-row {
   padding: 30px;
@@ -385,4 +384,6 @@ input[type="text"] {
   color: var(--box-color);
   height: 5vh;
   background-color: var(--color);
+  border: none;
+  border-radius: 7px;
 }
