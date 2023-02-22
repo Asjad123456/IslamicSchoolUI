@@ -28,7 +28,6 @@ body {
   background-color: var(--box-color);
 }
 #header-row {
-  width: 99vw;
   height: 7vh;
 }
 #header-col-1 {
@@ -36,6 +35,11 @@ body {
   justify-content: center;
   align-content: center;
   color: var(--color);
+}
+#header-col-1 h5{
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
 }
 #header-col-2 {
   display: grid;

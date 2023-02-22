@@ -1,265 +1,66 @@
 <body>
   <section id="parent-section">
-      <section id="header"> <!---------Header section start here----------->
-          <div class="row" id="header-row">
-              <div class="col-3" id="header-first-icon">
-                  <i class="fa fa-arrow-left" aria-hidden="true"></i>
-              </div>
-              <div class="col-6" id="header-img">
-                  <!-- <img src="/Dashboard/images//middle-school.png" alt=""> -->
-              </div>
-              <div class="col-3" id="header-last-icon">
-                  <i class="fa fa-align-center" aria-hidden="true"></i>
-              </div>
-          </div>
-      </section> <!---------Header section ends here----------->
-
-
-      <section id="hero-section"> <!---------Hero Section start here--------->
-          <div class="row" id="hero-row">
-              <!-- </div> -->
-              <div class="col" id="hero-col" *ngFor="let item of branch">
-                  <h1>{{item.branchName}}</h1>
-                  <span><i class="fa fa-globe" aria-hidden="true"></i>
-                      <b>{{item.address}}</b>
-                  </span>
-                  <div *ngFor="let appuser of item.appUsers">
-                    <p>Current Supervisor </p>
-                    <b>{{appuser.userName}}</b>
-                  </div>
-              </div>
-              <div class="col" id="hero-icon-col">
-                  <i class="fa fa-circle-info" aria-hidden="true"  type="button" data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" (click)="editBranch()"></i>
-              </div>
-          </div>
-      </section> <!---------Hero Section ends here--------->
-
-      <!--top i button  offcanvas start here -->
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
-      aria-labelledby="offcanvasRightLabel">
-      <div class="offcanvas-header" id="offcanvas-header">
-          <h5 id="offcanvasRightLabel" >Edit Branch Data</h5>
-          <button type="button" id="btn-close" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-              aria-label="Close"></button>
+    <section id="header">
+      <!---------Header section start here----------->
+      <div class="row" id="header-row">
+        <div class="col" id="header-first-icon">
+          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </div>
       </div>
-      <div class="offcanvas-body" id="offcanvas-body">
-          <div class="row" id="offcanvas-input-row">
-            <form [formGroup]="editBranchForm" (ngSubmit)="editBranchData()">
-              <div class="col" id="edit-branch-name-col">
-                <label for="">
-                    <p>Branch Name</p>
-                </label>
-                <input type="text" formControlName="branchName">
-            </div>
-            <div class="col" id="edit-branch-city-col">
-                <label for="">City</label>
-                <input type="text" formControlName="city">
-            </div>
-            <div class="col" id="edit-branch-address-col">
-                <label for="">Adress</label>
-                <input type="text" formControlName="address">
-            </div>
-            <div class="col" id="edit-branch-code-col">
-                <label for="">Branch Code</label>
-                <input type="text" formControlName="branchCode">
-            </div>
-            <div class="row" id="branch-offcanvas-btn">
-              <div class="col">
-                  <button type="submit" id="btn-close" class="text-reset" data-bs-dismiss="offcanvas"
-                  aria-label="Close">Submit</button>
-              </div>
-          </div>
-            </form>
-          </div>
-          <div class="row" id="branche-offcanvas-footer-row">
-              <div class="col">
-                  <img src="/assets/image-15-2.png" alt="">
-              </div>
-          </div>
+    </section>
+    <!---------Header section ends here----------->
+
+    <!---------Hero Section start here--------->
+    <section id="hero-section">
+      <div class="row" id="hero-row">
+        <div class="col" id="hero-col-1">
+          <h1>Branch A</h1>
+          <!-- <span
+            ><i class="fa fa-globe" aria-hidden="true"></i>
+            <b> Street A Home # 302</b>
+          </span> -->
+        </div>
+        <div class="col" id="hero-col-2">
+          <span
+            ><i class="fa fa-globe" aria-hidden="true"></i>
+             <b><br> My Street, Kingston,New York 12401. </b>
+          </span>
+        </div>
       </div>
-  </div> <!-- top i button offcanvas start here -->
+    </section>
+    <!---------Hero Section ends here--------->
 
-
-      <section id="main-section"> <!-----------main section start here------------->
-          <!-- <img id="main-sec-img" src="/Admin/images/edu.jpg"> -->
-
-          <div class="row" id="main-sec-row1">
-              <!-- main section teacher box -->
-
-              <!-- Teacher box HTML start here -->
-              <div class="col" id="teacher-box">
-
-                  <div class="row" id="techr-inr-header-row">
-                      <div class="col" id="techr-inr-col-1">
-                          <img src="/assets/headmaster.png" alt="">
-                      </div>
-                      <div class="col" id="techr-inr-col-2">
-                          <span class="dot"></span>
-                          <span class="dot"></span>
-                          <span class="dot"></span>
-                      </div>
-                  </div>
-
-                  <div class="row" id="techr-inr-main-row">
-                      <div class="col">
-                          <h2>201+</h2>
-                          <p>Teachers</p>
-                      </div>
-                  </div>
-                  <div class="row" id="techr-inr-fotr-row">
-                      <div class="col">
-                          <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                      </div>
-                  </div>
-              </div> <!-- Teacher box HTML start here -->
-              <!-- main section teacher box -->
-
-              <!--------- Supervisor Box start here  ----------->
-              <div class="col" id="supervisor-box" type="button" data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                  <div class="row" id="supervisor-box-row">
-                      <div class="col-10" id="supervisor-box-col-1">
-                          <p>Supervisor data </p>
-                      </div>
-                      <div class="col-2" id="supervisor-box-col-2">
-                          <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                      </div>
-                  </div>
-              </div> <!--------- Supervisor Box start here  ----------->
-
-              <!-- Supervisor data offcanvas start here -->
-              <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
-                  aria-labelledby="offcanvasExampleLabel">
-                  <!-- offcanvas header start-->
-                  <div class="offcanvas-body" id="teacher-offcanvas-body">
-                      <div class="supervisor-offcanvas-header">
-
-                          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                              aria-label="Close">
-                          </button>
-                      </div>
-                      <div class="row" id="teacher-offcanvas-row">
-                          <div class="col">
-                              <img src="/assets/bussiness-man.png" alt="">
-                          </div>
-                      </div>
-                  </div> <!-- offcanvas header ends-->
-
-                  <!-- offcanvas name details start -->
-                  <div class="row" id="offcanvas-hero">
-                      <div class="col" id="offcanves-name-col" *ngFor="let item of branch">
-                        <div *ngFor="let appuser of item.appUsers">
-                          <h5 class="offcanvas-title" id="offcanvas-header">Supervisor</h5>
-                          <h2>{{appuser.userName}}</h2>
-                          <p>{{appuser.email}}
-                          </p>
-                        </div>
-                      </div>
-                      <div class="col" id="offcanves-edit-col">
-                          <div class="col">
-                              <i class="fa fa-user-pen"></i>
-                          </div>
-                      </div>
-                  </div> <!-- offcanvas name details start -->
-
-                  <div class="row" id="offcanvas-main" *ngFor="let item of branch">
-                    <div *ngFor="let appuser of item.appUsers">
-                      <div class="col">
-                        <h3>Father name</h3>
-                        <p>{{appuser.fatherName}}</p>
-                    </div>
-                    <div class="col">
-                        <h3>Contact #</h3>
-                        <p>{{appuser.phoneNumber}}</p>
-                    </div>
-                    <div class="col">
-                        <h3>Teaching</h3>
-                        <p>{{item.branchName}}</p>
-                    </div>
-                    <div class="col">
-                        <h3>Socials</h3>
-                        <p>
-                            <i class="fa-brands fa-instagram"></i>
-                            <i class="fa-brands fa-twitter"></i>
-                            <i class="fa-brands fa-facebook-f"></i>
-                        </p>
-                    </div>
-                    </div>
-                  </div>
-
-              </div> <!-- Supervisor data offcanvas start here -->
-
+    <!-------- Main section HTML start here ------->
+    <section id="main-section">
+      <div class="row" id="class-row">
+        <div class="col-9" id="class-col-1">
+          <h1>Classes : 10+</h1>
+          <!-- <p>10+</p> -->
+        </div>
+        <div class="col-3" id="class-col-2">
+          <img src="/assets/students.png" alt="" />
+        </div>
+      </div>
+      <div id="footer-rows">
+        <div class="row" id="teacher-row">
+          <div class="col-3" id="teacher-col-1">
+            <img src="/assets/headmaster.png" alt="" />
           </div>
-
-
-          <div class="row" id="main-sec-row2">
-
-              <!------------- Branch Data start here --------------->
-              <div class="col" id="branch-box" [routerLink]="['class-list']">
-                  <div class="row" id="branch-box-row-1">
-                      <div class="col" id="branch-box-header-col-1">
-                          <img src="/assets/boy.png" alt="">
-                      </div>
-                      <div class="col" id="branch-box-header-col-2">
-                          <span class="dot"></span>
-                          <span class="dot"></span>
-                          <span class="dot"></span>
-                      </div>
-                  </div>
-                  <div class="row" id="branch-box-row-2">
-                      <h1>10+</h1>
-                      <p>Classes Lists</p>
-                  </div>
-                  <div class="row" id="branch-box-row-3">
-                     <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                  </div>
-              </div> <!------------- Branch Data start here --------------->
-
-
-
-
-
-
-
-              <!-------------- Student box start here  ------------->
-              <div class="col" id="student-box">
-                  <div class="row" id="student-box-header-row">
-                      <div class="col" id="student-box-header-col-1">
-                          <img src="/assets/boy.png" alt="">
-                      </div>
-                      <div class="col" id="student-box-header-col-2">
-                          <span class="dot"></span>
-                          <span class="dot"></span>
-                          <span class="dot"></span>
-                      </div>
-                  </div>
-
-                  <div class="row" id="student-inr-main-row">
-                      <div class="col">
-                          <h2>201+</h2>
-                          <p>Students</p>
-                      </div>
-                  </div>
-
-                  <div class="row" id="student-inr-fotr-row">
-                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                  </div>
-              </div>
-              <!-------------- Student box start here  ------------->
+          <div class="col-9" id="teacher-col-2">
+            <h1>Teachers</h1>
           </div>
-      </section> <!-----------main section start here------------->
+        </div>
 
-
-
-      <section id="footer-section">
-          <div class="row">
-              <div class="col">
-                  <!-- <a href=""><img src="/Admin/images/c28eecba-e02f-46fe-acf5-76cbea08e38e.jpg" alt=""></a> -->
-              </div>
+        <div class="row" id="student-row">
+          <div class="col-9" id="student-col-1">
+            <h1>Students</h1>
           </div>
-      </section>
+          <div class="col-3" id="student-col-2">
+            <img src="/assets/student.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-------- Main section HTML end here ------->
   </section>
-
-
 </body>

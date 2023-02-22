@@ -38,17 +38,17 @@ body {
 }
 #header-col-1 p {
   font-size: 20px;
-  font-weight: 400;
   color: var(--color);
   font-weight: 800;
-  /* font-style: italic; */
+  margin: 0;
+  font-variant: petite-caps;
 }
 #header-col-2 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-content: center;
-  color: var(--color);
+  color: goldenrod;
 }
 /*   hero section styling start here */
 #hero-section {
@@ -83,5 +83,7 @@ body {
 }
 #main-heading-row .col h2{
     font-weight: 300;
+    margin: 0;
+
 }
 

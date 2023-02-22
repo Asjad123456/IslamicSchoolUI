@@ -2,7 +2,7 @@
   <section id="main-Section">
     <section>
       <!--header-section start-->
-      <div class="row" id="header-row" style="border: 1px solid red">
+      <div class="row" id="header-row">
         <div class="col" id="first-icon-col">
           <i class="fa fa-arrow-left" aria-hidden="true"></i>
         </div>
@@ -15,7 +15,7 @@
       <div class="row" id="hero-row">
         <div class="col" id="hero-heading">
           <h1>Branches</h1>
-          <h5><span>Currently 40+</span><span>Active Branches</span></h5>
+          <h5>Currently 40+<span>Active Branches</span></h5>
         </div>
         <div class="col" id="hero-img-col">
           <img src="/assets/school-building.png" alt="" />
@@ -71,25 +71,25 @@
                   </div>
 
                   <!-- main inputs section -->
-                  <div class="row" id="offcanvas-main-row">
+                  <div class="row" id="offcanvas-main-row" style="border: 1px solid red;">
                     <form [formGroup]="addBranchForm" (ngSubmit)="addBranch()">
-                      <div class="col" id="offcanvas-main-col-1">
+                      <div class="col" id="offcanvas-main-col-1" style="border: 1px solid red;">
                         <label
                           >BranchName
                           <input type="text" formControlName="branchName"
                         /></label>
                       </div>
-                      <div class="col" id="offcanvas-main-col-2">
-                        <label
-                          ><input type="text" formControlName="city" />City
+                      <div class="col" id="offcanvas-main-col-2" style="border: 1px solid red;">
+                        <label 
+                          >City<input type="text" formControlName="city" />
                         </label>
                       </div>
-                      <div class="col" id="offcanvas-main-col-1">
+                      <div class="col" id="offcanvas-main-col-1" style="border: 1px solid red;">
                         <label
                           >Address <input type="text" formControlName="address"
                         /></label>
                       </div>
-                      <div class="col" id="offcanvas-main-col-2">
+                      <div class="col" id="offcanvas-main-col-2" style="border: 1px solid red;">
                         <label
                           ><input
                             type="text"
@@ -111,7 +111,6 @@
                             {{ item.userName }}
                           </option>
                         </select>
-
                       </div>
                       <div class="col" id="offcanvas-main-col-3">
                         <button
@@ -163,6 +162,8 @@
             ></a>
           </div>
         </div>
+        
+       
       </section>
       <!--------Main Section branch-list ends here--------->
     </section>

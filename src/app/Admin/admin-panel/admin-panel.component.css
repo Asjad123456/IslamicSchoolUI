@@ -36,7 +36,7 @@ body {
   height: 15vh;
   display: grid;
   align-content: center;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 80% 20%;
 }
 #head-container .col {
   display: flex;
@@ -46,11 +46,12 @@ body {
   color: #586e6b;
 }
 #head-container h1 {
+margin: 0;
   color: #586e6b;
-  text-align: left;
   font-size: 27px;
   font-weight: 800;
   font-family: "Rubik", sans-serif;
+  font-variant: petite-caps;
 }
 
 
@@ -66,7 +67,6 @@ body {
 
 
 #grid-row{
-/* border: 1px solid red; */
   display: grid;
   grid-template-columns: 50% 50%;
   gap: 8px 4px;
@@ -78,58 +78,55 @@ body {
   height: 24vh;
   display: grid;
   align-content: center;
-  gap: 32px;
+  gap: 50px;
   padding: 10px;
   background-color: #c9e393;
   border-radius: 10px;
   width: 45vw;
-  /* border: 1px solid red; */
-
 }
 #branch-mid-col{
   display: grid;
   align-content: center;
   justify-content: center;
   justify-items: center;
-/* border: 1px solid red; */
 }
 #branch-mid-col h1{
   font-size: 37px;
   font-weight: 700;
-  color: var(--color-1);
-}#branch-mid-col p{
+  color: #96bc00;
+  margin: 0;
+}
+#branch-mid-col p{
   font-size: 21px;
   font-weight: 200;
-  color: var(--color-1);
+  color: #978c58;
+  margin: 0;
 }
 #branch-footer-arrow{
   display: grid;
   justify-content: flex-end;
   align-content: center;
-  color: #bc9c00;
-/* border: 1px solid red; */
+  color: #c1ab95;
 }
 #dot-col{
   display: flex;
   justify-content: flex-end;
   align-content: center;
-/* border: 1px solid red; */
 }
 #supervisor-box{
   height: 24vh;
   display: grid;
   align-content: center;
-  gap: 32px;
+  gap: 36px;
   padding: 10px;
   background-color: #ffd9ba;
   border-radius: 10px;
   width: 45vw;
-  /* border: 1px solid red; */
 }
 .dot {
   height: 6px;
   width: 7px;
-  background-color: var(--color-1);
+  background-color: #cbb18d;
   border-radius: 50%;
   margin: 1px;
   display: inline-block;
@@ -138,7 +135,7 @@ body {
   height: 24vh;
   display: grid;
   align-content: center;
-  gap: 32px;
+  gap: 36px;
   padding: 10px;
   background-color: #ffd9ba;
   border-radius: 10px;
@@ -148,22 +145,13 @@ body {
   height: 24vh;
   display: grid;
   align-content: center;
-  gap: 32px;
+  gap: 50px;
   padding: 10px;
   background-color: #c9e393;
   border-radius: 10px;
   width: 45vw;
 
 }
-
-
-/* -------------------------------- */
-/* #footer-buttons{
-  display: grid;
-  grid-template-columns: 50% 50%;
-  gap: 10px;
-  border: 1px solid red;
-} */
 #role-managment-row{
   background-color: #fff5b8;
   height: 10vh;
@@ -173,7 +161,6 @@ body {
 #role-managment-col-1{
   display: grid;
   align-content: center;
-  /* align-self: center; */
   padding-left: 10px;
 }
 #role-managment-col-1 h1{
@@ -181,6 +168,8 @@ body {
   font-weight: 500;
   color: var(--color-1);
   max-width: 60%;
+  margin: 0;
+  font-family: math;
 }
 #role-managment-col-2{
   display: grid;
