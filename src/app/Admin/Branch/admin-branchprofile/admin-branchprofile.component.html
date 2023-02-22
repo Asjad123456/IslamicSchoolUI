@@ -4,17 +4,17 @@
       <!---------Header section start here----------->
       <div class="row" id="header-row">
         <div class="col" id="header-first-icon">
-          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+          <i class="fa fa-arrow-left" aria-hidden="true" (click)="onBack()"></i>
         </div>
       </div>
     </section>
     <!---------Header section ends here----------->
 
     <!---------Hero Section start here--------->
-    <section id="hero-section">
+    <section id="hero-section" *ngFor="let item of branch">
       <div class="row" id="hero-row">
         <div class="col" id="hero-col-1">
-          <h1>Branch A</h1>
+          <h1>{{item.branchName}}</h1>
           <!-- <span
             ><i class="fa fa-globe" aria-hidden="true"></i>
             <b> Street A Home # 302</b>
@@ -23,7 +23,7 @@
         <div class="col" id="hero-col-2">
           <span
             ><i class="fa fa-globe" aria-hidden="true"></i>
-             <b><br> My Street, Kingston,New York 12401. </b>
+             <b><br> {{item.address}} </b>
           </span>
         </div>
       </div>

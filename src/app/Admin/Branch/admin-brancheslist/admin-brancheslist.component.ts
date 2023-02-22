@@ -1,10 +1,10 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Branches } from 'src/Models/branches';
 import { User } from 'src/Models/user';
 import { AdminService } from 'src/Services/admin.service';
-
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-admin-brancheslist',
@@ -18,7 +18,7 @@ export class AdminBrancheslistComponent implements OnInit{
   searchText: string = '';
   addBranchForm: FormGroup;
 
-  constructor(private service:AdminService, private router: Router){}
+  constructor(private service:AdminService, private router: Router, private location: Location){}
 
 
   ngOnInit(): void {
@@ -79,5 +79,8 @@ export class AdminBrancheslistComponent implements OnInit{
   selectSupervisor(item: any) {
     // Update form control value with the supervisor's name
     this.addBranchForm.get('AppUserId').setValue(item.id);
+  }
+  onBack(){
+    this.location.back();
   }
 }
