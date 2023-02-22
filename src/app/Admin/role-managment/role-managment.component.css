@@ -97,3 +97,10 @@
   font-family: var(--main-family);
   color: var(--mainGreen);
 }
+#search-col {
+  display: grid;
+  align-items: center;
+  text-align: end;
+  font-style: inherit;
+  color: #586a47;
+}
