@@ -14,16 +14,76 @@
     <section id="hero-section" *ngFor="let item of branch">
       <div class="row" id="hero-row">
         <div class="col" id="hero-col-1">
-          <h1>{{item.branchName}}</h1>
+          <h1 aria-hidden="true"  type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">{{ item.branchName }}</h1>
           <!-- <span
             ><i class="fa fa-globe" aria-hidden="true"></i>
             <b> Street A Home # 302</b>
           </span> -->
         </div>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasRight"
+          aria-labelledby="offcanvasRightLabel"
+        >
+          <div class="offcanvas-header" id="offcanvas-header">
+            <h5 id="offcanvasRightLabel">Edit Branch Data</h5>
+            <button
+              type="button"
+              id="btn-close"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body" id="offcanvas-body">
+            <form [formGroup]="editBranchForm" (ngSubmit)="editBranchData()">
+              <div class="row" id="offcanvas-input-row">
+                <div class="col" id="edit-branch-name-col">
+                  <label for="">
+                    <p>Branch Name</p>
+                  </label>
+                  <input type="text" formControlName="branchName"/>
+                </div>
+                <div class="col" id="edit-branch-city-col">
+                  <label for="">City</label>
+                  <input type="text" formControlName="city"/>
+                </div>
+                <div class="col" id="edit-branch-address-col">
+                  <label for="">Adress</label>
+                  <input type="text" formControlName="address"/>
+                </div>
+                <div class="col" id="edit-branch-code-col">
+                  <label for="">Branch Code</label>
+                  <input type="text" formControlName="branchCode"/>
+                </div>
+              </div>
+              <div class="row" id="branch-offcanvas-btn">
+                <div class="col">
+                  <button type="submit"  id="btn-close"
+                  class="text-reset"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close">Submit</button>
+                </div>
+              </div>
+            </form>
+
+
+            <div class="row" id="branche-offcanvas-footer-row">
+              <div class="col">
+                <img src="/assets/image-15-2.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="col" id="hero-col-2">
           <span
             ><i class="fa fa-globe" aria-hidden="true"></i>
-             <b><br> {{item.address}} </b>
+            <b
+              ><br />
+              {{ item.address }}
+            </b>
           </span>
         </div>
       </div>
@@ -32,9 +92,9 @@
 
     <!-------- Main section HTML start here ------->
     <section id="main-section">
-      <div class="row" id="class-row">
+      <div class="row" id="class-row" (click)="toClassList()">
         <div class="col-9" id="class-col-1">
-          <h1>Classes : 10+</h1>
+          <h1>Classes : {{ studyClassCount }}</h1>
           <!-- <p>10+</p> -->
         </div>
         <div class="col-3" id="class-col-2">

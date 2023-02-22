@@ -103,7 +103,7 @@ body {
 
 /* --------Main section Styling start here----- */
 #main-section {
-  display: grid; 
+  display: grid;
   gap: 38px;
   align-content: center;
   height: 64vh;
@@ -215,3 +215,116 @@ body {
   width: 10vw;
 }
 /* Students Row styling start here */
+#offcanvas-body {
+  height: 91vh;
+  position: absolute;
+  top: 133px;
+  left: 0;
+  right: 0;
+}
+#offcanvas-input-row {
+  display: grid;
+  grid-template-columns: 373px;
+  position: relative;
+  left: 0px;
+  padding: 10px;
+}
+#edit-branch-name-col {
+  height: 10vh;
+  display: grid;
+  max-width: 97%;
+}
+#edit-branch-name-col label {
+  display: flex;
+  align-content: flex-end;
+  height: 0;
+  color: #fa9c18;
+}
+#edit-branch-name-col input {
+  display: flex;
+  align-items: flex-end;
+}
+#edit-branch-city-col {
+  padding-top: 10px;
+  height: 10vh;
+  display: grid;
+  max-width: 97%;
+}
+#edit-branch-city-col label {
+  display: flex;
+  align-content: flex-end;
+  height: 0;
+  color: #fa9c18;
+}
+#edit-branch-city-col input {
+  display: flex;
+  align-items: flex-end;
+}
+input[type="text"] {
+  height: fit-content;
+  border-bottom: 1px solid rgb(56, 42, 42);
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  outline: none;
+  background: none;
+}
+
+#edit-branch-address-col {
+  height: 10vh;
+  display: grid;
+  max-width: 97%;
+}
+#edit-branch-address-col label {
+  display: flex;
+  align-content: flex-end;
+  height: 0;
+  color: #fa9c18;
+}
+#edit-branch-address-col input {
+  display: flex;
+  align-items: flex-end;
+}
+
+#edit-branch-code-col {
+  height: 10vh;
+  display: grid;
+  max-width: 97%;
+}
+#edit-branch-code-col label {
+  display: flex;
+  align-content: flex-end;
+  height: 0;
+  color: #fa9c18;
+}
+#edit-branch-code-col input {
+  display: flex;
+  align-items: flex-end;
+}
+#branch-offcanvas-btn .col {
+  display: flex;
+  justify-content: flex-end;
+}
+#branch-offcanvas-btn {
+  /* border: 1px solid red; */
+  position: relative;
+  left: 0;
+  max-width: 95%;
+}
+#branch-offcanvas-btn button {
+  border: none;
+  width: 99px;
+  height: 5vh;
+  background-color: #f5c685;
+  color: #f4e9d9;
+  font-weight: 500;
+  border-radius: 5px;
+}
+#branche-offcanvas-footer-row {
+  position: absolute;
+  top: 51vh;
+  left: 22px;
+}
+#branche-offcanvas-footer-row .col img {
+  width: 88vw;
+}

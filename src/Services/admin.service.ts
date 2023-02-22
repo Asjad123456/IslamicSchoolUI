@@ -154,4 +154,8 @@ updateProfile(id: string, user: AdminForEdit) {
   };
   return this.http.put<AdminForEdit>(url, user, httpOptions);
 }
+gwtStudyClassCountForBranch(id: number){
+  const url = `${this.baseUrl}Branch/studyclasscount/${id}`;
+  return this.http.get<number>(url);
+}
 }

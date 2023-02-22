@@ -15,6 +15,7 @@ export class AdminBranchprofileComponent {
   public branchId: number;
   branch: Branches[];
   editBranchForm: FormGroup;
+  studyClassCount: number;
 
   constructor(private router: Router, private service:AdminService, private route: ActivatedRoute, private fb:FormBuilder, private location: Location){}
 
@@ -28,6 +29,7 @@ export class AdminBranchprofileComponent {
     this.getBranchDetails();
     console.log(this.route.snapshot.params['id']);
     this.editBranch();
+    this.getStudyClassCount()
   }
   getBranchDetails = () => {
     const id =+this.route.snapshot.params['id'];
@@ -56,5 +58,23 @@ export class AdminBranchprofileComponent {
   }
   onBack(){
     this.location.back();
+  }
+  getStudyClassCount(){
+    const branchId = +this.route.snapshot.params['id'];
+    this.service.gwtStudyClassCountForBranch(branchId).subscribe((res) =>{
+      this.studyClassCount = res;
+    })
+  }
+  toClassList(){
+    const branchId = +this.route.snapshot.params['id'];
+    this.router.navigate(['admin-branchprofile/' + branchId + '/class-list']);
+  }
+  toTeacherList(){
+    const branchId = +this.route.snapshot.params['id'];
+    this.router.navigate(['admin-branchprofile/' + branchId + '/class-list']);
+  }
+  toStudentList(){
+    const branchId = +this.route.snapshot.params['id'];
+    this.router.navigate(['admin-branchprofile/' + branchId + '/class-list']);
   }
 }
