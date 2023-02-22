@@ -328,3 +328,27 @@ input[type="text"] {
 #branche-offcanvas-footer-row .col img {
   width: 88vw;
 }
+#your-branch-row{
+  background-color: #fff5b8;
+  border-radius: 10px;
+}
+#your-branch-col-1{
+  display: grid;
+  align-content: center;
+  padding-left: 10px;
+}
+#your-branch-col-1 h1{
+  padding: 20px;
+  color: goldenrod;
+  font-weight: 800;
+  font-size: 20px;
+}
+#your-branch-col-2 i{
+  color: goldenrod;
+  font-size: 20px;
+}
+#your-branch-col-2{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}

@@ -16,6 +16,7 @@ export class AdminBranchprofileComponent {
   branch: Branches[];
   editBranchForm: FormGroup;
   studyClassCount: number;
+  teachersCount: number;
 
   constructor(private router: Router, private service:AdminService, private route: ActivatedRoute, private fb:FormBuilder, private location: Location){}
 
@@ -29,7 +30,8 @@ export class AdminBranchprofileComponent {
     this.getBranchDetails();
     console.log(this.route.snapshot.params['id']);
     this.editBranch();
-    this.getStudyClassCount()
+    this.getStudyClassCount();
+    this.getTeachersCount();
   }
   getBranchDetails = () => {
     const id =+this.route.snapshot.params['id'];
@@ -65,6 +67,12 @@ export class AdminBranchprofileComponent {
       this.studyClassCount = res;
     })
   }
+  getTeachersCount(){
+    const branchId = +this.route.snapshot.params['id'];
+    this.service.getTeacherCountorBranch(branchId).subscribe((res) =>{
+      this.teachersCount = res;
+    })
+  }
   toClassList(){
     const branchId = +this.route.snapshot.params['id'];
     this.router.navigate(['admin-branchprofile/' + branchId + '/class-list']);
@@ -73,8 +81,8 @@ export class AdminBranchprofileComponent {
     const branchId = +this.route.snapshot.params['id'];
     this.router.navigate(['admin-branchprofile/' + branchId + '/class-list']);
   }
-  toStudentList(){
+  toTeachersList(){
     const branchId = +this.route.snapshot.params['id'];
-    this.router.navigate(['admin-branchprofile/' + branchId + '/class-list']);
+    this.router.navigate(['admin-branchprofile/' + branchId + '/teachers-list']);
   }
 }

@@ -158,4 +158,8 @@ gwtStudyClassCountForBranch(id: number){
   const url = `${this.baseUrl}Branch/studyclasscount/${id}`;
   return this.http.get<number>(url);
 }
+getTeacherCountorBranch(id: number){
+  const url = `${this.baseUrl}Branch/teachercount/${id}`;
+  return this.http.get<number>(url);
+}
 }

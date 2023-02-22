@@ -14,8 +14,7 @@
     <section id="hero-section" *ngFor="let item of branch">
       <div class="row" id="hero-row">
         <div class="col" id="hero-col-1">
-          <h1 aria-hidden="true"  type="button" data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">{{ item.branchName }}</h1>
+          <h1 aria-hidden="true">{{ item.branchName }}</h1>
           <!-- <span
             ><i class="fa fa-globe" aria-hidden="true"></i>
             <b> Street A Home # 302</b>
@@ -92,25 +91,43 @@
 
     <!-------- Main section HTML start here ------->
     <section id="main-section">
-      <div class="row" id="class-row" (click)="toClassList()">
-        <div class="col-9" id="class-col-1">
-          <h1>Classes : {{ studyClassCount }}</h1>
-          <!-- <p>10+</p> -->
+      <div class="row" id="your-branch-row" type="button" data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+        <div class="col-10" id="your-branch-col-1">
+            <h1>Edit Branch Data</h1>
         </div>
-        <div class="col-3" id="class-col-2">
-          <img src="/assets/students.png" alt="" />
+        <div class="col-2" id="your-branch-col-2">
+          <i class="fa-solid fa-arrow-right"></i>
         </div>
-      </div>
+    </div>
       <div id="footer-rows">
-        <div class="row" id="teacher-row">
+        <div class="row" id="class-row" (click)="toClassList()">
+          <div class="col-9" id="class-col-1">
+            <h1>Classes : {{ studyClassCount }}</h1>
+            <!-- <p>10+</p> -->
+          </div>
+          <div class="col-3" id="class-col-2">
+            <img src="/assets/students.png" alt="" />
+          </div>
+        </div>
+        <div class="row" id="class-row" (click)="toTeachersList()">
+          <div class="col-9" id="class-col-1">
+            <h1>Teachers : {{ teachersCount }}</h1>
+            <!-- <p>10+</p> -->
+          </div>
+          <div class="col-3" id="class-col-2">
+            <img src="/assets/headmaster.png" alt="" />
+          </div>
+        </div>
+        <!-- <div class="row" id="teacher-row">
           <div class="col-3" id="teacher-col-1">
             <img src="/assets/headmaster.png" alt="" />
           </div>
           <div class="col-9" id="teacher-col-2">
             <h1>Teachers</h1>
           </div>
-        </div>
-
+        </div> -->
+<!--
         <div class="row" id="student-row">
           <div class="col-9" id="student-col-1">
             <h1>Students</h1>
@@ -118,7 +135,7 @@
           <div class="col-3" id="student-col-2">
             <img src="/assets/student.png" alt="" />
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
     <!-------- Main section HTML end here ------->
