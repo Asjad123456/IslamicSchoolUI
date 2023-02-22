@@ -71,25 +71,25 @@
                   </div>
 
                   <!-- main inputs section -->
-                  <div class="row" id="offcanvas-main-row" style="border: 1px solid red;">
+                  <div class="row" id="offcanvas-main-row">
                     <form [formGroup]="addBranchForm" (ngSubmit)="addBranch()">
-                      <div class="col" id="offcanvas-main-col-1" style="border: 1px solid red;">
+                      <div class="col" id="offcanvas-main-col-1">
                         <label
                           >BranchName
                           <input type="text" formControlName="branchName"
                         /></label>
                       </div>
-                      <div class="col" id="offcanvas-main-col-2" style="border: 1px solid red;">
-                        <label 
-                          >City<input type="text" formControlName="city" />
+                      <div class="col" id="offcanvas-main-col-2">
+                        <label
+                          ><input type="text" formControlName="city" />City
                         </label>
                       </div>
-                      <div class="col" id="offcanvas-main-col-1" style="border: 1px solid red;">
+                      <div class="col" id="offcanvas-main-col-1">
                         <label
                           >Address <input type="text" formControlName="address"
                         /></label>
                       </div>
-                      <div class="col" id="offcanvas-main-col-2" style="border: 1px solid red;">
+                      <div class="col" id="offcanvas-main-col-2">
                         <label
                           ><input
                             type="text"
@@ -97,20 +97,77 @@
                           />B.Code
                         </label>
                       </div>
-                      <div class="col">
-                        <label>Class-Name</label>
-                        <select
-                          class="form-control"
-                          formControlName="AppUserId"
+
+                      <div class="row" id="accordion-main-row">
+                        <div
+                          class="accordion accordion-flush"
+                          id="accordionFlushExample"
                         >
-                          <option value="">Select Supervisor</option>
-                          <option
-                            *ngFor="let item of branchsupervisors"
-                            value="{{ item.id }}"
-                          >
-                            {{ item.userName }}
-                          </option>
-                        </select>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                              <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne"
+                                aria-expanded="false"
+                                aria-controls="flush-collapseOne"
+                              >
+                                Select Supervisor
+                              </button>
+                            </h2>
+                            <div
+                              id="flush-collapseOne"
+                              class="accordion-collapse collapse"
+                              aria-labelledby="flush-headingOne"
+                              data-bs-parent="#accordionFlushExample"
+                            >
+                              <div class="accordion-body">
+                                <div class="row" id="accordion-search-bar">
+                                  <div class="col">
+                                    <input type="search" />
+                                    <label for=""
+                                      ><i class="fas fa-search"></i
+                                    ></label>
+                                  </div>
+                                </div>
+                                <div class="row" id="accordion-sec-row">
+
+                                  <div class="col" id="accordion-sec-col">
+                                    <div class="col" id="col-1" >
+                                      <img src="/assets/boy.png" alt="">
+                                    </div>
+                                    <div class="col" id="col-2" >
+                                      <h1>Name</h1>
+                                      <p>Paragraph</p>
+                                    </div>
+                                    <div class="col" id="col-3">
+                                      <i class="fas fa-check-circle"></i>
+                                    </div>
+                                  </div>
+
+
+                                </div>
+
+                                <!-- <div class="col">
+                                <label>Class-Name</label>
+                                <select
+                                  class="form-control"
+                                  formControlName="AppUserId"
+                                >
+                                  <option value="">Select Supervisor</option>
+                                  <option
+                                    *ngFor="let item of branchsupervisors"
+                                    value="{{ item.id }}"
+                                  >
+                                    {{ item.userName }}
+                                  </option>
+                                </select>
+                              </div> -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <div class="col" id="offcanvas-main-col-3">
                         <button
@@ -163,7 +220,6 @@
           </div>
         </div>
         
-       
       </section>
       <!--------Main Section branch-list ends here--------->
     </section>

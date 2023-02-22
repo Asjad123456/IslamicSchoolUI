@@ -10,7 +10,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Rubik", sans-serif;
-  /* border: 1px solid red; */
 }
 
 :host {
@@ -187,7 +186,71 @@ input[type="text"] {
   color: var(--light-green);
   height: 5vh;
 }
+/* Accordion section styling start here */
+.accordion-body{
+  display: grid;
+  gap: 21px;
+}
+#accordion-main-row{
+  padding: 19px ;
+}
+.accordion-flush button{
+  background-color: var(--golden);
+  /* border-radius: 10px; */
+  padding: 12px;
+}
+.accordion-item{
+  background-color: var(--background-color);
+}
+#accordion-search-bar .col{
+  padding: 11px;
+}
+#accordion-search-bar input[type="search"] {
+  width: 78vw;
+  background: none;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 1px solid rgb(68, 60, 60);
+  outline: none;
+}
 
+#accordion-sec-row{
+  display: grid;
+  gap: 10px;
+  overflow: scroll;
+  height: 27vh;
+}
+#accordion-sec-col{
+  display: flex;
+  height: 8vh;
+  border-radius: 15px;
+  background-color: #879f7c;
+}
+#col-1{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+#col-1 img{
+  width: 19vw;
+}
+#col-2{
+  display: grid;
+  flex-grow: 3;
+  align-content: center;
+  padding: 7px;
+}
+#col-2 h1 , p{
+  margin: 0;
+}
+#col-3{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+
+}
 /* ------------------------ */
 #main-sec-row {
   height: 39vh;
@@ -214,7 +277,6 @@ input[type="text"] {
   display: grid;
   gap: 10px;
   overflow: scroll;
-  /* height: 61vh; */
   align-items: baseline;
 }
 #main-sec-box1 .row {

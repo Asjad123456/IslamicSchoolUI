@@ -40,7 +40,7 @@ const routes: Routes = [
   {path:'welcome', component:WelcomeComponent},                        //90% Done
   // {path:'',redirectTo:'welcome',pathMatch:'full'},
   {path:'signup', component:SignupComponent},                          //90% Done
-  {path:'waiting',component:WaitingComponent},                         //80% Done
+  {path:'waiting',component:WaitingComponent},                         //90% Done
   //Admin Routes
   {path:'admin-panel/:id',component:AdminPanelComponent},              //90% Done
   {path:'admin-profile/:id',component:AdminProfileComponent},          //90% Done
