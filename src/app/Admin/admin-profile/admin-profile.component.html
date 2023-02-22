@@ -4,7 +4,7 @@
       <section>
           <div class="row" id="top-back-btn" >
               <div class="col">
-                  <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                  <i class="fa fa-arrow-left" aria-hidden="true" (click)="onBack()"></i>
               </div>
           </div>
       </section>
@@ -62,8 +62,7 @@
           <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
               <div class="offcanvas-header">
                   <!-- <h5 id="offcanvasTopLabel">Offcanvas top</h5> -->
-                  <button id="btn-close" type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                      aria-label="Close"></button>
+
               </div>
 
               <div class="offcanvas-body">
@@ -106,10 +105,12 @@
                   <section id="footer-btn-section">
                     <div class="row" id="footer-btn-row">
                         <div class="col" id="footer-btn-col-1">
-                            <button class="btn">cancel</button>
+                            <button class="btn" type="button" class="text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close">cancel</button>
                         </div>
                         <div class="col" id="footer-btn-col-2">
-                            <button class="submit">Save</button>
+                            <button class="btn" type="submit" class="text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close">Save</button>
                         </div>
                     </div>
                 </section>

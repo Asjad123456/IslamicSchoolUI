@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AccountService } from 'src/Services/account.service';
 import { AdminService } from 'src/Services/admin.service';
@@ -14,11 +15,14 @@ export class AdminPanelComponent {
   branchescount: number;
   studentscount: number;
 
-  constructor(private router: Router, private service: AdminService, private route: ActivatedRoute, private accountService: AccountService){}
+  constructor(private router: Router, private service: AdminService, private route: ActivatedRoute,
+     private accountService: AccountService, private snackBar: MatSnackBar){}
 
   ngOnInit(): void {
     this.adminCount();
     this.teachersCount();
+    this.branchesCount();
+    this.studentCount();
   }
   toRoleManagmnent(){
     this.router.navigate(['role-managment'])
@@ -57,6 +61,10 @@ export class AdminPanelComponent {
   }
   logout(){
     this.accountService.logout();
+    this.snackBar.open('LoggedOut!', 'Close', {
+      duration: 3000,
+      panelClass: 'success-snackbar'
+    });
   }
   toBranches(){
     this.router.navigate(['admin-brancheslist']);

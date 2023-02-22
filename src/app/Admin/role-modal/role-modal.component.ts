@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { User } from 'src/Models/user';
+
 
 @Component({
   selector: 'app-role-modal',
@@ -12,7 +14,7 @@ export class RoleModalComponent {
   user!: User;
   roles!: any[];
 
-  constructor(public bsModalRef: BsModalRef) { }
+  constructor(public bsModalRef: BsModalRef, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -20,5 +22,9 @@ export class RoleModalComponent {
   updateRoles(){
     this.updateSelectedRoles.emit(this.roles);
     this.bsModalRef.hide();
+    this.snackBar.open('Roles Changed!', 'Close', {
+      duration: 3000,
+      panelClass: 'success-snackbar'
+    });
   }
 }

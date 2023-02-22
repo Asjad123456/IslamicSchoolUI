@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/Models/user';
 import { AdminService } from 'src/Services/admin.service';
 
@@ -13,7 +14,8 @@ export class AdminProfileComponent {
   user: User[];
   editProfileForm: FormGroup;
 
-  constructor(private service: AdminService, private route: ActivatedRoute, private fb:FormBuilder){}
+  constructor(private service: AdminService, private route: ActivatedRoute, private fb:FormBuilder,
+     private snackBar: MatSnackBar, private router: Router){}
 
   ngOnInit(): void {
     this.editProfileForm= this.fb.group({
@@ -49,6 +51,19 @@ export class AdminProfileComponent {
     this.service.updateProfile(id, this.editProfileForm.value).subscribe(() =>{
       this.getAdminData();
       console.warn('done');
+      this.snackBar.open('Profile Updated!', 'Close', {
+        duration: 3000,
+        panelClass: 'success-snackbar'
+      });
+    }, error =>{
+      this.snackBar.open('Error Saving Changes!', 'Close', {
+        duration: 3000,
+        panelClass: 'success-snackbar'
+      });
     })
+  }
+  onBack(){
+    const id = this.route.snapshot.params['id'];
+    this.router.navigate(['admin-panel/' + id]);
   }
 }
