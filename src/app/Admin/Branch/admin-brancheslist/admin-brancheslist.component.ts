@@ -76,5 +76,8 @@ export class AdminBrancheslistComponent implements OnInit{
     this.searchText = searchValue;
     console.log(this.searchText);
   }
-
+  selectSupervisor(item: any) {
+    // Update form control value with the supervisor's name
+    this.addBranchForm.get('AppUserId').setValue(item.id);
+  }
 }
