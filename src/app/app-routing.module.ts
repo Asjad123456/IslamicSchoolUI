@@ -46,43 +46,43 @@ const routes: Routes = [
   {path:'admin-profile/:id',component:AdminProfileComponent},          //90% Done
   {path:'role-managment', component:RoleManagmentComponent},           //90% Done
   {path:'admin-brancheslist', component:AdminBrancheslistComponent},   //95% Done
-  {path:'admin-branchprofile/:id',component:AdminBranchprofileComponent},  //95% Done
-  {path:'admin-branchprofile/:id/teachers-list',component:AdminBranchTeacherlistComponent},    //work in progress
-  {path:'admin-branchprofile/:id/teacher-profile/:id',component:AdminBranchTeacherprofileComponent},     //work in progress
-  {path:'admin-branchprofile/teacher-profile/:id/class-profile/:id',component:AdminBranchClassprofileComponent},    //work in progress
+  {path:'admin-branchprofile/:id',component:AdminBranchprofileComponent},  //99% Done
+  {path:'admin-branchprofile/:id/teachers-list',component:AdminBranchTeacherlistComponent}, //Copy/paste
+  {path:'admin-branchprofile/:id/teacher-profile/:id',component:AdminBranchTeacherprofileComponent},//work in progress
+  {path:'admin-branchprofile/teacher-profile/:id/class-profile/:id',component:AdminBranchClassprofileComponent},//Full incomplete
   {path:'admin-branchprofile/:id/class-list',component:AdminBranchClasslistComponent},       //work in progress  
-  {path:'admin-branchprofile/:id/class-list/class-profile/:id',component:AdminBranchClassprofileComponent},      //work in progress
-  {path:'admin-branchprofile/:id/class-list/class-profile/:id/student-list',component:AdminBranchClassStudentlistComponent},    //work in progress
+  {path:'admin-branchprofile/:id/class-list/class-profile/:id',component:AdminBranchClassprofileComponent},     //Full incomplete
+  {path:'admin-branchprofile/:id/class-list/class-profile/:id/student-list',component:AdminBranchClassStudentlistComponent}, //Copy/paste
   {path:'admin-branchprofile/:id/class-list/class-profile/:id/student-list/:id',component:AdminBranchClassStudentprofileComponent},   //work in progress
 
-  {path:'admin-supervisorlist', component:AdminSupervisorlistComponent},                                //work in progress
-  {path:'admin-supervisorprofile/:id', component:AdminSupervisorprofileComponent},                      //work in progress
+  {path:'admin-supervisorlist', component:AdminSupervisorlistComponent},//work in progress
+  {path:'admin-supervisorprofile/:id', component:AdminSupervisorprofileComponent},//work in progress
 
-  {path:'admin-studentlist', component:AdminStudentlistComponent},                       //work in progress
-  {path:'admin-studentlist/admin-studentprofile/:id', component:AdminStudentprofileComponent},          //work in progress
+  {path:'admin-studentlist', component:AdminStudentlistComponent},//Copy/paste
+  {path:'admin-studentlist/admin-studentprofile/:id', component:AdminStudentprofileComponent},//work in progress
 
-  {path:'admin-teacherslist', component:AdminTeacherslistComponent},                    //work in progress
-  {path:'admin-teacherslist/admin-teacherprofile/:id', component:AdminTeacherprofileComponent},         //work in progress
+  {path:'admin-teacherslist', component:AdminTeacherslistComponent},//work in progress
+  {path:'admin-teacherslist/admin-teacherprofile/:id', component:AdminTeacherprofileComponent},//work in progress
   {path:'admin-teacherslist/admin-teacherprofile/class-profile/:id', component:AdminTeacherprofileComponent},//work in progress
 
   //Supervisor Routes
-  {path:'supervisor-panel/:id', component:SupervisorPanelComponent},         //90% Done
-  {path:'supervisor-profile/:id', component:SupervisorProfileComponent},     //80% Done
-  {path:'supervisor-panel/:id/supervisor-branchprofile/:id', component:SupervisorBranchprofileComponent},  //80% Done
-  {path:'supervisor-panel/:id/supervisor-branchprofile/:id/teacherlist', component:SupervisorBranchClasslistComponent},           //work in progress
-  {path:'supervisor-panel/supervisor-branchprofile/:id/teacher-profile/:id', component:SupervisorBranchTeacherprofileComponent},  //work in progress
-  {path:'supervisor-panel/:id/supervisor-branchprofile/:id/classlist', component:SupervisorBranchClasslistComponent},             //work in progress
-  {path:'supervisor-panel/supervisor-branchprofile/:id/classprofile/:id', component:SupervisorBranchClassprofileComponent},       //work in progress
+  {path:'supervisor-panel/:id', component:SupervisorPanelComponent},//90% Done
+  {path:'supervisor-profile/:id', component:SupervisorProfileComponent},//80% Done
+  {path:'supervisor-panel/:id/supervisor-branchprofile/:id', component:SupervisorBranchprofileComponent},//80% Done
+  {path:'supervisor-panel/:id/supervisor-branchprofile/:id/teacherlist', component:SupervisorBranchClasslistComponent},//work in progress
+  {path:'supervisor-panel/supervisor-branchprofile/:id/teacher-profile/:id', component:SupervisorBranchTeacherprofileComponent},//work in progress
+  {path:'supervisor-panel/:id/supervisor-branchprofile/:id/classlist', component:SupervisorBranchClasslistComponent},//work in progress
+  {path:'supervisor-panel/supervisor-branchprofile/:id/classprofile/:id', component:SupervisorBranchClassprofileComponent},//work in progress
   {path:'supervisor-panel/supervisor-branchprofile/classprofile/:id/student-profile/:id', component:SupervisorBranchClassStudentprofileComponent},//work in progress
-  {path:'supervisor-panel/:id/supervisor-branchprofile/:id/studentlist', component:SupervisorBranchStudentlistComponent},         //work in progress
+  {path:'supervisor-panel/:id/supervisor-branchprofile/:id/studentlist', component:SupervisorBranchStudentlistComponent},//work in progress
   {path:'supervisor-panel/supervisor-branchprofile/:id/studentlist/studentprofile/:id', component:SupervisorBranchStudentprofileComponent}, //work in progress
 
   //teacher Routes
-  {path:'teacher-panel/:id', component:TeacherPanelComponent},              //90% Done
-  {path:'teacher-profile/:id', component:TeacherProfileComponent},                 //work in progress
-  {path:'teacher-panel/:id/classlist', component:TeacherClasslistComponent},        //work in progress
-  {path:'teacher-panel/:id/classlist/classprofile/:id', component:TeacherClassprofileComponent},   //work in progress
-  {path:'teacher-panel/classlist/classprofile/:id/studentprofile/:id', component:TeacherClassStudentprofileComponent},  //work in progress
+  {path:'teacher-panel/:id', component:TeacherPanelComponent},//90% Done
+  {path:'teacher-profile/:id', component:TeacherProfileComponent},//work in progress
+  {path:'teacher-panel/:id/classlist', component:TeacherClasslistComponent},//work in progress
+  {path:'teacher-panel/:id/classlist/classprofile/:id', component:TeacherClassprofileComponent},//work in progress
+  {path:'teacher-panel/classlist/classprofile/:id/studentprofile/:id', component:TeacherClassStudentprofileComponent},//work in progress
 ];
 
 @NgModule({
