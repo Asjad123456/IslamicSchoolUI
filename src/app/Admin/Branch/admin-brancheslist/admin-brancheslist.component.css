@@ -20,7 +20,7 @@
   --main-family: "Rubik", sans-serif;
 }
 body {
-  background-image: linear-gradient(to top, #eaeddd 3%, #d2ffbe 100%);
+  background-image: linear-gradient(to top, #f0f7d3 3%, #d5ffc3 100%);
   height: 100vh;
 }
 
@@ -186,24 +186,53 @@ input[type="text"] {
   color: var(--light-green);
   height: 5vh;
 }
+.supervisor-col{
+  visibility: hidden;
+}
 /* Accordion section styling start here */
-.accordion-body{
+#accor-btn-row {
+  height: 8vh;
+  padding: 10px;
+}
+#accor-btn-col {
+  display: flex;
+  justify-content: center;
+  width: 65vw;
+  background-color: #bc9c00;
+  border-radius: 10px;
+}
+.accordion-button {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  color:#b4dfa0;
+  font-weight: 700;
+  margin: 0;
+}
+.accordion-body {
   display: grid;
   gap: 21px;
+  overflow: scroll;
+  height: 30vh;
+  padding-top: 32px;
 }
-#accordion-main-row{
-  padding: 19px ;
+div#accordion-search-bar {
+ 
 }
-.accordion-flush button{
+#accordion-main-row {
+  padding: 19px;
+}
+.accordion-flush button {
   background-color: var(--golden);
-  /* border-radius: 10px; */
   padding: 12px;
 }
-.accordion-item{
+.accordion-item {
   background-color: var(--background-color);
 }
-#accordion-search-bar .col{
+#accordion-search-bar .col {
   padding: 11px;
+  position: fixed;
+  top: 57vh;
 }
 #accordion-search-bar input[type="search"] {
   width: 78vw;
@@ -214,42 +243,41 @@ input[type="text"] {
   border-bottom: 1px solid rgb(68, 60, 60);
   outline: none;
 }
-
-#accordion-sec-row{
+#accordion-sec-row {
   display: grid;
   gap: 10px;
   overflow: scroll;
-  height: 27vh;
+  height: 9vh;
 }
-#accordion-sec-col{
+#accordion-sec-col {
   display: flex;
   height: 8vh;
-  border-radius: 15px;
-  background-color: #879f7c;
+  border-radius: 10px;
+  background-color: #b4dfa0;
 }
-#col-1{
+#col-1 {
   display: flex;
   justify-content: center;
   align-content: center;
 }
-#col-1 img{
+#col-1 img {
   width: 19vw;
 }
-#col-2{
+#col-2 {
   display: grid;
   flex-grow: 3;
   align-content: center;
   padding: 7px;
 }
-#col-2 h1 , p{
+#col-2 h1,
+p {
   margin: 0;
 }
-#col-3{
+#col-3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-
 }
 /* ------------------------ */
 #main-sec-row {

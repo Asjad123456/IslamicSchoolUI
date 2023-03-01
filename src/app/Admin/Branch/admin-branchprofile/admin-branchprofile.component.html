@@ -15,10 +15,6 @@
       <div class="row" id="hero-row">
         <div class="col" id="hero-col-1">
           <h1 aria-hidden="true">{{ item.branchName }}</h1>
-          <!-- <span
-            ><i class="fa fa-globe" aria-hidden="true"></i>
-            <b> Street A Home # 302</b>
-          </span> -->
         </div>
         <div
           class="offcanvas offcanvas-end"
@@ -26,16 +22,23 @@
           id="offcanvasRight"
           aria-labelledby="offcanvasRightLabel"
         >
-          <div class="offcanvas-header" id="offcanvas-header">
-            <h5 id="offcanvasRightLabel">Edit Branch Data</h5>
-            <button
-              type="button"
-              id="btn-close"
-              class="btn-close text-reset"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
+          <div class="row" id="branch-offcanva-top-row">
+            <div class="offcanvas-header" id="offcanvas-header">
+              <div class="col" id="branch-offcanva-top-col-1">
+                <h5 id="offcanvasRightLabel">Edit Branch Data</h5>
+              </div>
+              <div class="col" id="branch-offcanva-top-col-2">
+                <button
+                  type="button"
+                  id="btn-close"
+                  class="btn-close text-reset"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+            </div>
           </div>
+
           <div class="offcanvas-body" id="offcanvas-body">
             <form [formGroup]="editBranchForm" (ngSubmit)="editBranchData()">
               <div class="row" id="offcanvas-input-row">
@@ -43,31 +46,35 @@
                   <label for="">
                     <p>Branch Name</p>
                   </label>
-                  <input type="text" formControlName="branchName"/>
+                  <input type="text" formControlName="branchName" />
                 </div>
                 <div class="col" id="edit-branch-city-col">
                   <label for="">City</label>
-                  <input type="text" formControlName="city"/>
+                  <input type="text" formControlName="city" />
                 </div>
                 <div class="col" id="edit-branch-address-col">
                   <label for="">Adress</label>
-                  <input type="text" formControlName="address"/>
+                  <input type="text" formControlName="address" />
                 </div>
                 <div class="col" id="edit-branch-code-col">
                   <label for="">Branch Code</label>
-                  <input type="text" formControlName="branchCode"/>
+                  <input type="text" formControlName="branchCode" />
                 </div>
               </div>
               <div class="row" id="branch-offcanvas-btn">
                 <div class="col">
-                  <button type="submit"  id="btn-close"
-                  class="text-reset"
-                  data-bs-dismiss="offcanvas"
-                  aria-label="Close">Submit</button>
+                  <button
+                    type="submit"
+                    id="btn-close"
+                    class="text-reset"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"
+                  >
+                    Submit
+                  </button>
                 </div>
               </div>
             </form>
-
 
             <div class="row" id="branche-offcanvas-footer-row">
               <div class="col">
@@ -91,15 +98,21 @@
 
     <!-------- Main section HTML start here ------->
     <section id="main-section">
-      <div class="row" id="your-branch-row" type="button" data-bs-toggle="offcanvas"
-      data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+      <div
+        class="row"
+        id="your-branch-row"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight"
+      >
         <div class="col-10" id="your-branch-col-1">
-            <h1>Edit Branch Data</h1>
+          <h1>Edit Branch Data</h1>
         </div>
         <div class="col-2" id="your-branch-col-2">
           <i class="fa-solid fa-arrow-right"></i>
         </div>
-    </div>
+      </div>
       <div id="footer-rows">
         <div class="row" id="class-row" (click)="toClassList()">
           <div class="col-9" id="class-col-1">
@@ -127,7 +140,7 @@
             <h1>Teachers</h1>
           </div>
         </div> -->
-<!--
+        <!--
         <div class="row" id="student-row">
           <div class="col-9" id="student-col-1">
             <h1>Students</h1>

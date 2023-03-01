@@ -97,35 +97,36 @@
                           />B.Code
                         </label>
                       </div>
-                      <div class="col" id="offcanvas-main-col-1"
-                      class="accordion-button collapsed"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#flush-collapseOne"
-                                aria-expanded="false"
-                                aria-controls="flush-collapseOne">
+                      <div class="col supervisor-col" id="offcanvas-main-col-1">
                         <label
-                          >Supervisor <input type="text" formControlName="AppUserId"
+                          >Supervisor
+                          <input type="text" formControlName="AppUserId"
                         /></label>
                       </div>
+
+                      <!--  -->
+                      <div class="row" id="accor-btn-row">
+                        <div class="col" id="accor-btn-col">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne"
+                            aria-expanded="false"
+                            aria-controls="flush-collapseOne"
+                          >
+                            Click
+                          </button>
+                        </div>
+                      </div>
+
                       <div class="row" id="accordion-main-row">
                         <div
+                          
                           class="accordion accordion-flush"
                           id="accordionFlushExample"
                         >
-                          <div class="accordion-item">
-                            <!-- <h2 class="accordion-header" id="flush-headingOne">
-                              <button
-                                class="accordion-button collapsed"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#flush-collapseOne"
-                                aria-expanded="false"
-                                aria-controls="flush-collapseOne"
-                              >
-                                Select Supervisor
-                              </button>
-                            </h2> -->
+                          <div class="accordion-item" >
                             <div
                               id="flush-collapseOne"
                               class="accordion-collapse collapse"
@@ -141,13 +142,20 @@
                                     ></label>
                                   </div>
                                 </div>
-                                <div class="row" id="accordion-sec-row" *ngFor="let item of branchsupervisors">
-
-                                  <div class="col" id="accordion-sec-col" (click)="selectSupervisor(item)">
-                                    <div class="col" id="col-1" >
-                                      <img src="/assets/boy.png" alt="">
+                                <div
+                                  class="row"
+                                  id="accordion-sec-row"
+                                  *ngFor="let item of branchsupervisors"
+                                >
+                                  <div
+                                    class="col"
+                                    id="accordion-sec-col"
+                                    (click)="selectSupervisor(item)"
+                                  >
+                                    <div class="col" id="col-1">
+                                      <img src="/assets/boy.png" alt="" />
                                     </div>
-                                    <div class="col" id="col-2" >
+                                    <div class="col" id="col-2">
                                       <h1>{{ item.userName }}</h1>
                                       <p>Paragraph</p>
                                     </div>
@@ -155,25 +163,7 @@
                                       <i class="fas fa-check-circle"></i>
                                     </div>
                                   </div>
-
-
                                 </div>
-
-                                <!-- <div class="col">
-                                <label>Class-Name</label>
-                                <select
-                                  class="form-control"
-                                  formControlName="AppUserId"
-                                >
-                                  <option value="">Select Supervisor</option>
-                                  <option
-                                    *ngFor="let item of branchsupervisors"
-                                    value="{{ item.id }}"
-                                  >
-                                    {{ item.userName }}
-                                  </option>
-                                </select>
-                              </div> -->
                               </div>
                             </div>
                           </div>
@@ -229,7 +219,6 @@
             ></a>
           </div>
         </div>
-
       </section>
       <!--------Main Section branch-list ends here--------->
     </section>

@@ -27,8 +27,11 @@ body {
 /* top back button styling start here */
 #top-back-btn {
   max-width: 10vh;
+  border: 1px solid red;
 }
 #top-back-btn .col {
+
+  border: 1px solid red;
   position: relative;
   left: -19px;
   height: 5vh;

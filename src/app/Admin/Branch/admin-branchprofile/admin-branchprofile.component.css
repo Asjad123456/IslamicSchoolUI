@@ -20,11 +20,7 @@
 }
 
 body {
-  background:  linear-gradient(
-    to top,
-    #cbffb8 11%,
-    #d9ffca  75%
-  )
+  background: linear-gradient(to top, #cbffb8 11%, #d9ffca 75%);
 }
 #parent-section {
   max-width: 100%;
@@ -85,7 +81,7 @@ body {
   font-weight: 800;
   margin: 0;
 }
-#hero-col-2{
+#hero-col-2 {
   color: #6f8169;
   display: grid;
   justify-content: center;
@@ -122,13 +118,15 @@ body {
   display: grid;
   align-content: center;
 }
-#class-col-1 h1 , #teacher-col-2 h1, #student-col-1 h1{
+#class-col-1 h1,
+#teacher-col-2 h1,
+#student-col-1 h1 {
   font-weight: 100;
   color: #ab9a64;
   font-family: math;
   margin: 0;
 }
-#class-col-1 p{
+#class-col-1 p {
   font-size: 20px;
   font-weight: 100;
   color: #ab9a64;
@@ -141,13 +139,13 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   align-content: center;
-  border-left: 1px solid  #b4b780;
+  border-left: 1px solid #b4b780;
 }
-#class-col-2 img{
+#class-col-2 img {
   width: 10vw;
 }
 /* Classes Row styling start here */
-#footer-rows{
+#footer-rows {
   display: grid;
   gap: 10px;
 }
@@ -166,7 +164,7 @@ body {
   align-content: center;
   border-right: 1px solid #e3bd60;
 }
-#teacher-col-1 img{
+#teacher-col-1 img {
   width: 10vw;
 }
 #teacher-col-2 {
@@ -176,13 +174,6 @@ body {
   flex-wrap: wrap;
   align-content: center;
 }
-/* #teacher-col-2 h1{
-  font-weight: 700;
-  color: #c7b77b;
-  font-family: "Rubik", sans-serif;
-  margin: 0;
-} */
-/* Teachers Row styling start here */
 
 /* students Row styling start here */
 #student-row {
@@ -197,12 +188,6 @@ body {
   align-content: center;
   flex-wrap: wrap;
 }
-/* #student-col-1 h1{
-  font-weight: 700;
-  color: #c7b77b;
-  font-family: "Rubik", sans-serif;
-  margin: 0;
-} */
 #student-col-2 {
   padding: 10px;
   display: flex;
@@ -211,10 +196,43 @@ body {
   align-content: center;
   border-left: 1px solid #e3bd60;
 }
-#student-col-2 img{
+#student-col-2 img {
   width: 10vw;
 }
 /* Students Row styling start here */
+#offcanvasRight {
+  background-color: #fff0bf;
+}
+#offcanvas-header {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+#branch-offcanva-top-col-1 {
+  display: grid;
+  align-content: center;
+  padding: 12px;
+}
+#branch-offcanva-top-col-1 h5 {
+  font-size: 22px;
+  font-weight: 500;
+  color: #6f8169;
+  margin: 0;
+}
+#branch-offcanva-top-col-2 {
+  display: grid;
+  justify-content: flex-end;
+  height: 3vh;
+  align-content: center;
+}
+#branch-offcanva-top-col-2 button {
+  padding-left: 42px;
+}
+#branch-offcanva-top-row {
+  height: 6vh;
+}
 #offcanvas-body {
   height: 91vh;
   position: absolute;
@@ -240,10 +258,6 @@ body {
   height: 0;
   color: #fa9c18;
 }
-#edit-branch-name-col input {
-  display: flex;
-  align-items: flex-end;
-}
 #edit-branch-city-col {
   padding-top: 10px;
   height: 10vh;
@@ -256,13 +270,9 @@ body {
   height: 0;
   color: #fa9c18;
 }
-#edit-branch-city-col input {
-  display: flex;
-  align-items: flex-end;
-}
 input[type="text"] {
   height: fit-content;
-  border-bottom: 1px solid rgb(56, 42, 42);
+  border-bottom:1px solid #6f8169;
   border-top: none;
   border-right: none;
   border-left: none;
@@ -281,10 +291,11 @@ input[type="text"] {
   height: 0;
   color: #fa9c18;
 }
-#edit-branch-address-col input {
+/* #edit-branch-address-col input {
   display: flex;
   align-items: flex-end;
-}
+  color:#6f8169;
+} */
 
 #edit-branch-code-col {
   height: 10vh;
@@ -297,16 +308,19 @@ input[type="text"] {
   height: 0;
   color: #fa9c18;
 }
+#edit-branch-name-col input,
+#edit-branch-city-col input,
+#edit-branch-address-col input,
 #edit-branch-code-col input {
   display: flex;
   align-items: flex-end;
+  color: #6f8169;
 }
 #branch-offcanvas-btn .col {
   display: flex;
   justify-content: flex-end;
 }
 #branch-offcanvas-btn {
-  /* border: 1px solid red; */
   position: relative;
   left: 0;
   max-width: 95%;
@@ -328,26 +342,26 @@ input[type="text"] {
 #branche-offcanvas-footer-row .col img {
   width: 88vw;
 }
-#your-branch-row{
+#your-branch-row {
   background-color: #fff5b8;
   border-radius: 10px;
 }
-#your-branch-col-1{
+#your-branch-col-1 {
   display: grid;
   align-content: center;
   padding-left: 10px;
 }
-#your-branch-col-1 h1{
+#your-branch-col-1 h1 {
   padding: 20px;
   color: goldenrod;
   font-weight: 800;
   font-size: 20px;
 }
-#your-branch-col-2 i{
+#your-branch-col-2 i {
   color: goldenrod;
   font-size: 20px;
 }
-#your-branch-col-2{
+#your-branch-col-2 {
   display: grid;
   justify-content: center;
   align-content: center;

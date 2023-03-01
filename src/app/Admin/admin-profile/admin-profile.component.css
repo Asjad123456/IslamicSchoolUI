@@ -88,16 +88,16 @@ body {
   color: aliceblue;
   background-color: var(--color-1);
   border-radius: 26px;
-  height: 40px;
+  height: 41px;
   line-height: 1px;
-  width: 10vw;
+  width: 11vw;
 }
 /* Teacher deatail row styling section start here */
 #teacher-details-row {
   display: grid;
   grid-template-columns: 192px 193px;
   row-gap: 11px;
-  padding: 6px;
+  padding: 7px;
 }
 #teacher-details-col-1 {
   display: grid;
@@ -105,7 +105,7 @@ body {
   justify-content: center;
   text-align: center;
   height: 14vh;
-  background: #c3ffa9;
+  background: #beddb1;
   border-radius: 15px;
   width: 47vw;
 }
@@ -370,9 +370,10 @@ input[type="text"] {
 }
 #footer-btn-col-1 button {
   width: 20vw;
-  height: 5vh;
-  color: var(--box-color);
-  background-color: var(--color);
+    height: 5vh;
+    background-color: var(--color);
+    border: none;
+    border-radius: 8px;
 }
 #footer-btn-col-2 {
   display: grid;

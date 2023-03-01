@@ -35,9 +35,11 @@ import { SupervisorBranchTeacherprofileComponent } from './supervisor/supervisor
 import { AdminProfileComponent } from './Admin/admin-profile/admin-profile.component';
 import { AdminTeacherslistComponent } from './Admin/teachers/admin-teacherslist/admin-teacherslist.component';
 import { AdminTeacherprofileComponent } from './Admin/teachers/admin-teacherprofile/admin-teacherprofile.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
-  {path:'welcome', component:WelcomeComponent},                        //90% Done
+  {path:'welcome', component:WelcomeComponent},                     //90% Done
+  {path:'search', component:SearchComponent},
   // {path:'',redirectTo:'welcome',pathMatch:'full'},
   {path:'signup', component:SignupComponent},                          //90% Done
   {path:'waiting',component:WaitingComponent},                         //90% Done
