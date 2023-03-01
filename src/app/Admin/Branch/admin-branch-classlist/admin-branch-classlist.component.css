@@ -27,23 +27,22 @@ body {
   background-color: #fff;
   height: 100vh;
 }
-.offcanva {
+.parent {
   height: 100vh;
   background-color: var(--box-color);
 }
 #header-row {
   height: 7vh;
+  padding: 11px;
 }
 #header-col-1 {
   display: grid;
-  justify-content: center;
+  justify-content: flex-start;
   align-content: center;
   color: var(--medium);
 }
-#header-col-1 h5 {
-  margin: 0;
+#header-col-1 i{
   font-size: 20px;
-  font-weight: 500;
 }
 #header-col-2 {
   display: grid;
@@ -51,35 +50,41 @@ body {
   align-content: center;
   color: var(--army-green);
 }
+
+#header-col-2 h5 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+}
 /* hero section styling start here */
 .main-body {
   overflow: hidden;
 }
-#offcanva-main-row {
+#main-row {
   height: 20vh;
   display: grid;
   grid-template-columns: 76% 24%;
   padding-top: 41px;
 }
-#offcanva-main-col-1 {
+#main-col-1 {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
   padding-left: 21px;
   border-radius: 40px 999em 999em 40px;
-  /* background-color: #bed7b3; */
   background-color: var(--full-light);
 }
-#offcanva-main-col-2 {
+#main-col-1 h2 {
+  color: var(--golden);
+  margin: 0;
+}
+/* #offcanva-main-col-2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
 }
-#offcanva-main-col-1 h2 {
-  color: var(--golden);
-  margin: 0;
-}
+
 #offcanva-main-col-2 i {
   color: var(--box-color);
   background-color: var(--golden);
@@ -89,10 +94,10 @@ body {
   display: grid;
   align-content: center;
   border-radius: 50%;
-}
+} */
 
 /* plus button offcanvas styling start here */
-#close-btn-row {
+/* #close-btn-row {
   width: 100vw;
   height: 5vh;
 }
@@ -106,27 +111,27 @@ body {
   position: relative;
   right: 20px;
   color: var(--golden);
-}
+} */
 /* plus button offcanvas body styling start here */
-#offcanvasTop {
+/* #offcanvasTop {
   background-color: var(--box-color);
   height: 50%;
-}
-#offcanvas-hero-row {
+} */
+/* #offcanvas-hero-row {
   height: 10vh;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-content: center;
   padding: 10px;
-}
-#offcanvas-hero-col {
+} */
+/* #offcanvas-hero-col {
   padding: 7px;
 }
 #offcanvas-hero-col h2 {
   color: var(--army-green);
-}
-#offcanvas-main-row {
+} */
+/* #offcanvas-main-row {
   display: grid;
   grid-template-columns: 100%;
   row-gap: 10px;
@@ -144,9 +149,9 @@ input[type="text"] {
   background: none;
   outline: none;
   width: 67vw;
-}
+} */
 
-#offcanvas-main-col-1 {
+/* #offcanvas-main-col-1 {
   display: grid;
   justify-content: center;
   align-content: center;
@@ -157,8 +162,8 @@ input[type="text"] {
   justify-content: center;
   align-content: center;
   height: 7vh;
-}
-#offcanvas-main-col-3 {
+} */
+/* #offcanvas-main-col-3 {
   display: grid;
   justify-content: center;
 }
@@ -166,7 +171,7 @@ input[type="text"] {
   background-color: var(--golden);
   width: 26vw;
   color: var(--box-color);
-}
+} */
 
 /* main section header buttons styling start */
 #main-section-parent {
@@ -174,11 +179,12 @@ input[type="text"] {
   padding-top: 50px;
 }
 #main-sec-top-row {
-  height: 7vh;
+  height: 9vh;
   display: grid;
-  grid-template-columns: 76% 24%;
+  padding: 9px;
+ 
 }
-#main-sec-top-col-1 {
+/* #main-sec-top-col-1 {
   padding-left: 19px;
   display: flex;
   align-content: center;
@@ -187,17 +193,30 @@ input[type="text"] {
 #main-sec-top-col-1 button {
   width: 23vw;
   height: 4vh;
-  /* background-color: var(--army-green); */
   background-color: var(--medium);
   color: var(--box-color);
-}
-#main-sec-top-col-2 {
+} */
+#main-sec-top-col {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-content: center;
   padding: 10px;
   color: var(--army-green);
+  background-color: #e0fdb3;
+  border-radius: 6px;
+}
+input[type=search]{
+  outline: none;
+  background: none;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 0;
+  width: 76vw;
+}
+input[placeholder] {
+  font-size: 18px;
 }
 /* main section lists start here */
 #main-list-row {
