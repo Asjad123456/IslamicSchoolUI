@@ -115,14 +115,14 @@
                             aria-expanded="false"
                             aria-controls="flush-collapseOne"
                           >
-                            Click
+                          {{ supName ? 'Supervisor: ' + supName : 'Select Supervisor' }}
                           </button>
                         </div>
                       </div>
 
                       <div class="row" id="accordion-main-row">
                         <div
-                          
+
                           class="accordion accordion-flush"
                           id="accordionFlushExample"
                         >
@@ -146,6 +146,11 @@
                                   class="row"
                                   id="accordion-sec-row"
                                   *ngFor="let item of branchsupervisors"
+
+                                  data-bs-toggle="collapse"
+                                  data-bs-target="#flush-collapseOne"
+                                  aria-expanded="false"
+                                  aria-controls="flush-collapseOne"
                                 >
                                   <div
                                     class="col"

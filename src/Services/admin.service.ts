@@ -162,4 +162,7 @@ getTeacherCountorBranch(id: number){
   const url = `${this.baseUrl}Branch/teachercount/${id}`;
   return this.http.get<number>(url);
 }
+public deleteStudyClass(id: number): Observable<StudyClass>{
+  return this.http.delete<StudyClass>(this.baseUrl + 'StudyClass/' + id);
+}
 }

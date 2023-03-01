@@ -17,6 +17,7 @@ export class AdminBrancheslistComponent implements OnInit{
   branchsupervisors: User[];
   searchText: string = '';
   addBranchForm: FormGroup;
+  supName: string;
 
   constructor(private service:AdminService, private router: Router, private location: Location){}
 
@@ -56,6 +57,8 @@ export class AdminBrancheslistComponent implements OnInit{
     .subscribe(
       response =>{
         this.getbranches();
+      },error =>{
+        console.error(error)
       }
     )
   }
@@ -76,9 +79,11 @@ export class AdminBrancheslistComponent implements OnInit{
     this.searchText = searchValue;
     console.log(this.searchText);
   }
-  selectSupervisor(item: any) {
+  selectSupervisor(item: User) {
     // Update form control value with the supervisor's name
     this.addBranchForm.get('AppUserId').setValue(item.id);
+    this.supName = item.userName;
+    console.log(item.userName);
   }
   onBack(){
     this.location.back();

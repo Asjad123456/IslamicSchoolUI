@@ -51,6 +51,7 @@ import { AdminProfileComponent } from './Admin/admin-profile/admin-profile.compo
 import { AdminTeacherslistComponent } from './Admin/teachers/admin-teacherslist/admin-teacherslist.component';
 import { AdminTeacherprofileComponent } from './Admin/teachers/admin-teacherprofile/admin-teacherprofile.component';
 import { AdminTeacherClassprofileComponent } from './Admin/teachers/admin-teacher-classprofile/admin-teacher-classprofile.component';
+import { SearchPipePipe } from 'src/pipes/SearchPipe.pipe';
 
 @NgModule({
   declarations: [
@@ -92,7 +93,8 @@ import { AdminTeacherClassprofileComponent } from './Admin/teachers/admin-teache
     AdminProfileComponent,
     AdminTeacherslistComponent,
     AdminTeacherprofileComponent,
-    AdminTeacherClassprofileComponent
+    AdminTeacherClassprofileComponent,
+    SearchPipePipe
   ],
   imports: [
     BrowserModule,

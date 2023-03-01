@@ -52,10 +52,10 @@ const routes: Routes = [
   {path:'admin-branchprofile/:id/teachers-list',component:AdminBranchTeacherlistComponent}, //Copy/paste
   {path:'admin-branchprofile/:id/teacher-profile/:id',component:AdminBranchTeacherprofileComponent},//work in progress
   {path:'admin-branchprofile/teacher-profile/:id/class-profile/:id',component:AdminBranchClassprofileComponent},//Full incomplete
-  {path:'admin-branchprofile/:id/class-list',component:AdminBranchClasslistComponent},       //work in progress  
+  {path:'admin-branchprofile/:id/class-list',component:AdminBranchClasslistComponent},       //work in progress
   {path:'admin-branchprofile/:id/class-list/class-profile/:id',component:AdminBranchClassprofileComponent},     //Full incomplete
-  {path:'admin-branchprofile/:id/class-list/class-profile/:id/student-list',component:AdminBranchClassStudentlistComponent}, //Copy/paste
-  {path:'admin-branchprofile/:id/class-list/class-profile/:id/student-list/:id',component:AdminBranchClassStudentprofileComponent},   //work in progress
+  {path:'admin-branchprofile/:id/class-list/cs-lass-profile/:id/student-list',component:AdminBranchClassStudentlistComponent}, //Copy/paste
+  {path:'admin-branchprofile/:id/class-list/clasprofile/:id/student-list/:id',component:AdminBranchClassStudentprofileComponent},   //work in progress
 
   {path:'admin-supervisorlist', component:AdminSupervisorlistComponent},//work in progress
   {path:'admin-supervisorprofile/:id', component:AdminSupervisorprofileComponent},//work in progress

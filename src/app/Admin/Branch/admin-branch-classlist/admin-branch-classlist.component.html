@@ -14,14 +14,14 @@
   <div class="main-body">
     <div class="row" id="main-row">
       <div class="col" id="main-col-1">
-        <h2>Total Classes : 10</h2>
+        <h2>Total Classes : {{studyClassCount}}</h2>
       </div>
       <!-- <div class="col" id="offcanva-main-col-2" type="button" data-bs-toggle="offcanvas"
               data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
               <i class="fa fa-plus" aria-hidden="true"></i>
           </div> -->
     </div>
-    <!-- 
+    <!--
       <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
           <div class="offcanvas-header">
               <div class="row" id="close-btn-row">
@@ -61,21 +61,24 @@
           <input
             type="search"
             placeholder="Search"
+            [(ngModel)]="enteredSearchValue"
+            (input)="onSearchTextChanged()"
           />
-          <label for="search"
+          <!-- <label for="search"
             ><i class="fa fa-search" aria-hidden="true"></i
-          ></label>
+          ></label> -->
         </div>
       </div>
 
       <!-- main section list start here -->
-      <div class="row" id="main-list-row" *ngFor="let item of branch">
+      <div class="row" id="main-list-row" *ngFor="let item of branch" >
+
         <div
           class="col"
           id="list-parent-col"
-          *ngFor="let studyClass of item.studyClasses"
+          *ngFor="let studyClass of item.studyClasses | SearchPipe : searchText"
         >
-          <div
+                    <div
             class="row"
             id="list-row"
             (click)="toClassProfile(studyClass.id)"
@@ -88,6 +91,7 @@
               <i class="fa fa-trash" aria-hidden="true"></i>
             </div>
           </div>
+
         </div>
       </div>
     </section>
