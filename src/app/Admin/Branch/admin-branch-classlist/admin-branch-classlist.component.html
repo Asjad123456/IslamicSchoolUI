@@ -12,8 +12,8 @@
   </div>
 
   <div class="main-body">
-    <div class="row" id="main-row" >
-      <div class="col" id="main-col-1" >
+    <div class="row" id="main-row">
+      <div class="col" id="main-col-1">
         <h2>Total Classes : 10</h2>
       </div>
     </div>
@@ -23,7 +23,12 @@
       <!-- offcanvas main section sort button start here -->
       <div class="row" id="main-sec-top-row">
         <div class="col" id="main-sec-top-col">
-          <input type="search" placeholder="Search" />
+          <input
+            type="search"
+            placeholder="Search"
+            [(ngModel)]="enteredSearchValue"
+            (input)="onSearchTextChanged()"
+          />
           <label for="search"
             ><i class="fa fa-search" aria-hidden="true"></i
           ></label>
@@ -35,7 +40,7 @@
         <div
           class="col"
           id="list-parent-col"
-          *ngFor="let studyClass of item.studyClasses"
+          *ngFor="let studyClass of item.studyClasses | SearchPipe : searchText"
         >
           <div
             class="row"
