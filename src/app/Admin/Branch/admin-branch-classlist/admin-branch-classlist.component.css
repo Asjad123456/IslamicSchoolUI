@@ -128,9 +128,8 @@ input[placeholder] {
 #list-parent-col {
   display: grid;
   align-content: baseline;
-  /* height: 48vh; */
   row-gap: 25px;
-  /* overflow: scroll; */
+  overflow: scroll;
   padding: 6px;
 }
 #list-row {
