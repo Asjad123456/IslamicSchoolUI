@@ -120,23 +120,25 @@ input[placeholder] {
 /* main section lists start here */
 #main-list-row {
   height: 55vh;
-  display: flex;
+  display: grid;
   justify-content: center;
   align-content: baseline;
+  overflow: scroll;
 }
 #list-parent-col {
   display: grid;
   align-content: baseline;
-  height: 48vh;
+  /* height: 48vh; */
   row-gap: 25px;
-  overflow: scroll;
-  padding: 20px;
+  /* overflow: scroll; */
+  padding: 6px;
 }
 #list-row {
   display: grid;
   grid-template-columns: 70% 30%;
   background-color: #d2f9a7;
   height: 10vh;
+  width: 83vw;
   border-radius: 5px;
 }
 #list-inner-col {

@@ -108,12 +108,13 @@ body {
 }
 #main-student-row {
   display: grid;
-  grid-template-columns: 80% 20%;
+  grid-template-columns: 76% 24%;
   background: #d8e7b4;
   border-radius: 25px;
   padding: 7px;
   box-shadow: rgb(0 0 0 / 5%) 0px 0px 0px 1px,
     rgb(199 243 150 / 50%) 0px 0px 0px 1px inset;
+  height: 20vh;
 }
 #main-student-col-1 {
   display: grid;
@@ -132,12 +133,9 @@ body {
   color: var(--color);
 }
 #main-student-col-2 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  /* border-radius: 0 25px 25px 0; */
-  height: 13vh;
-  padding-top: 10px;
+  display: grid;
+  height: 18vh;
+  /* padding-top: 10px; */
 }
 .dot {
   height: 8px;
@@ -146,4 +144,12 @@ body {
   border-radius: 50%;
   display: inline-block;
   margin: 1px;
+}
+#col-2 {
+  display: grid;
+  justify-content: center;
+  align-content: flex-end;
+}
+#col-2 img{
+  width: 21vw;
 }

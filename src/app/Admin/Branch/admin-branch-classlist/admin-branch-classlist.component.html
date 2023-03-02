@@ -36,7 +36,7 @@
       </div>
 
       <!-- main section list start here -->
-      <div class="row" id="main-list-row" *ngFor="let item of branch">
+      <div class="row" id="main-list-row" *ngFor="let item of branch" style="border: 1px solid red;">
         <div
           class="col"
           id="list-parent-col"
@@ -56,6 +56,86 @@
             </div>
           </div>
         </div>
+
+        <div
+          class="col"
+          id="list-parent-col"
+          *ngFor="let studyClass of item.studyClasses | SearchPipe : searchText"
+        >
+          <div
+            class="row"
+            id="list-row"
+            (click)="toClassProfile(studyClass.id)"
+          >
+            <div class="col" id="list-inner-col">
+              <h1>{{ studyClass.className }}</h1>
+              <p>{{ studyClass.classTime }}</p>
+            </div>
+            <div class="col" id="main-list-icon-col">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="col"
+          id="list-parent-col"
+          *ngFor="let studyClass of item.studyClasses | SearchPipe : searchText"
+        >
+          <div
+            class="row"
+            id="list-row"
+            (click)="toClassProfile(studyClass.id)"
+          >
+            <div class="col" id="list-inner-col">
+              <h1>{{ studyClass.className }}</h1>
+              <p>{{ studyClass.classTime }}</p>
+            </div>
+            <div class="col" id="main-list-icon-col">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="col"
+          id="list-parent-col"
+          *ngFor="let studyClass of item.studyClasses | SearchPipe : searchText"
+        >
+          <div
+            class="row"
+            id="list-row"
+            (click)="toClassProfile(studyClass.id)"
+          >
+            <div class="col" id="list-inner-col">
+              <h1>{{ studyClass.className }}</h1>
+              <p>{{ studyClass.classTime }}</p>
+            </div>
+            <div class="col" id="main-list-icon-col">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col"
+          id="list-parent-col"
+          *ngFor="let studyClass of item.studyClasses | SearchPipe : searchText"
+        >
+          <div
+            class="row"
+            id="list-row"
+            (click)="toClassProfile(studyClass.id)"
+          >
+            <div class="col" id="list-inner-col">
+              <h1>{{ studyClass.className }}</h1>
+              <p>{{ studyClass.classTime }}</p>
+            </div>
+            <div class="col" id="main-list-icon-col">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        
       </div>
     </section>
   </div>
