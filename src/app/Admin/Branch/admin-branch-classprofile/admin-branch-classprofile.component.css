@@ -10,7 +10,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Rubik", sans-serif;
-  /* border: 1px solid red; */
 }
 :host {
   --green: #f5cac1;
@@ -20,7 +19,7 @@
   --box-color: #d0efc4;
 }
 body {
-  background-color: #d0efc4;
+  background: linear-gradient(0deg, var(--box-color) 0%, #9baf9a 100%);
   height: 100vh;
 }
 /* top back btn section styling start here */
@@ -29,368 +28,122 @@ body {
 }
 #back-btn-col i {
   font-size: 20px;
-  color: #41523a;
+  color: #d2f9a7;
 }
 /* hero section styling start here */
-#hero-section {
-  position: relative;
-  top: 30px;
-}
 #hero-section-row {
-  height: 20vh;
+  height: 37vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
 }
 #hero-section-col {
-  max-width: 69%;
-  border-radius: 0px 79px 81px 0;
+  border-radius: 999px 999em 999em 999em;
   display: grid;
   align-content: center;
-  padding: 20px;
-  background-color: antiquewhite;
-  color: #41523a;
-}
-/* main section styling start here */
-#main-section {
-  position: relative;
-  top: 125px;
-}
-#main-section-row {
-  display: grid;
-  grid-template-columns: 200px 171px;
-  row-gap: 10px;
-  column-gap: 7px;
-  padding: 10px;
-}
-
-/* main student box styling start here */
-#main-section-student-box {
-  height: 31vh;
-  max-width: 89%;
-  background-color: #CBEF90;
-  border-radius: 8px;
-}
-#student-box-top-row {
-  padding: 10px;
-}
-#student-box-top-col-1 img {
-  width: 9vw;
-}
-#student-box-top-col-2 {
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  align-content: center;
-}
-#dots {
-  width: 5px;
-  height: 5px;
-  background-color: var(--color);
-  margin: 6px 2px;
-  border-radius: 10px;
-}
-#student-box-main-row {
-  display: grid;
   justify-content: center;
-  align-content: center;
   text-align: center;
-  height: 20vh;
+  background-color: #d2f9a7;
+  color: #41523a;
+  height: 21vh;
+  width: 43vh;
 }
-#student-box-footer-row {
-  display: grid;
-  justify-content: flex-end;
-  align-content: center;
-  padding: 10px;
-  height: 3vh;
-}
-#student-box-main-col{
-    color: var(--color);
-}
-#student-box-footer-col i{
-    color: var(--color);
+#hero-section-col h1 {
+  font-size: 35px;
+  font-weight: 900;
 }
 
-/* teacher box styling start here */
-#teacher-profile-box {
-  height: 16vh;
-  max-width: 89%;
-  background-color: #F3E5BC;
-  border-radius: 9px;
-}
-#teacher-profile-box-inner-row {
-  height: 16vh;
-  display: grid;
+/* Main section styling :start here  */
+#main-teacher-parent-row {
+  display: flex;
+
+  height: 17vh;
   justify-content: center;
   align-content: center;
-  grid-template-columns: 72% 28%;
-}
-#teacher-profile-box-inner-col-1 {
   padding: 10px;
+  row-gap: 10px;
 }
-#teacher-profile-box-inner-col-1 h1 {
-  font-size: 20px;
-  color: var(--color-1);
-  font-weight: 300;
-}
-#teacher-profile-box-inner-col-2 i{
-    color: var(--color-1);
-  }
-#teacher-profile-box-inner-col-2 {
+#main-teacher-row {
   display: grid;
-  justify-content: center;
-  align-content: center;
+  grid-template-columns: 80% 20%;
+  padding: 6px;
+  border-radius: 10px;
+  background-color: #d8e7b4;
+  box-shadow: rgb(0 0 0 / 5%) 0px 0px 0px 1px,
+    rgb(199 243 150 / 50%) 0px 0px 0px 1px inset;
 }
-
-/* edit data class box styling start here */
-#edit-class-data-box {
-  height: 140px;
-  max-width: 100%;
-  position: relative;
-  left: -15px;
-  background-color: var(--green);
-  border-radius: 9px;
-}
-#edit-class-inner-row {
-  display: grid;
-  grid-template-columns: 78% 22%;
-  align-content: center;
-  height: 16vh;
-}
-#edit-class-inner-col-1 h1 {
-  padding: 10px;
-  font-size: 20px;
-  color: rgb(189, 138, 158);
-  font-weight: 300;
-}
-#edit-class-inner-col-2 i {
-    color: rgb(189, 138, 158);
-  }
-#edit-class-inner-col-2 {
-  display: grid;
-  align-content: center;
-  justify-content: center;
-}
-
-/* class img box styling styling start here */
-#class-img-box {
-  height: 31vh;
-  max-width: 44%;
-  position: absolute;
-  top: 161px;
-  left: 201px;
-  background-color: #F5DAB4;
-  border-radius: 9px;
-}
-#class-box-col{
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    height: 31vh;
-}
-#class-box-col img{
-    max-width: 20%;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* offcanvas styling start here */
-.btn-close {
-  position: relative;
-  right: 20px;
-  top: 19px;
-}
-.offcanvas-body{
-    background:  var(--box-color);
-}
-#header-heading-row {
-  height: 20vh;
-  padding: 8px;
-}
-#header-heading-row .col {
+#main-teacher-col-1 {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-  justify-content: center;
+  height: 8vh;
+  padding-left: 10px;
 }
-#header-heading-row .col h1 {
+#main-teacher-col-1 h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
   color: var(--color);
 }
+#main-teacher-col-2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  height: 8vh;
+}
+#main-teacher-col-2 i {
+  color: #dba100;
+}
 
-/* input field section styling start here */
-#input-field-row {
-  display: grid;
-  grid-template-columns: 100%;
+/* Main student section style :start here  */
+#main-student-parent-row {
+  display: flex;
+  /* grid-template-columns: 80% 20%; */
+  height: 25vh;
+  justify-content: center;
+  align-content: baseline;
+  padding: 10px;
   row-gap: 10px;
-  position: relative;
-  top: 0;
 }
-input[type="text"] {
-  border-top: 0;
-  border-right: 0;
-  border-left: 0;
-  border-bottom: 1px solid;
-  background: none;
-  outline: none;
-  width: 89vw;
-}
-#name-col {
-  height: 11vh;
-  padding: 15px;
-  color: var(--color-1);
-}
-#address-col {
-  height: 11vh;
-  padding: 15px;
-  color: var(--color-1);
-}
-#city-col {
-  height: 11vh;
-  padding: 15px;
-  color: var(--color-1);
-}
-#contact-col {
-  height: 11vh;
-  padding: 15px;
-  color: var(--color-1);
-}
-/* footer buttons section styling start here */
-#footer-btn-section {
-  position: relative;
-  top: 40px;
-}
-/* #footer-btn-row{
-} */
-#footer-btn-col-1 {
+#main-student-row {
   display: grid;
-  justify-content: center;
-  align-content: center;
+  grid-template-columns: 80% 20%;
+  background: #d8e7b4;
+  border-radius: 25px;
+  padding: 7px;
+  box-shadow: rgb(0 0 0 / 5%) 0px 0px 0px 1px,
+    rgb(199 243 150 / 50%) 0px 0px 0px 1px inset;
 }
-#footer-btn-col-1 button {
-  width: 20vw;
-  height: 5vh;
-  color: var(--box-color);
-  background-color: var(--color);
-}
-#footer-btn-col-2 {
+#main-student-col-1 {
   display: grid;
-  justify-content: center;
+  flex-wrap: wrap;
   align-content: center;
+  height: 13vh;
+  /* border-radius: 25px 0 0 25px; */
 }
-#footer-btn-col-2 button {
-  width: 20vw;
-  color: var(--box-color);
-  height: 5vh;
-  background-color: var(--color);
+#main-student-col-1 h1 {
+  padding-left: 10px;
+  font-weight: 600;
+  color: var(--color-1);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* teahcer offcanvas styling start here */
-.supervisor-offcanvas-header {
-    display: flex;
-    height: 4vh;
-  }
-  .offcanvas-title {
-    font-size: 16px;
-    font-weight: 100;
-    color: #82a048;
-  }
-  .supervisor-offcanvas-header button {
-    position: absolute;
-    right: 17px;
-    top: 14px;
-    font-size: 20px;
-    border: none;
-  }
-  #teacher-offcanvas-row {
-    background-color: #c9dfc0;
-    position: absolute;
-    top: 46px;
-    left: 14px;
-    right: 15px;
-    z-index: -1;
-  }
-  #teacher-offcanvas-row .col {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-  }
-  #teacher-offcanvas-row img {
-    width: 387px;
-  }
-
-  /* offcanvas Hero row styling  */
-  .offcanvas-start {
-    background-color: #c9dfc0;
-  }
-  #offcanvas-hero {
-    position: absolute;
-    top: 462px;
-    left: 34px;
-    width: 100%;
-  }
-  #offcanves-name-col p {
-    color: #db7b1b;
-    font-style: italic;
-  }
-  #offcanvas-hero h2 {
-    font-size: 20px;
-    color: #82a048;
-  }
-  #offcanves-edit-col {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #offcanves-edit-col .col {
-    max-width: 22%;
-    border-radius: 22px;
-    height: 5vh;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    color: #f6f1f1;
-    background-color: #799f69;
-  }
-  #offcanvas-main {
-    position: absolute;
-    top: 579px;
-    left: 37px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 1em;
-    column-gap: 6rem;
-  }
-  #offcanvas-main h3 {
-    color: #4c6912;
-    font-weight: 200;
-    font-size: 20px;
-  }
-  #offcanvas-main p {
-    text-decoration: underline;
-    color: #82a048;
-  }
-  #offcanvas-main .col i {
-    padding-left: 10px;
-  }
+#main-student-col-1 p {
+  padding-left: 10px;
+  color: var(--color);
+}
+#main-student-col-2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* border-radius: 0 25px 25px 0; */
+  height: 13vh;
+  padding-top: 10px;
+}
+.dot {
+  height: 8px;
+  width: 8px;
+  background-color: #dba100;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 1px;
+}

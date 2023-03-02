@@ -131,7 +131,7 @@ body {
   top: 44px;
 }
 #offcanvas-hero-row {
-  height: 10vh;
+  /* height: 10vh; */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -186,7 +186,7 @@ input[type="text"] {
   color: var(--light-green);
   height: 5vh;
 }
-.supervisor-col{
+.supervisor-col {
   visibility: hidden;
 }
 /* Accordion section styling start here */
@@ -205,7 +205,7 @@ input[type="text"] {
   display: grid;
   justify-content: center;
   align-content: center;
-  color:#b4dfa0;
+  color: #b4dfa0;
   font-weight: 700;
   margin: 0;
 }
@@ -266,15 +266,25 @@ input[type="text"] {
   align-content: center;
   padding: 7px;
 }
-#col-2 h1,
-p {
+#col-2 h1{
   margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color:#bc9c00;
+}
+#col-2 p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 100;
 }
 #col-3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
+}
+#col-3 i{
+  color: #bc9c00;
 }
 /* ------------------------ */
 #main-sec-row {

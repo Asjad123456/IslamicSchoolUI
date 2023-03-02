@@ -1,84 +1,43 @@
 <!-- Offcanvas for Gaurdain data start here -->
 <div class="parent">
   <div class="header">
-    <div class="row" id="header-row" >
-      <div class="col" id="header-col-1" >
+    <div class="row" id="header-row">
+      <div class="col" id="header-col-1">
         <i class="fas fa-arrow-left"></i>
       </div>
-      <div class="col" id="header-col-2" >
+      <div class="col" id="header-col-2">
         <h5>Classes</h5>
       </div>
     </div>
   </div>
 
   <div class="main-body">
-    <div class="row" id="main-row">
-      <div class="col" id="main-col-1">
-        <h2>Total Classes : {{studyClassCount}}</h2>
+    <div class="row" id="main-row" >
+      <div class="col" id="main-col-1" >
+        <h2>Total Classes : 10</h2>
       </div>
-      <!-- <div class="col" id="offcanva-main-col-2" type="button" data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
-              <i class="fa fa-plus" aria-hidden="true"></i>
-          </div> -->
     </div>
-    <!--
-      <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-          <div class="offcanvas-header">
-              <div class="row" id="close-btn-row">
-                  <div class="col" id="close-btn-col">
-                      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                          aria-label="Close">
-                      </button>
-                  </div>
-              </div>
-          </div>
-          <div class="offcanvas-body">
-              <div class="row" id="offcanvas-hero-row">
-                  <div class="col" id="offcanvas-hero-col">
-                      <h2>Add New Class</h2>
-                  </div>
-              </div>
-
-              <div class="row" id="offcanvas-main-row">
-                  <div class="col" id="offcanvas-main-col-1">
-                      <label>Class-Name <input type="text" /></label>
-                  </div>
-                  <div class="col" id="offcanvas-main-col-2">
-                      <label><input type="text" />Class-Time </label>
-                  </div>
-                  <div class="col" id="offcanvas-main-col-3">
-                      <button class="btn">Add Class</button>
-                  </div>
-              </div>
-          </div>
-      </div> -->
 
     <!-- offcanvas main section start here -->
     <section id="main-section-parent">
       <!-- offcanvas main section sort button start here -->
       <div class="row" id="main-sec-top-row">
         <div class="col" id="main-sec-top-col">
-          <input
-            type="search"
-            placeholder="Search"
-            [(ngModel)]="enteredSearchValue"
-            (input)="onSearchTextChanged()"
-          />
-          <!-- <label for="search"
+          <input type="search" placeholder="Search" />
+          <label for="search"
             ><i class="fa fa-search" aria-hidden="true"></i
-          ></label> -->
+          ></label>
         </div>
       </div>
 
       <!-- main section list start here -->
-      <div class="row" id="main-list-row" *ngFor="let item of branch" >
-
+      <div class="row" id="main-list-row" *ngFor="let item of branch">
         <div
           class="col"
           id="list-parent-col"
-          *ngFor="let studyClass of item.studyClasses | SearchPipe : searchText"
+          *ngFor="let studyClass of item.studyClasses"
         >
-                    <div
+          <div
             class="row"
             id="list-row"
             (click)="toClassProfile(studyClass.id)"
@@ -91,7 +50,6 @@
               <i class="fa fa-trash" aria-hidden="true"></i>
             </div>
           </div>
-
         </div>
       </div>
     </section>

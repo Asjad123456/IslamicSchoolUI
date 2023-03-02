@@ -9,7 +9,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 :host {
   --color-1: #bc9c00;
@@ -19,11 +18,11 @@
 }
 body {
   position: relative;
-  top: 0;
+  top: -1px;
   background-color: #d0efc4;
   height: 100vh;
   border: 1px solid transparent;
-  background: linear-gradient(to top, #ffffff 0%, #d2ffbe 81%);
+  background: linear-gradient(0deg, var(--box-color) 0%, #9baf9a 100%);
 }
 .section {
   position: relative;
@@ -42,31 +41,28 @@ body {
   display: flex;
   align-content: center;
   flex-wrap: inherit;
-  justify-content: center;
+  padding-left: 17px;
+  /* justify-content: center; */
   color: #586e6b;
 }
 #head-container h1 {
-margin: 0;
-  color: #586e6b;
+  margin: 0;
+  color: #d2f9a7;
   font-size: 27px;
   font-weight: 800;
   font-family: "Rubik", sans-serif;
   font-variant: petite-caps;
 }
 
-
-
-
 /* Main Section styling start here */
-.main-section{
+.main-section {
   padding: 10px;
   display: grid;
   gap: 10px;
   height: 82vh;
 }
 
-
-#grid-row{
+#grid-row {
   display: grid;
   grid-template-columns: 50% 50%;
   gap: 8px 4px;
@@ -74,7 +70,7 @@ margin: 0;
   align-content: center;
 }
 /* branch box styling start here */
-#branch-box{
+#branch-box {
   height: 24vh;
   display: grid;
   align-content: center;
@@ -84,36 +80,36 @@ margin: 0;
   border-radius: 10px;
   width: 45vw;
 }
-#branch-mid-col{
+#branch-mid-col {
   display: grid;
   align-content: center;
   justify-content: center;
   justify-items: center;
 }
-#branch-mid-col h1{
+#branch-mid-col h1 {
   font-size: 37px;
   font-weight: 700;
   color: #96bc00;
   margin: 0;
 }
-#branch-mid-col p{
+#branch-mid-col p {
   font-size: 21px;
   font-weight: 200;
   color: #978c58;
   margin: 0;
 }
-#branch-footer-arrow{
+#branch-footer-arrow {
   display: grid;
   justify-content: flex-end;
   align-content: center;
   color: #c1ab95;
 }
-#dot-col{
+#dot-col {
   display: flex;
   justify-content: flex-end;
   align-content: center;
 }
-#supervisor-box{
+#supervisor-box {
   height: 24vh;
   display: grid;
   align-content: center;
@@ -131,7 +127,7 @@ margin: 0;
   margin: 1px;
   display: inline-block;
 }
-#teacher-box{
+#teacher-box {
   height: 24vh;
   display: grid;
   align-content: center;
@@ -141,7 +137,7 @@ margin: 0;
   border-radius: 10px;
   width: 45vw;
 }
-#student-box{
+#student-box {
   height: 24vh;
   display: grid;
   align-content: center;
@@ -150,39 +146,36 @@ margin: 0;
   background-color: #c9e393;
   border-radius: 10px;
   width: 45vw;
-
 }
-#role-managment-row{
-  background-color: #fff5b8;
+#role-managment-row {
+  background-color: #d2f9a7;
   height: 10vh;
   border-radius: 10px;
   align-content: center;
 }
-#role-managment-col-1{
+#role-managment-col-1 {
   display: grid;
   align-content: center;
   padding-left: 10px;
 }
-#role-managment-col-1 h1{
-  font-size: 23px;
-  font-weight: 500;
-  color: var(--color-1);
+#role-managment-col-1 h1 {
+  font-size: 20px;
+  font-weight: 100;
+  color: #586e6b;
   max-width: 60%;
   margin: 0;
-  font-family: math;
 }
-#role-managment-col-2{
+#role-managment-col-2 {
   display: grid;
   align-content: center;
   justify-content: center;
 }
-#role-managment-col-2 i{
-  color: var(--color-1);
+#role-managment-col-2 i {
+  color: goldenrod;
 }
 
-#dean-box{
-  background-color: #fff5b8;
+#dean-box {
+  background-color: #d2f9a7;
   height: 10vh;
   border-radius: 10px;
 }
-
