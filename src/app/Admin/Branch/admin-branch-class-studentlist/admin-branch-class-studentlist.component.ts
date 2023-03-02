@@ -10,9 +10,8 @@ import { AdminService } from 'src/Services/admin.service';
   styleUrls: ['./admin-branch-class-studentlist.component.css']
 })
 export class AdminBranchClassStudentlistComponent {
-  class: StudyClass[];
+  studyclass: StudyClass[];
   branchid: string;
-
 
   constructor(private service:AdminService, private route: ActivatedRoute, private router: Router){}
 
@@ -22,14 +21,12 @@ export class AdminBranchClassStudentlistComponent {
     console.log(this.classId);
     console.log(this.branchId);
     this.getClassDetails();
-
   }
-  getClassDetails = () => {
-    console.log(this.classId);
-    const id =+this.route.snapshot.params['id'];
+  getClassDetails(){
+    const id = +this.route.snapshot.params['id'];
     this.service.getClassById(id).subscribe((res) =>{
-      this.class = res;
-      console.warn(res);
+      this.studyclass = res;
+      console.warn('hello', res);
     })
   }
   toStudentProfile(id:number){

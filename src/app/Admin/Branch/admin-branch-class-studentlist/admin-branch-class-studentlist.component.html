@@ -9,7 +9,7 @@
         </div>
       </section>
       <!--header-section end-->
-  
+
       <section id="hero">
         <!-- Hero-Section start-->
         <div class="row" id="hero-row">
@@ -23,7 +23,7 @@
         </div>
       </section>
       <!--Hero-Section end-->
-  
+
       <section id="sortby-sec-parent">
         <!--------Main Section start here--------->
         <!---------Sort-by section start --------->
@@ -69,7 +69,7 @@
                         <h2>Add New Class</h2>
                       </div>
                     </div>
-  
+
                     <!-- main inputs section -->
                     <div class="row" id="offcanvas-main-row">
                       <form>
@@ -142,7 +142,7 @@
                                     </div>
                                   </div>
                                   <div class="row" id="accordion-sec-row">
-  
+
                                     <div class="col" id="accordion-sec-col" >
                                       <div class="col" id="col-1" >
                                         <img src="/assets/boy.png" alt="">
@@ -155,10 +155,10 @@
                                         <i class="fas fa-check-circle"></i>
                                       </div>
                                     </div>
-  
-  
+
+
                                   </div>
-  
+
                                   <!-- <div class="col">
                                   <label>Class-Name</label>
                                   <select
@@ -203,39 +203,32 @@
           </div>
         </div>
         <!--------Sort-by section start ---------->
-  
+
         <!--------Main Section branch-list start here--------->
         <section id="main-sec-box1">
-          <div
-            class="row">
-            <div
-              class="col-9"
-              id="branch-name-col"
-            >
-              <h3></h3>
-              <p>Robert Robertson, 1234 NW Bobcat Lane, St. Robert.</p>
-            </div>
+          <div class="row" *ngFor="let item of studyclass">
+            <div class="col-9" id="branch-name-col" *ngFor="let student of item.students" (click)="toStudentProfile(student.id)">
+              <h3>{{student.name}}</h3>
+              <p>{{student.rollNumber}}</p>
             <div class="col-3" id="branch-icon-col">
-              <a
-                ><i class="fa-solid fa-trash"></i
-              ></a>
+              <a><i class="fa-solid fa-trash"></i></a>
+            </div>
             </div>
           </div>
-  
         </section>
         <!--------Main Section branch-list ends here--------->
       </section>
       <!------Main section end here--------->
     </section>
   </body>
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
 
 
 
@@ -263,7 +256,7 @@
 <!-- <body>
   <section id="main-Section">
 
-      <section> 
+      <section>
           <div class="row" id="header-row">
               <div class="col" id="first-icon-col">
                   <i class="fa fa-arrow-left" aria-hidden="true"></i>
@@ -277,7 +270,7 @@
       </section>
 
 
-      <section id="hero"> 
+      <section id="hero">
           <div class="row" id="hero-row">
               <div class="col" id="hero-heading">
                   <h1>Students</h1>
@@ -327,7 +320,7 @@
                       </div>
                   </div>
               </div>
-          </section> 
+          </section>
       </section>
 
 

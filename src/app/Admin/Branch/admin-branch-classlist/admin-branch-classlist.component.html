@@ -3,7 +3,7 @@
   <div class="header">
     <div class="row" id="header-row">
       <div class="col" id="header-col-1">
-        <i class="fas fa-arrow-left"></i>
+        <i class="fas fa-arrow-left" (click)="onBack()"></i>
       </div>
       <div class="col" id="header-col-2">
         <h5>Classes</h5>
@@ -14,7 +14,7 @@
   <div class="main-body">
     <div class="row" id="main-row">
       <div class="col" id="main-col-1">
-        <h2>Total Classes : 10</h2>
+        <h2>Total Classes : {{studyClassCount}}</h2>
       </div>
     </div>
 
@@ -54,14 +54,14 @@
             <div class="col" id="main-list-icon-col">
               <i class="fas fa-long-arrow-alt-right
               " aria-hidden="true"></i>
-              
+
             </div>
           </div>
 
 
-          
+
         </div>
-        
+
       </div>
     </section>
   </div>

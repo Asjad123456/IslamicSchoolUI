@@ -2,7 +2,7 @@
   <!-- header back-btn section  -->
   <div class="row" id="back-btn-row">
     <div class="col" id="back-btn-col">
-      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      <i class="fa fa-arrow-left" aria-hidden="true" (click)="onBack()"></i>
     </div>
   </div>
 
@@ -21,7 +21,7 @@
     <div class="row" id="main-teacher-parent-row">
       <div class="row" id="main-teacher-row">
         <div class="col" id="main-teacher-col-1">
-          <h1>TeacherB</h1>
+          <h1>View Teacher Profile</h1>
         </div>
         <div class="col" id="main-teacher-col-2">
           <i class="fas fa-arrow-right"></i>
@@ -29,11 +29,11 @@
       </div>
     </div>
 
-    <div class="row" id="main-student-parent-row" >
+    <div class="row" id="main-student-parent-row" (click)="toStudentList()">
       <div class="row" id="main-student-row" >
         <div class="col" id="main-student-col-1" >
-          <h1>100+</h1>
-          <p>TeacherB</p>
+          <h1>{{studentcount}}</h1>
+          <p>Students</p>
         </div>
         <div class="col" id="main-student-col-2" >
           <div class="col" id="col-1"  >

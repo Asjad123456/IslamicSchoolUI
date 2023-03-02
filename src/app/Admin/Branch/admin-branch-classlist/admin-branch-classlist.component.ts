@@ -47,4 +47,8 @@ export class AdminBranchClasslistComponent {
     this.searchText = this.enteredSearchValue.toLowerCase();
     console.log(this.searchText)
   }
+  onBack(){
+    const branchid = +this.route.snapshot.params['id'];
+    this.router.navigate(['admin-branchprofile/' +branchid]);
+  }
 }

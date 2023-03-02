@@ -165,4 +165,8 @@ getTeacherCountorBranch(id: number){
 public deleteStudyClass(id: number): Observable<StudyClass>{
   return this.http.delete<StudyClass>(this.baseUrl + 'StudyClass/' + id);
 }
+getStudentsCountForclassprofile(id: number){
+  const url = `${this.baseUrl}StudyClass/studentcount/${id}`;
+  return this.http.get<number>(url);
+}
 }
