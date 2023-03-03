@@ -178,20 +178,16 @@ body {
   color: #dba100;
 }
 
-
-
-
-
 /*View Teacher profile offcanvas start here */
-.offcanvas{
-  background: linear-gradient(to top, #daf1d0 52%, #d1fbbb 79%);
+.offcanvas {
+  background: linear-gradient(0deg, var(--box-color) 0%, #9baf9a 100%);
 }
 /* .offcanvas-header{
 } */
-.offcanvas-header .row{
+.offcanvas-header .row {
   width: 100vw;
 }
-.offcanvas-header .row .col{
+.offcanvas-header .row .col {
   display: flex;
   justify-content: flex-start;
   align-content: center;
@@ -199,13 +195,12 @@ body {
   height: 5vh;
   padding-left: 11px;
 }
-.offcanvas-header .row .col button{
+.offcanvas-header .row .col button {
   font-size: 17px;
 }
 
 #parent-section {
   height: 100vh;
-  
 }
 #main-img-row .col {
   display: flex;
@@ -215,7 +210,7 @@ body {
 #main-img-row .col img {
   max-width: 89%;
 }
-#teacher-info-row{
+#teacher-info-row {
   height: 15vh;
 }
 #teacher-info-col {
@@ -224,7 +219,7 @@ body {
   align-content: center;
 }
 #teacher-info-col h2 {
-  color: var(--color-1);
+  color: #dba100;
   font-size: 17px;
   margin: 0;
   font-weight: 400;
@@ -252,7 +247,7 @@ body {
   justify-content: center;
   text-align: center;
   height: 14vh;
-  background: #beddb1;
+  background: #d2f9a7;
   border-radius: 15px;
   width: 47vw;
 }
@@ -263,4 +258,3 @@ body {
 #teacher-details-col-1 p {
   color: var(--color);
 }
- 
