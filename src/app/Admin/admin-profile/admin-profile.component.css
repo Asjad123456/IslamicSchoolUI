@@ -26,17 +26,6 @@ body {
   background: linear-gradient(to top, #daf1d0 52%, #d1fbbb 79%);
 }
 /* top back button styling start here */
-#top-back-btn .col {
-  height: 5vh;
-  display: flex;
-  justify-content: start;
-  flex-wrap: wrap;
-  align-content: center;
-  font-size: 24px;
-  color: var(--color);
-  padding-left: 14px;
-}
-/* top back button styling start here */
 #main-img-row .col {
   display: flex;
   justify-content: center;
