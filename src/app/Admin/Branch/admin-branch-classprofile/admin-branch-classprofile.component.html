@@ -19,7 +19,13 @@
   <!-- main section start here -->
   <section id="main-section">
     <div class="row" id="main-teacher-parent-row">
-      <div class="row" id="main-teacher-row">
+      <div
+        class="row"
+        id="main-teacher-row"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight"
+      >
         <div class="col" id="main-teacher-col-1">
           <h1>View Teacher Profile</h1>
         </div>
@@ -29,25 +35,57 @@
       </div>
     </div>
 
+<!-- View Teacher Profile offcanvas  -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasRight"
+      aria-labelledby="offcanvasRightLabel"
+    >
+      <div class="offcanvas-header">
+        <div class="row">
+          <div class="col">
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+        </div>
+      </div>
+      <div class="offcanvas-body">
+        
+      </div>
+    </div>
+    <!-- View Teacher Profile offcanvas  -->
+
     <div class="row" id="main-student-parent-row" (click)="toStudentList()">
-      <div class="row" id="main-student-row" >
-        <div class="col" id="main-student-col-1" >
-          <h1>{{studentcount}}</h1>
+      <div class="row" id="main-student-row">
+        <div class="col" id="main-student-col-1">
+          <h1>{{ studentcount }}</h1>
           <p>Students</p>
         </div>
-        <div class="col" id="main-student-col-2" >
-          <div class="col" id="col-1"  >
+        <div class="col" id="main-student-col-2">
+          <div class="col" id="col-1">
             <div style="text-align: center">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-              </div>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
           </div>
-          <div class="col" id="col-2" >
-            <img src="/assets/boy.png" alt="">
+          <div class="col" id="col-2">
+            <img src="/assets/boy.png" alt="" />
+          </div>
         </div>
+      </div>
+    </div>
 
-        </div>
+    <!-- Footer Watch Section starts -->
+    <div class="row" id="footer">
+      <div class="col">
+        <h1>Class Time - 8:30</h1>
+        <i class="fa-solid fa-clock"></i>
       </div>
     </div>
   </section>

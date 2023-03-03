@@ -1,126 +1,148 @@
 <body>
+  <section id="parent-section">
+    <section>
+      <div class="row" id="top-back-btn">
+        <div class="col">
+          <i class="fa fa-arrow-left" aria-hidden="true" (click)="onBack()"></i>
+        </div>
+      </div>
+    </section>
 
-  <section id="parent-section" >
-      <section>
-          <div class="row" id="top-back-btn" >
-              <div class="col">
-                  <i class="fa fa-arrow-left" aria-hidden="true" (click)="onBack()"></i>
+    <section>
+      <div class="row" id="main-img-row">
+        <div class="col">
+          <img src="/assets/headmaster.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="row" id="teacher-info-row">
+        <div class="col" id="teacher-info-col" *ngFor="let item of user">
+          <h2>Admin</h2>
+          <b>{{ item.userName }}</b>
+          <p>{{ item.email }}</p>
+        </div>
+        <div class="col" id="teacher-btn-col">
+          <button
+            class="btn"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasTop"
+            aria-controls="offcanvasTop"
+          >
+            <i class="fa fas fa-user-plus"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="row" id="teacher-details-row" *ngFor="let item of user">
+        <div class="col" id="teacher-details-col-1">
+          <h2>Father name</h2>
+          <p>{{ item.fatherName }}</p>
+        </div>
+        <div class="col" id="teacher-details-col-1">
+          <h2>Contact #</h2>
+          <p>{{ item.phoneNumber }}</p>
+        </div>
+        <div class="col" id="teacher-details-col-1">
+          <h2>Address</h2>
+          <p>{{ item.address }}</p>
+        </div>
+        <div class="col" id="teacher-details-col-1">
+          <h3>Socials</h3>
+          <p>
+            <i class="fa-brands fa-instagram" style="padding-left: 10px"></i>
+            <i class="fa-brands fa-twitter" style="padding-left: 10px"></i>
+            <i class="fa-brands fa-facebook-f" style="padding-left: 10px"></i>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <!-- Offcanvas for Gaurdain data start here -->
+      <div
+        class="offcanvas offcanvas-top"
+        tabindex="-1"
+        id="offcanvasTop"
+        aria-labelledby="offcanvasTopLabel"
+      >
+        <div class="offcanvas-header">
+        </div>
+
+        <div
+          class="offcanvas-body"
+          style="background: linear-gradient(to top, #e1e0bb 0%, #c5f3cb 100%)"
+        >
+          <body>
+            <!-- Header section start here -->
+            <section id="header-heading-sec">
+              <div class="row" id="header-heading-row">
+                <div class="col">
+                  <h1>Edit Your Profile</h1>
+                </div>
               </div>
-          </div>
-      </section>
+            </section>
 
-      <section>
-          <div class="row" id="main-img-row" >
-              <div class="col">
-                  <img src="/assets/headmaster.png" alt="">
-              </div>
-          </div>
-      </section>
+            <!-- input-field section start here -->
+            <section id="input-field-section">
+              <form [formGroup]="editProfileForm" (ngSubmit)="editProfile()">
+                <div class="row" id="input-field-row">
+                  <div class="col" id="name-col">
+                    <p>Name</p>
+                    <input type="text" formControlName="userName" />
+                  </div>
+                  <div class="col" id="name-col">
+                    <p>Email</p>
+                    <input type="text" formControlName="email" />
+                  </div>
+                  <div class="col" id="address-col">
+                    <p>Father name</p>
+                    <input type="text" formControlName="fatherName" />
+                  </div>
+                  <div class="col" id="city-col">
+                    <p>Address</p>
+                    <input type="text" formControlName="Address" />
+                  </div>
+                  <div class="col" id="contact-col">
+                    <p>Contact</p>
+                    <input type="text" formControlName="phoneNumber" />
+                  </div>
+                </div>
 
-      <section>
-          <div class="row" id="teacher-info-row" >
-              <div class="col" id="teacher-info-col" *ngFor="let item of user">
-                  <h2>Admin</h2>
-                  <b>{{item.userName}}</b>
-                  <p>{{item.email}}</p>
-              </div>
-              <div class="col" id="teacher-btn-col" >
-                  <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
-                  aria-controls="offcanvasTop"><i class="fa fas fa-user-plus"></i></button>
-              </div>
-          </div>
-      </section>
-
-      <section>
-          <div class="row" id="teacher-details-row" *ngFor="let item of user">
-              <div class="col" id="teacher-details-col-1">
-                  <h2>Father name</h2>
-                  <p>{{item.fatherName}}</p>
-              </div>
-              <div class="col" id="teacher-details-col-1">
-                  <h2>Contact #</h2>
-                  <p>{{item.phoneNumber}}</p>
-              </div>
-              <div class="col" id="teacher-details-col-1">
-                  <h2>Address</h2>
-                  <p>{{item.address}}</p>
-              </div>
-              <div class="col" id="teacher-details-col-1">
-                <h3>Socials</h3>
-                <p >
-                    <i class="fa-brands fa-instagram" style="padding-left: 10px;"></i>
-                    <i class="fa-brands fa-twitter" style="padding-left: 10px;"></i>
-                    <i class="fa-brands fa-facebook-f" style="padding-left: 10px;"></i>
-                </p>
-              </div>
-          </div>
-      </section>
-
-
-      <section>
-          <!-- Offcanvas for Gaurdain data start here -->
-          <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-              <div class="offcanvas-header">
-                  <!-- <h5 id="offcanvasTopLabel">Offcanvas top</h5> -->
-
-              </div>
-
-              <div class="offcanvas-body" style="background: linear-gradient(to top, #e1e0bb 0%, #c5f3cb 100%);" >
-                <body>
-                  <!-- Header section start here -->
-                  <section id="header-heading-sec">
-                      <div class="row" id="header-heading-row">
-                          <div class="col">
-                              <h1>Edit Your Profile</h1>
-                          </div>
-                      </div>
-                  </section>
-
-                  <!-- input-field section start here -->
-                  <section id="input-field-section">
-                      <form [formGroup]="editProfileForm" (ngSubmit)="editProfile()">
-                          <div class="row" id="input-field-row">
-                              <div class="col" id="name-col" >
-                                  <p>Name</p>
-                                  <input type="text" formControlName="userName">
-                              </div>
-                              <div class="col" id="name-col" >
-                                  <p>Email</p>
-                                  <input type="text" formControlName="email">
-                              </div>
-                              <div class="col" id="address-col">
-                                  <p>Father name</p>
-                                  <input type="text" formControlName="fatherName">
-                              </div>
-                              <div class="col" id="city-col">
-                                  <p>Address</p>
-                                  <input type="text" formControlName="Address">
-                              </div>
-                              <div class="col" id="contact-col">
-                                  <p>Contact</p>
-                                  <input type="text" formControlName="phoneNumber">
-                              </div>
-                          </div>
-
-                  <section id="footer-btn-section">
-                    <div class="row" id="footer-btn-row">
-                        <div class="col" id="footer-btn-col-1">
-                            <button class="btn" type="button" class="text-reset" data-bs-dismiss="offcanvas"
-                            aria-label="Close">cancel</button>
-                        </div>
-                        <div class="col" id="footer-btn-col-2">
-                            <button class="btn" type="submit" class="text-reset" data-bs-dismiss="offcanvas"
-                            aria-label="Close">Save</button>
-                        </div>
+                <section id="footer-btn-section">
+                  <div class="row" id="footer-btn-row">
+                    <div class="col" id="footer-btn-col-1">
+                      <button
+                        class="btn"
+                        type="button"
+                        class="text-reset"
+                        data-bs-dismiss="offcanvas"
+                        aria-label="Close"
+                      >
+                        cancel
+                      </button>
                     </div>
+                    <div class="col" id="footer-btn-col-2">
+                      <button
+                        class="btn"
+                        type="submit"
+                        class="text-reset"
+                        data-bs-dismiss="offcanvas"
+                        aria-label="Close"
+                      >
+                        Save
+                      </button>
+                    </div>
+                  </div>
                 </section>
-                      </form>
-                  </section>
-              </body>
-
-              </div>
-          </div>
-          <!-- Offcanvas for Gaurdain data ends here -->
-      </section>
+              </form>
+            </section>
+          </body>
+        </div>
+      </div>
+    </section>
   </section>
 </body>

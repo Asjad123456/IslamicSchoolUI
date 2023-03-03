@@ -62,6 +62,7 @@ body {
   justify-content: center;
 }
 #hero-row {
+  display: flex;
   width: 100vw;
   height: 13vh;
 }
