@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,8 +13,12 @@ import { AdminService } from 'src/Services/admin.service';
 export class AdminBranchClassStudentlistComponent {
   studyclass: StudyClass[];
   branchid: string;
+  enteredSearchValue: string = '';
+  searchText: string = '';
+  studentcount: number;
 
-  constructor(private service:AdminService, private route: ActivatedRoute, private router: Router){}
+
+  constructor(private service:AdminService, private route: ActivatedRoute, private router: Router, private location: Location){}
 
   classId = +this.route.snapshot.params['id'];
   branchId = localStorage.getItem('branchID');
@@ -21,6 +26,7 @@ export class AdminBranchClassStudentlistComponent {
     console.log(this.classId);
     console.log(this.branchId);
     this.getClassDetails();
+    this.getStudentCount();
   }
   getClassDetails(){
     const id = +this.route.snapshot.params['id'];
@@ -32,8 +38,23 @@ export class AdminBranchClassStudentlistComponent {
   toStudentProfile(id:number){
     this.service.getClassById(id).subscribe(
       response =>{
-        this.router.navigate(['admin-branchprofile/' + this.branchId + '/class-list/class-profile/'+ this.classId + '/student-list/' + id]);
+        this.router.navigate(['admin-branchprofile/class-list/clasprofile/student-profile/' + id]);
       }
     );
+  }
+  onBack(){
+    this.location.back();
+  }
+  onSearchTextChanged(){
+    this.searchText = this.enteredSearchValue.toLowerCase();
+    console.log(this.searchText)
+  }
+  getStudentCount(){
+    const classid = +this.route.snapshot.params['id'];
+    this.service.getStudentsCountForclassprofile(classid).subscribe((res) =>{
+      this.studentcount = res;
+      console.log('hello', res);
+      console.log(classid);
+    })
   }
 }
