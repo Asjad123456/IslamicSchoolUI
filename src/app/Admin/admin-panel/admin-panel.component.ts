@@ -73,7 +73,7 @@ export class AdminPanelComponent {
     this.router.navigate(['admin-supervisorlist']);
   }
   toTeachers(){
-    this.router.navigate(['']);
+    this.router.navigate(['admin-teacherslist']);
   }
   toStudents(){
     this.router.navigate(['admin-studentlist']);
