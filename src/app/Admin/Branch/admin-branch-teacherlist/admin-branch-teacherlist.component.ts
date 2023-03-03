@@ -10,11 +10,15 @@ import { AdminService } from 'src/Services/admin.service';
 })
 export class AdminBranchTeacherlistComponent {
   branch: Branches[];
+  teachercount: number;
+  enteredSearchValue: string = '';
+  searchText: string = '';
 
   constructor(private service: AdminService, private router: Router, private route: ActivatedRoute){}
 
   ngOnInit(): void {
-    this.getbranchData()
+    this.getbranchData();
+    this.teachersCount();
   }
   getbranchData(){
     const branchId = +this.route.snapshot.params['id'];
@@ -23,12 +27,26 @@ export class AdminBranchTeacherlistComponent {
       console.log(res);
     })
   }
-  toTeacherProfile(){
+  toTeacherProfile(id: string){
     const branchId = +this.route.snapshot.params['id'];
     this.service.getBranchWithOnlyTeachers(branchId).subscribe((res) =>{
       this.branch = res;
       console.log(res);
-      this.router.navigate(['admin-branchprofile/' + branchId + '/teacher-profile/' + this.branch[0].appUsers[0].id])
+      this.router.navigate(['admin-branchprofile/' + branchId + '/teacher-profile/' + id])
     })
+  }
+  onBack(){
+    const branchid = +this.route.snapshot.params['id'];
+    this.router.navigate(['admin-branchprofile/' + branchid]);
+  }
+  teachersCount(){
+    this.service.getTeachersCount().subscribe((res) =>{
+      console.warn(res);
+      this.teachercount = res;
+    })
+  }
+  onSearchTextChanged(){
+    this.searchText = this.enteredSearchValue.toLowerCase();
+    console.log(this.searchText)
   }
 }

@@ -1,332 +1,69 @@
-<body>
-  <section id="main-Section">
-    <section>
-      <!--header-section start-->
-      <div class="row" id="header-row">
-        <div class="col" id="first-icon-col">
-          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+<!-- Offcanvas for Gaurdain data start here -->
+<div class="parent">
+  <div class="header">
+    <div class="row" id="header-row">
+      <div class="col" id="header-col-1">
+        <i class="fas fa-arrow-left" (click)="onBack()"></i>
+      </div>
+      <div class="col" id="header-col-2">
+        <h5>Teachers</h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-body">
+    <div class="row" id="main-row">
+      <div class="col" id="main-col-1">
+        <h2>Total Teachers : {{ teachercount }}</h2>
+      </div>
+    </div>
+
+    <!-- offcanvas main section start here -->
+    <section id="main-section-parent">
+      <!-- offcanvas main section sort button start here -->
+      <div class="row" id="main-sec-top-row">
+        <div class="col" id="main-sec-top-col">
+          <input
+            type="search"
+            placeholder="Search"
+            [(ngModel)]="enteredSearchValue"
+            (input)="onSearchTextChanged()"
+          />
+          <label for="search"
+            ><i class="fa fa-search" aria-hidden="true"></i
+          ></label>
         </div>
       </div>
-    </section>
-    <!--header-section end-->
 
-    <section id="hero">
-      <!-- Hero-Section start-->
-      <div class="row" id="hero-row">
-        <div class="col" id="hero-heading">
-          <h1>Branches</h1>
-          <h5>Currently 40+<span>Active Branches</span></h5>
-        </div>
-        <div class="col" id="hero-img-col">
-          <img src="/assets/school-building.png" alt="" />
-        </div>
-      </div>
-    </section>
-    <!--Hero-Section end-->
-
-    <section id="sortby-sec-parent">
-      <!--------Main Section start here--------->
-      <!---------Sort-by section start --------->
-      <div class="row" id="sortby-sec-row">
-        <div class="col" id="dropdown-btn">
-          <div class="btn-group">
-            <button
-              class="btn"
-              type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasExample"
-              aria-controls="offcanvasExample"
-            >
-              <i class="fa fa-plus" aria-hidden="true"></i>
-            </button>
-            <!-- offcanvas start-->
-            <div
-              class="offcanvas offcanvas-start"
-              tabindex="-1"
-              id="offcanvasExample"
-              aria-labelledby="offcanvasExampleLabel"
-            >
-              <div class="offcanvas-header">
-                <div class="row" id="sortby-offcanva-top-row">
-                  <div class="col" id="sortby-offcanva-top-col-1">
-                    <!-- <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5> -->
-                  </div>
-                  <div class="col" id="sortby-offcanva-top-col-2">
-                    <button
-                      type="button"
-                      class="btn-close text-reset"
-                      data-bs-dismiss="offcanvas"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                </div>
-              </div>
-              <div class="offcanvas-body">
-                <section id="input-feild-section">
-                  <!-- hero section -->
-                  <div class="row" id="offcanvas-hero-row">
-                    <div class="col" id="offcanvas-hero-col">
-                      <h2>Add New Class</h2>
-                    </div>
-                  </div>
-
-                  <!-- main inputs section -->
-                  <div class="row" id="offcanvas-main-row">
-                    <form>
-                      <div class="col" id="offcanvas-main-col-1">
-                        <label
-                          >BranchName
-                          <input type="text" formControlName="branchName"
-                        /></label>
-                      </div>
-                      <div class="col" id="offcanvas-main-col-2">
-                        <label
-                          ><input type="text" formControlName="city" />City
-                        </label>
-                      </div>
-                      <div class="col" id="offcanvas-main-col-1">
-                        <label
-                          >Address <input type="text" formControlName="address"
-                        /></label>
-                      </div>
-                      <div class="col" id="offcanvas-main-col-2">
-                        <label
-                          ><input
-                            type="text"
-                            formControlName="branchCode"
-                          />B.Code
-                        </label>
-                      </div>
-                      <div class="col" id="offcanvas-main-col-1"
-                      class="accordion-button collapsed"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#flush-collapseOne"
-                                aria-expanded="false"
-                                aria-controls="flush-collapseOne">
-                        <label
-                          >Supervisor <input type="text" formControlName="AppUserId"
-                        /></label>
-                      </div>
-                      <div class="row" id="accordion-main-row">
-                        <div
-                          class="accordion accordion-flush"
-                          id="accordionFlushExample"
-                        >
-                          <div class="accordion-item">
-                            <!-- <h2 class="accordion-header" id="flush-headingOne">
-                              <button
-                                class="accordion-button collapsed"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#flush-collapseOne"
-                                aria-expanded="false"
-                                aria-controls="flush-collapseOne"
-                              >
-                                Select Supervisor
-                              </button>
-                            </h2> -->
-                            <div
-                              id="flush-collapseOne"
-                              class="accordion-collapse collapse"
-                              aria-labelledby="flush-headingOne"
-                              data-bs-parent="#accordionFlushExample"
-                            >
-                              <div class="accordion-body" >
-                                <div class="row" id="accordion-search-bar">
-                                  <div class="col">
-                                    <input type="search" />
-                                    <label for=""
-                                      ><i class="fas fa-search"></i
-                                    ></label>
-                                  </div>
-                                </div>
-                                <div class="row" id="accordion-sec-row">
-
-                                  <div class="col" id="accordion-sec-col" >
-                                    <div class="col" id="col-1" >
-                                      <img src="/assets/boy.png" alt="">
-                                    </div>
-                                    <div class="col" id="col-2" >
-                                      <h1></h1>
-                                      <p>Paragraph</p>
-                                    </div>
-                                    <div class="col" id="col-3">
-                                      <i class="fas fa-check-circle"></i>
-                                    </div>
-                                  </div>
-
-
-                                </div>
-
-                                <!-- <div class="col">
-                                <label>Class-Name</label>
-                                <select
-                                  class="form-control"
-                                  formControlName="AppUserId"
-                                >
-                                  <option value="">Select Supervisor</option>
-                                  <option
-                                    *ngFor="let item of branchsupervisors"
-                                    value="{{ item.id }}"
-                                  >
-                                    {{ item.userName }}
-                                  </option>
-                                </select>
-                              </div> -->
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col" id="offcanvas-main-col-3">
-                        <button
-                          id="btn"
-                          class="btn"
-                          data-bs-dismiss="offcanvas"
-                          aria-label="Close"
-                        >
-                          Add Class
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-                </section>
-              </div>
-            </div>
-            <!-- offcanva end  -->
-          </div>
-        </div>
-        <div class="col" id="search-col">
-          <!-- <app-search
-          ></app-search> -->
-        </div>
-      </div>
-      <!--------Sort-by section start ---------->
-
-      <!--------Main Section branch-list start here--------->
-      <section id="main-sec-box1">
+      <!-- main section list start here -->
+      <div class="row" id="main-list-row" *ngFor="let item of branch">
         <div
-          class="row">
+          class="col"
+          id="list-parent-col"
+          *ngFor="let teacher of item.appUsers | SearchTeacherPipe : searchText"
+        >
           <div
-            class="col-9"
-            id="branch-name-col"
+            class="row"
+            id="list-row"
+            (click)="toTeacherProfile(teacher.id)"
           >
-            <h3></h3>
-            <p>Robert Robertson, 1234 NW Bobcat Lane, St. Robert.</p>
-          </div>
-          <div class="col-3" id="branch-icon-col">
-            <a
-              ><i class="fa-solid fa-trash"></i
-            ></a>
-          </div>
-        </div>
+            <div class="col" id="list-inner-col">
+              <h1>{{ teacher.userName }}</h1>
+              <p>{{ teacher.email }}</p>
+            </div>
+            <div class="col" id="main-list-icon-col">
+              <i class="fas fa-long-arrow-alt-right
+              " aria-hidden="true"></i>
 
-      </section>
-      <!--------Main Section branch-list ends here--------->
-    </section>
-    <!------Main section end here--------->
-  </section>
-</body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <body>
-  <section id="main-Section">
-    <section>
-      <div class="row" id="header-row">
-        <div class="col" id="first-icon-col">
-          <i class="fa fa-arrow-left" aria-hidden="true"></i>
-        </div>
-        <div class="col" id="second-icon-col">
-          <span class="dot" style="margin: 0px"></span>
-          <span class="dot" style="margin: 3px"></span>
-          <span class="dot"></span>
-        </div>
-      </div>
-    </section>
-
-    <section id="hero">
-      <div class="row" id="hero-row">
-        <div class="col" id="hero-heading">
-          <h1>Teachers</h1>
-          <h5><span>Currently 40+</span><span>Active Teachers</span></h5>
-        </div>
-        <div class="col" id="hero-img-col">
-          <img src="/assets/teacher.png" alt="" />
-        </div>
-      </div>
-    </section>
-
-    <section id="sortby-sec-parent">
-      <section id="sortby-main">
-        <div class="row" id="sortby-sec-row">
-          <div class="col" id="dropdown-btn">
-            <div class="btn-group">
-              <button
-                class="btn dropdown-toggle"
-                type="button"
-                id="triggerId"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Sort by
-              </button>
-              <div
-                class="dropdown-menu dropdown-menu-right"
-                aria-labelledby="triggerId"
-              >
-                <a class="dropdown-item">Size</a>
-                <a class="dropdown-item">Name</a>
-                <a class="dropdown-item">Type</a>
-              </div>
             </div>
           </div>
-          <div class="col" id="search-col">
-            <a><i class="fa fa-search" aria-hidden="true"></i></a>
-          </div>
-        </div>
-      </section>
 
-      <section>
-        <div class="row" id="main-sec-row">
-          <div class="col-12" id="main-sec-box1">
-            <div class="row" *ngFor="let item of branch">
-              <div
-                class="col-9"
-                id="branch-name-col"
-                *ngFor="let appuser of item.appUsers"
-                (click)="toTeacherProfile()"
-              >
-                <h3>{{ appuser.userName }}</h3>
-                <p>{{ appuser.email }}</p>
-              </div>
-              <div class="col-3" id="branch-icon-col">
-                <i class="fa-solid fa-trash"></i>
-              </div>
-            </div>
-          </div>
+
+
         </div>
-      </section>
+
+      </div>
     </section>
-  </section>
-</body> -->
+  </div>
+</div>
+<!-- Offcanvas for Gaurdain data ends here -->

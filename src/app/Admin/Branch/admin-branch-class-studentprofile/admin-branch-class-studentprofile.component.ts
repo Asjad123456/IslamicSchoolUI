@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Student } from 'src/Models/students';
 import { AdminService } from 'src/Services/admin.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-admin-branch-class-studentprofile',
@@ -11,7 +12,7 @@ import { AdminService } from 'src/Services/admin.service';
 export class AdminBranchClassStudentprofileComponent {
   student: Student[];
 
-  constructor(private service:AdminService, private route: ActivatedRoute){}
+  constructor(private service:AdminService, private route: ActivatedRoute, private location: Location){}
 
   ngOnInit(): void{
     this.getStudentDetails();
@@ -23,5 +24,8 @@ export class AdminBranchClassStudentprofileComponent {
       this.student = res;
       console.warn(res);
     })
+  }
+  onback(){
+    this.location.back();
   }
 }
