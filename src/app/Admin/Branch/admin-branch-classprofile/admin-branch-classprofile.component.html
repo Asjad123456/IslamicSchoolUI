@@ -55,7 +55,96 @@
         </div>
       </div>
       <div class="offcanvas-body">
-        
+      <!-- -->
+      <body>
+        <section id="parent-section">
+          <section>
+            <div class="row" id="top-back-btn">
+              <div class="col">
+                <i class="fa fa-arrow-left" aria-hidden="true" (click)="onBack()"></i>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div class="row" id="main-img-row">
+              <div class="col">
+                <img src="/assets/headmaster.png" alt="" />
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div class="row" id="teacher-info-row">
+              <div class="col" id="teacher-info-col" *ngFor="let item of class">
+                <h2>Admin</h2>
+                <b>{{ item.userName }}</b>
+                <p>{{ item.email }}</p>
+              </div>
+              <div class="col" id="teacher-btn-col">
+                <button
+                  class="btn"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasTop"
+                  aria-controls="offcanvasTop"
+                >
+                  <i class="fa fas fa-user-plus"></i>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div class="row" id="teacher-details-row" *ngFor="let item of class">
+              <div class="col" id="teacher-details-col-1">
+                <h2>Father name</h2>
+                <p>{{ item.fatherName }}</p>
+              </div>
+              <div class="col" id="teacher-details-col-1">
+                <h2>Contact #</h2>
+                <p>{{ item.phoneNumber }}</p>
+              </div>
+              <div class="col" id="teacher-details-col-1">
+                <h2>Address</h2>
+                <p>address</p>
+              </div>
+              <div class="col" id="teacher-details-col-1">
+                <h3>Socials</h3>
+                <p>
+                  <i class="fa-brands fa-instagram" style="padding-left: 10px"></i>
+                  <i class="fa-brands fa-twitter" style="padding-left: 10px"></i>
+                  <i class="fa-brands fa-facebook-f" style="padding-left: 10px"></i>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <!-- Offcanvas for Gaurdain data start here -->
+            <div
+              class="offcanvas offcanvas-top"
+              tabindex="-1"
+              id="offcanvasTop"
+              aria-labelledby="offcanvasTopLabel"
+            >
+              <div class="offcanvas-header">
+              </div>
+
+              <div
+                class="offcanvas-body"
+                style="background: linear-gradient(to top, #e1e0bb 0%, #c5f3cb 100%)"
+              >
+                <body>
+                  <!-- Header section start here -->
+
+                  <!-- input-field section start here -->
+                </body>
+              </div>
+            </div>
+          </section>
+        </section>
+      </body>
+
       </div>
     </div>
     <!-- View Teacher Profile offcanvas  -->
