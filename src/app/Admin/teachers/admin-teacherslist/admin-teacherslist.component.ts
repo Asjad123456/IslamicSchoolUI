@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/Models/user';
 import { AdminService } from 'src/Services/admin.service';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-admin-teacherslist',
@@ -10,12 +12,15 @@ import { AdminService } from 'src/Services/admin.service';
 })
 export class AdminTeacherslistComponent {
   user: User[];
+  teachercount: number;
+  enteredSearchValue: string = '';
+  searchText: string = '';
 
-  constructor(private service: AdminService, private router: Router){}
+  constructor(private service: AdminService, private router: Router, private location: Location){}
 
   ngOnInit(): void {
     this.TeachersList();
-
+    this.teachersCount();
   }
   TeachersList(){
     this.service.getTeachers().subscribe((res) =>{
@@ -28,5 +33,18 @@ export class AdminTeacherslistComponent {
       this.user = res;
       this.router.navigate(['admin-teacherslist/admin-teacherprofile/' + id])
     })
+  }
+  onBack(){
+    this.location.back()
+  }
+  teachersCount(){
+    this.service.getTeachersCount().subscribe((res) =>{
+      console.warn(res);
+      this.teachercount = res;
+    })
+  }
+  onSearchTextChanged(){
+    this.searchText = this.enteredSearchValue.toLowerCase();
+    console.log(this.searchText)
   }
 }

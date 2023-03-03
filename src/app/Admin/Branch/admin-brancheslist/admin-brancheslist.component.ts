@@ -27,6 +27,7 @@ export class AdminBrancheslistComponent implements OnInit{
   ngOnInit(): void {
     this.getbranches();
     this.getUsersforSupervisors();
+    this.branchesCount();
     this.addBranchForm = new FormGroup({
       branchName: new FormControl('', Validators.required),
       city: new FormControl('', Validators.required),

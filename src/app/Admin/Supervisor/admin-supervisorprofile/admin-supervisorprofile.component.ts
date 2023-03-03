@@ -48,4 +48,7 @@ export class AdminSupervisorprofileComponent {
   toSupervisorBranch(id: number){
     this.router.navigate(['admin-branchprofile/'+ id]);
   }
+  onback(){
+    this.router.navigate(['admin-supervisorlist']);
+  }
 }
