@@ -18,6 +18,8 @@ export class AdminBrancheslistComponent implements OnInit{
   searchText: string = '';
   addBranchForm: FormGroup;
   supName: string;
+  branchescount: number;
+
 
   constructor(private service:AdminService, private router: Router, private location: Location){}
 
@@ -87,5 +89,10 @@ export class AdminBrancheslistComponent implements OnInit{
   }
   onBack(){
     this.location.back();
+  }
+  branchesCount(){
+    this.service.getBranchesCount().subscribe((res) =>{
+      this.branchescount = res;
+    })
   }
 }
