@@ -56,6 +56,7 @@ export class AdminProfileComponent {
         panelClass: 'success-snackbar'
       });
     }, error =>{
+      console.log(error);
       this.snackBar.open('Error Saving Changes!', 'Close', {
         duration: 3000,
         panelClass: 'success-snackbar'

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { User } from 'src/Models/user';
 import { AdminService } from 'src/Services/admin.service';
@@ -16,7 +16,8 @@ export class RoleManagmentComponent implements OnInit {
   bsModalRef!: BsModalRef;
   searchText: string = '';
 
-  constructor(private router: Router, private adminService: AdminService, private modalService: BsModalService, private location: Location){}
+  constructor(private router: Router, private adminService: AdminService, private modalService: BsModalService,
+     private location: Location, private route: ActivatedRoute){}
 
   ngOnInit(): void {
     this.getUsersWithRoles();
@@ -77,7 +78,8 @@ export class RoleManagmentComponent implements OnInit {
     return roles;
   }
   onBack(){
-    this.location.back();
+    const adminId = this.route.snapshot.params['id'];
+    this.router.navigate(['admin-panel/' + adminId]);
   }
   onSearchTextEntered(searchValue: string){
     this.searchText = searchValue;

@@ -46,8 +46,8 @@ const routes: Routes = [
   //Admin Routes
   {path:'admin-panel/:id',component:AdminPanelComponent},              //90% Done
   {path:'admin-profile/:id',component:AdminProfileComponent},          //90% Done
-  {path:'role-managment', component:RoleManagmentComponent},           //90% Done
-  {path:'admin-brancheslist', component:AdminBrancheslistComponent},   //95% Done
+  {path:'admin/:id/role-managment', component:RoleManagmentComponent},           //90% Done
+  {path:'admin/:id/brancheslist', component:AdminBrancheslistComponent},   //95% Done
   {path:'admin-branchprofile/:id',component:AdminBranchprofileComponent},  //99% Done
   {path:'admin-branchprofile/:id/teachers-list',component:AdminBranchTeacherlistComponent}, //Copy/paste
   {path:'admin-branchprofile/:id/teacher-profile/:id',component:AdminBranchTeacherprofileComponent},//work in progress

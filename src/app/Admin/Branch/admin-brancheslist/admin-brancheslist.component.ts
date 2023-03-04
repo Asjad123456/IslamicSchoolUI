@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Branches } from 'src/Models/branches';
 import { User } from 'src/Models/user';
 import { AdminService } from 'src/Services/admin.service';
@@ -21,7 +21,7 @@ export class AdminBrancheslistComponent implements OnInit{
   branchescount: number;
 
 
-  constructor(private service:AdminService, private router: Router, private location: Location){}
+  constructor(private service:AdminService, private router: Router, private location: Location, private route: ActivatedRoute){}
 
 
   ngOnInit(): void {
@@ -89,7 +89,8 @@ export class AdminBrancheslistComponent implements OnInit{
     console.log(item.userName);
   }
   onBack(){
-    this.location.back();
+    const adminId = this.route.snapshot.params['id'];
+    this.router.navigate(['admin-panel/' + adminId]);
   }
   branchesCount(){
     this.service.getBranchesCount().subscribe((res) =>{

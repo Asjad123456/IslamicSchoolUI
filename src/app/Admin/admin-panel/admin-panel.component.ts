@@ -18,6 +18,8 @@ export class AdminPanelComponent {
   constructor(private router: Router, private service: AdminService, private route: ActivatedRoute,
      private accountService: AccountService, private snackBar: MatSnackBar){}
 
+    branchId = this.route.snapshot.params['id'];
+
   ngOnInit(): void {
     this.adminCount();
     this.teachersCount();
@@ -28,7 +30,8 @@ export class AdminPanelComponent {
     this.router.navigate(['role-managment'])
   }
   toBranchesList(){
-    this.router.navigate(['admin-brancheslist']);
+    const adminId = this.route.snapshot.params['id']
+    this.router.navigate(['admin/' + adminId + '/brancheslist']);
   }
   toAdminProfile(){
     const AdminId = this.route.snapshot.params['id'];
@@ -57,7 +60,7 @@ export class AdminPanelComponent {
     })
   }
   toRoleManagment(){
-    this.router.navigate(['role-managment']);
+    this.router.navigate(['admin/'+ this.branchId +'/role-managment']);
   }
   logout(){
     this.accountService.logout();

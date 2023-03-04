@@ -59,7 +59,7 @@ export class AdminBranchprofileComponent {
     })
   }
   onBack(){
-    this.router.navigate(['admin-brancheslist']);
+    this.location.back();
   }
   getStudyClassCount(){
     const branchId = +this.route.snapshot.params['id'];
@@ -85,4 +85,5 @@ export class AdminBranchprofileComponent {
     const branchId = +this.route.snapshot.params['id'];
     this.router.navigate(['admin-branchprofile/' + branchId + '/teachers-list']);
   }
+
 }
