@@ -59,7 +59,7 @@ export class AdminBranchprofileComponent {
     })
   }
   onBack(){
-    this.location.back();
+    this.router.navigate(['admin-brancheslist']);
   }
   getStudyClassCount(){
     const branchId = +this.route.snapshot.params['id'];

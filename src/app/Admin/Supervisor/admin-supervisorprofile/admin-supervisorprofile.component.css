@@ -22,46 +22,33 @@ body {
 }
 #parent-section {
   height: 100vh;
-  background: linear-gradient(to bottom, #daf1d0 21%, var(--background) 100%);
+  background: linear-gradient(0deg, var(--box-color) 0%, #9baf9a 100%);
 }
 /* top back button styling start here */
-#top-back-btn {
-  max-width: 10vh;
-}
 #top-back-btn .col {
-  position: relative;
-  left: -19px;
   height: 5vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   align-content: center;
+  padding-left: 15px;
   font-size: 24px;
   color: var(--color);
 }
 /* top back button styling start here */
-
-/* main img styling start here */
-#main-img-row {
-  position: absolute;
-  left: 12px;
-  max-width: 100%;
-}
 #main-img-row .col {
   display: flex;
   justify-content: center;
 }
 #main-img-row .col img {
-  max-width: 89%;
+  max-width: 79%;
 }
 /* main img styling start here */
 
 /* Teacher name data section start here */
 #teacher-info-row {
-  position: absolute;
-  top: 404px;
-  right: 54px;
-  left: 45px;
+  display: grid;
+  grid-template-columns: 53% 47%;
 }
 
 #teacher-info-col {
@@ -73,6 +60,7 @@ body {
 #teacher-info-col h2 {
   color: var(--color-1);
   font-size: 20px;
+  margin: 0;
 }
 #teacher-info-col abbr {
   color: var(--color);
@@ -84,7 +72,7 @@ body {
 }
 #teacher-btn-col {
   display: grid;
-  justify-content: flex-end;
+  justify-content: center;
   align-content: center;
 }
 #teacher-btn-col button {
@@ -98,72 +86,187 @@ body {
 }
 /* Teacher deatail row styling section start here */
 #teacher-details-row {
-  position: absolute;
-  top: 514px;
-  left: 11px;
-  right: 16px;
   display: grid;
-  grid-template-columns: 192px 193px;
-  row-gap: 17px;
-}
-#teacher-details-col-1 {
-  max-width: 90%;
-  display: grid;
-  align-content: center;
+  grid-template-columns: 50% 50%;
+  gap: 7px;
+  height: 36vh;
   justify-content: center;
-  text-align: center;
-  height: 14vh;
-  background: var(--box-color);
-  border-radius: 15px;
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
-    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
-}
-#teacher-details-col-1 h2 {
-  font-size: 20px;
-  color: var(--color);
-}
-#teacher-details-col-1 p {
-  color: var(--color);
-}
-#teacher-details-col-2 {
-  max-width: 90%;
-  display: grid;
   align-content: center;
-  justify-content: center;
-  text-align: center;
-  height: 14vh;
-  background: var(--box-color);
-  border-radius: 15px;
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
-    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  padding: 14px;
 }
-#teacher-details-col-2 h2 {
-  font-size: 20px;
-  color: var(--color);
-}
-#teacher-details-col-2 p {
-  color: var(--color);
-}
-#teacher-details-col-3 {
-  max-width: 90%;
-  display: grid;
-  align-content: center;
-  justify-content: center;
-  text-align: center;
-  height: 14vh;
-  background: var(--box-color);
-  border-radius: 15px;
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
-    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
-}
+#teacher-details-col-1 h2,
+#teacher-details-col-2 h2,
 #teacher-details-col-3 h2 {
   font-size: 20px;
   color: var(--color);
 }
+#teacher-details-col-1 p,
+#teacher-details-col-2 p,
 #teacher-details-col-3 p {
   color: var(--color);
 }
+#teacher-details-col-1,
+#teacher-details-col-2,
+#teacher-details-col-3,
 #teacher-details-col-4 {
+  width: 48vw;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  height: 14vh;
+  background-color: #d2f9a7;
+  border-radius: 15px;
+  box-shadow: rgb(0 0 0 / 5%) 0px 0px 0px 1px,
+    rgb(199 243 150 / 50%) 0px 0px 0px 1px inset;
+}
+#teacher-details-col-4 h2 {
+  font-size: 20px;
+  color: var(--color);
+}
+#teacher-details-col-4 p {
+  color: var(--color);
+}
+/*  footer button section styling start here */
+#footer-btn-col {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+#footer-btn-col button {
+  width: 93vw;
+  height: 5vh;
+  font-size: 17px;
+  font-weight: 600;
+  color: #586e6b;
+  background-color: #d2f9a7;
+  box-shadow: rgb(0 0 0 / 5%) 0px 0px 0px 1px,
+    rgb(199 243 150 / 50%) 0px 0px 0px 1px inset;
+}
+
+/* footer button offcanvas section styling start here */
+.offcanvas {
+  height: 100vh;
+  background: linear-gradient(0deg, var(--box-color) 0%, #9baf9a 100%);
+}
+.offcanvas-header {
+  display: flex;
+  justify-content: end;
+}
+.offcanvas-header .row .col {
+  padding-right: 25px;
+}
+#btn-close {
+  font-size: 17px;
+}
+#profile-section {
+  height: 10vh;
+}
+#profile-img-row {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  justify-content: center;
+  align-content: center;
+  height: 17vh;
+  padding: 20px;
+  /* column-gap: 11px; */
+}
+#profile-img-col-1,
+#profile-img-col-2 {
+  display: grid;
+  justify-content: flex-start;
+  align-content: end;
+  border-bottom: 2px solid #586e6b;
+}
+#profile-img-row #profile-img-col-1 img {
+  max-width: 71%;
+}
+#profile-img-row #profile-img-col-2 h1 {
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--color-1);
+  margin: 0;
+}
+
+#Guardain-detail-section {
+  height: 42vh;
+}
+#Guardain-detail-row {
+  display: grid;
+  row-gap: 1rem;
+  height: 71vh;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+#Guardain-detail-col-1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  width: 90vw;
+}
+#Guardain-detail-col-1 .col,
+#Guardain-detail-col-2 .col,
+#Guardain-detail-col-3 .col,
+#Guardain-detail-col-4 .col {
+  padding: 9px;
+  display: grid;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  background-color: #d2f9a7;
+  box-shadow: rgb(0 0 0 / 5%) 0px 0px 0px 1px,
+    rgb(199 243 150 / 50%) 0px 0px 0px 1px inset;
+  border-radius: 10px;
+}
+#Guardain-detail-col-2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  width: 90vw;
+}
+#Guardain-detail-col-3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  width: 90vw;
+}
+#Guardain-detail-col-4 {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  width: 90vw;
+}
+#Guardain-detail-col-1 .col h1,
+#Guardain-detail-col-2 .col h1,
+#Guardain-detail-col-3 .col h1,
+#Guardain-detail-col-4 .col h1 {
+  font-size: 20px;
+  color: var(--color);
+  margin: 0;
+}
+#Guardain-detail-col-1 .col p,
+#Guardain-detail-col-2 .col p,
+#Guardain-detail-col-3 .col p,
+#Guardain-detail-col-4 .col p {
+  color: var(--color-1);
+}
+/* footer img section styling start here  */
+/* #footer-img-section {
+}
+#footer-img-row {
+}
+#footer-img-row .col {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+#footer-img-row .col img {
+  max-width: 20%;
+} */
+
+
+/* #teacher-details-col-4 {
   max-width: 90%;
   display: grid;
   align-content: center;
@@ -181,194 +284,4 @@ body {
 }
 #teacher-details-col-4 p {
   color: var(--color);
-}
-/*  footer button section styling start here */
-
-#footer-btn-row {
-  position: absolute;
-  top: 788px;
-  left: 11px;
-  width: 94%;
-}
-#footer-btn-col {
-  display: grid;
-}
-#footer-btn-col button {
-  width: 100%;
-  height: 5vh;
-  font-size: 17px;
-  font-weight: 600;
-  color: var(--color);
-  background-color: var(--box-color);
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
-    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
-}
-
-/* footer button offcanvas section styling start here */
-.offcanvas {
-  height: 100vh;
-  background-color: var(--box-color);
-}
-.offcanvas-header {
-  display: flex;
-  justify-content: end;
-}
-#btn-close {
-  position: relative;
-  top: 20px;
-  right: 19px;
-}
-#profile-section {
-    height: 101px;
-    position: relative;
-    top: 42px;
-    left: 16px;
-    width: 88vw;
-}
-
-#profile-img-row #profile-img-col-1 img {
-  max-width: 20%;
-  position: absolute;
-  top: 7px;
-}
-#profile-img-row #profile-img-col-2 h1 {
-  position: absolute;
-  top: 53px;
-  left: 110px;
-  font-size: 22px;
-  font-weight: 400;
-  color: var(--color-1);
-}
-#profile-img-row #hr {
-  border: 1px solid rgb(0, 0, 0);
-  position: absolute;
-  top: 75px;
-  left: 5px;
-  right: 0px;
-  z-index: -1;
-  width: 94vw;
-}
-
-#Guardain-detail-section {
-  height: 42vh;
-  position: relative;
-  top: 55px;
-}
-#Guardain-detail-row {
-  position: relative;
-  left: 0px;
-  right: 0px;
-  display: grid;
-  grid-template-columns: 100%;
-  row-gap: 1rem;
-  height: 100%;
-}
-/* Guardain-detail-col-1 - - - - - - - */
-#Guardain-detail-col-1 {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-end;
-  width: 90vw;
-  left: 16px;
-}
-#Guardain-detail-col-1 .col {
-  border-bottom: 1px solid var(--color);
-  display: grid;
-  flex-wrap: wrap;
-  align-content: flex-end;
-}
-#Guardain-detail-col-1 .col h1 {
-  font-size: 20px;
-  color: var(--color);
-}
-#Guardain-detail-col-1 .col p {
-  color: var(--color-1);
-}
-/* Guardain-detail-col-2 - - - - - - - */
-#Guardain-detail-col-2 {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-end;
-  width: 90vw;
-  left: 16px;
-}
-#Guardain-detail-col-2 .col {
-  border-bottom: 1px solid var(--color);
-  display: grid;
-  flex-wrap: wrap;
-  align-content: flex-end;
-}
-#Guardain-detail-col-2 .col h1 {
-  font-size: 20px;
-  color: var(--color);
-}
-#Guardain-detail-col-2 .col p {
-  color: var(--color-1);
-}
-/* Guardain-detail-col-3 - - - - - - - */
-#Guardain-detail-col-3 {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-end;
-  width: 90vw;
-  left: 16px;
-}
-#Guardain-detail-col-3 .col {
-  border-bottom: 1px solid var(--color);
-  display: grid;
-  flex-wrap: wrap;
-  align-content: flex-end;
-}
-#Guardain-detail-col-3 .col h1 {
-  font-size: 20px;
-  color: var(--color);
-}
-#Guardain-detail-col-3 .col p {
-  color: var(--color-1);
-}
-/* Guardain-detail-col-4 - - - - - - - */
-#Guardain-detail-col-4 {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-end;
-  width: 90vw;
-  left: 16px;
-}
-#Guardain-detail-col-4 .col {
-  border-bottom: 1px solid var(--color);
-  display: grid;
-  flex-wrap: wrap;
-  align-content: flex-end;
-}
-#Guardain-detail-col-4 .col h1 {
-  font-size: 20px;
-  color: var(--color);
-}
-#Guardain-detail-col-4 .col p {
-  color: var(--color-1);
-}
-/* footer img section styling start here  */
-#footer-img-section {
-  position: relative;
-  top: 54px;
-  height: 26vh;
-}
-#footer-img-row {
-  position: relative;
-  top: 47px;
-  height: 100%;
-}
-#footer-img-row .col {
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
-}
-#footer-img-row .col img {
-  max-width: 65%;
-}
+} */

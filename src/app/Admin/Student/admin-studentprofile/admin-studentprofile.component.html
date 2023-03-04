@@ -1,128 +1,142 @@
 <body>
-
   <section id="parent-section">
-      <section>
-          <div class="row" id="top-back-btn">
+    <div class="row" id="top-back-btn">
+      <div class="col">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <div class="row" id="main-img-row">
+      <div class="col">
+        <img src="/assets/student.png" alt="" />
+      </div>
+    </div>
+
+    <div class="row" id="teacher-info-row" *ngFor="let item of student">
+      <div class="col" id="teacher-info-col">
+        <h2>Student</h2>
+        <abbr>{{ item.name }}</abbr>
+        <p>Roll # {{ item.rollNumber }}</p>
+      </div>
+      <div class="col" id="teacher-btn-col">
+        <button class="btn"><i class="fa-solid fa-phone-flip"></i></button>
+      </div>
+    </div>
+
+    <div class="row" id="teacher-details-row" *ngFor="let item of student">
+      <div class="col" id="teacher-details-col-1">
+        <h2>Father name</h2>
+        <p>{{ item.fatherName }}</p>
+      </div>
+      <div class="col" id="teacher-details-col-2">
+        <h2>Contact #</h2>
+        <p>{{ item.contactNumber }}</p>
+      </div>
+      <div class="col" id="teacher-details-col-3">
+        <h2>Registration #</h2>
+        <p>{{ item.regNumber }}</p>
+      </div>
+      <div class="col" id="teacher-details-col-4">
+        <h2>Address</h2>
+        <p>{{ item.address }}</p>
+      </div>
+    </div>
+
+    <!-- <section> -->
+    <div class="row" id="footer-btn-row">
+      <div class="col" id="footer-btn-col">
+        <button
+          class="btn"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasTop"
+          aria-controls="offcanvasTop"
+        >
+          View Gaurdain
+          <i class="fa fa-angle-down"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Offcanvas for Gaurdain data start here -->
+    <div
+      class="offcanvas offcanvas-top"
+      tabindex="-1"
+      id="offcanvasTop"
+      aria-labelledby="offcanvasTopLabel"
+    >
+      <div class="offcanvas-header">
+        <!-- <h5 id="offcanvasTopLabel">Offcanvas top</h5> -->
+        <div class="row">
+          <div class="col">
+            <button
+              id="btn-close"
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="offcanvas-body">
+        <section id="profile-section">
+          <div class="row" id="profile-img-row" >
+            <div class="col" id="profile-img-col-1" >
+              <img src="/assets/headmaster.png" alt="" />
+            </div>
+            <div
+              class="col"
+              id="profile-img-col-2"
+              *ngFor="let item of student"
+            >
+              <h1>{{ item.guardianName }}</h1>
+            </div>
+            <!-- <hr id="hr" /> -->
+          </div>
+        </section>
+
+        <section id="Guardain-detail-section">
+          <div
+            class="row"
+            id="Guardain-detail-row"
+            *ngFor="let item of student"
+          >
+            <div class="col" id="Guardain-detail-col-1">
               <div class="col">
-                  <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                <h1>Father's Name</h1>
+                <p>{{ item.guardianFatherName }}</p>
               </div>
-          </div>
-      </section>
-
-      <section>
-          <div class="row" id="main-img-row">
+            </div>
+            <div class="col" id="Guardain-detail-col-2">
               <div class="col">
-                  <img src="/assets/student.png" alt="">
+                <h1>Contact #</h1>
+                <p>{{ item.guardianContactNumber }}</p>
               </div>
+            </div>
+            <div class="col" id="Guardain-detail-col-3">
+              <div class="col">
+                <h1>Address</h1>
+                <p>{{ item.guardianAddress }}</p>
+              </div>
+            </div>
+            <div class="col" id="Guardain-detail-col-4">
+              <div class="col">
+                <h1>CNIC #</h1>
+                <p>{{ item.cnic }}</p>
+              </div>
+            </div>
           </div>
-      </section>
+        </section>
 
-      <section>
-          <div class="row" id="teacher-info-row" *ngFor="let item of student">
-              <div class="col" id="teacher-info-col">
-                  <h2>Student</h2>
-                  <abbr>{{item.name}}</abbr>
-                  <p>Roll # {{item.rollNumber}}</p>
-              </div>
-              <div class="col" id="teacher-btn-col">
-                  <button class="btn"><i class="fa-solid fa-phone-flip"></i></button>
-              </div>
-          </div>
-      </section>
-
-      <section>
-          <div class="row" id="teacher-details-row" *ngFor="let item of student">
-              <div class="col" id="teacher-details-col-1">
-                  <h2>Father name</h2>
-                  <p>{{item.fatherName}}</p>
-              </div>
-              <div class="col" id="teacher-details-col-2">
-                  <h2>Contact #</h2>
-                  <p>{{item.contactNumber}}</p>
-              </div>
-              <div class="col" id="teacher-details-col-3">
-                  <h2>Registration #</h2>
-                  <p>{{item.regNumber}}</p>
-              </div>
-              <div class="col" id="teacher-details-col-4">
-                  <h2>Address</h2>
-                  <p>{{item.address}}</p>
-              </div>
-          </div>
-      </section>
-
-
-      <section>
-          <div class="row" id="footer-btn-row">
-              <div class="col" id="footer-btn-col">
-                  <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
-                      aria-controls="offcanvasTop">View Gaurdain
-                      <i class="fa fa-angle-down"></i>
-                  </button>
-              </div>
-          </div>
-          <!-- Offcanvas for Gaurdain data start here -->
-          <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-              <div class="offcanvas-header">
-                  <!-- <h5 id="offcanvasTopLabel">Offcanvas top</h5> -->
-                  <button id="btn-close" type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                      aria-label="Close"></button>
-              </div>
-
-              <div class="offcanvas-body">
-                  <section id="profile-section">
-                      <div class="row" id="profile-img-row">
-                          <div class="col" id="profile-img-col-1">
-                              <img src="/assets/headmaster.png" alt="">
-                          </div>
-                            <div class="col" id="profile-img-col-2" *ngFor="let item of student">
-                              <h1>{{item.guardianName}}</h1>
-                            </div>
-                          <hr id="hr">
-                      </div>
-                  </section>
-
-                  <section id="Guardain-detail-section">
-                      <div class="row" id="Guardain-detail-row" *ngFor="let item of student">
-                        <div class="col" id="Guardain-detail-col-1">
-                            <div class="col">
-                                <h1>Father's Name</h1>
-                                <p>{{item.guardianFatherName}}</p>
-                            </div>
-                        </div>
-                        <div class="col" id="Guardain-detail-col-2">
-                            <div class="col">
-                                <h1>Contact #</h1>
-                                <p>{{item.guardianContactNumber}}</p>
-                            </div>
-                        </div>
-                        <div class="col" id="Guardain-detail-col-3">
-                            <div class="col">
-                                <h1>Address</h1>
-                                <p>{{item.guardianAddress}}</p>
-                            </div>
-                        </div>
-                        <div class="col" id="Guardain-detail-col-4">
-                            <div class="col">
-                                <h1>CNIC #</h1>
-                                <p>{{item.cnic}}</p>
-                            </div>
-                        </div>
-                    </div>
-                  </section>
-
-                  <!-- footer img section start here -->
-                  <section id="footer-img-section">
-                      <div class="row" id="footer-img-row">
-                          <div class="col">
-                              <img src="/assets/home2_Flower.png" alt="">
-                          </div>
-                      </div>
-                  </section>
-                  <!-- footer img section start here -->
-              </div>
-          </div>
-          <!-- Offcanvas for Gaurdain data ends here -->
-      </section>
+        <!-- footer img section start here -->
+        <!-- <div class="row" id="footer-img-row" >
+            <div class="col" >
+              <img src="/assets/home2_Flower.png" alt="" />
+            </div>
+          </div> -->
+        <!-- footer img section start here -->
+      </div>
+    </div>
   </section>
 </body>
