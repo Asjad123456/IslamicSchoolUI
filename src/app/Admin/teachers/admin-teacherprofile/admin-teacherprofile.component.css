@@ -291,10 +291,11 @@ body {
   gap: 21px;
   overflow: scroll;
   height: 30vh;
-  padding-top: 32px;
+  /* padding-top: 32px; */
 }
 #accordion-main-row {
   padding: 19px;
+  background-color: #d9f9d8;
 }
 .accordion-flush button {
   background-color: var(--golden);
@@ -305,8 +306,6 @@ body {
 }
 #accordion-search-bar .col {
   padding: 11px;
-  position: fixed;
-  top: 57vh;
 }
 #accordion-search-bar input[type="search"] {
   width: 78vw;
