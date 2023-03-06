@@ -12,12 +12,12 @@
 
     <!---------Hero Section start here--------->
     <section id="hero-section">
-      <div class="row" id="hero-row">
+      <div class="row" id="hero-row" *ngFor="let item of branch">
         <div class="col" id="hero-col">
-          <h1>Branch A</h1>
+          <h1>{{item.branchName}}</h1>
           <span
             ><i class="fa fa-globe" aria-hidden="true"></i>
-            <b> Street A Home # 302</b>
+            <b> {{item.address}}</b>
           </span>
         </div>
       </div>
@@ -26,10 +26,10 @@
 
     <!-------- Main section HTML start here ------->
     <section id="main-section">
-      <div class="row" id="class-row">
+      <div class="row" id="class-row" (click)="toclassesList()">
         <div class="col-10" id="class-col-1">
           <h1>Classes</h1>
-          <p>10+</p>
+          <p>{{classCount}}</p>
         </div>
         <div class="col-2" id="class-col-2">
           <img src="/assets/students.png" alt="" />
