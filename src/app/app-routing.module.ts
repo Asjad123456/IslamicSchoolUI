@@ -73,7 +73,7 @@ const routes: Routes = [
   {path:'supervisor-panel/:id/supervisor-branchprofile/:id', component:SupervisorBranchprofileComponent},//80% Done
   {path:'supervisor-panel/:id/supervisor-branchprofile/:id/teacherlist', component:SupervisorBranchClasslistComponent},//work in progress
   {path:'supervisor-panel/supervisor-branchprofile/:id/teacher-profile/:id', component:SupervisorBranchTeacherprofileComponent},//work in progress
-  {path:'supervisor-panel/:id/supervisor-branchprofile/:id/classlist', component:SupervisorBranchClasslistComponent},//work in progress
+  {path:'supervisor-panel/supervisor-branchprofile/:id/classlist', component:SupervisorBranchClasslistComponent},//work in progress
   {path:'supervisor-panel/supervisor-branchprofile/:id/classprofile/:id', component:SupervisorBranchClassprofileComponent},//work in progress
   {path:'supervisor-panel/supervisor-branchprofile/classprofile/:id/student-profile/:id', component:SupervisorBranchClassStudentprofileComponent},//work in progress
   {path:'supervisor-panel/:id/supervisor-branchprofile/:id/studentlist', component:SupervisorBranchStudentlistComponent},//work in progress

@@ -58,4 +58,8 @@ updateClass(id: number, studyclass: StudyClass) {
 
   return this.http.put<StudyClass>(url, studyclass, httpOptions);
 }
+gwtStudyClassCountForBranch(id: number){
+  const url = `${this.baseUrl}Branch/studyclasscount/${id}`;
+  return this.http.get<number>(url);
+}
 }
