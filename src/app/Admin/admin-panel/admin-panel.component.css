@@ -22,7 +22,7 @@ body {
   background-color: #d0efc4;
   height: 100vh;
   border: 1px solid transparent;
-  background: linear-gradient(0deg, var(--box-color) 0%, #9baf9a 100%);
+  background: linear-gradient(0deg, var(--box-color) 0%, #a3bb7c 100%);
 }
 .section {
   position: relative;
@@ -47,7 +47,7 @@ body {
 }
 #head-container h1 {
   margin: 0;
-  color: #d2f9a7;
+  color: #626e55;
   font-size: 27px;
   font-weight: 800;
   font-family: "Rubik", sans-serif;
@@ -73,10 +73,9 @@ body {
 #branch-box {
   height: 24vh;
   display: grid;
-  align-content: center;
-  gap: 50px;
+  align-content: space-between;
   padding: 10px;
-  background-color: #c9e393;
+  background-color: #dae59e;
   border-radius: 10px;
   width: 45vw;
 }
@@ -112,10 +111,9 @@ body {
 #supervisor-box {
   height: 24vh;
   display: grid;
-  align-content: center;
-  gap: 36px;
+  align-content: space-between;
   padding: 10px;
-  background-color: #ffd9ba;
+  background-color: #c9ffb2;
   border-radius: 10px;
   width: 45vw;
 }
@@ -130,25 +128,23 @@ body {
 #teacher-box {
   height: 24vh;
   display: grid;
-  align-content: center;
-  gap: 36px;
+  align-content: space-between;
   padding: 10px;
-  background-color: #ffd9ba;
+  background-color: #e9e7b0;
   border-radius: 10px;
   width: 45vw;
 }
 #student-box {
   height: 24vh;
   display: grid;
-  align-content: center;
-  gap: 50px;
+  align-content: space-between;
   padding: 10px;
-  background-color: #c9e393;
+  background-color: #d1d9b9;
   border-radius: 10px;
   width: 45vw;
 }
 #role-managment-row {
-  background-color: #d2f9a7;
+  background-color: #d5f3b4;
   height: 10vh;
   border-radius: 10px;
   align-content: center;
@@ -160,8 +156,8 @@ body {
 }
 #role-managment-col-1 h1 {
   font-size: 20px;
-  font-weight: 100;
-  color: #586e6b;
+  font-weight: 200;
+  color: #9ab17d;
   max-width: 60%;
   margin: 0;
 }
@@ -175,7 +171,7 @@ body {
 }
 
 #dean-box {
-  background-color: #d2f9a7;
+  background-color: #d5f3b4;
   height: 10vh;
   border-radius: 10px;
 }

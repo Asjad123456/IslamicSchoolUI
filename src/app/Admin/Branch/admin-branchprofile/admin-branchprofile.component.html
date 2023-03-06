@@ -22,12 +22,12 @@
           id="offcanvasRight"
           aria-labelledby="offcanvasRightLabel"
         >
-          <div class="row" id="branch-offcanva-top-row">
-            <div class="offcanvas-header" id="offcanvas-header">
-              <div class="col" id="branch-offcanva-top-col-1">
+          <div class="row" id="branch-offcanva-top-row" >
+            <div class="offcanvas-header" id="offcanvas-header" >
+              <div class="col" id="branch-offcanva-top-col-1" >
                 <h5 id="offcanvasRightLabel">Edit Branch Data</h5>
               </div>
-              <div class="col" id="branch-offcanva-top-col-2">
+              <div class="col" id="branch-offcanva-top-col-2" >
                 <button
                   type="button"
                   id="btn-close"
@@ -40,7 +40,7 @@
           </div>
 
           <div class="offcanvas-body" id="offcanvas-body">
-            <form [formGroup]="editBranchForm" (ngSubmit)="editBranchData()">
+            <form [formGroup]="editBranchForm" (ngSubmit)="editBranchData()" >
               <div class="row" id="offcanvas-input-row">
                 <div class="col" id="edit-branch-name-col">
                   <label for="">

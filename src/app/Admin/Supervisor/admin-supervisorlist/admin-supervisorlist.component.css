@@ -132,6 +132,9 @@ input[placeholder] {
   overflow: scroll;
   padding: 6px;
 }
+#list-parent-col::-webkit-scrollbar {
+  display: none;
+}
 #list-row {
   display: grid;
   grid-template-columns: 70% 30%;

@@ -1,12 +1,12 @@
 <body>
   <section id="parent-section">
-    <section>
-      <div class="row" id="top-back-btn">
-        <div class="col">
-          <i class="fa fa-arrow-left" aria-hidden="true" (click)="onBack()"></i>
-        </div>
+    <!-- <section> -->
+    <div class="row" id="top-back-btn">
+      <div class="col">
+        <i class="fa fa-arrow-left" aria-hidden="true" (click)="onBack()"></i>
       </div>
-    </section>
+    </div>
+    <!-- </section> -->
 
     <section>
       <div class="row" id="main-img-row">
@@ -69,78 +69,74 @@
         id="offcanvasTop"
         aria-labelledby="offcanvasTopLabel"
       >
-        <div class="offcanvas-header">
-        </div>
+        <!-- <div class="offcanvas-header"></div> -->
 
-        <div
-          class="offcanvas-body"
-          style="background: linear-gradient(to top, #e1e0bb 0%, #c5f3cb 100%)"
-        >
-          <body>
-            <!-- Header section start here -->
-            <section id="header-heading-sec">
-              <div class="row" id="header-heading-row">
-                <div class="col">
-                  <h1>Edit Your Profile</h1>
+        <div class="offcanvas-body">
+          <!-- <body> -->
+          <!-- Header section start here -->
+          <section id="header-heading-sec">
+            <div class="row" id="header-heading-row">
+              <div class="col">
+                <h1>Edit Your Profile</h1>
+              </div>
+            </div>
+          </section>
+
+          <!-- input-field section start here -->
+          <section id="input-field-section" >
+            <form [formGroup]="editProfileForm" (ngSubmit)="editProfile()">
+              <div class="row" id="input-field-row" >
+                <div class="col" id="name-col">
+                  <p>Name</p>
+                  <input type="text" formControlName="userName" />
+                </div>
+                <div class="col" id="name-col">
+                  <p>Email</p>
+                  <input type="text" formControlName="email" />
+                </div>
+                <div class="col" id="address-col">
+                  <p>Father name</p>
+                  <input type="text" formControlName="fatherName" />
+                </div>
+                <div class="col" id="city-col">
+                  <p>Address</p>
+                  <input type="text" formControlName="address" />
+                </div>
+                <div class="col" id="contact-col">
+                  <p>Contact</p>
+                  <input type="text" formControlName="phoneNumber" />
                 </div>
               </div>
-            </section>
 
-            <!-- input-field section start here -->
-            <section id="input-field-section">
-              <form [formGroup]="editProfileForm" (ngSubmit)="editProfile()">
-                <div class="row" id="input-field-row">
-                  <div class="col" id="name-col">
-                    <p>Name</p>
-                    <input type="text" formControlName="userName" />
+              <section id="footer-btn-section">
+                <div class="row" id="footer-btn-row">
+                  <div class="col" id="footer-btn-col-1">
+                    <button
+                      class="btn"
+                      type="button"
+                      class="text-reset"
+                      data-bs-dismiss="offcanvas"
+                      aria-label="Close"
+                    >
+                      cancel
+                    </button>
                   </div>
-                  <div class="col" id="name-col">
-                    <p>Email</p>
-                    <input type="text" formControlName="email" />
-                  </div>
-                  <div class="col" id="address-col">
-                    <p>Father name</p>
-                    <input type="text" formControlName="fatherName" />
-                  </div>
-                  <div class="col" id="city-col">
-                    <p>Address</p>
-                    <input type="text" formControlName="address" />
-                  </div>
-                  <div class="col" id="contact-col">
-                    <p>Contact</p>
-                    <input type="text" formControlName="phoneNumber" />
+                  <div class="col" id="footer-btn-col-2">
+                    <button
+                      class="btn"
+                      type="submit"
+                      class="text-reset"
+                      data-bs-dismiss="offcanvas"
+                      aria-label="Close"
+                    >
+                      Save
+                    </button>
                   </div>
                 </div>
-
-                <section id="footer-btn-section">
-                  <div class="row" id="footer-btn-row">
-                    <div class="col" id="footer-btn-col-1">
-                      <button
-                        class="btn"
-                        type="button"
-                        class="text-reset"
-                        data-bs-dismiss="offcanvas"
-                        aria-label="Close"
-                      >
-                        cancel
-                      </button>
-                    </div>
-                    <div class="col" id="footer-btn-col-2">
-                      <button
-                        class="btn"
-                        type="submit"
-                        class="text-reset"
-                        data-bs-dismiss="offcanvas"
-                        aria-label="Close"
-                      >
-                        Save
-                      </button>
-                    </div>
-                  </div>
-                </section>
-              </form>
-            </section>
-          </body>
+              </section>
+            </form>
+          </section>
+          <!-- </body> -->
         </div>
       </div>
     </section>

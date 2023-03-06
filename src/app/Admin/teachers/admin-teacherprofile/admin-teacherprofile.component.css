@@ -41,14 +41,17 @@ body {
   justify-content: center;
 }
 #main-img-row .col img {
-  max-width: 79%;
+  max-width: 67%;
 }
 /* main img styling start here */
 
 /* Teacher name data section start here */
 #teacher-info-row {
   display: grid;
-  grid-template-columns: 53% 47%;
+  grid-template-columns: 67% 33%;
+  align-content: end;
+  height: 17vh;
+  /* padding: 19px; */
 }
 
 #teacher-info-col {

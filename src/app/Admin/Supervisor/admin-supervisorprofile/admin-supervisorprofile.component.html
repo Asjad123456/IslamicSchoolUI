@@ -6,37 +6,37 @@
       </div>
     </div>
 
-    <div class="row" id="main-img-row">
+    <div class="row" id="main-img-row" >
       <div class="col">
         <img src="/assets/man.png" alt="" />
       </div>
     </div>
 
-    <div class="row" id="teacher-info-row" *ngFor="let item of user">
-      <div class="col" id="teacher-info-col">
+    <div class="row" id="teacher-info-row" *ngFor="let item of user" >
+      <div class="col" id="teacher-info-col" >
         <h2>Supervisor</h2>
         <abbr>{{ item.userName }}</abbr>
         <p>Roll # {{ item.email }}</p>
       </div>
-      <div class="col" id="teacher-btn-col">
+      <div class="col" id="teacher-btn-col" >
         <button class="btn"><i class="fa-solid fa-phone-flip"></i></button>
       </div>
     </div>
 
-    <div class="row" id="teacher-details-row" *ngFor="let item of user">
-      <div class="col" id="teacher-details-col-1">
+    <div class="row" id="teacher-details-row" *ngFor="let item of user" >
+      <div class="col" id="teacher-details-col-1" >
         <h2>Father name</h2>
         <p>{{ item.fatherName }}</p>
       </div>
-      <div class="col" id="teacher-details-col-2">
+      <div class="col" id="teacher-details-col-2" >
         <h2>Contact #</h2>
         <p>{{ item.phoneNumber }}</p>
       </div>
-      <div class="col" id="teacher-details-col-3">
+      <div class="col" id="teacher-details-col-3" >
         <h2>Registration #</h2>
         <p>{{ item.address }}</p>
       </div>
-      <div class="col" id="teacher-details-col-4">
+      <div class="col" id="teacher-details-col-4" >
           <h2>Socials</h2>
           <p>Socials</p>
       </div>

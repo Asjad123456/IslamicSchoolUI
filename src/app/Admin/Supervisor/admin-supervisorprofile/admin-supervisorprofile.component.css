@@ -41,34 +41,39 @@ body {
   justify-content: center;
 }
 #main-img-row .col img {
-  max-width: 79%;
+  max-width: 55%;
 }
 /* main img styling start here */
 
 /* Teacher name data section start here */
 #teacher-info-row {
   display: grid;
-  grid-template-columns: 53% 47%;
+  grid-template-columns: 62% 43%;
+  align-content: end;
+  height: 17vh;
+  padding: 19px;
 }
 
 #teacher-info-col {
   display: grid;
   justify-content: center;
-  flex-wrap: nowrap;
   align-content: center;
 }
 #teacher-info-col h2 {
   color: var(--color-1);
-  font-size: 20px;
+  font-size: 18px;
   margin: 0;
+  font-weight: 100;
 }
 #teacher-info-col abbr {
   color: var(--color);
   font-size: 20px;
+  font-variant: petite-caps;
 }
 #teacher-info-col p {
   font-size: 15px;
   color: var(--color);
+  margin: 0;
 }
 #teacher-btn-col {
   display: grid;
@@ -89,7 +94,7 @@ body {
   display: grid;
   grid-template-columns: 50% 50%;
   gap: 7px;
-  height: 36vh;
+  height: 41vh;
   justify-content: center;
   align-content: center;
   padding: 14px;
@@ -140,6 +145,7 @@ body {
   font-weight: 600;
   color: #586e6b;
   background-color: #d2f9a7;
+  border: none;
   box-shadow: rgb(0 0 0 / 5%) 0px 0px 0px 1px,
     rgb(199 243 150 / 50%) 0px 0px 0px 1px inset;
 }
