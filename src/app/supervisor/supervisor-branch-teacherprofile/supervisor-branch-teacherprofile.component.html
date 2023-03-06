@@ -1,95 +1,61 @@
 <body>
-
   <section id="parent-section">
-      <section>
-          <div class="row" id="top-back-btn">
-              <div class="col">
-                  <i class="fa fa-arrow-left" aria-hidden="true"></i>
-              </div>
-          </div>
-      </section>
+    <!-- <section> -->
+    <div class="row" id="top-back-btn">
+      <div class="col">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      </div>
+    </div>
+    <!-- </section> -->
 
-      <section>
-          <div class="row" id="main-img-row">
-              <div class="col">
-                  <img src="/assets/teacher.png" alt="">
-              </div>
-          </div>
-      </section>
+    <section>
+      <div class="row" id="main-img-row">
+        <div class="col">
+          <img src="/assets/headmaster.png" alt="" />
+        </div>
+      </div>
+    </section>
 
-      <section>
-          <div class="row" id="teacher-info-row" *ngFor="let item of teacher">
-              <div class="col" id="teacher-info-col">
-                  <h2>Teacher</h2>
-                  <abbr>{{item.userName}}</abbr>
-                  <p>{{item.email}}</p>
-              </div>
-              <div class="col" id="teacher-btn-col">
-                  <button class="btn"><i class="fa-solid fa-phone-flip"></i></button>
-              </div>
-          </div>
-      </section>
+    <section>
+      <div class="row" id="teacher-info-row">
+        <div class="col" id="teacher-info-col" *ngFor="let item of teacher">
+          <h2>Admin</h2>
+          <b>{{ item.userName }}</b>
+          <p>{{ item.email }}</p>
+        </div>
+        <div class="col" id="teacher-btn-col">
+          <button
+            class="btn"
+          >
+            <i class="fa fas fa-user-plus"></i>
+          </button>
+        </div>
+      </div>
+    </section>
 
-      <section>
-          <div class="row" id="teacher-details-row" *ngFor="let item of teacher">
-              <div class="col" id="teacher-details-col-1">
-                  <h2>Father name</h2>
-                  <p>{{item.fatherName}}</p>
-              </div>
-              <div class="col" id="teacher-details-col-2">
-                  <h2>Contact #</h2>
-                  <p>{{item.phoneNumber}}</p>
-              </div>
-              <div class="col" id="teacher-details-col-3">
-                  <h2>Address</h2>
-                  <p></p>
-              </div>
-              <div class="col" id="teacher-details-col-4">
-                  <h2>Socials</h2>
-                  <p></p>
-              </div>
-          </div>
-      </section>
-
-
-      <section>
-          <div class="row" id="footer-btn-row">
-              <div class="col" id="footer-btn-col">
-                  <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
-                      aria-controls="offcanvasTop">View Gaurdain
-                      <i class="fa fa-angle-down"></i>
-                  </button>
-              </div>
-          </div>
-          <!-- Offcanvas for Gaurdain data start here -->
-          <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-              <div class="offcanvas-header">
-                  <!-- <h5 id="offcanvasTopLabel">Offcanvas top</h5> -->
-                  <button id="btn-close" type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                      aria-label="Close"></button>
-              </div>
-
-              <div class="offcanvas-body">
-                <div class="row" id="footer-btn-row" style="top: 10vh;" *ngFor="let item of teacher">
-                  <div class="col" id="footer-btn-col" *ngFor="let class of item.studyClasses">
-                      <button class="btn" type="button" (click)="toClassProfile()">{{class.className}}
-                          <i class="fa fa-angle-down"></i>
-                      </button>
-                  </div>
-                  </div>
-
-                  <!-- footer img section start here -->
-                  <section id="footer-img-section">
-                      <div class="row" id="footer-img-row">
-                          <div class="col">
-                              <img src="/assets/home2_Flower.png" alt="">
-                          </div>
-                      </div>
-                  </section>
-                  <!-- footer img section start here -->
-              </div>
-          </div>
-          <!-- Offcanvas for Gaurdain data ends here -->
-      </section>
+    <section>
+      <div class="row" id="teacher-details-row" *ngFor="let item of teacher">
+        <div class="col" id="teacher-details-col-1">
+          <h2>Father name</h2>
+          <p>{{ item.fatherName }}</p>
+        </div>
+        <div class="col" id="teacher-details-col-1">
+          <h2>Contact #</h2>
+          <p>{{ item.phoneNumber }}</p>
+        </div>
+        <div class="col" id="teacher-details-col-1">
+          <h2>Address</h2>
+          <p>{{ item.address }}</p>
+        </div>
+        <div class="col" id="teacher-details-col-1">
+          <h3>Socials</h3>
+          <p>
+            <i class="fa-brands fa-instagram" style="padding-left: 10px"></i>
+            <i class="fa-brands fa-twitter" style="padding-left: 10px"></i>
+            <i class="fa-brands fa-facebook-f" style="padding-left: 10px"></i>
+          </p>
+        </div>
+      </div>
+    </section>
   </section>
 </body>

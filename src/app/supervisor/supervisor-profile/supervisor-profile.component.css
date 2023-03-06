@@ -1,7 +1,7 @@
-@import '~@fortawesome/fontawesome-free/css/all.css';
-@import '~@fortawesome/fontawesome-free/css/solid.css';
-@import '~@fortawesome/fontawesome-free/css/regular.css';
-@import '~@fortawesome/fontawesome-free/css/brands.css';
+@import "~@fortawesome/fontawesome-free/css/all.css";
+@import "~@fortawesome/fontawesome-free/css/solid.css";
+@import "~@fortawesome/fontawesome-free/css/regular.css";
+@import "~@fortawesome/fontawesome-free/css/brands.css";
 
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
 
@@ -10,247 +10,228 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Rubik", sans-serif;
-  border: 1px solid transparent;
 }
 :host {
-  --color-1: #dba100;
+  --color-1: #bc9c00;
   --color: #586e6b;
   --background: #fff;
-  --box-color: #D0EFC4;
+  --box-color: #daf1d0;
+}
+body {
+  /* background: linear-gradient(to top, #daf1d0 81%, #abc9af 100%); */
+  height: 99vh;
+}
+#parent-section {
+  height: 100vh;
+  background: linear-gradient(0deg, var(--box-color) 0%, #9baf9a 100%);
+}
+/* top back button styling start here */
+#top-back-btn {
+  height: 5vh;
+  padding: 10px;
+}
+#top-back-btn .col {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+#top-back-btn .col i {
+  font-size: 20px;
+  color: var(--color);
 }
 
-
-#hero-col-inner-1 i{
-    font-size: 20px;
-    color: var(--color-1);
+#main-img-row .col {
+  display: flex;
+  justify-content: center;
+  padding: 11px;
+}
+#main-img-row .col img {
+  max-width: 67%;
 }
 
-
-/* i button offcanvas section styling start here*/
-#offcanvasExample{
-    background-color: var(--box-color);
-}
-#teacher-offcanvas-body{
-    height: 99.8vh;
-}
-.supervisor-offcanvas-header{
-    display: flex;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    align-content: center;
-    height: 5vh;
-    padding: 5px;
-}
-.supervisor-offcanvas-header button{
-    font-size: 20px;
-    position: relative;
-    right: 7px;
-}
-#teacher-offcanvas-row .col img{
-    width: 97vw;
-}
-/* - - - ===== - - - */
-#name-section{
-    height: 19vh;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-}
-#name-section-row{
-    display: grid;
-    grid-template-columns: 66% 40%;
-}
-#name-section-col-1{
-    display: grid;
-    justify-content: center;
-    padding: 7px;
-    color: var(--color);
-}
-#name-section-col-1 h3{
-    font-weight: 900;
-    color: #bbd5ab;
-}
-#name-section-col-2{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-content: center;
-    width: 33vw;
-}
-#name-section-col-2 i{
-    font-size: 30px;
-    color: var(--color);
-}
-/* =-=-=-=-=-=-=--=--== */
-#main-detail-section{
-    position: relative;
-    top: 23px;
-    padding: 4px;
-}
-#main-detail-row{
-    display: grid;
-    grid-template-columns: 51% 48%;
-    column-gap: 5px;
-    row-gap: 5px;
-    height: 28vh;
-}
-#main-detail-col-1{
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    background: #c7f3b5;
-    border-radius: 15px;
-    color: var(--color-1);
-}
-#main-detail-col-2{
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    background: #c7f3b5;
-    border-radius: 15px;
-    color: var(--color-1);
-}
-#main-detail-col-3{
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    background: #c7f3b5;
-    border-radius: 15px;
-    color: var(--color-1);
-}
-#main-detail-col-4{
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    background: #c7f3b5;
-    border-radius: 15px;
-    color: var(--color-1);
+/* Teacher name data section start here */
+#teacher-info-row {
+  padding: 30px;
+  height: 14vh;
 }
 
-/* ------------------------------------- */
-/* Branch offcanvas section styling start here */
-#offcanvasRight{
-    background: linear-gradient(to top, #fff 0%, var(--box-color) 0%);
+#teacher-info-col {
+  display: grid;
+  justify-content: center;
+  align-content: center;
 }
-#offcanvas-btn-row{
-    position: relative;
-    top: 5px;
-    left: 0;
+#teacher-info-col h2 {
+  color: var(--color-1);
+  font-size: 17px;
+  margin: 0;
+  font-weight: 400;
 }
-#offcanvas-btn-col{
-    width: 98vw;
-    display: grid;
-    height: 4vh;
-    justify-content: flex-end;
-    align-content: center;
+#teacher-info-col b {
+  color: var(--color);
+  font-size: 20px;
+  font-weight: 900;
 }
-#offcanvas-btn-col button{
-    position: relative;
-    right: 16px;
-    color: var(--color);
+#teacher-info-col p {
+  color: var(--color);
+  font-size: 15px;
+  margin: 0;
+  font-weight: 400;
 }
-#offcanvas-profile-sec{
-    height: 15vh;
-    display: grid;
-    align-content: center;
-    justify-content: center;
+#teacher-btn-col {
+  display: grid;
+  justify-content: flex-end;
+  align-content: center;
 }
-#offcanvas-profile-col{
-    display: grid;
-    align-content: center;
-    color: var(--color);
+#teacher-btn-col button {
+  text-decoration: none;
+  color: aliceblue;
+  background-color: goldenrod;
+  border-radius: 26px;
+  height: 41px;
+  line-height: 1px;
+  width: 11vw;
 }
-#offcanvas-profile-col strong{
-    font-size: 20px;
-    font-weight: 900;
+/* Teacher deatail row styling section start here */
+#teacher-details-row {
+  display: grid;
+  grid-template-columns: 192px 193px;
+  row-gap: 11px;
+  padding: 7px;
+  height: 39vh;
+  align-content: center;
 }
-#offcanvas-main-row{
-    display: grid;
-    grid-template-columns: 381px;
-    row-gap: 10px;
+#teacher-details-col-1 {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  height: 14vh;
+  background: #d2f9a7;
+  border-radius: 15px;
+  width: 47vw;
 }
-label{
-    font-size: 15px;
-    font-weight: 800;
-    color: var(--color);
+#teacher-details-col-1 h2 {
+  font-size: 20px;
+  color: var(--color);
 }
-input#name {
-    width: 85vw;
+#teacher-details-col-1 h3 {
+  font-size: 20px;
+  color: var(--color);
 }
-input[type = "text"]{
-    background: none;
-    border-bottom: 1px solid var(--color-1);
-    border-top: 0;
-    border-right: 0;
-    border-left: 0;
-    outline: none;
-}
-#offcanvas-main-col-1{
-    height: 9vh;
-    padding: 8px;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-}
-#offcanvas-main-col-2{
-    height: 10vh;
-    padding: 8px;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-}
-#offcanvas-main-col-3{
-    height: 9vh;
-    padding: 8px;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-}
-#offcanvas-main-col-4{
-    height: 9vh;
-    padding: 8px;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-}
-#offcanvas-main-col-5{
-    height: 9vh;
-    padding: 8px;
-    display: grid;
-    justify-content: center;
-    align-content: center;
+#teacher-details-col-1 p {
+  color: var(--color);
 }
 
+#footer-btn-row {
+  width: 94%;
+}
+
+/* footer button offcanvas section styling start here */
+.offcanvas {
+  height: 100vh;
+  background-color: var(--box-color);
+}
+.offcanvas-body {
+  background: linear-gradient(0deg, var(--box-color) 0%, #9baf9a 100%);
+}
+#header-heading-row {
+  height: 20vh;
+  padding: 8px;
+}
+#header-heading-row .col {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+#header-heading-row .col h1 {
+  color: var(--color);
+  font-weight: 100;
+  margin: 0;
+}
+
+/* input field section styling start here */
+#input-field-row {
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: 10px;
+  /* position: relative;
+  top: 0; */
+}
+input[type="text"] {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 1px solid;
+  background: none;
+  outline: none;
+  width: 89vw;
+}
+#name-col {
+  height: 11vh;
+  padding: 15px;
+  color: var(--color-1);
+}
+#name-col input {
+  color: var(--color);
+}
+#address-col {
+  height: 11vh;
+  padding: 15px;
+  color: var(--color-1);
+}
+#address-col input {
+  color: var(--color);
+}
+#city-col {
+  height: 11vh;
+  padding: 15px;
+  color: var(--color-1);
+}
+#city-col input {
+  color: var(--color);
+}
+#contact-col {
+  height: 11vh;
+  padding: 15px;
+  color: var(--color-1);
+}
+#name-col,
+#address-col,
+#city-col,
+p {
+  color: var(--color-1);
+}
+#name-col,
+#address-col,
+#city-col,
+#contact-col input {
+  color: var(--color);
+}
 /* footer buttons section styling start here */
-#footer-btns-row{
-    height: 10vh;
-    display: flex;
-    align-content: center;
-    justify-content: center;
+#footer-btn-col-1 {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  color: var(--box-color);
 }
-#footer-btns-col-1{
-    display: grid;
-    align-content: center;
-    justify-content: center;
+#footer-btn-col-1 button {
+  width: 20vw;
+  height: 5vh;
+  background-color: var(--color);
+  border: none;
+  border-radius: 8px;
 }
-#footer-btns-col-1 .btn{
-    width: 20vw;
-    height: 5vh;
-    background-color: var(--color-1);
-    color: var(--box-color);
-    font-size: 16px;
-    font-weight: 600;
+#footer-btn-col-2 {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  color: var(--box-color);
 }
-#footer-btns-col-2{
-    display: grid;
-    align-content: center;
-    justify-content: center;
-}
-#footer-btns-col-2 .btn{
-    width: 20vw;
-    height: 5vh;
-    background-color: var(--color-1);
-    color: var(--box-color);
-    font-size: 16px;
-    font-weight: 600;
+#footer-btn-col-2 button {
+  width: 20vw;
+  height: 5vh;
+  background-color: var(--color);
+  border: none;
+  border-radius: 7px;
 }

@@ -23,7 +23,7 @@ export class SupervisorProfileComponent {
       fatherName: [''],
       email: [''],
       phoneNumber: [''],
-      // address: ['']
+      address: ['']
     })
     this.getSupervisorDetails();
     this.populateEditForm();
@@ -50,7 +50,7 @@ export class SupervisorProfileComponent {
         this.editSupervisorProfileForm.controls['fatherName'].setValue(res[0]?.fatherName);
         this.editSupervisorProfileForm.controls['email'].setValue(res[0]?.email);
         this.editSupervisorProfileForm.controls['phoneNumber'].setValue(res[0]?.phoneNumber);
-        // this.editSupervisorProfileForm.controls['address'].setValue(res[0]?.address);
+        this.editSupervisorProfileForm.controls['address'].setValue(res[0]?.address);
       console.warn(res)
     })
   }

@@ -10,317 +10,251 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Rubik", sans-serif;
-  overflow: hidden;
 }
 :host {
-  --color-1: #bc9c00;
+  --green: #f5cac1;
+  --color-1: #dba100;
   --color: #586e6b;
   --background: #fff;
-  --box-color: #daf1d0;
+  --box-color: #d0efc4;
 }
 body {
-  background: linear-gradient(to top, var(--box-color) 0%, #d0efc0 100%);
+  background: linear-gradient(0deg, var(--box-color) 0%, #9baf9a 100%);
   height: 100vh;
 }
-/* Top back btn section styling start here */
+/* top back btn section styling start here */
 #back-btn-row {
   padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
 }
 #back-btn-col i {
   font-size: 20px;
+  color: #d2f9a7;
 }
-
-/* Hero section styling start here */
-#hero-section {
-  position: relative;
-  top: 30px;
-}
-#hero-row {
-  height: 20vh;
-}
-#hero-col-1 {
+/* hero section styling start here */
+#hero-section-row {
+  height: 37vh;
   display: grid;
   justify-content: center;
   align-content: center;
-  row-gap: 10px;
+}
+#hero-section-col {
+  border-radius: 999px 999em 999em 999em;
+  display: grid;
+  align-content: center;
+  justify-content: center;
   text-align: center;
-  border-radius: 0px 86px 89px 0;
-  background: var(--color);
+  background-color: #d2f9a7;
+  color: #41523a;
+  height: 21vh;
+  width: 43vh;
 }
-#hero-col-1 h2 {
-  color: var(--box-color);
-  font-size: 25px;
-  font-weight: 500;
-}
-#hero-col-1 p {
-  color: var(--color-1);
-  font-size: 16px;
-  font-weight: 500;
-}
-#info-col{
-    display: grid;
-    justify-content: flex-end;
-    color: var(--color-1);
+#hero-section-col h1 {
+  font-size: 35px;
+  font-weight: 900;
 }
 
-/* top i button styling start here */
-#offcanvasTop{
-  background-color: var(--box-color);
-  height: 50%;
-}
-.offcanvas-header{
-  height: 5vh;
-}
-#close-btn-row{
-  width: 100vw;
-}
-#close-btn-col{
-    display: grid;
-    height: 5vh;
-    align-content: center;
-    padding-left: 10px;
-}
-#offcanvas-hero-row{
-  height: 10vh;
+/* Main section styling :start here  */
+#main-teacher-parent-row {
   display: flex;
+
+  height: 17vh;
   justify-content: center;
-  flex-wrap: wrap;
   align-content: center;
   padding: 10px;
-}
-#offcanvas-hero-col{
-  padding: 7px;
-}
-#offcanvas-hero-col h2{
-  color: var(--color);
-}
-#offcanvas-main-row{
-  display: grid;
-  grid-template-columns: 100%;
   row-gap: 10px;
-  justify-content: center;
-  height: 25vh;
 }
-#offcanvas-main-row label{
-  color: var(--color-1);
-}
-input[type=text]{
-  border-top: 0;
-  border-right: 0;
-  border-left: 0;
-  border-bottom: 1px solid var(--color);
-  background: none;
-  outline: none;
-  width: 67vw;
-}
-
-#offcanvas-main-col-1{
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  height: 7vh;
-}
-#offcanvas-main-col-2{
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  height: 7vh;
-}
-#offcanvas-main-col-3{
-  display: grid;
-  justify-content: center;
-}
-#offcanvas-main-col-3 button{
-  background-color: var(--color-1);
-  width: 26vw;
-  color: var(--box-color);
-}
-
-
-
-
-
-#hero-col-2 {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-content: center;
-}
-#hero-col-2 img {
-  width: 42vw;
-  height: 16vh;
-}
-
-/* main section styling start here  */
-#main-section {
-  position: relative;
-  top: 41px;
-  height: 70%;
-}
-/* student heading styling */
-#student-heading-row {
-  padding: 17px;
-}
-#student-heading-col {
-  max-width: fit-content;
-}
-#student-heading-col h1 {
-  color: var(--color-1);
-  font-size: 25px;
-  font-weight: 200;
-}
-
-/* sort by button styling */
-#sort-btn-col-1 {
-  padding: 10px;
-}
-#sort-btn-col-1 button {
-  width: 20vw;
-  height: 4vh;
-  background-color: var(--color-1);
-  color: var(--box-color);
-  font-weight: 300;
-}
-#sort-btn-col-2 {
-  padding: 10px;
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  align-content: center;
-}
-
-/* student list styling start here  */
-#student-list-parent-row {
-  height: 90%;
-  overflow: scroll;
-}
-#student-list-row {
+#main-teacher-row {
   display: grid;
   grid-template-columns: 80% 20%;
-  padding: 10px;
+  padding: 6px;
+  border-radius: 10px;
+  background-color: #d8e7b4;
+  box-shadow: rgb(0 0 0 / 5%) 0px 0px 0px 1px,
+    rgb(199 243 150 / 50%) 0px 0px 0px 1px inset;
 }
-#student-list-col-1 {
-  padding: 10px;
-  border-radius: 17px 0px 0px 17px;
-  background-color: rgb(199 219 171);
-  color: var(--color);
-  padding: 19px;
-}
-#student-list-col-1 h1 {
-  font-size: 20px;
-  font-weight: 500;
-}
-#student-list-col-1 p {
-  font-size: 15px;
-  font-weight: 300;
-}
-#student-list-col-2 {
+#main-teacher-col-1 {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   align-content: center;
-  border-radius: 0px 17px 17px 0px;
-  background-color: rgb(199 219 171);
+  height: 8vh;
+  padding-left: 10px;
+}
+#main-teacher-col-1 h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
   color: var(--color);
 }
-
-
-
-
-
-
-
-
-
-
-/* Supervisor offcanvas styling start here */
-.supervisor-offcanvas-header {
+#main-teacher-col-2 {
   display: flex;
-  height: 4vh;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  height: 8vh;
 }
-.offcanvas-title {
-  font-size: 16px;
-  font-weight: 100;
-  color: #82a048;
+#main-teacher-col-2 i {
+  color: #dba100;
 }
-.supervisor-offcanvas-header button {
-  position: absolute;
-  right: 17px;
-  top: 17px;
-  font-size: 20px;
-  border: none;
-}
-#teacher-offcanvas-row {
-  background-color: #c9dfc0;
-  position: absolute;
-  top: 46px;
-  left: 14px;
-  right: 15px;
-  z-index: -1;
-}
-#teacher-offcanvas-row .col {
+
+/* Main student section style :start here  */
+#main-student-parent-row {
   display: flex;
+  height: 25vh;
+  justify-content: center;
+  align-content: baseline;
+  padding: 10px;
+  row-gap: 10px;
+}
+#main-student-row {
+  display: grid;
+  grid-template-columns: 76% 24%;
+  background: #d8e7b4;
+  border-radius: 25px;
+  padding: 7px;
+  box-shadow: rgb(0 0 0 / 5%) 0px 0px 0px 1px,
+    rgb(199 243 150 / 50%) 0px 0px 0px 1px inset;
+  height: 20vh;
+}
+#main-student-col-1 {
+  display: grid;
+  flex-wrap: wrap;
+  align-content: center;
+  height: 13vh;
+}
+#main-student-col-1 h1 {
+  padding-left: 10px;
+  font-weight: 600;
+  color: var(--color-1);
+}
+#main-student-col-1 p {
+  padding-left: 10px;
+  color: var(--color);
+}
+#main-student-col-2 {
+  display: grid;
+  height: 18vh;
+}
+.dot {
+  height: 8px;
+  width: 8px;
+  background-color: #dba100;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 1px;
+}
+#col-2 {
+  display: grid;
+  justify-content: center;
+  align-content: flex-end;
+}
+#col-2 img {
+  max-width: 100%;
+  height: auto;
+}
+/* footer section styling starts */
+#footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+#footer .col {
+  background-color: #d2f9a7;
+  max-width: fit-content;
+  text-align: center;
+  padding: 14px;
+  border-radius: 24px;
+  box-shadow: rgb(0 0 0 / 5%) 0px 0px 0px 1px,
+    rgb(199 243 150 / 50%) 0px 0px 0px 1px inset;
+}
+#footer .col h1 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #586e6b;
+  margin: 0;
+}
+#footer .col i {
+  font-size: 29px;
+  font-weight: 400;
+  color: #dba100;
+}
+
+/*View Teacher profile offcanvas start here */
+.offcanvas {
+  background: linear-gradient(0deg, var(--box-color) 0%, #9baf9a 100%);
+}
+/* .offcanvas-header{
+} */
+.offcanvas-header .row {
+  width: 100vw;
+}
+.offcanvas-header .row .col {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  flex-wrap: wrap;
+  height: 5vh;
+  padding-left: 11px;
+}
+.offcanvas-header .row .col button {
+  font-size: 17px;
+}
+
+#parent-section {
+  height: 100vh;
+}
+#main-img-row .col {
+  display: flex;
+  justify-content: center;
+  padding: 11px;
+}
+#main-img-row .col img {
+  max-width: 89%;
+}
+#teacher-info-row {
+  height: 15vh;
+}
+#teacher-info-col {
+  display: grid;
   justify-content: center;
   align-content: center;
 }
-#teacher-offcanvas-row img {
-  width: 387px;
+#teacher-info-col h2 {
+  color: #dba100;
+  font-size: 17px;
+  margin: 0;
+  font-weight: 400;
 }
-
-/* offcanvas Hero row styling  */
-.offcanvas-start {
-  background-color: #c9dfc0;
-}
-#offcanvas-hero {
-  position: absolute;
-  top: 462px;
-  left: 34px;
-  width: 100%;
-}
-#offcanves-name-col p {
-  color: #db7b1b;
-  font-style: italic;
-}
-#offcanvas-hero h2 {
+#teacher-info-col b {
+  color: var(--color);
   font-size: 20px;
-  color: #82a048;
+  font-weight: 900;
 }
-#offcanves-edit-col {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#teacher-info-col p {
+  color: var(--color);
+  font-size: 15px;
+  margin: 0;
+  font-weight: 400;
 }
-#offcanves-edit-col .col {
-  max-width: 22%;
-  border-radius: 22px;
-  height: 5vh;
+#teacher-details-row {
   display: grid;
-  justify-content: center;
-  align-items: center;
-  color: #f6f1f1;
-  background-color: #799f69;
+  grid-template-columns: 192px 193px;
+  row-gap: 11px;
+  padding: 7px;
 }
-#offcanvas-main {
-  position: absolute;
-  top: 579px;
-  left: 37px;
+#teacher-details-col-1 {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  row-gap: 1em;
-  column-gap: 6rem;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  height: 14vh;
+  background: #d2f9a7;
+  border-radius: 15px;
+  width: 47vw;
 }
-#offcanvas-main h3 {
-  color: #4c6912;
-  font-weight: 200;
+#teacher-details-col-1 h2 {
   font-size: 20px;
+  color: var(--color);
 }
-#offcanvas-main p {
-  text-decoration: underline;
-  color: #82a048;
-}
-#offcanvas-main .col i {
-  padding-left: 10px;
+#teacher-details-col-1 p {
+  color: var(--color);
 }

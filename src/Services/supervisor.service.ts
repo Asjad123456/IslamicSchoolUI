@@ -62,4 +62,20 @@ gwtStudyClassCountForBranch(id: number){
   const url = `${this.baseUrl}Branch/studyclasscount/${id}`;
   return this.http.get<number>(url);
 }
+getTeacherCountforBranch(id: number){
+  const url = `${this.baseUrl}Branch/teachercount/${id}`;
+  return this.http.get<number>(url);
+}
+getStudentsCountforBranch(id: number){
+  const url = `${this.baseUrl}Branch/students/${id}`;
+  return this.http.get<number>(url);
+}
+getStudentsCountForclassprofile(id: number){
+  const url = `${this.baseUrl}StudyClass/studentcount/${id}`;
+  return this.http.get<number>(url);
+}
+getStudentList(id: number){
+  const url = `${this.baseUrl}Branch/studentslist/${id}`;
+  return this.http.get<Branches[]>(url);
+}
 }

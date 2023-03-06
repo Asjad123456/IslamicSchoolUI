@@ -1,120 +1,144 @@
-<!-- Supervisor data offcanvas start here -->
-<div class="offcanvas-start" id="offcanvasExample">
-  <!-- offcanvas header start-->
-  <div class="offcanvas-body" id="teacher-offcanvas-body">
-    <div class="row" id="teacher-offcanvas-row">
+<body>
+  <section id="parent-section">
+    <!-- <section> -->
+    <div class="row" id="top-back-btn">
       <div class="col">
-        <img src="/assets/bussiness-man.png" alt="" />
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
       </div>
     </div>
-    <!-- offcanvas header ends-->
+    <!-- </section> -->
 
-    <!-- offcanvas name details start -->
-    <section id="name-section">
-      <div class="row" id="name-section-row">
-        <div class="col" id="name-section-col-1" *ngFor="let item of user">
-          <h3>Supervisor</h3>
-          <strong>{{ item.userName }}</strong>
+    <section>
+      <div class="row" id="main-img-row">
+        <div class="col">
+          <img src="/assets/headmaster.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="row" id="teacher-info-row">
+        <div class="col" id="teacher-info-col" *ngFor="let item of user">
+          <h2>Admin</h2>
+          <b>{{ item.userName }}</b>
           <p>{{ item.email }}</p>
         </div>
-        <div class="col" id="name-section-col-2">
-          <i
-            class="fa-solid fa-pen-nib"
+        <div class="col" id="teacher-btn-col">
+          <button
+            class="btn"
             data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasRight"
-            aria-controls="offcanvasRight"
-          ></i>
+            data-bs-target="#offcanvasTop"
+            aria-controls="offcanvasTop"
+          >
+            <i class="fa fas fa-user-plus"></i>
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- Branch box offcanvas section start here -->
-    <div
-      class="offcanvas offcanvas-end"
-      tabindex="-1"
-      id="offcanvasRight"
-      aria-labelledby="offcanvasRightLabel"
-    >
-      <div class="offcanvas-header">
-        <div class="row" id="offcanvas-btn-row">
-          <div class="col" id="offcanvas-btn-col">
-            <button
-              type="button"
-              class="btn-close text-reset"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
-          </div>
-        </div>
-      </div>
-      <div class="offcanvas-body">
-        <!-- profile data section start here -->
-        <section id="offcanvas-profile-sec">
-          <div class="row" id="offcanvas-profile-row">
-            <div class="col" id="offcanvas-profile-col">
-              <strong>Edit Your Profile</strong>
-            </div>
-          </div>
-        </section>
-
-        <!-- supervisor profile main section start here -->
-        <section id="offcanvas-main-section">
-          <form [formGroup]="editSupervisorProfileForm" (ngSubmit)="editProfile()">
-          <div class="row" id="offcanvas-main-row">
-            <div class="col" id="offcanvas-main-col-1">
-              <label for="name">Name:</label>
-              <input type="text" id="name" formControlName="userName"/>
-            </div>
-            <div class="col" id="offcanvas-main-col-2">
-              <label for="name">father Name:</label>
-              <input type="text" id="name" formControlName="fatherName"/>
-            </div>
-            <div class="col" id="offcanvas-main-col-3">
-              <label for="name">Email:</label>
-              <input type="text" id="name" formControlName="email"/>
-            </div>
-            <div class="col" id="offcanvas-main-col-4">
-              <label for="name">Contact:</label>
-              <input type="text" id="name" formControlName="phoneNumber"/>
-            </div>
-            <!-- <div class="col" id="offcanvas-main-col-5">
-              <label for="name">Address:</label>
-              <input type="text" id="name" formControlName="address"/>
-            </div> -->
-          </div>
-          <div class="row" id="footer-btns-row">
-            <div class="col" id="footer-btns-col-1">
-              <button class="btn" type="button">Cancel</button>
-            </div>
-            <div class="col" id="footer-btns-col-2">
-              <button class="btn" type="submit">Submit</button>
-            </div>
-          </div>
-        </form>
-        </section>
-      </div>
-    </div>
-
-    <section id="main-detail-section">
-      <div class="row" id="main-detail-row" *ngFor="let item of user">
-        <div class="col" id="main-detail-col-1">
-          <strong>Father name</strong>
+    <section>
+      <div class="row" id="teacher-details-row" *ngFor="let item of user">
+        <div class="col" id="teacher-details-col-1">
+          <h2>Father name</h2>
           <p>{{ item.fatherName }}</p>
         </div>
-        <div class="col" id="main-detail-col-2">
-          <strong>Supervising</strong>
-          <p>{{ item.branchName }}</p>
-        </div>
-        <div class="col" id="main-detail-col-3">
-          <strong>Contact</strong>
+        <div class="col" id="teacher-details-col-1">
+          <h2>Contact #</h2>
           <p>{{ item.phoneNumber }}</p>
         </div>
-        <div class="col" id="main-detail-col-4">
-          <strong>Address</strong>
+        <div class="col" id="teacher-details-col-1">
+          <h2>Address</h2>
           <p>{{ item.address }}</p>
+        </div>
+        <div class="col" id="teacher-details-col-1">
+          <h3>Socials</h3>
+          <p>
+            <i class="fa-brands fa-instagram" style="padding-left: 10px"></i>
+            <i class="fa-brands fa-twitter" style="padding-left: 10px"></i>
+            <i class="fa-brands fa-facebook-f" style="padding-left: 10px"></i>
+          </p>
         </div>
       </div>
     </section>
-  </div>
-</div>
-<!-- Supervisor data offcanvas start here -->
+
+    <section>
+      <!-- Offcanvas for Gaurdain data start here -->
+      <div
+        class="offcanvas offcanvas-top"
+        tabindex="-1"
+        id="offcanvasTop"
+        aria-labelledby="offcanvasTopLabel"
+      >
+        <!-- <div class="offcanvas-header"></div> -->
+
+        <div class="offcanvas-body">
+          <!-- <body> -->
+          <!-- Header section start here -->
+          <section id="header-heading-sec">
+            <div class="row" id="header-heading-row">
+              <div class="col">
+                <h1>Edit Your Profile</h1>
+              </div>
+            </div>
+          </section>
+
+          <!-- input-field section start here -->
+          <section id="input-field-section" >
+            <form [formGroup]="editSupervisorProfileForm" (ngSubmit)="editProfile()">
+              <div class="row" id="input-field-row" >
+                <div class="col" id="name-col">
+                  <p>Name</p>
+                  <input type="text" formControlName="userName" />
+                </div>
+                <div class="col" id="name-col">
+                  <p>Email</p>
+                  <input type="text" formControlName="email" />
+                </div>
+                <div class="col" id="address-col">
+                  <p>Father name</p>
+                  <input type="text" formControlName="fatherName" />
+                </div>
+                <div class="col" id="city-col">
+                  <p>Address</p>
+                  <input type="text" formControlName="address" />
+                </div>
+                <div class="col" id="contact-col">
+                  <p>Contact</p>
+                  <input type="text" formControlName="phoneNumber" />
+                </div>
+              </div>
+
+              <section id="footer-btn-section">
+                <div class="row" id="footer-btn-row">
+                  <div class="col" id="footer-btn-col-1">
+                    <button
+                      class="btn"
+                      type="button"
+                      class="text-reset"
+                      data-bs-dismiss="offcanvas"
+                      aria-label="Close"
+                    >
+                      cancel
+                    </button>
+                  </div>
+                  <div class="col" id="footer-btn-col-2">
+                    <button
+                      class="btn"
+                      type="submit"
+                      class="text-reset"
+                      data-bs-dismiss="offcanvas"
+                      aria-label="Close"
+                    >
+                      Save
+                    </button>
+                  </div>
+                </div>
+              </section>
+            </form>
+          </section>
+          <!-- </body> -->
+        </div>
+      </div>
+    </section>
+  </section>
+</body>
