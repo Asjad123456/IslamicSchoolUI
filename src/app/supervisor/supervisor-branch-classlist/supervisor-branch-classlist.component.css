@@ -226,3 +226,10 @@ input[type=text]{
   align-content: center;
   color: var(--color-1s);
 }
+
+
+
+
+input[type=text] {
+  background: none;
+}
