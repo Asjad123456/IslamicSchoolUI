@@ -13,6 +13,7 @@ export class SupervisorBranchClassprofileComponent {
   studyclass: StudyClass[];
   classtostudent: StudyClass;
   editClassForm: FormGroup;
+  studentcount: number;
 
   constructor(private route: ActivatedRoute, private router: Router, private service: SupervisorService, private fb:FormBuilder){}
 
@@ -23,7 +24,8 @@ export class SupervisorBranchClassprofileComponent {
   })
     console.log(+this.route.snapshot.params['id']);
     this.getClassDetail();
-    this.editClass()
+    this.editClass();
+    this.getStudentCount();
   }
   getClassDetail(){
     const classId = +this.route.snapshot.params['id'];
@@ -57,5 +59,17 @@ export class SupervisorBranchClassprofileComponent {
     },error =>{
       console.log(error);
     })
+  }
+  getStudentCount(){
+    const classid = +this.route.snapshot.params['id'];
+    this.service.getStudentsCountForclassprofile(classid).subscribe((res) =>{
+      this.studentcount = res;
+      console.log('hello', res);
+      console.log(classid);
+    })
+  }
+  ToStudentList(){
+    const classId = +this.route.snapshot.params['id'];
+    this.router.navigate(['supervisor-panel/supervisor-branchprofile/classprofile/'+ classId +'/studentlist']);
   }
 }

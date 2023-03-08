@@ -10,7 +10,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Rubik", sans-serif;
-  /* border: 1px solid red; */
 }
 
 :host {
@@ -21,60 +20,19 @@
 }
 
 body {
-  background:  linear-gradient(
-    to top,
-    #cbffb8 11%,
-    #d9ffca  75%
-  )
+  background: linear-gradient(to top, #cbffb8 11%, #d9ffca 75%);
 }
-#parent-section {
-  /* background-image: linear-gradient(to right, #d0efc4, #93ab8a); */
-  max-width: 100%;
-  height: 100vh;
-}
-/* Header section styling start here */
-#header {
-  max-width: 100%;
-}
+
 #header-row {
   display: flex;
   max-width: 103%;
   height: 5vh;
   justify-content: space-around;
 }
-#header-img img {
-  position: absolute;
-  top: -107px;
-  right: 0;
-  bottom: 0;
-  left: 120px;
-  width: 54%;
-  height: auto;
-  transform: rotate(747deg);
-  opacity: 0.2;
-}
-#header-last-icon {
-  position: absolute;
-  top: 9px;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  right: 0px;
-  left: 40vh;
-  max-width: fit-content;
-  font-size: 23px;
-  color: #55913e;
-}
 #header-first-icon {
-  position: absolute;
-  top: 9px;
   display: flex;
-  justify-content: unset;
-  text-align: center;
-  right: 0;
-  left: 26px;
-  max-width: fit-content;
   font-size: 23px;
+  padding: 10px;
   color: #6c7e65;
 }
 
@@ -86,36 +44,45 @@ body {
   justify-content: center;
 }
 #hero-row {
-  width: 77vw;
-  height: 15vh;
+  display: flex;
+  width: 100vw;
+  height: 13vh;
 }
-#hero-col {
+#hero-col-1 {
   color: #6f8169;
   display: grid;
   justify-content: center;
   align-content: center;
+  border-right: 1px solid #8f690c;
+  flex-basis: 0;
+  padding: 10px;
 }
-#hero-col b {
-  font-weight: 100;
-  color: #6f8169;
-}
-#hero-col label {
-  font-weight: 800;
-  color: #6f8169;
-}
-#hero-col h1 {
-  color: #6f8169;
+#hero-col-1 h1 {
+  color: goldenrod;
   font-size: 36px;
   max-width: fit-content;
   font-weight: 800;
+  margin: 0;
 }
-#hero-col i {
+#hero-col-2 {
+  color: #6f8169;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  padding: 10px;
+}
+#hero-col-2 b {
+  font-weight: 100;
+  color: goldenrod;
+}
+
+#hero-col-2 i {
   color: #6f8169;
 }
 
 /* --------Main section Styling start here----- */
 #main-section {
-  display: grid; 
+  display: grid;
   gap: 38px;
   align-content: center;
   height: 64vh;
@@ -124,22 +91,25 @@ body {
 
 /* Classes Row styling start here */
 #class-row {
-  background-color: #ffdea8;
+  background-color: #befd94;
   border-radius: 10px;
-  height: 13vh;
+  height: 12vh;
+  padding: 10px;
 }
 #class-col-1 {
   padding: 10px;
   display: grid;
   align-content: center;
-  flex-wrap: wrap;
 }
-#class-col-1 h1{
-  font-weight: 700;
+#class-col-1 h1,
+#teacher-col-2 h1,
+#student-col-1 h1 {
+  font-weight: 100;
   color: #ab9a64;
-  font-family: "Rubik", sans-serif;
+  font-family: math;
+  margin: 0;
 }
-#class-col-1 p{
+#class-col-1 p {
   font-size: 20px;
   font-weight: 100;
   color: #ab9a64;
@@ -152,12 +122,13 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   align-content: center;
+  border-left: 1px solid #b4b780;
 }
-#class-col-2 img{
+#class-col-2 img {
   width: 10vw;
 }
 /* Classes Row styling start here */
-#footer-rows{
+#footer-rows {
   display: grid;
   gap: 10px;
 }
@@ -166,6 +137,7 @@ body {
   background-color: var(--light-yellow);
   border-radius: 10px;
   height: 10vh;
+  padding: 10px;
 }
 #teacher-col-1 {
   padding: 10px;
@@ -173,8 +145,9 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   align-content: center;
+  border-right: 1px solid #e3bd60;
 }
-#teacher-col-1 img{
+#teacher-col-1 img {
   width: 10vw;
 }
 #teacher-col-2 {
@@ -184,18 +157,13 @@ body {
   flex-wrap: wrap;
   align-content: center;
 }
-#teacher-col-2 h1{
-  font-weight: 700;
-  color: #c7b77b;
-  font-family: "Rubik", sans-serif;
-}
-/* Teachers Row styling start here */
 
 /* students Row styling start here */
 #student-row {
   background-color: var(--light-yellow);
   border-radius: 10px;
   height: 10vh;
+  padding: 10px;
 }
 #student-col-1 {
   padding: 10px;
@@ -203,19 +171,170 @@ body {
   align-content: center;
   flex-wrap: wrap;
 }
-#student-col-1 h1{
-  font-weight: 700;
-  color: #c7b77b;
-  font-family: "Rubik", sans-serif;
-}
 #student-col-2 {
   padding: 10px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-content: center;
+  border-left: 1px solid #e3bd60;
 }
-#student-col-2 img{
+#student-col-2 img {
   width: 10vw;
 }
 /* Students Row styling start here */
+#offcanvasRight {
+  background-color: #fff0bf;
+}
+#offcanvas-header {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+#branch-offcanva-top-col-1 {
+  display: grid;
+  align-content: center;
+  padding: 12px;
+}
+#branch-offcanva-top-col-1 h5 {
+  font-size: 22px;
+  font-weight: 500;
+  color: #6f8169;
+  margin: 0;
+}
+#branch-offcanva-top-col-2 {
+  display: grid;
+  justify-content: flex-end;
+  height: 3vh;
+  align-content: center;
+}
+#branch-offcanva-top-col-2 button {
+  padding-left: 42px;
+}
+#branch-offcanva-top-row {
+  height: 6vh;
+}
+#offcanvas-body {
+  height: 91vh;
+
+}
+#offcanvas-body form {
+  height: 65vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+#offcanvas-input-row {
+  display: grid;
+  grid-template-columns: 373px;
+
+  padding: 10px;
+}
+#edit-branch-name-col {
+  height: 10vh;
+  display: grid;
+  max-width: 97%;
+}
+#edit-branch-name-col label {
+  display: flex;
+  align-content: flex-end;
+  height: 0;
+  color: #fa9c18;
+}
+#edit-branch-city-col {
+  padding-top: 10px;
+  height: 10vh;
+  display: grid;
+  max-width: 97%;
+}
+#edit-branch-city-col label {
+  display: flex;
+  align-content: flex-end;
+  height: 0;
+  color: #fa9c18;
+}
+input[type="text"] {
+  height: fit-content;
+  border-bottom: 1px solid #6f8169;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  outline: none;
+  background: none;
+}
+#edit-branch-address-col {
+  height: 10vh;
+  display: grid;
+  max-width: 97%;
+}
+#edit-branch-address-col label {
+  display: flex;
+  align-content: flex-end;
+  height: 0;
+  color: #fa9c18;
+}
+#edit-branch-code-col {
+  height: 10vh;
+  display: grid;
+  max-width: 97%;
+}
+#edit-branch-code-col label {
+  display: flex;
+  align-content: flex-end;
+  height: 0;
+  color: #fa9c18;
+}
+#edit-branch-name-col input,
+#edit-branch-city-col input,
+#edit-branch-address-col input,
+#edit-branch-code-col input {
+  display: flex;
+  align-items: flex-end;
+  color: #6f8169;
+}
+#branch-offcanvas-btn .col {
+  display: flex;
+  justify-content: flex-end;
+}
+#branch-offcanvas-btn {
+  max-width: 95%;
+}
+#branch-offcanvas-btn button {
+  border: none;
+  width: 99px;
+  height: 5vh;
+  background-color: #f5c685;
+  color: #f4e9d9;
+  font-weight: 500;
+  border-radius: 5px;
+}
+#branche-offcanvas-footer-row .col img {
+  width: 88vw;
+}
+#your-branch-row {
+  background-color: #fff5b8;
+  border-radius: 10px;
+}
+#your-branch-col-1 {
+  display: grid;
+  align-content: center;
+  padding-left: 10px;
+}
+#your-branch-col-1 h1 {
+  padding: 20px;
+  color: goldenrod;
+  font-weight: 800;
+  font-size: 20px;
+  margin: 0;
+}
+#your-branch-col-2 i {
+  color: goldenrod;
+  font-size: 20px;
+}
+#your-branch-col-2 {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}

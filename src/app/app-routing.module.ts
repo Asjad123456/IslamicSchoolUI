@@ -36,6 +36,8 @@ import { AdminProfileComponent } from './Admin/admin-profile/admin-profile.compo
 import { AdminTeacherslistComponent } from './Admin/teachers/admin-teacherslist/admin-teacherslist.component';
 import { AdminTeacherprofileComponent } from './Admin/teachers/admin-teacherprofile/admin-teacherprofile.component';
 import { SearchComponent } from './search/search.component';
+import { SupervisorBranchClassStudentlistComponent } from './supervisor/supervisor-branch-class-studentlist/supervisor-branch-class-studentlist.component';
+import { SupervisorBranchTeacherslistComponent } from './supervisor/supervisor-branch-teacherslist/supervisor-branch-teacherslist.component';
 
 const routes: Routes = [
   {path:'welcome', component:WelcomeComponent},                     //90% Done
@@ -71,12 +73,13 @@ const routes: Routes = [
   {path:'supervisor-panel/:id', component:SupervisorPanelComponent},//90% Done
   {path:'supervisor-profile/:id', component:SupervisorProfileComponent},//80% Done
   {path:'supervisor-panel/:id/supervisor-branchprofile/:id', component:SupervisorBranchprofileComponent},//80% Done
-  {path:'supervisor-panel/:id/supervisor-branchprofile/:id/teacherlist', component:SupervisorBranchClasslistComponent},//work in progress
+  {path:'supervisor-panel/supervisor-branchprofile/:id/teacherlist', component:SupervisorBranchTeacherslistComponent},//work in progress
   {path:'supervisor-panel/supervisor-branchprofile/:id/teacher-profile/:id', component:SupervisorBranchTeacherprofileComponent},//work in progress
   {path:'supervisor-panel/supervisor-branchprofile/:id/classlist', component:SupervisorBranchClasslistComponent},//work in progress
   {path:'supervisor-panel/supervisor-branchprofile/:id/classprofile/:id', component:SupervisorBranchClassprofileComponent},//work in progress
+  {path:'supervisor-panel/supervisor-branchprofile/classprofile/:id/studentlist', component:SupervisorBranchClassStudentlistComponent},
   {path:'supervisor-panel/supervisor-branchprofile/classprofile/:id/student-profile/:id', component:SupervisorBranchClassStudentprofileComponent},//work in progress
-  {path:'supervisor-panel/:id/supervisor-branchprofile/:id/studentlist', component:SupervisorBranchStudentlistComponent},//work in progress
+  {path:'supervisor-panel/supervisor-branchprofile/:id/studentlist', component:SupervisorBranchStudentlistComponent},//work in progress
   {path:'supervisor-panel/supervisor-branchprofile/:id/studentlist/studentprofile/:id', component:SupervisorBranchStudentprofileComponent}, //work in progress
 
   //teacher Routes

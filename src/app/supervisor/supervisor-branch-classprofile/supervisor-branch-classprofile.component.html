@@ -1,193 +1,178 @@
 <body>
-  <!-- header back btn section -->
-  <section>
-      <div class="row" id="back-btn-row">
-          <div class="col" id="back-btn-col">
-              <i class="fa fa-arrow-left" aria-hidden="true"></i>
-          </div>
-      </div>
-  </section>
-
-
-  <!-- hero section start  -->
-  <section id="hero-section">
-      <div class="row" id="hero-row">
-          <div class="col" id="hero-col-1" *ngFor="let item of studyclass">
-              <div class="col" id="info-col">
-                  <i class="fa fa-info-circle" aria-hidden="true" type="button" id="offcanva-main-col-2" type="button" data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"></i>
-              </div>
-
-              <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-                <div class="offcanvas-header" >
-                    <div class="row" id="close-btn-row" >
-                        <div class="col" id="close-btn-col" >
-                            <button type="button" id="btn-close" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                                aria-label="Close">
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="offcanvas-body">
-                     <!-- hero section -->
-                <div class="row" id="offcanvas-hero-row">
-                    <div class="col" id="offcanvas-hero-col">
-                        <h2>Add New Class</h2>
-                    </div>
-                </div>
-
-                <!-- main inputs section -->
-                <form [formGroup]="editClassForm" (ngSubmit)="editClassData()">
-                  <div class="row" id="offcanvas-main-row">
-                    <div class="col" id="offcanvas-main-col-1">
-                        <label>Class-Name <input type="text" formControlName="className"/></label>
-                    </div>
-                    <div class="col" id="offcanvas-main-col-2">
-                      <div class="ngx-timepicker-field-example">
-                        <ngx-timepicker-field formControlName="classTime"></ngx-timepicker-field>
-                    </div>
-                    </div>
-                    <div class="col" id="offcanvas-main-col-2">
-                      <label>Class-Name</label>
-                  </div>
-                  </div>
-                    <div class="col" id="offcanvas-main-col-3">
-                        <button type="submit" class="btn">Add Class</button>
-                    </div>
-                </form>
-                </div>
-            </div>
-
-              <div class="col">
-                  <h2>{{item.className}}</h2>
-              <p>{{item.userName}}   <i class="fa fa-edit" aria-hidden="true" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"></i></p>
-              </div>
-          </div>
-          <div class="col" id="hero-col-2">
-              <img src="/assets/boy.png" alt="">
-          </div>
-      </div>
-  </section>
-
-
-
-
-
-
-    <!-- Supervisor data offcanvas start here -->
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
-    aria-labelledby="offcanvasExampleLabel">
-    <!-- offcanvas header start-->
-    <div class="offcanvas-body" id="teacher-offcanvas-body">
-        <div class="supervisor-offcanvas-header">
-
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                aria-label="Close">
-            </button>
-        </div>
-        <div class="row" id="teacher-offcanvas-row">
-            <div class="col">
-                <img src="/assets/bussiness-man.png" alt="">
-            </div>
-        </div>
-    </div> <!-- offcanvas header ends-->
-
-    <!-- offcanvas name details start -->
-    <div class="row" id="offcanvas-hero" *ngFor="let item of studyclass">
-        <div class="col" id="offcanves-name-col" >
-            <h5 class="offcanvas-title" id="offcanvas-header">Teacher</h5>
-            <h2>{{item.userName}}</h2>
-            <p>{{item.email}}
-            </p>
-        </div>
-        <div class="col" id="offcanves-edit-col">
-            <div class="col">
-                <i class="fa fa-user-pen"></i>
-            </div>
-        </div>
-    </div> <!-- offcanvas name details start -->
-
-    <div class="row" id="offcanvas-main" *ngFor="let item of studyclass">
-        <div class="col">
-            <h3>Father name</h3>
-            <p>{{item.fatherName}}</p>
-        </div>
-        <div class="col">
-            <h3>Contact #</h3>
-            <p>{{item.phoneNumber}}</p>
-        </div>
-        <div class="col">
-            <h3>Teaching</h3>
-            <p>{{item.className}}</p>
-        </div>
-        <div class="col">
-            <h3>Socials</h3>
-            <p>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-twitter"></i>
-                <i class="fa-brands fa-facebook-f"></i>
-            </p>
-        </div>
+  <!-- header back-btn section  -->
+  <div class="row" id="back-btn-row">
+    <div class="col" id="back-btn-col">
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
     </div>
+  </div>
 
-</div> <!-- Supervisor data offcanvas start here -->
+  <section id="hero-section">
+    <!-- hero section start here -->
+    <div class="row" id="hero-section-row" *ngFor="let item of studyclass">
+      <div class="col" id="hero-section-col">
+        <h1 type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">{{ item.className }}</h1>
+        <p>Teacher: {{ item.userName }}</p>
+      </div>
+    </div>
+  </section>
 
+  <!--Edit branch off canvas starts here-->
 
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <form [formGroup]="editClassForm" (ngSubmit)="editClassData()" >
+      <div class="row" id="offcanvas-input-row">
+        <div class="col" id="edit-branch-name-col">
+          <label for="">
+            <p>CLass Name</p>
+          </label>
+          <input type="text" formControlName="className" />
+        </div>
+        <div class="ngx-timepicker-field-example">
+          <ngx-timepicker-field formControlName="classTime"></ngx-timepicker-field>
+        </div>
+      </div>
+      <div class="row" id="branch-offcanvas-btn">
+        <div class="col">
+          <button
+            type="submit"
+            id="btn-close"
+            class="text-reset"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <!--Edit branch off canvas ends here-->
 
   <!-- main section start here -->
   <section id="main-section">
-      <!-- student heading row -->
-
-      <div class="row" id="student-heading-row">
-          <div class="col" id="student-heading-col">
-              <h1>Students</h1>
-          </div>
+    <div class="row" id="main-teacher-parent-row">
+      <div
+        class="row"
+        id="main-teacher-row"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight"
+      >
+        <div class="col" id="main-teacher-col-1">
+          <h1>View Teacher Profile</h1>
+        </div>
+        <div class="col" id="main-teacher-col-2">
+          <i class="fas fa-arrow-right"></i>
+        </div>
       </div>
+    </div>
 
-      <!-- sort by button row  -->
-
-      <div class="row" id="sort-btn-row">
-          <div class="col" id="sort-btn-col-1">
-              <button class="btn">sort by</button>
+    <!-- View Teacher Profile offcanvas  -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasRight"
+      aria-labelledby="offcanvasRightLabel"
+    >
+      <div class="offcanvas-header">
+        <div class="row">
+          <div class="col">
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
           </div>
-          <div class="col" id="sort-btn-col-2">
-              <i class="fa fa-search" aria-hidden="true"></i>
-          </div>
+        </div>
       </div>
-
-      <!-- student list row -->
-
-      <main id="student-list-parent-row" *ngFor="let item of studyclass">
-          <div class="row" id="student-list-row" *ngFor="let studentitem of item.students" (click)="toStudentProfile()">
-              <div class="col" id="student-list-col-1">
-                  <h1>{{studentitem.name}}</h1>
-                  <p>{{studentitem.rollNumber}}</p>
-              </div>
-              <div class="col" id="student-list-col-2">
-                  <i class="fa fa-trash" aria-hidden="true"></i>
-              </div>
+      <!-- <div class="offcanvas-body"> -->
+      <!-- <body> -->
+      <section id="parent-section">
+        <section>
+          <div class="row" id="main-img-row">
+            <div class="col">
+              <img src="/assets/headmaster.png" alt="" />
+            </div>
           </div>
-      </main>
+        </section>
+
+        <section>
+          <div class="row" id="teacher-info-row">
+            <div class="col" id="teacher-info-col" *ngFor="let item of studyclass">
+              <h2>Admin</h2>
+              <b>{{ item.userName }}</b>
+              <p>{{ item.email }}</p>
+            </div>
+            <div class="col" id="teacher-btn-col"></div>
+          </div>
+        </section>
+
+        <section>
+          <div class="row" id="teacher-details-row" *ngFor="let item of studyclass">
+            <div class="col" id="teacher-details-col-1">
+              <h2>Father name</h2>
+              <p>{{ item.fatherName }}</p>
+            </div>
+            <div class="col" id="teacher-details-col-1">
+              <h2>Contact #</h2>
+              <p>{{ item.phoneNumber }}</p>
+            </div>
+            <div class="col" id="teacher-details-col-1">
+              <h2>Address</h2>
+              <p>address</p>
+            </div>
+            <div class="col" id="teacher-details-col-1">
+              <h3>Socials</h3>
+              <p>
+                <i
+                  class="fa-brands fa-instagram"
+                  style="padding-left: 10px"
+                ></i>
+                <i class="fa-brands fa-twitter" style="padding-left: 10px"></i>
+                <i
+                  class="fa-brands fa-facebook-f"
+                  style="padding-left: 10px"
+                ></i>
+              </p>
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- </body> -->
+
+      <!-- </div> -->
+    </div>
+    <!-- View Teacher Profile offcanvas  -->
+
+    <div class="row" id="main-student-parent-row">
+      <div class="row" id="main-student-row" (click)="ToStudentList()">
+        <div class="col" id="main-student-col-1">
+          <h1>{{ studentcount }}</h1>
+          <p>Students</p>
+        </div>
+        <div class="col" id="main-student-col-2">
+          <div class="col" id="col-1">
+            <div style="text-align: center">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+          <div class="col" id="col-2">
+            <img src="/assets/student.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Watch Section starts -->
+    <div class="row" id="footer">
+      <div class="col" *ngFor="let item of studyclass">
+        <h1>Class Time - {{ item.classTime }}</h1>
+        <i class="fa-solid fa-clock"></i>
+      </div>
+    </div>
   </section>
 </body>

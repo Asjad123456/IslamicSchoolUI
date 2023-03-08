@@ -10,12 +10,16 @@ import { TeacherService } from 'src/Services/teacher.service';
 })
 export class TeacherClasslistComponent {
   teacher: Teacher[];
+  studyClassCount: number;
+  enteredSearchValue: string = '';
+  searchText: string = '';
 
   constructor(private route: ActivatedRoute, private service: TeacherService, private router: Router){}
 
   ngOnInit(): void{
     console.warn(this.route.snapshot.params['id']);
     this.getTeacherData();
+    this.getTeacherClassCount();
   }
   getTeacherData(){
     const teacherId = this.route.snapshot.params['id']
@@ -24,12 +28,22 @@ export class TeacherClasslistComponent {
       console.log(res);
     })
   }
-  toClassProfile(){
+  toClassProfile(id: number){
     const teacherId = this.route.snapshot.params['id']
     this.service.getTeacherForClassList(teacherId).subscribe((res) =>{
       this.teacher = res;
       console.log(res);
-      this.router.navigate(['teacher-panel/' + teacherId + '/classlist/classprofile/' + this.teacher[0].studyClasses[0].id]);
+      this.router.navigate(['teacher-panel/' + teacherId + '/classlist/classprofile/' + id]);
+    })
+  }
+  onSearchTextChanged(){
+    this.searchText = this.enteredSearchValue.toLowerCase();
+    console.log(this.searchText)
+  }
+  getTeacherClassCount(){
+    const teacherID = this.route.snapshot.params['id'];
+    this.service.getTeacherClassesCount(teacherID).subscribe((res) =>{
+      this.studyClassCount = res;
     })
   }
 }

@@ -5,6 +5,7 @@ export interface Teacher {
   email:string;
   fatherName:string;
   phoneNumber: string;
+  address: string;
   studyClasses: Array<{
     id: number;
     className: string;

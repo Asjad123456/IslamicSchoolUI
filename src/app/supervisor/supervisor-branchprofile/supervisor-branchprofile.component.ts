@@ -11,12 +11,16 @@ import { SupervisorService } from 'src/Services/supervisor.service';
 export class SupervisorBranchprofileComponent {
   branch: Branches[];
   classCount: number;
+  teachersCount: number;
+  studentsCount: number;
 
   constructor(private route: ActivatedRoute, private service: SupervisorService, private router: Router){}
 
   ngOnInit(): void{
     this.getBranchDetails();
     this.getclassesCount();
+    this.getTeachersCount();
+    this.getStudentsCount();
   }
 
   getBranchDetails(){
@@ -35,5 +39,25 @@ export class SupervisorBranchprofileComponent {
   toclassesList(){
     const branchId = +this.route.snapshot.params['id'];
     this.router.navigate(['supervisor-panel/supervisor-branchprofile/' + branchId + '/classlist']);
+  }
+  getTeachersCount(){
+    const branchId = +this.route.snapshot.params['id'];
+    this.service.getTeacherCountforBranch(branchId).subscribe((res) =>{
+      this.teachersCount = res;
+    })
+  }
+  getStudentsCount(){
+    const branchId = +this.route.snapshot.params['id'];
+    this.service.getStudentsCountforBranch(branchId).subscribe((res) =>{
+      this.studentsCount = res;
+    })
+  }
+  toTeachersList(){
+    const branchId = +this.route.snapshot.params['id'];
+    this.router.navigate(['supervisor-panel/supervisor-branchprofile/'+ branchId+'/teacherlist']);
+  }
+  toStudentsList(){
+    const branchId = +this.route.snapshot.params['id'];
+    this.router.navigate(['supervisor-panel/supervisor-branchprofile/'+ branchId +'/studentlist']);
   }
 }

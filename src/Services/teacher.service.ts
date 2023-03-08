@@ -54,4 +54,8 @@ updateStudent(id: number, student: Student) {
 
   return this.http.put<Student>(url, student, httpOptions);
 }
+getTeacherClassesCount(id: number){
+  const url = `${this.baseUrl}User/teacherclasscount/${id}`;
+  return this.http.get<number>(url);
+}
 }
