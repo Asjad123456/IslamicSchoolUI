@@ -1,130 +1,21 @@
-<!-- Offcanvas for Gaurdain data start here -->
-<div class="offcanva">
+<body>
   <div class="offcanva-header">
-    <div class="row" id="header-row">
-      <div class="col" id="header-col-1">
+    <div class="row" id="header-row" >
+      <div class="col" id="header-col-1" >
         <h5 id="">Your Classes</h5>
       </div>
-      <div class="col" id="header-col-2"></div>
-=======
-    <div class="offcanva-header">
-        <div class="row" id="header-row">
-            <div class="col" id="header-col-1">
-                <h5 id="">Your Classes</h5>
-            </div>
-            <div class="col" id="header-col-2">
-            </div>
-        </div>
-    </div>
-
-    <div class="main-body">
-        <div class="row" id="offcanva-main-row">
-            <div class="col" id="offcanva-main-col-1">
-                <h2>Total Classes : 10</h2>
-            </div>
-            <div class="col" id="offcanva-main-col-2" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
-                <i class="fa fa-plus" aria-hidden="true"></i>
-            </div>
-        </div>
-
-        <!-- plus button to top offcanvas start here -->
-        <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-            <div class="offcanvas-header">
-                <div class="row" id="close-btn-row">
-                    <div class="col" id="close-btn-col">
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                            aria-label="Close">
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="offcanvas-body">
-                <!-- hero section -->
-                <div class="row" id="offcanvas-hero-row">
-                    <div class="col" id="offcanvas-hero-col">
-                        <h2>Add New Class</h2>
-                    </div>
-                </div>
-
-                <!-- main inputs section -->
-                <form [formGroup]="addClassForm" (ngSubmit)="addClass()">
-                  <div class="row" id="offcanvas-main-row">
-                    <div class="col" id="offcanvas-main-col-1">
-                        <label>Class-Name <input type="text" formControlName="className"/></label>
-                    </div>
-                    <div class="col" id="offcanvas-main-col-2">
-                      <div class="ngx-timepicker-field-example">
-                        <ngx-timepicker-field formControlName="classTime"></ngx-timepicker-field>
-                    </div>
-                        <!-- <label><input type=""/>Class-Time </label> -->
-                    </div>
-                    <div [hidden]="true" class="col" id="offcanvas-main-col-2">
-                      <label><input type="text" [value]="this.branchId" formControlName="branchId"/>branchId</label>
-                    </div>
-                    <div class="col" id="offcanvas-main-col-2">
-                      <label>Class-Name</label>
-                      <select class="form-control" formControlName="AppUserId">
-                        <option value="">Select teacher</option>
-                        <option *ngFor="let item of teacher" value="{{item.id}}">
-                          {{item.userName}}
-                        </option>
-                      </select>
-                  </div>
-                  </div>
-                    <div class="col" id="offcanvas-main-col-3">
-                        <button type="submit" class="btn">Add Class</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-        <!-- offcanvas main section start here -->
-        <section id="main-section-parent">
-            <!-- offcanvas main section sort button start here -->
-            <div class="row" id="main-sec-top-row">
-                <div class="col" id="main-sec-top-col-1">
-                    <button class="btn">Sort by</button>
-                </div>
-                <div class="col" id="main-sec-top-col-2">
-                    <app-search></app-search>
-                </div>
-            </div>
-
-            <!-- main section list start here -->
-            <div class="row" id="main-list-row" *ngFor="let item of branch">
-              <div class="col" id="list-parent-col" *ngFor="let studyClass of item.studyClasses">
-                <div class="row" id="list-row" (click)="toClassProfile(studyClass.id)">
-                  <div class="col" id="list-inner-col">
-                    <h1>{{studyClass.className}}</h1>
-                    <p>{{studyClass.classTime}}</p>
-                  </div>
-                  <div class="col" id="main-list-icon-col">
-                    <i class="fa fa-trash" aria-hidden="true"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-        </section>
+      <div class="col" id="header-col-2" ></div>
     </div>
   </div>
 
-  <div class="main-body">
-    <div class="row" id="offcanva-main-row">
-      <div class="col" id="offcanva-main-col-1">
+  <div class="Hero-section" >
+    <div class="row" id="hero-row" >
+      <div class="col" id="hero-col-1" >
         <h2>Total Classes : 10</h2>
       </div>
       <div
-        class="col"
-        id="offcanva-main-col-2"
+        class="col" 
+        id="hero-col-2"
         type="button"
         data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasTop"
@@ -134,7 +25,6 @@
       </div>
     </div>
 
-    <!-- plus button to top offcanvas start here -->
     <div
       class="offcanvas offcanvas-top"
       tabindex="-1"
@@ -154,14 +44,12 @@
         </div>
       </div>
       <div class="offcanvas-body">
-        <!-- hero section -->
         <div class="row" id="offcanvas-hero-row">
           <div class="col" id="offcanvas-hero-col">
             <h2>Add New Class</h2>
           </div>
         </div>
 
-        <!-- main inputs section -->
         <form [formGroup]="addClassForm" (ngSubmit)="addClass()">
           <div class="row" id="offcanvas-main-row">
             <div class="col" id="offcanvas-main-col-1">
@@ -175,12 +63,10 @@
                   formControlName="classTime"
                 ></ngx-timepicker-field>
               </div>
-              <!-- <label><input type=""/>Class-Time </label> -->
             </div>
             <div [hidden]="true" class="col" id="offcanvas-main-col-2">
               <label
                 ><input
-                  style="border: 1px solid red"
                   type="text"
                   [value]="this.branchId"
                   formControlName="branchId"
@@ -188,7 +74,7 @@
               >
             </div>
             <div class="col" id="offcanvas-main-col-2">
-              <label>Class-Name</label>
+              <label></label>
               <select class="form-control" formControlName="AppUserId">
                 <option value="">Select teacher</option>
                 <option *ngFor="let item of teacher" value="{{ item.id }}">
@@ -203,20 +89,18 @@
         </form>
       </div>
     </div>
+  </div>
 
+  <div class="main-body">
     <!-- offcanvas main section start here -->
     <section id="main-section-parent">
-      <!-- offcanvas main section sort button start here -->
       <div class="row" id="main-sec-top-row">
-        <div class="col" id="main-sec-top-col-1">
-          <button class="btn">Sort by</button>
-        </div>
         <div class="col" id="main-sec-top-col-2">
-          <i class="fa fa-search" aria-hidden="true"></i>
+         <input type="search" placeholder="Search">
+         <label for="search"><i class="fa fa-search"></i></label>
         </div>
-      </div>
+      </div>  
 
-      <!-- main section list start here -->
       <div class="row" id="main-list-row" *ngFor="let item of branch">
         <div
           class="col"
@@ -237,8 +121,53 @@
             </div>
           </div>
         </div>
+
+
+        <div
+        class="col"
+        id="list-parent-col"
+        *ngFor="let studyClass of item.studyClasses"
+      >
+        <div
+          class="row"
+          id="list-row"
+          (click)="toClassProfile(studyClass.id)"
+        >
+          <div class="col" id="list-inner-col">
+            <h1>{{ studyClass.className }}</h1>
+            <p>{{ studyClass.classTime }}</p>
+          </div>
+          <div class="col" id="main-list-icon-col">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </div>
+        </div>
       </div>
+
+
+
+      <div
+      class="col"
+      id="list-parent-col"
+      *ngFor="let studyClass of item.studyClasses"
+    >
+      <div
+        class="row"
+        id="list-row"
+        (click)="toClassProfile(studyClass.id)"
+      >
+        <div class="col" id="list-inner-col">
+          <h1>{{ studyClass.className }}</h1>
+          <p>{{ studyClass.classTime }}</p>
+        </div>
+        <div class="col" id="main-list-icon-col">
+          <i class="fa fa-trash" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+      </div>
+
+
+      
     </section>
   </div>
-</div>
-<!-- Offcanvas for Gaurdain data ends here -->
+</body>
