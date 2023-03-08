@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { StudyClass } from 'src/Models/StudyClass';
 import { Teacher } from 'src/Models/teacher';
 import { AdminService } from 'src/Services/admin.service';
 
@@ -10,6 +11,9 @@ import { AdminService } from 'src/Services/admin.service';
 })
 export class AdminTeacherprofileComponent {
   teacher: Teacher[];
+  studyclass: StudyClass[]
+  enteredSearchValue: string = '';
+  searchText: string = '';
 
   constructor(private service: AdminService, private route: ActivatedRoute, private router: Router){}
 
@@ -24,7 +28,11 @@ export class AdminTeacherprofileComponent {
     })
   }
   toClassProfile(id: number){
-      this.router.navigate(['admin-teacherslist/admin-teacherprofile/class-profile/' + id]);
-
+      this.router.navigate(['class-profile/' + id]);
+      console.log(id);
+  }
+  onSearchTextChanged(){
+    this.searchText = this.enteredSearchValue.toLowerCase();
+    console.log(this.searchText)
   }
 }

@@ -320,7 +320,7 @@ body {
   display: grid;
   gap: 10px;
   overflow: scroll;
-  height: 9vh;
+  height: 21vh;
 }
 #accordion-sec-col {
   display: flex;

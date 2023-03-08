@@ -1,61 +1,114 @@
 <body>
   <section id="parent-section">
-    <!-- <section> -->
     <div class="row" id="top-back-btn">
       <div class="col">
         <i class="fa fa-arrow-left" aria-hidden="true"></i>
       </div>
     </div>
-    <!-- </section> -->
 
-    <section>
-      <div class="row" id="main-img-row">
-        <div class="col">
-          <img src="/assets/headmaster.png" alt="" />
-        </div>
+    <div class="row" id="main-img-row">
+      <div class="col">
+        <img src="/assets/teacher.png" alt="" />
       </div>
-    </section>
+    </div>
 
-    <section>
-      <div class="row" id="teacher-info-row">
-        <div class="col" id="teacher-info-col" *ngFor="let item of teacher">
-          <h2>Admin</h2>
-          <b>{{ item.userName }}</b>
-          <p>{{ item.email }}</p>
-        </div>
-        <div class="col" id="teacher-btn-col">
-          <button
-            class="btn"
+    <div class="row" id="teacher-info-row" *ngFor="let item of teacher" >
+      <div class="col" id="teacher-info-col" >
+        <h2>Teacher</h2>
+        <abbr>{{ item.userName }}</abbr>
+        <p>Roll # {{ item.email }}</p>
+      </div>
+      <div class="col" id="teacher-btn-col" >
+        <button class="btn"><i class="fa-solid fa-phone-flip"></i></button>
+      </div>
+    </div>
+
+    <div class="row" id="teacher-details-row" *ngFor="let item of teacher">
+      <div class="col" id="teacher-details-col-1">
+        <h2>Father name</h2>
+        <p>{{ item.fatherName }}</p>
+      </div>
+      <div class="col" id="teacher-details-col-2">
+        <h2>Contact #</h2>
+        <p>{{ item.phoneNumber }}</p>
+      </div>
+      <div class="col" id="teacher-details-col-3">
+        <h2>Address</h2>
+        <p></p>
+      </div>
+      <div class="col" id="teacher-details-col-4">
+        <h2>Socials</h2>
+        <p>socaials</p>
+      </div>
+    </div>
+
+    <!-- <section> -->
+    <div class="row" id="footer-btn-row">
+      <div class="col" id="footer-btn-col">
+        <button
+        class="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseOne"
+        aria-expanded="false"
+        aria-controls="flush-collapseOne"
+        >
+          View Classes
+          <!-- <i class="fa fa-angle-down"></i> -->
+        </button>
+      </div>
+    </div>
+    <!-- Offcanvas for Gaurdain data start here -->
+    <div class="row" id="accordion-main-row">
+      <div
+        class="accordion accordion-flush"
+        id="accordionFlushExample"
+      >
+        <div class="accordion-item">
+          <div
+            id="flush-collapseOne"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingOne"
+            data-bs-parent="#accordionFlushExample"
           >
-            <i class="fa fas fa-user-plus"></i>
-          </button>
+            <div class="accordion-body">
+              <div class="row" id="accordion-search-bar">
+                <div class="col">
+                  <input type="search"
+                  [(ngModel)]="enteredSearchValue"
+                  (input)="onSearchTextChanged()" />
+                  <label for=""
+                    ><i class="fas fa-search"></i
+                  ></label>
+                </div>
+              </div>
+              <div
+                class="row"
+                id="accordion-sec-row"
+                *ngFor="let item of teacher"
+              >
+                <div
+                  class="col"
+                  id="accordion-sec-col"
+                  *ngFor="let studyclass of item.studyClasses | SearchPipe: searchText"
+                  (click)="toClassProfile(studyclass.id)"
+                  >
+                  <div class="col" id="col-1">
+                    <img src="/assets/boy.png" alt="" />
+                  </div>
+                  <div class="col" id="col-2">
+                    <h1>{{studyclass.className}}</h1>
+                    <p>{{studyclass.classTime}}</p>
+                  </div>
+                  <div class="col" id="col-3">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-
-    <section>
-      <div class="row" id="teacher-details-row" *ngFor="let item of teacher">
-        <div class="col" id="teacher-details-col-1">
-          <h2>Father name</h2>
-          <p>{{ item.fatherName }}</p>
-        </div>
-        <div class="col" id="teacher-details-col-1">
-          <h2>Contact #</h2>
-          <p>{{ item.phoneNumber }}</p>
-        </div>
-        <div class="col" id="teacher-details-col-1">
-          <h2>Address</h2>
-          <p>{{ item.address }}</p>
-        </div>
-        <div class="col" id="teacher-details-col-1">
-          <h3>Socials</h3>
-          <p>
-            <i class="fa-brands fa-instagram" style="padding-left: 10px"></i>
-            <i class="fa-brands fa-twitter" style="padding-left: 10px"></i>
-            <i class="fa-brands fa-facebook-f" style="padding-left: 10px"></i>
-          </p>
-        </div>
-      </div>
-    </section>
+    </div>
   </section>
 </body>

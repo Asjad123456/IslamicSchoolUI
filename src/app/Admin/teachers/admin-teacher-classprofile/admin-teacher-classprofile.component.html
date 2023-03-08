@@ -1,219 +1,145 @@
 <body>
+  <!-- header back-btn section  -->
+  <div class="row" id="back-btn-row">
+    <div class="col" id="back-btn-col">
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </div>
+  </div>
 
-  <section> <!-- header back-btn section  -->
-      <div class="row" id="back-btn-row">
-          <div class="col" id="back-btn-col">
-              <i class="fa fa-arrow-left" aria-hidden="true"></i>
-          </div>
+  <section id="hero-section">
+    <!-- hero section start here -->
+    <div class="row" id="hero-section-row" *ngFor="let item of class">
+      <div class="col" id="hero-section-col">
+        <h1>{{ item.className }}</h1>
+        <p>Teacher: {{ item.userName }}</p>
       </div>
+    </div>
   </section>
 
-  <section id="hero-section"><!-- hero section start here -->
-      <div class="row" id="hero-section-row" *ngFor="let item of class">
-          <div class="col" id="hero-section-col">
-              <h1>{{item.className}}</h1>
-              <p>Teacher: {{item.userName}}</p>
-          </div>
-      </div>
-  </section>
+  <!-- main section start here -->
   <section id="main-section">
-      <div class="row" id="main-section-row">
-
-          <!-- Student box start here -->
-          <div class="col" id="main-section-student-box">
-
-              <div class="row" id="student-box-top-row">
-                  <div class="col" id="student-box-top-col-1">
-                      <img src="/assets/boy.png" alt="">
-                  </div>
-                  <div class="col" id="student-box-top-col-2">
-                      <div id="dots"></div>
-                      <div id="dots"></div>
-                      <div id="dots"></div>
-                  </div>
-              </div>
-
-              <div class="row" id="student-box-main-row" [routerLink]="['student-list']">
-                  <div class="col" id="student-box-main-col">
-                      <h1>67+</h1>
-                      <p>Students</p>
-                  </div>
-              </div>
-
-              <div class="row" id="student-box-footer-row">
-                  <div class="col" id="student-box-footer-col">
-                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                  </div>
-              </div>
-          </div>
-
-
-          <!-- Edit class data box start here -->
-          <div class="col" id="edit-class-data-box" type="button" data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-              <div class="row" id="edit-class-inner-row">
-                  <div class="col" id="edit-class-inner-col-1">
-                      <h1>Edit Class data</h1>
-                  </div>
-                  <div class="col" id="edit-class-inner-col-2">
-                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                  </div>
-              </div>
-          </div>
-
-          <!-- Edit class data offcanvas start here -->
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
-              aria-labelledby="offcanvasRightLabel">
-              <div class="offcanvas-header">
-                  <h5 id="offcanvasRightLabel"></h5>
-                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                      aria-label="Close"></button>
-              </div>
-              <div class="offcanvas-body">
-                  <!-- Header section start here -->
-                  <section id="header-heading-sec">
-                      <div class="row" id="header-heading-row" (click)="editClass()">
-                          <div class="col">
-                              <h1>Edit Class Data</h1>
-                          </div>
-                      </div>
-                  </section>
-
-                  <!-- input-field section start here -->
-                  <form [formGroup]="editClassForm" (ngSubmit)="editClassData()">
-                    <section id="input-field-section">
-
-                          <div class="row" id="input-field-row">
-                              <div class="col" id="name-col">
-                                  <p>Class Name</p>
-                                  <input type="text" formControlName="className">
-                              </div>
-                              <div class="col" id="name-col">
-                                  <p>Class Time</p>
-                                  <input type="text" formControlName="classTime">
-                              </div>
-                          </div>
-
-                  </section>
-
-                  <section id="footer-btn-section">
-                      <div class="row" id="footer-btn-row">
-                          <div class="col" id="footer-btn-col-1">
-                              <button class="btn">cancel</button>
-                          </div>
-                          <div class="col" id="footer-btn-col-2">
-                              <button type="submit" class="btn text-reset" data-bs-dismiss="offcanvas"
-                              aria-label="Close">Save</button>
-                          </div>
-                      </div>
-                  </section>
-                </form>
-              </div>
-          </div>
-
-
-
-
-
-          <!-- Teacher profile box start here -->
-          <div class="col" id="teacher-profile-box" type="button" data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-              <div class="row" id="teacher-profile-box-inner-row">
-                  <div class="col" id="teacher-profile-box-inner-col-1">
-                      <h1>Teacher Profile</h1>
-                  </div>
-                  <div class="col" id="teacher-profile-box-inner-col-2">
-                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                  </div>
-              </div>
-          </div>
-
-
-          <!-- Supervisor data offcanvas start here -->
-          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
-              aria-labelledby="offcanvasExampleLabel">
-              <!-- offcanvas header start-->
-              <div class="offcanvas-body" id="teacher-offcanvas-body">
-                  <div class="supervisor-offcanvas-header">
-
-                      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                          aria-label="Close">
-                      </button>
-                  </div>
-                  <div class="row" id="teacher-offcanvas-row">
-                      <div class="col">
-                          <img src="/assets/bussiness-man.png" alt="">
-                      </div>
-                  </div>
-              </div> <!-- offcanvas header ends-->
-
-              <!-- offcanvas name details start -->
-              <div class="row" id="offcanvas-hero">
-                  <div class="col" id="offcanves-name-col" *ngFor="let item of class">
-
-                      <h5 class="offcanvas-title" id="offcanvas-header">Teacher</h5>
-                      <h2>{{item.userName}}</h2>
-                      <p>{{item.email}}
-                      </p>
-                  </div>
-                  <div class="col" id="offcanves-edit-col">
-                      <div class="col">
-                          <i class="fa fa-user-pen"></i>
-                      </div>
-                  </div>
-              </div> <!-- offcanvas name details start -->
-
-              <div class="row" id="offcanvas-main" *ngFor="let item of class">
-                  <div class="col">
-                      <h3>Father name</h3>
-                      <p>{{item.fatherName}}</p>
-                  </div>
-                  <div class="col">
-                      <h3>Contact #</h3>
-                      <p>{{item.phoneNumber}}</p>
-                  </div>
-                  <div class="col">
-                      <h3>Teaching</h3>
-                      <p>{{item.className}}</p>
-                  </div>
-                  <div class="col">
-                      <h3>Socials</h3>
-                      <p>
-                          <i class="fa-brands fa-instagram"></i>
-                          <i class="fa-brands fa-twitter"></i>
-                          <i class="fa-brands fa-facebook-f"></i>
-                      </p>
-                  </div>
-              </div>
-
-          </div> <!-- Supervisor data offcanvas start here -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <!-- class img box styling start here -->
-          <div class="col" id="class-img-box">
-              <div class="row" id="class-box-row" >
-                  <div class="col" id="class-box-col" style="border: 1px solid red;">
-                     <img src="/assets/students.png" alt="">
-                  </div>
-              </div>
-          </div>
+    <div class="row" id="main-teacher-parent-row">
+      <div
+        class="row"
+        id="main-teacher-row"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight"
+      >
+        <div class="col" id="main-teacher-col-1">
+          <h1>View Teacher Profile</h1>
+        </div>
+        <div class="col" id="main-teacher-col-2">
+          <i class="fas fa-arrow-right"></i>
+        </div>
       </div>
+    </div>
+
+    <!-- View Teacher Profile offcanvas  -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasRight"
+      aria-labelledby="offcanvasRightLabel"
+    >
+      <div class="offcanvas-header">
+        <div class="row">
+          <div class="col">
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="offcanvas-body"> -->
+      <!-- <body> -->
+      <section id="parent-section">
+        <section>
+          <div class="row" id="main-img-row">
+            <div class="col">
+              <img src="/assets/headmaster.png" alt="" />
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="row" id="teacher-info-row">
+            <div class="col" id="teacher-info-col" *ngFor="let item of class">
+              <h2>Admin</h2>
+              <b>{{ item.userName }}</b>
+              <p>{{ item.email }}</p>
+            </div>
+            <div class="col" id="teacher-btn-col"></div>
+          </div>
+        </section>
+
+        <section>
+          <div class="row" id="teacher-details-row" *ngFor="let item of class">
+            <div class="col" id="teacher-details-col-1">
+              <h2>Father name</h2>
+              <p>{{ item.fatherName }}</p>
+            </div>
+            <div class="col" id="teacher-details-col-1">
+              <h2>Contact #</h2>
+              <p>{{ item.phoneNumber }}</p>
+            </div>
+            <div class="col" id="teacher-details-col-1">
+              <h2>Address</h2>
+              <p>address</p>
+            </div>
+            <div class="col" id="teacher-details-col-1">
+              <h3>Socials</h3>
+              <p>
+                <i
+                  class="fa-brands fa-instagram"
+                  style="padding-left: 10px"
+                ></i>
+                <i class="fa-brands fa-twitter" style="padding-left: 10px"></i>
+                <i
+                  class="fa-brands fa-facebook-f"
+                  style="padding-left: 10px"
+                ></i>
+              </p>
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- </body> -->
+
+      <!-- </div> -->
+    </div>
+    <!-- View Teacher Profile offcanvas  -->
+
+    <div class="row" id="main-student-parent-row" (click)="toStudentList()">
+      <div class="row" id="main-student-row">
+        <div class="col" id="main-student-col-1">
+          <h1>{{ studentcount }}</h1>
+          <p>Students</p>
+        </div>
+        <div class="col" id="main-student-col-2">
+          <div class="col" id="col-1">
+            <div style="text-align: center">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+          <div class="col" id="col-2">
+            <img src="/assets/student.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Watch Section starts -->
+    <div class="row" id="footer">
+      <div class="col" *ngFor="let item of class">
+        <h1>Class Time - {{ item.classTime }}</h1>
+        <i class="fa-solid fa-clock"></i>
+      </div>
+    </div>
   </section>
 </body>

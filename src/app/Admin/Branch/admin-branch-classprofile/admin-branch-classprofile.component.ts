@@ -12,16 +12,11 @@ import { Location } from '@angular/common';
 })
 export class AdminBranchClassprofileComponent {
   class: StudyClass[];
-  editClassForm: FormGroup;
   studentcount: number;
 
   constructor(private service:AdminService, private route: ActivatedRoute, private fb:FormBuilder, private router: Router,  private location: Location){}
 
   ngOnInit(): void{
-    this.editClassForm= this.fb.group({
-      className: [''],
-      classTime: ['']
-  })
     // this.editClass();
     this.getClassDetails();
     console.log(+this.route.snapshot.params['id']);

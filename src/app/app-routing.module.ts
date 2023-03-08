@@ -38,6 +38,7 @@ import { AdminTeacherprofileComponent } from './Admin/teachers/admin-teacherprof
 import { SearchComponent } from './search/search.component';
 import { SupervisorBranchClassStudentlistComponent } from './supervisor/supervisor-branch-class-studentlist/supervisor-branch-class-studentlist.component';
 import { SupervisorBranchTeacherslistComponent } from './supervisor/supervisor-branch-teacherslist/supervisor-branch-teacherslist.component';
+import { AdminTeacherClassprofileComponent } from './Admin/teachers/admin-teacher-classprofile/admin-teacher-classprofile.component';
 
 const routes: Routes = [
   {path:'welcome', component:WelcomeComponent},                     //90% Done
@@ -67,7 +68,7 @@ const routes: Routes = [
 
   {path:'admin-teacherslist', component:AdminTeacherslistComponent},//work in progress
   {path:'admin-teacherslist/admin-teacherprofile/:id', component:AdminTeacherprofileComponent},//work in progress
-  {path:'admin-teacherslist/admin-teacherprofile/class-profile/:id', component:AdminTeacherprofileComponent},//work in progress
+  {path:'class-profile/:id', component:AdminTeacherClassprofileComponent},//work in progress
 
   //Supervisor Routes
   {path:'supervisor-panel/:id', component:SupervisorPanelComponent},//90% Done

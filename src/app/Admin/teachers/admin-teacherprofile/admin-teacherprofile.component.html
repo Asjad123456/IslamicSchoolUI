@@ -74,7 +74,9 @@
             <div class="accordion-body">
               <div class="row" id="accordion-search-bar">
                 <div class="col">
-                  <input type="search" />
+                  <input type="search"
+                  [(ngModel)]="enteredSearchValue"
+                  (input)="onSearchTextChanged()" />
                   <label for=""
                     ><i class="fas fa-search"></i
                   ></label>
@@ -83,23 +85,20 @@
               <div
                 class="row"
                 id="accordion-sec-row"
-               
-                data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseOne"
-                aria-expanded="false"
-                aria-controls="flush-collapseOne"
+                *ngFor="let item of teacher"
               >
                 <div
                   class="col"
                   id="accordion-sec-col"
-
-                >
+                  *ngFor="let studyclass of item.studyClasses | SearchPipe: searchText"
+                  (click)="toClassProfile(studyclass.id)"
+                  >
                   <div class="col" id="col-1">
                     <img src="/assets/boy.png" alt="" />
                   </div>
                   <div class="col" id="col-2">
-                    <h1>userName</h1>
-                    <p>Paragraph</p>
+                    <h1>{{studyclass.className}}</h1>
+                    <p>{{studyclass.classTime}}</p>
                   </div>
                   <div class="col" id="col-3">
                     <i class="fas fa-check-circle"></i>
