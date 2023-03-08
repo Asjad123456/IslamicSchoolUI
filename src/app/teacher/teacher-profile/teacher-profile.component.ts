@@ -21,6 +21,7 @@ export class TeacherProfileComponent {
       fatherName: [''],
       email: [''],
       phoneNumber: [''],
+      address: ['']
     })
     console.warn(this.route.snapshot.params['id']);
     this.getTeacherData();
@@ -40,6 +41,7 @@ export class TeacherProfileComponent {
         this.editProfileForm.controls['fatherName'].setValue(res[0]?.fatherName);
         this.editProfileForm.controls['email'].setValue(res[0]?.email);
         this.editProfileForm.controls['phoneNumber'].setValue(res[0]?.phoneNumber);
+        this.editProfileForm.controls['address'].setValue(res[0]?.address);
       console.warn(res)
     })
   }

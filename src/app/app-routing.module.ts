@@ -39,6 +39,7 @@ import { SearchComponent } from './search/search.component';
 import { SupervisorBranchClassStudentlistComponent } from './supervisor/supervisor-branch-class-studentlist/supervisor-branch-class-studentlist.component';
 import { SupervisorBranchTeacherslistComponent } from './supervisor/supervisor-branch-teacherslist/supervisor-branch-teacherslist.component';
 import { AdminTeacherClassprofileComponent } from './Admin/teachers/admin-teacher-classprofile/admin-teacher-classprofile.component';
+import { TeacherClassStudentlistComponent } from './teacher/teacher-class-studentlist/teacher-class-studentlist.component';
 
 const routes: Routes = [
   {path:'welcome', component:WelcomeComponent},                     //90% Done
@@ -88,6 +89,7 @@ const routes: Routes = [
   {path:'teacher-profile/:id', component:TeacherProfileComponent},//work in progress
   {path:'teacher-panel/:id/classlist', component:TeacherClasslistComponent},//work in progress
   {path:'teacher-panel/:id/classlist/classprofile/:id', component:TeacherClassprofileComponent},//work in progress
+  {path:'teacher-panel/classlist/classprofile/:id/studentlist', component:TeacherClassStudentlistComponent},
   {path:'teacher-panel/classlist/classprofile/:id/studentprofile/:id', component:TeacherClassStudentprofileComponent},//work in progress
 ];
 

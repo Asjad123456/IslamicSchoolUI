@@ -26,6 +26,9 @@ export class SupervisorBranchClasslistComponent {
   teacher: User[];
   studyclass: StudyClass;
   addClassForm: FormGroup;
+  enteredSearchValue: string = '';
+  searchText: string = '';
+  classcount: number;
 
   constructor(private route: ActivatedRoute, private service: SupervisorService, private router: Router){}
 
@@ -39,6 +42,7 @@ export class SupervisorBranchClasslistComponent {
       AppUserId: new FormControl('', Validators.required)
     });
     console.log(+this.route.snapshot.params['id']);
+    this.getClassCount();
     this.getbranchdetails();
     this.getTeachersList();
   }
@@ -66,6 +70,16 @@ export class SupervisorBranchClasslistComponent {
   addClass(){
     this.service.addClass(this.addClassForm.value).subscribe((res) =>{
       console.log(res);
+    })
+  }
+  onSearchTextChanged(){
+    this.searchText = this.enteredSearchValue.toLowerCase();
+    console.log(this.searchText)
+  }
+  getClassCount(){
+    const branchID = +this.route.snapshot.params['id'];
+    this.service.gwtStudyClassCountForBranch(branchID).subscribe((res) =>{
+      this.classcount = res;
     })
   }
 }

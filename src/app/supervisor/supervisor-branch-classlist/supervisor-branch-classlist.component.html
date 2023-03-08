@@ -11,10 +11,10 @@
   <div class="Hero-section" >
     <div class="row" id="hero-row" >
       <div class="col" id="hero-col-1" >
-        <h2>Total Classes : 10</h2>
+        <h2>Total Classes : {{classcount}}</h2>
       </div>
       <div
-        class="col" 
+        class="col"
         id="hero-col-2"
         type="button"
         data-bs-toggle="offcanvas"
@@ -96,16 +96,18 @@
     <section id="main-section-parent">
       <div class="row" id="main-sec-top-row">
         <div class="col" id="main-sec-top-col-2">
-         <input type="search" placeholder="Search">
+         <input type="search" placeholder="Search"
+         [(ngModel)]="enteredSearchValue"
+         (input)="onSearchTextChanged()">
          <label for="search"><i class="fa fa-search"></i></label>
         </div>
-      </div>  
+      </div>
 
       <div class="row" id="main-list-row" *ngFor="let item of branch">
         <div
           class="col"
           id="list-parent-col"
-          *ngFor="let studyClass of item.studyClasses"
+          *ngFor="let studyClass of item.studyClasses | SearchPipe: searchText "
         >
           <div
             class="row"
@@ -121,53 +123,7 @@
             </div>
           </div>
         </div>
-
-
-        <div
-        class="col"
-        id="list-parent-col"
-        *ngFor="let studyClass of item.studyClasses"
-      >
-        <div
-          class="row"
-          id="list-row"
-          (click)="toClassProfile(studyClass.id)"
-        >
-          <div class="col" id="list-inner-col">
-            <h1>{{ studyClass.className }}</h1>
-            <p>{{ studyClass.classTime }}</p>
-          </div>
-          <div class="col" id="main-list-icon-col">
-            <i class="fa fa-trash" aria-hidden="true"></i>
-          </div>
-        </div>
       </div>
-
-
-
-      <div
-      class="col"
-      id="list-parent-col"
-      *ngFor="let studyClass of item.studyClasses"
-    >
-      <div
-        class="row"
-        id="list-row"
-        (click)="toClassProfile(studyClass.id)"
-      >
-        <div class="col" id="list-inner-col">
-          <h1>{{ studyClass.className }}</h1>
-          <p>{{ studyClass.classTime }}</p>
-        </div>
-        <div class="col" id="main-list-icon-col">
-          <i class="fa fa-trash" aria-hidden="true"></i>
-        </div>
-      </div>
-    </div>
-      </div>
-
-
-      
     </section>
   </div>
 </body>

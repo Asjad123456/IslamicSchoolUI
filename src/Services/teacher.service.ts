@@ -58,4 +58,8 @@ getTeacherClassesCount(id: number){
   const url = `${this.baseUrl}User/teacherclasscount/${id}`;
   return this.http.get<number>(url);
 }
+getStudentsCountForclassprofile(id: number){
+  const url = `${this.baseUrl}StudyClass/studentcount/${id}`;
+  return this.http.get<number>(url);
+}
 }

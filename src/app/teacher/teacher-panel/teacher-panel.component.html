@@ -1,85 +1,73 @@
 <body>
   <!-- Header section start here -->
-  <section id="header-section">
-    <div class="row" id="header-row">
-      <div class="col">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i>
-      </div>
+
+  <div class="row" id="header-row" >
+    <div class="col" >
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
     </div>
-  </section>
-  <!-- Hero section start here -->
-  <section id="hero-section">
-    <div class="row" id="hero-section-row">
-      <div class="col" id="hero-col-1">
-        <div class="row">
-          <div class="col" id="hero-col-inner-1">
-          </div>
+  </div>
 
-          <div class="col" id="hero-col-inner-2" *ngFor="let item of teacher">
-            <h1>{{item.userName}}</h1>
-            <p><i class="fas fa-location"></i>{{item.email}}</p>
-          </div>
-        </div>
-      </div>
-      <div class="col" id="hero-col-2">
-        <img src="/assets/bussiness-man.png" alt="" />
-      </div>
+  <div class="row" id="hero-section-row" >
+    <div
+      class="col"
+      id="hero-col-1"
+      *ngFor="let item of teacher"
+
+    >
+      <h1>{{ item.userName }}</h1>
+      <p><i class="fas fa-location"></i>{{ item.email }}</p>
     </div>
-
-    <!-- Supervisor data offcanvas start here -->
-
-    <!-- Supervisor data offcanvas start here -->
-  </section>
+    <div class="col" id="hero-col-2" >
+      <img src="/assets/bussiness-man.png" alt="" />
+    </div>
+  </div>
 
   <!-- Main content section styling start here -->
-  <section id="main-section">
+  <section id="main-section" >
 
     <div class="row" id="your-branch-row" (click)="toclassesList()">
-        <div class="col-10" id="your-branch-col-1">
-            <h1>Your Classes</h1>
-        </div>
-        <div class="col-2" id="your-branch-col-2">
-          <i class="fa-solid fa-arrow-right"></i>
-        </div>
-    </div>
-<!-- your branch & profile columns are has same id -->
-    <div class="row" id="your-profile-row">
-        <div class="col-10" id="your-branch-col-1">
-            <h1>Your Profile</h1>
-        </div>
-        <div class="col-2" id="your-branch-col-2" >
-          <i class="fa-solid fa-arrow-right"></i>
-        </div>
-    </div>
-    <div class="row" id="footer-box-row">
-      <div class="row" id="main-sec-first-row">
-        <div class="col" id="message-board-col">
-          <div class="row">
-            <div class="col" id="message-inner-col-1">
-              <strong>Messages</strong>
-            </div>
-            <div class="col" id="message-inner-col-2">
-              <i class="fa-solid fa-angle-right"></i>
-            </div>
-          </div>
-        </div>
+      <div class="col-10" id="your-branch-col-1">
+        <h1>Your CLasses</h1>
       </div>
-      <div class="row" id="main-sec-second-row">
-        <div
-          class="col"
-          id="branch-profile-col"
-          type="button"
-        >
-          <div class="row">
-            <div class="col" id="branch-inner-col-1">
-              <strong>Branche Profile</strong>
-            </div>
-            <div class="col" id="branch-inner-col-2">
-              <i class="fa-solid fa-angle-right"></i>
-            </div>
-          </div>
+      <div class="col-2" id="your-branch-col-2">
+        <i class="fa-solid fa-arrow-right"></i>
+      </div>
+    </div>
+    <!-- your branch & profile columns are has same id -->
+    <div class="row" id="your-profile-row" (click)="toteacherprofile()">
+      <div class="col-10" id="your-branch-col-1">
+        <h1>Your Profile</h1>
+      </div>
+      <div class="col-2" id="your-branch-col-2">
+        <i class="fa-solid fa-arrow-right"></i>
+      </div>
+    </div>
+
+    <div class="row" id="footer-box-row" >
+      <div class="row" id="main-sec-first-row" >
+        <!-- <div class="col" id="message-board-col">
+          <div class="row"> -->
+        <div class="col" id="message-inner-col-1">
+          <h1>Messages</h1>
+        </div>
+        <div class="col" id="message-inner-col-2">
+          <i class="fa-solid fa-angle-right"></i>
+        </div>
+        <!-- </div>
+        </div> -->
+      </div>
+      <div class="row" id="main-sec-second-row" >
+        <!-- <div class="col" id="branch-profile-col" type="button">
+          <div class="row"> -->
+        <div class="col" id="branch-inner-col-1">
+          <h1>Branch Profile</h1>
+        </div>
+        <div class="col" id="branch-inner-col-2">
+          <i class="fa-solid fa-angle-right"></i>
         </div>
       </div>
     </div>
+    <!-- </div>
+    </div> -->
   </section>
 </body>

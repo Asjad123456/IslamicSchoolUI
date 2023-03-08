@@ -78,4 +78,5 @@ getStudentList(id: number){
   const url = `${this.baseUrl}Branch/studentslist/${id}`;
   return this.http.get<Branches[]>(url);
 }
+
 }

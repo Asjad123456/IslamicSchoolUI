@@ -1,134 +1,41 @@
 <body>
-  <!-- header back btn section -->
-  <section>
-    <div class="row" id="back-btn-row">
-      <div class="col" id="back-btn-col">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i>
-      </div>
-    </div>
-  </section>
-
-  <!-- hero section start  -->
-  <section id="hero-section">
-    <div class="row" id="hero-row">
-      <div class="col" id="hero-col-1" *ngFor="let item of studyclass">
-        <div class="col" id="info-col">
-          <i
-            class="fa fa-info-circle"
-            aria-hidden="true"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasExample"
-            aria-controls="offcanvasExample"
-          ></i>
-        </div>
-        <div class="col">
-          <h2>{{ item.className }}</h2>
-          <p>
-            {{ item.userName }} <i class="fa fa-edit" aria-hidden="true"></i>
-          </p>
-        </div>
-      </div>
-      <div class="col" id="hero-col-2">
-        <img src="/assets/boy.png" alt="" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Supervisor data offcanvas start here -->
-  <div
-    class="offcanvas offcanvas-start"
-    tabindex="-1"
-    id="offcanvasExample"
-    aria-labelledby="offcanvasExampleLabel"
-  >
-    <!-- offcanvas header start-->
-    <div class="offcanvas-body" id="teacher-offcanvas-body">
-      <div class="supervisor-offcanvas-header">
-        <button
-          type="button"
-          class="btn-close text-reset"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="row" id="teacher-offcanvas-row">
-        <div class="col">
-          <img src="/assets/bussiness-man.png" alt="" />
-        </div>
-      </div>
-    </div>
-    <!-- offcanvas header ends-->
-
-    <!-- offcanvas name details start -->
-    <div class="row" id="offcanvas-hero">
-      <div class="col" id="offcanves-name-col" *ngFor="let item of studyclass">
-        <h5 class="offcanvas-title" id="offcanvas-header">Teacher</h5>
-        <h2>{{ item.userName }}</h2>
-        <p>{{ item.email }}</p>
-      </div>
-      <div class="col" id="offcanves-edit-col">
-        <div class="col">
-          <i class="fa fa-user-pen"></i>
-        </div>
-      </div>
-    </div>
-    <!-- offcanvas name details start -->
-
-    <div class="row" id="offcanvas-main" *ngFor="let item of studyclass">
-      <div class="col">
-        <h3>Father name</h3>
-        <p>{{ item.fatherName }}</p>
-      </div>
-      <div class="col">
-        <h3>Contact #</h3>
-        <p>{{ item.phoneNumber }}</p>
-      </div>
-      <div class="col">
-        <h3>Teaching</h3>
-        <p>{{ item.className }}</p>
-      </div>
-      <div class="col">
-        <h3>Socials</h3>
-        <p>
-          <i class="fa-brands fa-instagram"></i>
-          <i class="fa-brands fa-twitter"></i>
-          <i class="fa-brands fa-facebook-f"></i>
-        </p>
-      </div>
+  <!-- header back-btn section  -->
+  <div class="row" id="back-btn-row">
+    <div class="col" id="back-btn-col">
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
     </div>
   </div>
-  <!-- Supervisor data offcanvas start here -->
+
+  <section id="hero-section">
+    <!-- hero section start here -->
+    <div class="row" id="hero-section-row" *ngFor="let item of studyclass">
+      <div class="col" id="hero-section-col">
+        <h1>{{ item.className }}</h1>
+        <p>Teacher: {{ item.userName }}</p>
+      </div>
+    </div>
+  </section>
 
   <!-- main section start here -->
   <section id="main-section">
-    <!-- student heading row -->
-
-    <div class="row" id="student-heading-row">
-      <div class="col" id="student-heading-col">
-        <h1>Students</h1>
+    <div class="row" id="main-teacher-parent-row">
+      <div
+        class="row"
+        id="main-teacher-row"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight"
+      >
+        <div class="col" id="main-teacher-col-1">
+          <h1>View Teacher Profile</h1>
+        </div>
+        <div class="col" id="main-teacher-col-2">
+          <i class="fas fa-arrow-right"></i>
+        </div>
       </div>
     </div>
 
-    <!-- sort by button row  -->
-
-    <div class="row" id="sort-btn-row">
-      <div class="col" id="sort-btn-col-1">
-        <button
-          class="btn"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasRight"
-          aria-controls="offcanvasRight"
-        >
-          sort by
-        </button>
-      </div>
-      <div class="col" id="sort-btn-col-2">
-        <i class="fa fa-search" aria-hidden="true"></i>
-      </div>
-    </div>
-
+    <!-- View Teacher Profile offcanvas  -->
     <div
       class="offcanvas offcanvas-end"
       tabindex="-1"
@@ -136,7 +43,7 @@
       aria-labelledby="offcanvasRightLabel"
     >
       <div class="offcanvas-header">
-        <div class="row" style="border: 1px solid red">
+        <div class="row">
           <div class="col">
             <button
               type="button"
@@ -147,189 +54,92 @@
           </div>
         </div>
       </div>
-
-      <div
-        class="offcanvas-body"
-        style="border: 1px solid red"
-        style="overflow-y: auto"
-      >
-        <form [formGroup]="addStudentForm" (ngSubmit)="addStudent()">
-          <div class="row" id="input-row">
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingOne">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseOne"
-                    aria-expanded="false"
-                    aria-controls="flush-collapseOne"
-                  >
-                    Student
-                  </button>
-                </h2>
-                <div
-                  id="flush-collapseOne"
-                  class="accordion-collapse collapse"
-                  aria-labelledby="flush-headingOne"
-                  data-bs-parent="#accordionFlushExample"
-                >
-                  <!-- student data accordion body start here -->
-                  <div class="accordion-body">
-                    <div class="row" id="student-accor">
-                      <div class="col">
-                        <label for="username">Name</label>
-                        <input
-                          type="text"
-                          id="username"
-                          formControlName="name"
-                        />
-                      </div>
-                      <div class="col">
-                        <label for="username">Father Name</label>
-                        <input
-                          type="text"
-                          id="username"
-                          formControlName="fatherName"
-                        />
-                      </div>
-                      <div class="col">
-                        <label for="username">Reg #</label>
-                        <input
-                          type="text"
-                          id="username"
-                          formControlName="regNumber"
-                        />
-                      </div>
-                      <div class="col">
-                        <label for="username">Roll #</label>
-                        <input
-                          type="text"
-                          id="username"
-                          formControlName="rollNumber"
-                        />
-                      </div>
-                      <div class="col">
-                        <label for="username">Contact</label>
-                        <input
-                          type="text"
-                          id="username"
-                          formControlName="contactNumber"
-                        />
-                      </div>
-                      <div class="col">
-                        <label for="username">Address</label>
-                        <input
-                          type="text"
-                          id="username"
-                          formControlName="address"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingTwo">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseTwo"
-                    aria-expanded="false"
-                    aria-controls="flush-collapseTwo"
-                  >
-                    Guardian
-                  </button>
-                </h2>
-                <div
-                  id="flush-collapseTwo"
-                  class="accordion-collapse collapse"
-                  aria-labelledby="flush-headingTwo"
-                  data-bs-parent="#accordionFlushExample"
-                >
-                  <div class="accordion-body">
-                    <div class="row" id="guardain-accor">
-                      <div class="col">
-                        <label for="username">Name</label>
-                        <input
-                          type="text"
-                          id="username"
-                          formControlName="guardianName"
-                        />
-                      </div>
-                      <div class="col">
-                        <label for="username">FatherName</label>
-                        <input
-                          type="text"
-                          id="username"
-                          formControlName="guardianFatherName"
-                        />
-                      </div>
-                      <div class="col">
-                        <label for="username">CNIC</label>
-                        <input
-                          type="text"
-                          id="username"
-                          formControlName="cnic"
-                        />
-                      </div>
-                      <div class="col">
-                        <label for="username">Address</label>
-                        <input
-                          type="text"
-                          id="username"
-                          formControlName="guardianAddress"
-                        />
-                      </div>
-                      <div class="col">
-                        <label for="username">Phone Number</label>
-                        <input
-                          type="text"
-                          id="username"
-                          formControlName="phoneNumber"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      <!-- <div class="offcanvas-body"> -->
+      <!-- <body> -->
+      <section id="parent-section">
+        <section>
+          <div class="row" id="main-img-row">
+            <div class="col">
+              <img src="/assets/headmaster.png" alt="" />
             </div>
           </div>
+        </section>
 
-          <div class="row" id="button-row">
-            <div class="col" id="button-col-1">
-              <button class="btn" type="submit">Save</button>
+        <section>
+          <div class="row" id="teacher-info-row">
+            <div class="col" id="teacher-info-col" *ngFor="let item of studyclass">
+              <h2>Admin</h2>
+              <b>{{ item.userName }}</b>
+              <p>{{ item.email }}</p>
             </div>
-            <div class="col" id="button-col-2">
-              <button class="btn" type="button">Cancal</button>
+            <div class="col" id="teacher-btn-col"></div>
+          </div>
+        </section>
+
+        <section>
+          <div class="row" id="teacher-details-row" *ngFor="let item of studyclass">
+            <div class="col" id="teacher-details-col-1">
+              <h2>Father name</h2>
+              <p>{{ item.fatherName }}</p>
+            </div>
+            <div class="col" id="teacher-details-col-1">
+              <h2>Contact #</h2>
+              <p>{{ item.phoneNumber }}</p>
+            </div>
+            <div class="col" id="teacher-details-col-1">
+              <h2>Address</h2>
+              <p>address</p>
+            </div>
+            <div class="col" id="teacher-details-col-1">
+              <h3>Socials</h3>
+              <p>
+                <i
+                  class="fa-brands fa-instagram"
+                  style="padding-left: 10px"
+                ></i>
+                <i class="fa-brands fa-twitter" style="padding-left: 10px"></i>
+                <i
+                  class="fa-brands fa-facebook-f"
+                  style="padding-left: 10px"
+                ></i>
+              </p>
             </div>
           </div>
-        </form>
+        </section>
+      </section>
+      <!-- </body> -->
+
+      <!-- </div> -->
+    </div>
+    <!-- View Teacher Profile offcanvas  -->
+
+    <div class="row" id="main-student-parent-row" (click)="toStudentList()">
+      <div class="row" id="main-student-row">
+        <div class="col" id="main-student-col-1">
+          <h1>{{ studentcount }}</h1>
+          <p>Students</p>
+        </div>
+        <div class="col" id="main-student-col-2">
+          <div class="col" id="col-1">
+            <div style="text-align: center">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+          <div class="col" id="col-2">
+            <img src="/assets/student.png" alt="" />
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- student list row -->
-
-    <main id="student-list-parent-row" *ngFor="let item of studyclass">
-      <div
-        class="row"
-        id="student-list-row"
-        *ngFor="let studentitem of item.students"
-      >
-        <div
-          class="col"
-          id="student-list-col-1"
-          (click)="toStudentProfile(studentitem.id)"
-        >
-          <h1>{{ studentitem.name }}</h1>
-          <p>{{ studentitem.rollNumber }}</p>
-        </div>
-        <div class="col" id="student-list-col-2">
-          <i class="fa fa-trash" aria-hidden="true"></i>
-        </div>
+    <!-- Footer Watch Section starts -->
+    <div class="row" id="footer">
+      <div class="col" *ngFor="let item of studyclass">
+        <h1>Class Time - {{ item.classTime }}</h1>
+        <i class="fa-solid fa-clock"></i>
       </div>
-    </main>
+    </div>
   </section>
 </body>

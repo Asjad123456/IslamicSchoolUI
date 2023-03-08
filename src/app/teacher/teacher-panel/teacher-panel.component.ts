@@ -28,4 +28,8 @@ export class TeacherPanelComponent {
     const teacherid = this.route.snapshot.params['id'];
     this.router.navigate(['teacher-panel/'+teacherid+'/classlist']);
   }
+  toteacherprofile(){
+    const teacherId = this.route.snapshot.params['id'];
+    this.router.navigate(['teacher-profile/' + teacherId]);
+  }
 }
