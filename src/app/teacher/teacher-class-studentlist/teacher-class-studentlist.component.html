@@ -15,10 +15,12 @@
       <div class="row" id="hero-row">
         <div class="col" id="hero-heading">
           <h1>Branches</h1>
-          <h5>Currently {{ studentcount }}<span>Students in this class</span></h5>
+          <h5>
+            Currently {{ studentcount }}<span>Students in this class</span>
+          </h5>
         </div>
         <div class="col" id="hero-img-col">
-          <img src="/assets/kids.jpg" alt="" />
+          <img src="/assets/students.png" alt="" />
         </div>
       </div>
     </section>
@@ -62,154 +64,171 @@
                 </div>
               </div>
               <div class="offcanvas-body">
-                <section id="input-field-section" style="overflow-y: auto">
-                  <form [formGroup]="addStudentForm" (ngSubmit)="addStudent()">
-                    <div class="row" id="input-row">
-                      <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item">
-                          <h2 class="accordion-header" id="flush-headingOne">
-                            <button
-                              class="accordion-button collapsed"
-                              type="button"
-                              data-bs-toggle="collapse"
-                              data-bs-target="#flush-collapseOne"
-                              aria-expanded="false"
-                              aria-controls="flush-collapseOne"
+                <!-- <section id="input-field-section" style="overflow-y: auto"> -->
+                <form [formGroup]="addStudentForm" (ngSubmit)="addStudent()">
+                  <!-- Header section start here -->
+                  <section id="header-heading-sec">
+                    <div class="row" id="header-heading-row">
+                      <div class="col">
+                        <h1>Add Students</h1>
+                      </div>
+                    </div>
+                  </section>
+
+                  <!-- input-field section start here -->
+                  <section id="input-field-section" style="overflow-y: auto">
+                    <form
+                      [formGroup]="addStudentForm"
+                      (ngSubmit)="addStudent()"
+                    >
+                      <div class="row" id="input-row">
+                        <div
+                          class="accordion accordion-flush"
+                          id="accordionFlushExample"
+                        >
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                              <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne"
+                                aria-expanded="false"
+                                aria-controls="flush-collapseOne"
+                              >
+                                Student
+                              </button>
+                            </h2>
+                            <div
+                              id="flush-collapseOne"
+                              class="accordion-collapse collapse"
+                              aria-labelledby="flush-headingOne"
+                              data-bs-parent="#accordionFlushExample"
                             >
-                              Student
-                            </button>
-                          </h2>
-                          <div
-                            id="flush-collapseOne"
-                            class="accordion-collapse collapse"
-                            aria-labelledby="flush-headingOne"
-                            data-bs-parent="#accordionFlushExample"
-                          >
-                            <!-- student data accordion body start here -->
-                            <div class="accordion-body">
-                              <div class="row" id="student-accor">
-                                <div class="col">
-                                  <label for="username">Name</label>
-                                  <input
-                                    type="text"
-                                    id="username"
-                                    formControlName="name"
-                                  />
-                                </div>
-                                <div class="col">
-                                  <label for="username">Father Name</label>
-                                  <input
-                                    type="text"
-                                    id="username"
-                                    formControlName="fatherName"
-                                  />
-                                </div>
-                                <div class="col">
-                                  <label for="username">Reg #</label>
-                                  <input
-                                    type="text"
-                                    id="username"
-                                    formControlName="regNumber"
-                                  />
-                                </div>
-                                <div class="col">
-                                  <label for="username">Roll #</label>
-                                  <input
-                                    type="text"
-                                    id="username"
-                                    formControlName="rollNumber"
-                                  />
-                                </div>
-                                <div class="col">
-                                  <label for="username">Contact</label>
-                                  <input
-                                    type="text"
-                                    id="username"
-                                    formControlName="contactNumber"
-                                  />
-                                </div>
-                                <div class="col">
-                                  <label for="username">Address</label>
-                                  <input
-                                    type="text"
-                                    id="username"
-                                    formControlName="address"
-                                  />
+                              <!-- student data accordion body start here -->
+                              <div class="accordion-body">
+                                <div class="row" id="student-accor">
+                                  <div class="col">
+                                    <label for="username">Name</label>
+                                    <input
+                                      type="text"
+                                      id="username"
+                                      formControlName="name"
+                                    />
+                                  </div>
+                                  <div class="col">
+                                    <label for="username">Father Name</label>
+                                    <input
+                                      type="text"
+                                      id="username"
+                                      formControlName="fatherName"
+                                    />
+                                  </div>
+                                  <div class="col">
+                                    <label for="username">Reg #</label>
+                                    <input
+                                      type="text"
+                                      id="username"
+                                      formControlName="regNumber"
+                                    />
+                                  </div>
+                                  <div class="col">
+                                    <label for="username">Roll #</label>
+                                    <input
+                                      type="text"
+                                      id="username"
+                                      formControlName="rollNumber"
+                                    />
+                                  </div>
+                                  <div class="col">
+                                    <label for="username">Contact</label>
+                                    <input
+                                      type="text"
+                                      id="username"
+                                      formControlName="contactNumber"
+                                    />
+                                  </div>
+                                  <div class="col">
+                                    <label for="username">Address</label>
+                                    <input
+                                      type="text"
+                                      id="username"
+                                      formControlName="address"
+                                    />
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="accordion-item">
-                          <h2 class="accordion-header" id="flush-headingTwo">
-                            <button
-                              class="accordion-button collapsed"
-                              type="button"
-                              data-bs-toggle="collapse"
-                              data-bs-target="#flush-collapseTwo"
-                              aria-expanded="false"
-                              aria-controls="flush-collapseTwo"
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingTwo">
+                              <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo"
+                                aria-expanded="false"
+                                aria-controls="flush-collapseTwo"
+                              >
+                                Guardian
+                              </button>
+                            </h2>
+                            <div
+                              id="flush-collapseTwo"
+                              class="accordion-collapse collapse"
+                              aria-labelledby="flush-headingTwo"
+                              data-bs-parent="#accordionFlushExample"
                             >
-                              Guardian
-                            </button>
-                          </h2>
-                          <div
-                            id="flush-collapseTwo"
-                            class="accordion-collapse collapse"
-                            aria-labelledby="flush-headingTwo"
-                            data-bs-parent="#accordionFlushExample"
-                          >
-                            <div class="accordion-body">
-                              <div class="row" id="guardain-accor">
-                                <div class="col">
-                                  <label for="username">Name</label>
-                                  <input
-                                    type="text"
-                                    id="username"
-                                    formControlName="guardianName"
-                                  />
-                                </div>
-                                <div class="col">
-                                  <label for="username">FatherName</label>
-                                  <input
-                                    type="text"
-                                    id="username"
-                                    formControlName="guardianFatherName"
-                                  />
-                                </div>
-                                <div class="col">
-                                  <label for="username">CNIC</label>
-                                  <input
-                                    type="text"
-                                    id="username"
-                                    formControlName="cnic"
-                                  />
-                                </div>
-                                <div class="col">
-                                  <label for="username">Address</label>
-                                  <input
-                                    type="text"
-                                    id="username"
-                                    formControlName="guardianAddress"
-                                  />
-                                </div>
-                                <div class="col">
-                                  <label for="username">Phone Number</label>
-                                  <input
-                                    type="text"
-                                    id="username"
-                                    formControlName="phoneNumber"
-                                  />
+                              <div class="accordion-body">
+                                <div class="row" id="guardain-accor">
+                                  <div class="col">
+                                    <label for="username">Name</label>
+                                    <input
+                                      type="text"
+                                      id="username"
+                                      formControlName="guardianName"
+                                    />
+                                  </div>
+                                  <div class="col">
+                                    <label for="username">FatherName</label>
+                                    <input
+                                      type="text"
+                                      id="username"
+                                      formControlName="guardianFatherName"
+                                    />
+                                  </div>
+                                  <div class="col">
+                                    <label for="username">CNIC</label>
+                                    <input
+                                      type="text"
+                                      id="username"
+                                      formControlName="cnic"
+                                    />
+                                  </div>
+                                  <div class="col">
+                                    <label for="username">Address</label>
+                                    <input
+                                      type="text"
+                                      id="username"
+                                      formControlName="guardianAddress"
+                                    />
+                                  </div>
+                                  <div class="col">
+                                    <label for="username">Phone Number</label>
+                                    <input
+                                      type="text"
+                                      id="username"
+                                      formControlName="phoneNumber"
+                                    />
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
 
-
-                    <div class="row" id="button-row">
+                      <div class="row" id="button-row">
                         <div class="col" id="button-col-1">
                           <button class="btn" type="submit">Save</button>
                         </div>
@@ -217,10 +236,10 @@
                           <button class="btn" type="button">Cancal</button>
                         </div>
                       </div>
-
-
-                  </form>
-                </section>
+                    </form>
+                  </section>
+                </form>
+                <!-- </section> -->
               </div>
             </div>
             <!-- offcanva end  -->
@@ -238,26 +257,24 @@
       <section id="main-sec-box1" *ngFor="let item of studyclass">
         <div *ngFor="let student of item.students">
           <div
-          class="row"
-          *ngIf="
-            searchText === '' ||
-            item.students[0].name.toLowerCase().includes(searchText)
-          "
-        >
-          <div
-            class="col-9"
-            id="branch-name-col"
-            (click)="toStudentProfile(student.id)"
+            class="row"
+            *ngIf="
+              searchText === '' ||
+              item.students[0].name.toLowerCase().includes(searchText)
+            "
           >
-            <h3>{{ student.name }}</h3>
-            <p>{{ student.rollNumber }}</p>
+            <div
+              class="col-9"
+              id="branch-name-col"
+              (click)="toStudentProfile(student.id)"
+            >
+              <h3>{{ student.name }}</h3>
+              <p>{{ student.rollNumber }}</p>
+            </div>
+            <div class="col-3" id="branch-icon-col">
+              <a><i class="fa-solid fa-trash"></i></a>
+            </div>
           </div>
-          <div class="col-3" id="branch-icon-col">
-            <a
-              ><i class="fa-solid fa-trash"></i
-            ></a>
-          </div>
-        </div>
         </div>
       </section>
       <!--------Main Section branch-list ends here--------->
