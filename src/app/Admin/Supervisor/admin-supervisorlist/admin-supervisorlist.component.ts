@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { User } from 'src/Models/user';
 import { AdminService } from 'src/Services/admin.service';
 import { Location } from '@angular/common';
+import { AccountService } from 'src/Services/account.service';
 
 @Component({
   selector: 'app-admin-supervisorlist',
@@ -12,12 +13,16 @@ import { Location } from '@angular/common';
 export class AdminSupervisorlistComponent {
   user: User[];
   admincount: number;
+  previousUrl: string;
   enteredSearchValue: string = '';
   searchText: string = '';
 
-  constructor(private service: AdminService, private router: Router, private location: Location){}
+  constructor(private service: AdminService, private router: Router, private location: Location, private route: ActivatedRoute){}
 
   ngOnInit(): void{
+  this.route.params.subscribe(params => {
+    this.previousUrl = `/admin-panel/${params['id']}`;
+  });
   this.getSupervisors();
   this.adminCount();
   }
@@ -35,7 +40,7 @@ export class AdminSupervisorlistComponent {
     );
   }
   onBack(){
-    this.location.back()
+    this.router.navigateByUrl(this.previousUrl);
   }
   adminCount(){
     this.service.getSupervisorCount().subscribe((res) =>{

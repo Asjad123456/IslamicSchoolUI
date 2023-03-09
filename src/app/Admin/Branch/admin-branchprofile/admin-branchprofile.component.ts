@@ -17,6 +17,7 @@ export class AdminBranchprofileComponent {
   editBranchForm: FormGroup;
   studyClassCount: number;
   teachersCount: number;
+  previousUrl: string;
 
   constructor(private router: Router, private service:AdminService, private route: ActivatedRoute, private fb:FormBuilder, private location: Location){}
 
@@ -27,6 +28,9 @@ export class AdminBranchprofileComponent {
       address: [''],
       branchCode: [''],
     })
+    this.route.params.subscribe(params => {
+      this.previousUrl = `/admin/${params['id']}/brancheslist`;
+    });
     this.getBranchDetails();
     console.log(this.route.snapshot.params['id']);
     this.editBranch();
@@ -59,7 +63,7 @@ export class AdminBranchprofileComponent {
     })
   }
   onBack(){
-    this.location.back();
+    this.router.navigateByUrl(this.previousUrl);
   }
   getStudyClassCount(){
     const branchId = +this.route.snapshot.params['id'];

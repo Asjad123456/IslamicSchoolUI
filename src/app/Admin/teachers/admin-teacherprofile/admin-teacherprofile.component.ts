@@ -10,14 +10,19 @@ import { AdminService } from 'src/Services/admin.service';
   styleUrls: ['./admin-teacherprofile.component.css']
 })
 export class AdminTeacherprofileComponent {
+
   teacher: Teacher[];
   studyclass: StudyClass[]
   enteredSearchValue: string = '';
   searchText: string = '';
+  previousUrl: string;
 
   constructor(private service: AdminService, private route: ActivatedRoute, private router: Router){}
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.previousUrl = `/admin/${params['id']}/admin-teacherslist`;
+    });
     this.getTeacherDetail();
   }
   getTeacherDetail(){
@@ -34,5 +39,8 @@ export class AdminTeacherprofileComponent {
   onSearchTextChanged(){
     this.searchText = this.enteredSearchValue.toLowerCase();
     console.log(this.searchText)
+  }
+  onBack(){
+    this.router.navigateByUrl(this.previousUrl);
   }
 }

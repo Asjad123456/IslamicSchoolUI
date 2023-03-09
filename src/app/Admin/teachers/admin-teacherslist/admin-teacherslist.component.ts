@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/Models/user';
 import { AdminService } from 'src/Services/admin.service';
 import { Location } from '@angular/common';
@@ -15,8 +15,10 @@ export class AdminTeacherslistComponent {
   teachercount: number;
   enteredSearchValue: string = '';
   searchText: string = '';
+  previousUrl: string;
 
-  constructor(private service: AdminService, private router: Router, private location: Location){}
+
+  constructor(private service: AdminService, private router: Router, private location: Location, private route: ActivatedRoute){}
 
   ngOnInit(): void {
     this.TeachersList();
@@ -35,7 +37,8 @@ export class AdminTeacherslistComponent {
     })
   }
   onBack(){
-    this.location.back()
+    const adminId = this.route.snapshot.params['id'];
+    this.router.navigate(['admin-panel/' + adminId]);
   }
   teachersCount(){
     this.service.getTeachersCount().subscribe((res) =>{

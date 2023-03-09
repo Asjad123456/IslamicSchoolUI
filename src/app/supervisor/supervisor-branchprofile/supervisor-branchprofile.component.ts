@@ -13,6 +13,8 @@ export class SupervisorBranchprofileComponent {
   classCount: number;
   teachersCount: number;
   studentsCount: number;
+  previousUrl: string;
+
 
   constructor(private route: ActivatedRoute, private service: SupervisorService, private router: Router){}
 
@@ -59,5 +61,8 @@ export class SupervisorBranchprofileComponent {
   toStudentsList(){
     const branchId = +this.route.snapshot.params['id'];
     this.router.navigate(['supervisor-panel/supervisor-branchprofile/'+ branchId +'/studentlist']);
+  }
+  onback(){
+    window.history.back();
   }
 }

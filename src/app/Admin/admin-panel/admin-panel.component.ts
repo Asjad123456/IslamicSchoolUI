@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { AccountService } from 'src/Services/account.service';
 import { AdminService } from 'src/Services/admin.service';
 
@@ -30,8 +30,9 @@ export class AdminPanelComponent {
     this.router.navigate(['role-managment'])
   }
   toBranchesList(){
-    const adminId = this.route.snapshot.params['id']
-    this.router.navigate(['admin/' + adminId + '/brancheslist']);
+    const adminId = this.route.snapshot.params['id'];
+    localStorage.setItem('adminID', adminId)
+    this.router.navigate(['admin-brancheslist']);
   }
   toAdminProfile(){
     const AdminId = this.route.snapshot.params['id'];
@@ -70,13 +71,19 @@ export class AdminPanelComponent {
     });
   }
   toBranches(){
+    const navigationExtras: NavigationExtras = {
+      state: {
+        previousUrl: this.router.url
+      }
+    };
     this.router.navigate(['admin-brancheslist']);
   }
   toSupervisors(){
     this.router.navigate(['admin-supervisorlist']);
   }
   toTeachers(){
-    this.router.navigate(['admin-teacherslist']);
+    const adminId = this.route.snapshot.params['id'];
+    this.router.navigate(['admin/' + adminId +'/admin-teacherslist']);
   }
   toStudents(){
     this.router.navigate(['admin-studentlist']);

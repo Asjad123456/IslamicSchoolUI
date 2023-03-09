@@ -18,7 +18,6 @@ export class AdminSupervisorprofileComponent {
   constructor(private router: Router, private service:AdminService, private route: ActivatedRoute, private fb:FormBuilder){}
 
   ngOnInit(): void{
-
     this.addBranchForm = new FormGroup({
       branchid: new FormControl('', Validators.required),
     })
@@ -46,7 +45,8 @@ export class AdminSupervisorprofileComponent {
 
   }
   toSupervisorBranch(id: number){
-    this.router.navigate(['admin-branchprofile/'+ id]);
+    const supervisorId = this.route.snapshot.params['id'];
+    this.router.navigate(['supervisor-panel/' + supervisorId + '/supervisor-branchprofile/' + id]);
   }
   onback(){
     this.router.navigate(['admin-supervisorlist']);

@@ -104,7 +104,7 @@ import { TeacherClassStudentlistComponent } from './teacher/teacher-class-studen
     SearchTeacherPipe,
     SearchSupervisorPipe,
     SupervisorBranchClassStudentlistComponent,
-    TeacherClassStudentlistComponent
+    TeacherClassStudentlistComponent,
   ],
   imports: [
     BrowserModule,
