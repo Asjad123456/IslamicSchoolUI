@@ -145,7 +145,7 @@ input[type="text"] {
   align-content: center;
   height: 7vh;
 }
-.form-control{
+.form-control {
   background-color: #9baf9a;
   width: 48vw;
   display: grid;
@@ -179,10 +179,10 @@ input[type="text"] {
   background-color: #cbf58a;
   border-radius: 6px;
 }
-input[placeholder]{
+input[placeholder] {
   font-size: 18px;
 }
-input[type=search]{
+input[type="search"] {
   outline: none;
   background: none;
   border-top: 0;
@@ -191,12 +191,12 @@ input[type=search]{
   border-bottom: 0;
   width: 76vw;
 }
-#main-sec-top-col-2 i{
+#main-sec-top-col-2 i {
   color: #586e6b;
 }
 /* main section lists start here */
 
-#main-list-row{
+#main-list-row {
   display: grid;
   overflow: scroll;
   height: 37vh;
@@ -213,7 +213,7 @@ input[type=search]{
   grid-template-columns: 70% 30%;
   background: #e0fdb3;
   width: 90vw;
- height: 10vh;
+  height: 10vh;
   border-radius: 5px;
 }
 #list-inner-col {
