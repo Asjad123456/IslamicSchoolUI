@@ -48,7 +48,7 @@ export class AdminBranchprofileComponent {
     const id =+this.route.snapshot.params['id'];
     this.service.getBranchById(id).subscribe((res) =>{
         this.editBranchForm.controls['branchName'].setValue(res[0]?.branchName);
-        this.editBranchForm.controls['city'].setValue(res[0]?.city);
+        this.editBranchForm.controls['city'].setValue(res[0]?.city);          
         this.editBranchForm.controls['address'].setValue(res[0]?.address);
         this.editBranchForm.controls['branchCode'].setValue(res[0]?.branchCode);
       console.warn(res)
@@ -63,7 +63,7 @@ export class AdminBranchprofileComponent {
     })
   }
   onBack(){
-    this.router.navigateByUrl(this.previousUrl);
+    this.router.navigate(['admin-brancheslist']);         
   }
   getStudyClassCount(){
     const branchId = +this.route.snapshot.params['id'];

@@ -48,9 +48,10 @@ export class WelcomeComponent implements OnInit {
         console.log('local storage not supported  $$$ ');
       }
     },error =>{
+      console.error(error);
       this.snackBar.open('An error occurred, Try Again!', 'Close', {
         duration: 3000,
-        panelClass: 'error-snackbar'
+        panelClass: 'error-snackbar',
       });
     });
   }

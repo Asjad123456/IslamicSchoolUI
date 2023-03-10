@@ -61,7 +61,8 @@ export class AdminPanelComponent {
     })
   }
   toRoleManagment(){
-    this.router.navigate(['admin/'+ this.branchId +'/role-managment']);
+    const adminId = this.route.snapshot.params['id'];
+    this.router.navigate(['admin/' + adminId + '/role-managment']);
   }
   logout(){
     this.accountService.logout();

@@ -50,6 +50,7 @@ export class AdminBrancheslistComponent implements OnInit{
         this.getbranches();
         console.log(response);
         console.log("done");
+        this.addBranchForm.reset();
       },
       (error) => {
         console.log(error);
@@ -61,6 +62,7 @@ export class AdminBrancheslistComponent implements OnInit{
     .subscribe(
       response =>{
         this.getbranches();
+        this.getUsersforSupervisors();
       },error =>{
         console.error(error)
       }
@@ -90,7 +92,8 @@ export class AdminBrancheslistComponent implements OnInit{
     console.log(item.userName);
   }
   onBack(){
-
+    const adminId = localStorage.getItem('adminID');
+    this.router.navigate(['admin-panel/' + adminId]);
   }
   branchesCount(){
     this.service.getBranchesCount().subscribe((res) =>{
