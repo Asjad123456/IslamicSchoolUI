@@ -33,8 +33,8 @@ export class AdminTeacherprofileComponent {
     })
   }
   toClassProfile(id: number){
-      this.router.navigate(['class-profile/' + id]);
-      console.log(id);
+    this.router.navigateByUrl(`/class-profile/1?from=${encodeURIComponent('admin-teacherslist/admin-teacherprofile/94d525e0-3a73-4817-4b38-08db2173ac50')}`);
+
   }
   onSearchTextChanged(){
     this.searchText = this.enteredSearchValue.toLowerCase();

@@ -44,7 +44,7 @@ export class AdminTeacherClassprofileComponent {
   // }
   toStudentList(){
     const classid = +this.route.snapshot.params['id'];
-    this.router.navigate(['admin-branchprofile/class-list/class-profile/' + classid +'/student-list']);
+    this.router.navigateByUrl(`/admin-branchprofile/class-list/class-profile/${classid}/student-list`);
   }
 
   getStudentCount(){
@@ -54,5 +54,13 @@ export class AdminTeacherClassprofileComponent {
       console.log('hello', res);
       console.log(classid);
     })
+  }
+  onback(){
+    const from = this.route.snapshot.queryParamMap.get('from');
+  if (from) {
+    this.router.navigateByUrl(from);
+  } else {
+    // handle case where there is no 'from' query parameter
+  }
   }
 }

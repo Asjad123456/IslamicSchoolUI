@@ -27,8 +27,7 @@ export class AdminBranchTeacherprofileComponent {
     })
   }
   toClassProfile(id: number){
-    this.router.navigate(['class-profile/' + id]);
-    console.log(id);
+    this.router.navigateByUrl(`/class-profile/${id}?from=${encodeURIComponent('admin-branchprofile/5/teacher-profile/94d525e0-3a73-4817-4b38-08db2173ac50')}`);
 }
   onback(){
     this.location.back();
