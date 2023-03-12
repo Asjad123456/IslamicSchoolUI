@@ -48,7 +48,8 @@ export class AdminBranchClasslistComponent {
     console.log(this.searchText)
   }
   onBack(){
-    const branchid = +this.route.snapshot.params['id'];
-    this.router.navigate(['admin-branchprofile/' +branchid]);
+    const lastRoute = localStorage.getItem('lastRoute');
+    this.router.navigateByUrl(lastRoute);
+    localStorage.removeItem('lastRoute');
   }
 }

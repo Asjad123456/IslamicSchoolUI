@@ -40,7 +40,8 @@ export class AdminSupervisorlistComponent {
     );
   }
   onBack(){
-    this.router.navigateByUrl(this.previousUrl);
+    const adminId = localStorage.getItem('adminID');
+    this.router.navigate(['admin-panel/'+ adminId]);
   }
   adminCount(){
     this.service.getSupervisorCount().subscribe((res) =>{

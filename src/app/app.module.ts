@@ -57,6 +57,7 @@ import { SearchTeacherPipe } from 'src/pipes/searchteacher.pipe';
 import { SearchSupervisorPipe } from 'src/pipes/supervisorsearch.pipe';
 import { SupervisorBranchClassStudentlistComponent } from './supervisor/supervisor-branch-class-studentlist/supervisor-branch-class-studentlist.component';
 import { TeacherClassStudentlistComponent } from './teacher/teacher-class-studentlist/teacher-class-studentlist.component';
+import { AdminSupervisorBranchprofileComponent } from './Admin/Supervisor/admin-supervisor-branchprofile/admin-supervisor-branchprofile.component';
 
 @NgModule({
   declarations: [
@@ -105,6 +106,7 @@ import { TeacherClassStudentlistComponent } from './teacher/teacher-class-studen
     SearchSupervisorPipe,
     SupervisorBranchClassStudentlistComponent,
     TeacherClassStudentlistComponent,
+    AdminSupervisorBranchprofileComponent,
     ],
   imports: [
     BrowserModule,

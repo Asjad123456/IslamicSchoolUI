@@ -33,5 +33,6 @@ export class SupervisorPanelComponent {
       this.userforredirect = res[0];
       this.router.navigate(['supervisor-panel/' + supervisorId + '/supervisor-branchprofile/' + this.userforredirect.branchId]);
     });
+    localStorage.setItem('supervisorid', supervisorId);
   }
 }

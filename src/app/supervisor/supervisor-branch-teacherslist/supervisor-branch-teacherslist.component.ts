@@ -1,3 +1,4 @@
+import { LocalizedString } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Branches } from 'src/Models/branches';
@@ -29,15 +30,14 @@ export class SupervisorBranchTeacherslistComponent {
   }
   toTeacherProfile(id: string){
     const branchId = +this.route.snapshot.params['id'];
-    this.service.getBranchWithOnlyTeachers(branchId).subscribe((res) =>{
-      this.branch = res;
-      console.log(res);
-      this.router.navigate(['admin-branchprofile/' + branchId + '/teacher-profile/' + id])
-    })
+    this.router.navigate(['supervisor-panel/supervisor-branchprofile/'+ branchId +'/teacher-profile/' + id]);
+    localStorage.setItem('branchid', branchId.toString());
   }
   onBack(){
     const branchid = +this.route.snapshot.params['id'];
-    this.router.navigate(['admin-branchprofile/' + branchid]);
+    const supervisorId = localStorage.getItem('supervisorid');
+    this.router.navigate(['supervisor-panel/' + supervisorId +'/supervisor-branchprofile/' + branchid]);
+    localStorage.removeItem('supervisorid');
   }
   teachersCount(){
     this.service.getTeachersCount().subscribe((res) =>{

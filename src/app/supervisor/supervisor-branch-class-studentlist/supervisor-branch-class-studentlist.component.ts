@@ -37,15 +37,15 @@ export class SupervisorBranchClassStudentlistComponent {
   }
   toStudentProfile(id:number){
     const classid = +this.route.snapshot.params['id'];
-    this.service.getClassById(id).subscribe(
-      response =>{
-        this.router.navigate(['supervisor-panel/supervisor-branchprofile/classprofile/' + classid+ '/student-profile/' + id]);
-      }
-    );
+    this.router.navigate(['supervisor-panel/supervisor-branchprofile/classprofile/' + classid+ '/student-profile/' + id]);
+    localStorage.setItem('classid', classid.toString());
   }
-  // onBack(){
-  //   this.location.back();
-  // }
+  onBack(){
+   const branchid = localStorage.getItem('branchid');
+   const classid = this.route.snapshot.params['id'];
+   this.router.navigate(['supervisor-panel/supervisor-branchprofile/'+ branchid +'/classprofile/' + classid]);
+   
+  }
   onSearchTextChanged(){
     this.searchText = this.enteredSearchValue.toLowerCase();
     console.log(this.searchText)

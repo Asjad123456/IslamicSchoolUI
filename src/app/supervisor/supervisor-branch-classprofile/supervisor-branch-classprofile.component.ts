@@ -1,3 +1,4 @@
+import { coerceStringArray } from '@angular/cdk/coercion';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -71,5 +72,11 @@ export class SupervisorBranchClassprofileComponent {
   ToStudentList(){
     const classId = +this.route.snapshot.params['id'];
     this.router.navigate(['supervisor-panel/supervisor-branchprofile/classprofile/'+ classId +'/studentlist']);
+  }
+  onback(){
+    const teacherid = localStorage.getItem('teacherid');
+    const branchid = localStorage.getItem('branchid');
+    this.router.navigate(['supervisor-panel/supervisor-branchprofile/'+ branchid +'/teacher-profile/'+ teacherid]);
+    localStorage.removeItem('teacherid');
   }
 }

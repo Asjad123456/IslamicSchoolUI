@@ -40,6 +40,7 @@ import { SupervisorBranchClassStudentlistComponent } from './supervisor/supervis
 import { SupervisorBranchTeacherslistComponent } from './supervisor/supervisor-branch-teacherslist/supervisor-branch-teacherslist.component';
 import { AdminTeacherClassprofileComponent } from './Admin/teachers/admin-teacher-classprofile/admin-teacher-classprofile.component';
 import { TeacherClassStudentlistComponent } from './teacher/teacher-class-studentlist/teacher-class-studentlist.component';
+import { AdminSupervisorBranchprofileComponent } from './Admin/Supervisor/admin-supervisor-branchprofile/admin-supervisor-branchprofile.component';
 
 const routes: Routes = [
   {path:'welcome', component:WelcomeComponent},                     //90% Done
@@ -55,6 +56,7 @@ const routes: Routes = [
   {path:'admin-branchprofile/:id',component:AdminBranchprofileComponent},  //99% Done
   {path:'admin-branchprofile/:id/teachers-list',component:AdminBranchTeacherlistComponent}, //Copy/paste
   {path:'admin-branchprofile/:id/teacher-profile/:id',component:AdminBranchTeacherprofileComponent},//work in progress
+  {path:'admin-branchprofile/teacher-profile/class-profile/:id', component:AdminTeacherClassprofileComponent},
   {path:'admin-branchprofile/teacher-profile/:id/class-profile/:id',component:AdminBranchClassprofileComponent},//Full incomplete
   {path:'admin-branchprofile/:id/class-list',component:AdminBranchClasslistComponent},       //work in progress
   {path:'admin-branchprofile/:id/class-list/class-profile/:id',component:AdminBranchClassprofileComponent},     //Full incomplete
@@ -63,6 +65,7 @@ const routes: Routes = [
 
   {path:'admin-supervisorlist', component:AdminSupervisorlistComponent},//work in progress
   {path:'admin-supervisorprofile/:id', component:AdminSupervisorprofileComponent},//work in progress
+  {path:'admin-supervisor-branchprofile/:id', component:AdminSupervisorBranchprofileComponent},
 
   {path:'admin-studentlist', component:AdminStudentlistComponent},//Copy/paste
   {path:'admin-studentlist/admin-studentprofile/:id', component:AdminStudentprofileComponent},//work in progress

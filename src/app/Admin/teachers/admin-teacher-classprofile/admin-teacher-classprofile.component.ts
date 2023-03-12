@@ -56,11 +56,8 @@ export class AdminTeacherClassprofileComponent {
     })
   }
   onback(){
-    const from = this.route.snapshot.queryParamMap.get('from');
-  if (from) {
-    this.router.navigateByUrl(from);
-  } else {
-    // handle case where there is no 'from' query parameter
-  }
+    const lastRoute = localStorage.getItem('lastRoute');
+    this.router.navigateByUrl(lastRoute);
+    localStorage.removeItem('lastRoute');
   }
 }

@@ -1,0 +1,106 @@
+<body>
+    <section id="parent-section">
+      <section id="header">
+        <!---------Header section start here----------->
+        <div class="row" id="header-row">
+          <div class="col" id="header-first-icon">
+            <i class="fa fa-arrow-left" aria-hidden="true" (click)="onback()"></i>
+          </div>
+        </div>
+      </section>
+      <!---------Header section ends here----------->
+  
+      <!---------Hero Section start here--------->
+      <section id="hero-section" *ngFor="let item of branch">
+        <div class="row" id="hero-row">
+          <div class="col" id="hero-col-1">
+            <h1 aria-hidden="true">{{ item.branchName }}</h1>
+          </div>
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasRight"
+            aria-labelledby="offcanvasRightLabel"
+          >
+            <div class="row" id="branch-offcanva-top-row" >
+              <div class="offcanvas-header" id="offcanvas-header" >
+                <div class="col" id="branch-offcanva-top-col-1" >
+                  <h5 id="offcanvasRightLabel">Edit Branch Data</h5>
+                </div>
+                <div class="col" id="branch-offcanva-top-col-2" >
+                  <button
+                    type="button"
+                  ></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col" id="hero-col-2">
+            <span
+              ><i class="fa fa-globe" aria-hidden="true"></i>
+              <b
+                ><br />
+                {{ item.address }}
+              </b>
+            </span>
+          </div>
+        </div>
+      </section>
+      <!---------Hero Section ends here--------->
+  
+      <!-------- Main section HTML start here ------->
+      <section id="main-section">
+        <div
+          class="row"
+          id="your-branch-row"
+          (click)="toclassesList()"
+        >
+          <div class="col-10" id="your-branch-col-1">
+            <h1>Classes</h1>
+          </div>
+          <div class="col-2" id="your-branch-col-2">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+        <div id="footer-rows">
+          <div class="row" id="class-row" (click)="toTeachersList()">
+            <div class="col-9" id="class-col-1">
+              <h1>Teachers : {{ teachersCount }}</h1>
+              <!-- <p>10+</p> -->
+            </div>
+            <div class="col-3" id="class-col-2">
+              <img src="/assets/headmaster.png" alt="" />
+            </div>
+          </div>
+          <div class="row" id="class-row" (click)="toStudentsList()">
+            <div class="col-9" id="class-col-1">
+              <h1>Students : {{studentsCount}}</h1>
+              <!-- <p>10+</p> -->
+            </div>
+            <div class="col-3" id="class-col-2">
+              <img src="/assets/students.png" alt="" />
+            </div>
+          </div>
+          <!-- <div class="row" id="teacher-row">
+            <div class="col-3" id="teacher-col-1">
+              <img src="/assets/headmaster.png" alt="" />
+            </div>
+            <div class="col-9" id="teacher-col-2">
+              <h1>Teachers</h1>
+            </div>
+          </div> -->
+          <!--
+          <div class="row" id="student-row">
+            <div class="col-9" id="student-col-1">
+              <h1>Students</h1>
+            </div>
+            <div class="col-3" id="student-col-2">
+              <img src="/assets/student.png" alt="" />
+            </div>
+          </div> -->
+        </div>
+      </section>
+      <!-------- Main section HTML end here ------->
+    </section>
+  </body>
+  

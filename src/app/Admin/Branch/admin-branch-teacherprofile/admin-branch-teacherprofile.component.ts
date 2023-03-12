@@ -27,10 +27,14 @@ export class AdminBranchTeacherprofileComponent {
     })
   }
   toClassProfile(id: number){
-    this.router.navigateByUrl(`/class-profile/${id}?from=${encodeURIComponent('admin-branchprofile/5/teacher-profile/94d525e0-3a73-4817-4b38-08db2173ac50')}`);
+    const currentRoute = this.router.url;
+    localStorage.setItem('lastRoute', currentRoute);
+    this.router.navigate(['admin-branchprofile/teacher-profile/class-profile/' + id]);
 }
   onback(){
-    this.location.back();
+    const branhcid = localStorage.getItem('brnachid');
+    this.router.navigate(['admin-branchprofile/'+ branhcid +'/teachers-list']);
+    localStorage.removeItem('brnachid');
   }
   onSearchTextChanged(){
     this.searchText = this.enteredSearchValue.toLowerCase();

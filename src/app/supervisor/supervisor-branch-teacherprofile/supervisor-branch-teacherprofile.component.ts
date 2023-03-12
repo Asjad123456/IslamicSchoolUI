@@ -10,6 +10,8 @@ import { AdminService } from 'src/Services/admin.service';
 })
 export class SupervisorBranchTeacherprofileComponent {
   teacher: Teacher[];
+  enteredSearchValue: string = '';
+  searchText: string = '';
 
   constructor(private service: AdminService, private route: ActivatedRoute, private router: Router){}
 
@@ -23,12 +25,18 @@ export class SupervisorBranchTeacherprofileComponent {
       console.log(res);
     })
   }
-  toClassProfile(){
-    const teacherId = this.route.snapshot.params['id'];
-    this.service.getTeacherById(teacherId).subscribe((res) =>{
-      this.teacher = res;
-      console.log(res);
-      this.router.navigate(['admin-branchprofile/teacher-profile/' + teacherId + '/class-profile/' + this.teacher[0].studyClasses[0].id])
-    })
+  toClassProfile(id: number){
+    const branchid = localStorage.getItem('branchid');
+    this.router.navigate(['supervisor-panel/supervisor-branchprofile/'+ branchid +'/classprofile/' + id]);
+    const teacherid = this.route.snapshot.params['id'];
+    localStorage.setItem('teacherid', teacherid);
+  }
+  onSearchTextChanged(){
+    this.searchText = this.enteredSearchValue.toLowerCase();
+    console.log(this.searchText)
+  }
+  onBack(){
+    const branchid = localStorage.getItem('branchid');
+    this.router.navigate(['supervisor-panel/supervisor-branchprofile/'+ branchid +'/teacherlist']);
   }
 }

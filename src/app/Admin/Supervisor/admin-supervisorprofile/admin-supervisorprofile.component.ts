@@ -45,8 +45,7 @@ export class AdminSupervisorprofileComponent {
 
   }
   toSupervisorBranch(id: number){
-    const supervisorId = this.route.snapshot.params['id'];
-    this.router.navigate(['supervisor-panel/' + supervisorId + '/supervisor-branchprofile/' + id]);
+    this.router.navigate(['admin-supervisor-branchprofile/' + id]);
   }
   onback(){
     this.router.navigate(['admin-supervisorlist']);

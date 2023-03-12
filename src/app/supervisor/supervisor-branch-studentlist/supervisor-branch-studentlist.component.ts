@@ -39,6 +39,7 @@ export class SupervisorBranchStudentlistComponent {
   toStudentProfile(id: number){
     const branchid = +this.route.snapshot.params['id'];
     this.router.navigate(['supervisor-panel/supervisor-branchprofile/'+branchid+'/studentlist/studentprofile/' + id]);
+    localStorage.setItem('branchid', branchid.toString());
   }
   getStudentCount(){
     const classid = +this.route.snapshot.params['id'];
@@ -47,5 +48,11 @@ export class SupervisorBranchStudentlistComponent {
       console.log('hello', res);
       console.log(classid);
     })
+  }
+  onBack(){
+    const branchid = +this.route.snapshot.params['id'];
+    const supervisorId = localStorage.getItem('supervisorid');
+    this.router.navigate(['supervisor-panel/' + supervisorId +'/supervisor-branchprofile/' + branchid]);
+    localStorage.removeItem('supervisorid');
   }
 }

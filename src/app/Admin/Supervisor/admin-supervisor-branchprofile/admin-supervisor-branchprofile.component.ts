@@ -4,11 +4,11 @@ import { Branches } from 'src/Models/branches';
 import { SupervisorService } from 'src/Services/supervisor.service';
 
 @Component({
-  selector: 'app-supervisor-branchprofile',
-  templateUrl: './supervisor-branchprofile.component.html',
-  styleUrls: ['./supervisor-branchprofile.component.css']
+  selector: 'app-admin-supervisor-branchprofile',
+  templateUrl: './admin-supervisor-branchprofile.component.html',
+  styleUrls: ['./admin-supervisor-branchprofile.component.css']
 })
-export class SupervisorBranchprofileComponent {
+export class AdminSupervisorBranchprofileComponent {
   branch: Branches[];
   classCount: number;
   teachersCount: number;
@@ -19,8 +19,6 @@ export class SupervisorBranchprofileComponent {
   constructor(private route: ActivatedRoute, private service: SupervisorService, private router: Router){}
 
   ngOnInit(): void{
-    const branchid = this.route.snapshot.params['id'];
-    localStorage.setItem('branchid', branchid);
     this.getBranchDetails();
     this.getclassesCount();
     this.getTeachersCount();
@@ -42,7 +40,9 @@ export class SupervisorBranchprofileComponent {
   }
   toclassesList(){
     const branchId = +this.route.snapshot.params['id'];
-    this.router.navigate(['supervisor-panel/supervisor-branchprofile/' + branchId + '/classlist']);
+    this.router.navigate(['admin-branchprofile/'+ branchId +'/class-list']);
+    const currentRoute = this.router.url;
+    localStorage.setItem('lastRoute', currentRoute);
   }
   getTeachersCount(){
     const branchId = +this.route.snapshot.params['id'];
@@ -65,9 +65,6 @@ export class SupervisorBranchprofileComponent {
     this.router.navigate(['supervisor-panel/supervisor-branchprofile/'+ branchId +'/studentlist']);
   }
   onback(){
-    const supervisorId = localStorage.getItem('supervisorid');
-    this.router.navigate(['supervisor-panel/'+ supervisorId]);
-    localStorage.removeItem('supervisorid');
-    localStorage.removeItem('branchid');
+    window.history.back();
   }
 }

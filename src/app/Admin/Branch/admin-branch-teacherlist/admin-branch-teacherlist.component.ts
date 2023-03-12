@@ -34,6 +34,8 @@ export class AdminBranchTeacherlistComponent {
       console.log(res);
       this.router.navigate(['admin-branchprofile/' + branchId + '/teacher-profile/' + id])
     })
+    const branchid = JSON.stringify(+this.route.snapshot.params['id']);
+    localStorage.setItem('brnachid', branchid);
   }
   onBack(){
     const branchid = +this.route.snapshot.params['id'];

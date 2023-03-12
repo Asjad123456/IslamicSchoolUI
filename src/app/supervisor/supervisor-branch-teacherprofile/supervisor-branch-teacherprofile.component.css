@@ -18,220 +18,347 @@
   --box-color: #daf1d0;
 }
 body {
-  /* background: linear-gradient(to top, #daf1d0 81%, #abc9af 100%); */
-  height: 99vh;
+  background-color: #fff;
 }
 #parent-section {
   height: 100vh;
   background: linear-gradient(0deg, var(--box-color) 0%, #9baf9a 100%);
 }
 /* top back button styling start here */
-#top-back-btn {
-  height: 5vh;
-  padding: 10px;
-}
 #top-back-btn .col {
+  height: 5vh;
   display: flex;
+  justify-content: flex-start;
   flex-wrap: wrap;
   align-content: center;
-}
-#top-back-btn .col i {
-  font-size: 20px;
+  padding-left: 15px;
+  font-size: 24px;
   color: var(--color);
 }
-
+/* top back button styling start here */
 #main-img-row .col {
   display: flex;
   justify-content: center;
-  padding: 11px;
 }
 #main-img-row .col img {
   max-width: 67%;
 }
+/* main img styling start here */
 
 /* Teacher name data section start here */
 #teacher-info-row {
-  padding: 30px;
-  height: 14vh;
+  display: grid;
+  grid-template-columns: 67% 33%;
+  align-content: end;
+  height: 17vh;
+  /* padding: 19px; */
 }
 
 #teacher-info-col {
   display: grid;
   justify-content: center;
+  flex-wrap: nowrap;
   align-content: center;
 }
 #teacher-info-col h2 {
   color: var(--color-1);
-  font-size: 17px;
+  font-size: 20px;
   margin: 0;
-  font-weight: 400;
 }
-#teacher-info-col b {
+#teacher-info-col abbr {
   color: var(--color);
   font-size: 20px;
-  font-weight: 900;
 }
 #teacher-info-col p {
-  color: var(--color);
   font-size: 15px;
-  margin: 0;
-  font-weight: 400;
+  color: var(--color);
 }
 #teacher-btn-col {
   display: grid;
-  justify-content: flex-end;
+  justify-content: center;
   align-content: center;
 }
 #teacher-btn-col button {
   text-decoration: none;
   color: aliceblue;
-  background-color: goldenrod;
+  background-color: var(--color-1);
   border-radius: 26px;
-  height: 41px;
+  height: 40px;
   line-height: 1px;
-  width: 11vw;
+  width: 10vw;
 }
 /* Teacher deatail row styling section start here */
 #teacher-details-row {
   display: grid;
-  grid-template-columns: 192px 193px;
-  row-gap: 11px;
-  padding: 7px;
-  height: 39vh;
+  grid-template-columns: 50% 50%;
+  gap: 7px;
+  height: 36vh;
+  justify-content: center;
   align-content: center;
+  padding: 14px;
 }
-#teacher-details-col-1 {
+#teacher-details-col-1 h2,
+#teacher-details-col-2 h2,
+#teacher-details-col-3 h2 {
+  font-size: 20px;
+  color: var(--color);
+}
+#teacher-details-col-1 p,
+#teacher-details-col-2 p,
+#teacher-details-col-3 p {
+  color: var(--color);
+}
+#teacher-details-col-1,
+#teacher-details-col-2,
+#teacher-details-col-3,
+#teacher-details-col-4 {
+  width: 48vw;
   display: grid;
   align-content: center;
   justify-content: center;
   text-align: center;
   height: 14vh;
-  background: #d2f9a7;
+  background-color: #d2f9a7;
   border-radius: 15px;
-  width: 47vw;
+  box-shadow: rgb(0 0 0 / 5%) 0px 0px 0px 1px,
+    rgb(199 243 150 / 50%) 0px 0px 0px 1px inset;
 }
-#teacher-details-col-1 h2 {
+#teacher-details-col-4 h2 {
   font-size: 20px;
   color: var(--color);
 }
-#teacher-details-col-1 h3 {
-  font-size: 20px;
+#teacher-details-col-4 p {
   color: var(--color);
 }
-#teacher-details-col-1 p {
-  color: var(--color);
+/*  footer button section styling start here */
+#footer-btn-col {
+  display: grid;
+  justify-content: center;
+  align-content: center;
 }
-
-#footer-btn-row {
-  width: 94%;
+#footer-btn-col button {
+  width: 93vw;
+  height: 5vh;
+  font-size: 17px;
+  font-weight: 600;
+  color: #586e6b;
+  background-color: #d2f9a7;
+  box-shadow: rgb(0 0 0 / 5%) 0px 0px 0px 1px,
+    rgb(199 243 150 / 50%) 0px 0px 0px 1px inset;
 }
 
 /* footer button offcanvas section styling start here */
 .offcanvas {
   height: 100vh;
-  background-color: var(--box-color);
-}
-.offcanvas-body {
   background: linear-gradient(0deg, var(--box-color) 0%, #9baf9a 100%);
 }
-#header-heading-row {
-  height: 20vh;
-  padding: 8px;
+.offcanvas-header {
+  display: flex;
+  justify-content: end;
 }
-#header-heading-row .col {
+.offcanvas-header .row .col {
+  padding-right: 25px;
+}
+#btn-close {
+  font-size: 17px;
+}
+#profile-section {
+  height: 10vh;
+}
+#profile-img-row {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  justify-content: center;
+  align-content: center;
+  height: 17vh;
+  padding: 20px;
+  /* column-gap: 11px; */
+}
+#profile-img-col-1,
+#profile-img-col-2 {
+  display: grid;
+  justify-content: flex-start;
+  align-content: end;
+  border-bottom: 2px solid #586e6b;
+}
+#profile-img-row #profile-img-col-1 img {
+  max-width: 71%;
+}
+#profile-img-row #profile-img-col-2 h1 {
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--color-1);
+  margin: 0;
+}
+
+#Guardain-detail-section {
+  height: 42vh;
+}
+#Guardain-detail-row {
+  display: grid;
+  row-gap: 1rem;
+  height: 71vh;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+#Guardain-detail-col-1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  width: 90vw;
+}
+#Guardain-detail-col-1 .col,
+#Guardain-detail-col-2 .col,
+#Guardain-detail-col-3 .col,
+#Guardain-detail-col-4 .col {
+  padding: 9px;
+  display: grid;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  background-color: #d2f9a7;
+  box-shadow: rgb(0 0 0 / 5%) 0px 0px 0px 1px,
+    rgb(199 243 150 / 50%) 0px 0px 0px 1px inset;
+  border-radius: 10px;
+}
+#Guardain-detail-col-2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  width: 90vw;
+}
+#Guardain-detail-col-3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  width: 90vw;
+}
+#Guardain-detail-col-4 {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  width: 90vw;
+}
+#Guardain-detail-col-1 .col h1,
+#Guardain-detail-col-2 .col h1,
+#Guardain-detail-col-3 .col h1,
+#Guardain-detail-col-4 .col h1 {
+  font-size: 20px;
+  color: var(--color);
+  margin: 0;
+}
+#Guardain-detail-col-1 .col p,
+#Guardain-detail-col-2 .col p,
+#Guardain-detail-col-3 .col p,
+#Guardain-detail-col-4 .col p {
+  color: var(--color-1);
+}
+/* footer img section styling start here  */
+/* #footer-img-section {
+}
+#footer-img-row {
+}
+#footer-img-row .col {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
 }
-#header-heading-row .col h1 {
-  color: var(--color);
-  font-weight: 100;
+#footer-img-row .col img {
+  max-width: 20%;
+} */
+#accor-btn-row {
+  height: 8vh;
+  padding: 10px;
+}
+#accor-btn-col {
+  display: flex;
+  justify-content: center;
+  width: 65vw;
+  background-color: #bc9c00;
+  border-radius: 10px;
+}
+.accordion-button {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  color: #b4dfa0;
+  font-weight: 700;
   margin: 0;
 }
-
-/* input field section styling start here */
-#input-field-row {
+.accordion-body {
   display: grid;
-  grid-template-columns: 100%;
-  row-gap: 10px;
-  /* position: relative;
-  top: 0; */
+  gap: 21px;
+  overflow: scroll;
+  height: 30vh;
+  /* padding-top: 32px; */
 }
-input[type="text"] {
+#accordion-main-row {
+  padding: 19px;
+  background-color: #d9f9d8;
+}
+.accordion-flush button {
+  background-color: var(--golden);
+  padding: 12px;
+}
+.accordion-item {
+  background-color: var(--background-color);
+}
+#accordion-search-bar .col {
+  padding: 11px;
+}
+#accordion-search-bar input[type="search"] {
+  width: 78vw;
+  background: none;
   border-top: 0;
   border-right: 0;
   border-left: 0;
-  border-bottom: 1px solid;
-  background: none;
+  border-bottom: 1px solid rgb(68, 60, 60);
   outline: none;
-  width: 89vw;
 }
-#name-col {
-  height: 11vh;
-  padding: 15px;
-  color: var(--color-1);
-}
-#name-col input {
-  color: var(--color);
-}
-#address-col {
-  height: 11vh;
-  padding: 15px;
-  color: var(--color-1);
-}
-#address-col input {
-  color: var(--color);
-}
-#city-col {
-  height: 11vh;
-  padding: 15px;
-  color: var(--color-1);
-}
-#city-col input {
-  color: var(--color);
-}
-#contact-col {
-  height: 11vh;
-  padding: 15px;
-  color: var(--color-1);
-}
-#name-col,
-#address-col,
-#city-col,
-p {
-  color: var(--color-1);
-}
-#name-col,
-#address-col,
-#city-col,
-#contact-col input {
-  color: var(--color);
-}
-/* footer buttons section styling start here */
-#footer-btn-col-1 {
+#accordion-sec-row {
   display: grid;
+  gap: 10px;
+  overflow: scroll;
+  height: 21vh;
+}
+#accordion-sec-col {
+  display: flex;
+  height: 8vh;
+  border-radius: 10px;
+  background-color: #b4dfa0;
+}
+#col-1 {
+  display: flex;
   justify-content: center;
   align-content: center;
-  color: var(--box-color);
 }
-#footer-btn-col-1 button {
-  width: 20vw;
-  height: 5vh;
-  background-color: var(--color);
-  border: none;
-  border-radius: 8px;
+#col-1 img {
+  width: 19vw;
 }
-#footer-btn-col-2 {
+#col-2 {
   display: grid;
+  flex-grow: 3;
+  align-content: center;
+  padding: 7px;
+}
+#col-2 h1{
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color:#bc9c00;
+}
+#col-2 p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 100;
+}
+#col-3 {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  color: var(--box-color);
 }
-#footer-btn-col-2 button {
-  width: 20vw;
-  height: 5vh;
-  background-color: var(--color);
-  border: none;
-  border-radius: 7px;
+#col-3 i{
+  color: #bc9c00;
 }
