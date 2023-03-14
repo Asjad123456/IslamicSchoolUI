@@ -199,7 +199,7 @@ input[type="search"] {
 #main-list-row {
   display: grid;
   overflow: scroll;
-  height: 37vh;
+  height: 44vh;
   align-content: space-around;
   justify-content: center;
   gap: 10px;

@@ -70,6 +70,7 @@ export class AdminPanelComponent {
       duration: 3000,
       panelClass: 'success-snackbar'
     });
+    localStorage.clear();
   }
   toBranches(){
     const navigationExtras: NavigationExtras = {

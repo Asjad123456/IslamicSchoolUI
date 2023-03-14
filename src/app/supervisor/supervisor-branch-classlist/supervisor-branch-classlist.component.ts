@@ -2,6 +2,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { ThisReceiver } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Branches } from 'src/Models/branches';
 import { StudyClass } from 'src/Models/StudyClass';
@@ -31,7 +32,7 @@ export class SupervisorBranchClasslistComponent {
   searchText: string = '';
   classcount: number;
 
-  constructor(private route: ActivatedRoute, private service: SupervisorService, private router: Router){}
+  constructor(private route: ActivatedRoute, private service: SupervisorService, private router: Router, private snackBar: MatSnackBar){}
 
   branchId = +this.route.snapshot.params['id'];
 
@@ -74,6 +75,11 @@ export class SupervisorBranchClasslistComponent {
       response =>{
         this.getbranchdetails();
         this.getTeachersList();
+        this.getClassCount();
+        this.snackBar.open('Class Deleted!', 'Close', {
+          duration: 3000,
+          panelClass: 'success-snackbar'
+        });
       },error =>{
         console.error(error)
       }
@@ -82,6 +88,12 @@ export class SupervisorBranchClasslistComponent {
   addClass(){
     this.service.addClass(this.addClassForm.value).subscribe((res) =>{
       console.log(res);
+      this.getbranchdetails();
+      this.addClassForm.reset();
+      this.snackBar.open('Class Added!', 'Close', {
+        duration: 3000,
+        panelClass: 'success-snackbar'
+      });
     })
   }
   onSearchTextChanged(){

@@ -40,4 +40,8 @@ export class AdminStudentlistComponent {
     this.searchText = this.enteredSearchValue.toLowerCase();
     console.log(this.searchText)
   }
+  onback(){
+    const adminId = localStorage.getItem('adminID');
+    this.router.navigate(['admin-panel/' + adminId]);
+  }
 }
