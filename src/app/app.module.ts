@@ -18,7 +18,6 @@ import { AdminBrancheslistComponent } from './Admin/Branch/admin-brancheslist/ad
 import { WaitingComponent } from './waiting/waiting.component';
 import { SupervisorPanelComponent } from './supervisor/supervisor-panel/supervisor-panel.component';
 import { TeacherPanelComponent } from './teacher/teacher-panel/teacher-panel.component';
-import { RoleGuard } from 'src/guards/role.guard';
 import { SearchComponent } from './search/search.component';
 import { AdminBranchprofileComponent } from './Admin/Branch/admin-branchprofile/admin-branchprofile.component';
 import { AdminBranchClasslistComponent } from './Admin/Branch/admin-branch-classlist/admin-branch-classlist.component';
@@ -122,7 +121,6 @@ import { AdminSupervisorBranchprofileComponent } from './Admin/Supervisor/admin-
   ],
   providers: [
     { provide: FaIconLibrary, useValue: faBinoculars },
-    RoleGuard
   ],
   bootstrap: [AppComponent]
 })

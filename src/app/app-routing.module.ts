@@ -1,6 +1,5 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RoleGuard } from 'src/guards/role.guard';
 import { AdminBranchClassStudentlistComponent } from './Admin/Branch/admin-branch-class-studentlist/admin-branch-class-studentlist.component';
 import { AdminBranchClassStudentprofileComponent } from './Admin/Branch/admin-branch-class-studentprofile/admin-branch-class-studentprofile.component';
 import { AdminBranchClasslistComponent } from './Admin/Branch/admin-branch-classlist/admin-branch-classlist.component';
@@ -41,59 +40,62 @@ import { SupervisorBranchTeacherslistComponent } from './supervisor/supervisor-b
 import { AdminTeacherClassprofileComponent } from './Admin/teachers/admin-teacher-classprofile/admin-teacher-classprofile.component';
 import { TeacherClassStudentlistComponent } from './teacher/teacher-class-studentlist/teacher-class-studentlist.component';
 import { AdminSupervisorBranchprofileComponent } from './Admin/Supervisor/admin-supervisor-branchprofile/admin-supervisor-branchprofile.component';
+import { DeanGuard } from 'src/guards/dean.guard';
+import { AdminGuard } from 'src/guards/admin.guard';
+import { TeacherGuard } from 'src/guards/teacher.guard';
 
 const routes: Routes = [
   {path:'welcome', component:WelcomeComponent},                     //90% Done
-  {path:'search', component:SearchComponent},
+  // {path:'search', component:SearchComponent},
   // {path:'',redirectTo:'welcome',pathMatch:'full'},
   {path:'signup', component:SignupComponent},                          //90% Done
   {path:'waiting',component:WaitingComponent},                         //90% Done
   //Admin Routes
-  {path:'admin-panel/:id',component:AdminPanelComponent},              //90% Done
-  {path:'admin-profile/:id',component:AdminProfileComponent},          //90% Done
-  {path:'admin/:id/role-managment', component:RoleManagmentComponent},           //90% Done
-  {path:'admin-brancheslist', component:AdminBrancheslistComponent},   //95% Done
-  {path:'admin-branchprofile/:id',component:AdminBranchprofileComponent},  //99% Done
-  {path:'admin-branchprofile/:id/teachers-list',component:AdminBranchTeacherlistComponent}, //Copy/paste
-  {path:'admin-branchprofile/:id/teacher-profile/:id',component:AdminBranchTeacherprofileComponent},//work in progress
-  {path:'admin-branchprofile/teacher-profile/class-profile/:id', component:AdminTeacherClassprofileComponent},
-  {path:'admin-branchprofile/teacher-profile/:id/class-profile/:id',component:AdminBranchClassprofileComponent},//Full incomplete
-  {path:'admin-branchprofile/:id/class-list',component:AdminBranchClasslistComponent},       //work in progress
-  {path:'admin-branchprofile/:id/class-list/class-profile/:id',component:AdminBranchClassprofileComponent},     //Full incomplete
-  {path:'admin-branchprofile/class-list/class-profile/:id/student-list',component:AdminBranchClassStudentlistComponent}, //Copy/paste
-  {path:'admin-branchprofile/class-list/clasprofile/student-profile/:id',component:AdminBranchClassStudentprofileComponent},   //work in progress
+  {path:'admin-panel/:id',component:AdminPanelComponent,canActivate: [DeanGuard]},              //90% Done
+  {path:'admin-profile/:id',component:AdminProfileComponent,canActivate: [DeanGuard]},          //90% Done
+  {path:'admin/:id/role-managment', component:RoleManagmentComponent,canActivate: [DeanGuard]},           //90% Done
+  {path:'admin-brancheslist', component:AdminBrancheslistComponent,canActivate: [DeanGuard]},   //95% Done
+  {path:'admin-branchprofile/:id',component:AdminBranchprofileComponent,canActivate: [DeanGuard]},  //99% Done
+  {path:'admin-branchprofile/:id/teachers-list',component:AdminBranchTeacherlistComponent,canActivate: [DeanGuard]}, //Copy/paste
+  {path:'admin-branchprofile/:id/teacher-profile/:id',component:AdminBranchTeacherprofileComponent,canActivate: [DeanGuard]},//work in progress
+  {path:'admin-branchprofile/teacher-profile/class-profile/:id', component:AdminTeacherClassprofileComponent,canActivate: [DeanGuard]},
+  {path:'admin-branchprofile/teacher-profile/:id/class-profile/:id',component:AdminBranchClassprofileComponent,canActivate: [DeanGuard]},//Full incomplete
+  {path:'admin-branchprofile/:id/class-list',component:AdminBranchClasslistComponent,canActivate: [DeanGuard]},       //work in progress
+  {path:'admin-branchprofile/:id/class-list/class-profile/:id',component:AdminBranchClassprofileComponent,canActivate: [DeanGuard]},     //Full incomplete
+  {path:'admin-branchprofile/class-list/class-profile/:id/student-list',component:AdminBranchClassStudentlistComponent,canActivate: [DeanGuard]}, //Copy/paste
+  {path:'admin-branchprofile/class-list/clasprofile/student-profile/:id',component:AdminBranchClassStudentprofileComponent,canActivate: [DeanGuard]},   //work in progress
 
-  {path:'admin-supervisorlist', component:AdminSupervisorlistComponent},//work in progress
-  {path:'admin-supervisorprofile/:id', component:AdminSupervisorprofileComponent},//work in progress
-  {path:'admin-supervisor-branchprofile/:id', component:AdminSupervisorBranchprofileComponent},
+  {path:'admin-supervisorlist', component:AdminSupervisorlistComponent,canActivate: [DeanGuard]},//work in progress
+  {path:'admin-supervisorprofile/:id', component:AdminSupervisorprofileComponent,canActivate: [DeanGuard]},//work in progress
+  {path:'admin-supervisor-branchprofile/:id', component:AdminSupervisorBranchprofileComponent,canActivate: [DeanGuard]},
 
-  {path:'admin-studentlist', component:AdminStudentlistComponent},//Copy/paste
-  {path:'admin-studentlist/admin-studentprofile/:id', component:AdminStudentprofileComponent},//work in progress
+  {path:'admin-studentlist', component:AdminStudentlistComponent,canActivate: [DeanGuard]},//Copy/paste
+  {path:'admin-studentlist/admin-studentprofile/:id', component:AdminStudentprofileComponent,canActivate: [DeanGuard]},//work in progress
 
-  {path:'admin/:id/admin-teacherslist', component:AdminTeacherslistComponent},//work in progress
-  {path:'admin-teacherslist/admin-teacherprofile/:id', component:AdminTeacherprofileComponent},//work in progress
-  {path:'class-profile/:id', component:AdminTeacherClassprofileComponent},//work in progress
+  {path:'admin/:id/admin-teacherslist', component:AdminTeacherslistComponent,canActivate: [DeanGuard]},//work in progress
+  {path:'admin-teacherslist/admin-teacherprofile/:id', component:AdminTeacherprofileComponent,canActivate: [DeanGuard]},//work in progress
+  {path:'class-profile/:id', component:AdminTeacherClassprofileComponent,canActivate: [DeanGuard]},//work in progress
 
   //Supervisor Routes
-  {path:'supervisor-panel/:id', component:SupervisorPanelComponent},//90% Done
-  {path:'supervisor-profile/:id', component:SupervisorProfileComponent},//80% Done
-  {path:'supervisor-panel/:id/supervisor-branchprofile/:id', component:SupervisorBranchprofileComponent},//80% Done
-  {path:'supervisor-panel/supervisor-branchprofile/:id/teacherlist', component:SupervisorBranchTeacherslistComponent},//work in progress
-  {path:'supervisor-panel/supervisor-branchprofile/:id/teacher-profile/:id', component:SupervisorBranchTeacherprofileComponent},//work in progress
-  {path:'supervisor-panel/supervisor-branchprofile/:id/classlist', component:SupervisorBranchClasslistComponent},//work in progress
-  {path:'supervisor-panel/supervisor-branchprofile/:id/classprofile/:id', component:SupervisorBranchClassprofileComponent},//work in progress
-  {path:'supervisor-panel/supervisor-branchprofile/classprofile/:id/studentlist', component:SupervisorBranchClassStudentlistComponent},
-  {path:'supervisor-panel/supervisor-branchprofile/classprofile/:id/student-profile/:id', component:SupervisorBranchClassStudentprofileComponent},//work in progress
-  {path:'supervisor-panel/supervisor-branchprofile/:id/studentlist', component:SupervisorBranchStudentlistComponent},//work in progress
-  {path:'supervisor-panel/supervisor-branchprofile/:id/studentlist/studentprofile/:id', component:SupervisorBranchStudentprofileComponent}, //work in progress
+  {path:'supervisor-panel/:id', component:SupervisorPanelComponent,canActivate: [AdminGuard]},//90% Done
+  {path:'supervisor-profile/:id', component:SupervisorProfileComponent,canActivate: [AdminGuard]},//80% Done
+  {path:'supervisor-panel/:id/supervisor-branchprofile/:id', component:SupervisorBranchprofileComponent,canActivate: [AdminGuard]},//80% Done
+  {path:'supervisor-panel/supervisor-branchprofile/:id/teacherlist', component:SupervisorBranchTeacherslistComponent,canActivate: [AdminGuard]},//work in progress
+  {path:'supervisor-panel/supervisor-branchprofile/:id/teacher-profile/:id', component:SupervisorBranchTeacherprofileComponent,canActivate: [AdminGuard]},//work in progress
+  {path:'supervisor-panel/supervisor-branchprofile/:id/classlist', component:SupervisorBranchClasslistComponent,canActivate: [AdminGuard]},//work in progress
+  {path:'supervisor-panel/supervisor-branchprofile/:id/classprofile/:id', component:SupervisorBranchClassprofileComponent,canActivate: [AdminGuard]},//work in progress
+  {path:'supervisor-panel/supervisor-branchprofile/classprofile/:id/studentlist', component:SupervisorBranchClassStudentlistComponent,canActivate: [AdminGuard]},
+  {path:'supervisor-panel/supervisor-branchprofile/classprofile/:id/student-profile/:id', component:SupervisorBranchClassStudentprofileComponent,canActivate: [AdminGuard]},//work in progress
+  {path:'supervisor-panel/supervisor-branchprofile/:id/studentlist', component:SupervisorBranchStudentlistComponent,canActivate: [AdminGuard]},//work in progress
+  {path:'supervisor-panel/supervisor-branchprofile/:id/studentlist/studentprofile/:id', component:SupervisorBranchStudentprofileComponent,canActivate: [AdminGuard]}, //work in progress
 
   //teacher Routes
-  {path:'teacher-panel/:id', component:TeacherPanelComponent},//90% Done
-  {path:'teacher-profile/:id', component:TeacherProfileComponent},//work in progress
-  {path:'teacher-panel/:id/classlist', component:TeacherClasslistComponent},//work in progress
-  {path:'teacher-panel/:id/classlist/classprofile/:id', component:TeacherClassprofileComponent},//work in progress
-  {path:'teacher-panel/classlist/classprofile/:id/studentlist', component:TeacherClassStudentlistComponent},
-  {path:'teacher-panel/classlist/classprofile/:id/studentprofile/:id', component:TeacherClassStudentprofileComponent},//work in progress
+  {path:'teacher-panel/:id', component:TeacherPanelComponent,canActivate: [TeacherGuard]},//90% Done
+  {path:'teacher-profile/:id', component:TeacherProfileComponent,canActivate: [TeacherGuard]},//work in progress
+  {path:'teacher-panel/:id/classlist', component:TeacherClasslistComponent,canActivate: [TeacherGuard]},//work in progress
+  {path:'teacher-panel/:id/classlist/classprofile/:id', component:TeacherClassprofileComponent,canActivate: [TeacherGuard]},//work in progress
+  {path:'teacher-panel/classlist/classprofile/:id/studentlist', component:TeacherClassStudentlistComponent,canActivate: [TeacherGuard]},
+  {path:'teacher-panel/classlist/classprofile/:id/studentprofile/:id', component:TeacherClassStudentprofileComponent,canActivate: [TeacherGuard]},//work in progress
 ];
 
 @NgModule({

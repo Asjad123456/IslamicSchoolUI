@@ -23,6 +23,8 @@ export class AdminBranchClassStudentprofileComponent {
     this.service.getStudentById(id).subscribe((res) =>{
       this.student = res;
       console.warn(res);
+    }, error =>{
+      console.warn(error);
     })
   }
   onback(){

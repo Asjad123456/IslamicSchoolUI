@@ -78,5 +78,7 @@ getStudentList(id: number){
   const url = `${this.baseUrl}Branch/studentslist/${id}`;
   return this.http.get<Branches[]>(url);
 }
-
+public deleteClass(id: number): Observable<StudyClass>{
+  return this.http.delete<StudyClass>(this.baseUrl + 'StudyClass/' + id);
+}
 }

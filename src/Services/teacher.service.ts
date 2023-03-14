@@ -74,4 +74,7 @@ getStudentsCountForclassprofile(id: number){
   const url = `${this.baseUrl}StudyClass/studentcount/${id}`;
   return this.http.get<number>(url);
 }
+public deleteStudent(id: number): Observable<Student>{
+  return this.http.delete<Student>(this.baseUrl + 'Student/' + id);
+}
 }

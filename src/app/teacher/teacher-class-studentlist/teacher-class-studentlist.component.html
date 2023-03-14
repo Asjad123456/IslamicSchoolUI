@@ -272,7 +272,7 @@
               <p>{{ student.rollNumber }}</p>
             </div>
             <div class="col-3" id="branch-icon-col">
-              <a><i class="fa-solid fa-trash"></i></a>
+              <a><i class="fa-solid fa-trash" (click)="deleteStudent(student.id)"></i></a>
             </div>
           </div>
         </div>

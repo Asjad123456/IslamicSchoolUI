@@ -14,13 +14,14 @@ export class SupervisorPanelComponent {
   userforredirect: User;
 
   ngOnInit(): void{
+    localStorage.setItem('  ', this.route.snapshot.params['id']);
     this.getSupervisorDetails();
   }
   getSupervisorDetails(){
    const supervisorId = this.route.snapshot.params['id'];
    this.service.getSupervisorById(supervisorId).subscribe((res) =>{
     this.user = res;
-    console.log(res)
+    console.log(res);
    })
   }
   toadminprofile(){
@@ -32,7 +33,8 @@ export class SupervisorPanelComponent {
     this.service.getSupervisorById(supervisorId).subscribe((res) => {
       this.userforredirect = res[0];
       this.router.navigate(['supervisor-panel/' + supervisorId + '/supervisor-branchprofile/' + this.userforredirect.branchId]);
+      const currenturl = this.router.url;
+      localStorage.setItem('previousUrl', currenturl);
     });
-    localStorage.setItem('supervisorid', supervisorId);
   }
 }

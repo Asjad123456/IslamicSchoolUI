@@ -1,4 +1,5 @@
 import { animate, style, transition, trigger } from '@angular/animations';
+import { ThisReceiver } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -67,6 +68,17 @@ export class SupervisorBranchClasslistComponent {
       this.teacher = res;
     })
   }
+  deleteClass(id: number){
+    this.service.deleteClass(id)
+    .subscribe(
+      response =>{
+        this.getbranchdetails();
+        this.getTeachersList();
+      },error =>{
+        console.error(error)
+      }
+    )
+  }
   addClass(){
     this.service.addClass(this.addClassForm.value).subscribe((res) =>{
       console.log(res);
@@ -81,5 +93,10 @@ export class SupervisorBranchClasslistComponent {
     this.service.gwtStudyClassCountForBranch(branchID).subscribe((res) =>{
       this.classcount = res;
     })
+  }
+  onback(){
+    const supervisorId = localStorage.getItem('supervisorId');
+    const branchId = +this.route.snapshot.params['id'];
+    this.router.navigate(['supervisor-panel/'+ supervisorId+'/supervisor-branchprofile/' + branchId]);
   }
 }
