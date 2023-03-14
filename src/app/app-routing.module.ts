@@ -43,6 +43,7 @@ import { AdminSupervisorBranchprofileComponent } from './Admin/Supervisor/admin-
 import { DeanGuard } from 'src/guards/dean.guard';
 import { AdminGuard } from 'src/guards/admin.guard';
 import { TeacherGuard } from 'src/guards/teacher.guard';
+import { TeacherClassAttendancelistComponent } from './teacher/teacher-class-attendancelist/teacher-class-attendancelist.component';
 
 const routes: Routes = [
   {path:'welcome', component:WelcomeComponent},                     //90% Done
@@ -94,6 +95,7 @@ const routes: Routes = [
   {path:'teacher-profile/:id', component:TeacherProfileComponent,canActivate: [TeacherGuard]},//work in progress
   {path:'teacher-panel/:id/classlist', component:TeacherClasslistComponent,canActivate: [TeacherGuard]},//work in progress
   {path:'teacher-panel/:id/classlist/classprofile/:id', component:TeacherClassprofileComponent,canActivate: [TeacherGuard]},//work in progress
+  {path:'teacher-panel/classlist/classprofile/:id/attendancelist', component:TeacherClassAttendancelistComponent},
   {path:'teacher-panel/classlist/classprofile/:id/studentlist', component:TeacherClassStudentlistComponent,canActivate: [TeacherGuard]},
   {path:'teacher-panel/classlist/classprofile/:id/studentprofile/:id', component:TeacherClassStudentprofileComponent,canActivate: [TeacherGuard]},//work in progress
 ];
