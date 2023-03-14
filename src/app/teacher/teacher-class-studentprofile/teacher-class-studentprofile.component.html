@@ -64,7 +64,7 @@
 
         <!-- input-field section start here -->
         <section id="input-field-section" style="overflow-y: auto">
-          <form [formGroup]="editStudentForm" (ngSubmit)="editData()">
+          <form [formGroup]="editStudentForm" (ngSubmit)="editStudent()">
             <div class="row" id="input-row">
               <div class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item">
@@ -138,9 +138,26 @@
                           />
                         </div>
                       </div>
+                      <div class="row" id="button-row">
+                        <div class="col" id="button-col-1">
+                          <button class="btn" type="submit">Save</button>
+                        </div>
+                        <div class="col" id="button-col-2">
+                          <button class="btn" type="button">Cancal</button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </form>
+        </section>
+
+        <section id="input-field-section" style="overflow-y: auto">
+          <form [formGroup]="editGuardianForm" (ngSubmit)="editGuardian()">
+            <div class="row" id="input-row">
+              <div class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="flush-headingTwo">
                     <button
@@ -167,7 +184,7 @@
                           <input
                             type="text"
                             id="username"
-                            formControlName="guardianName"
+                            formControlName="name"
                           />
                         </div>
                         <div class="col">
@@ -175,7 +192,7 @@
                           <input
                             type="text"
                             id="username"
-                            formControlName="guardianFatherName"
+                            formControlName="fatherName"
                           />
                         </div>
                         <div class="col">
@@ -191,7 +208,7 @@
                           <input
                             type="text"
                             id="username"
-                            formControlName="guardianAddress"
+                            formControlName="address"
                           />
                         </div>
                         <div class="col">
@@ -204,24 +221,21 @@
                         </div>
                       </div>
                     </div>
+                    <div class="row" id="button-row">
+                      <div class="col" id="button-col-1">
+                        <button class="btn" type="submit">Save</button>
+                      </div>
+                      <div class="col" id="button-col-2">
+                        <button class="btn" type="button">Cancal</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-
-
-            <div class="row" id="button-row">
-                <div class="col" id="button-col-1">
-                  <button class="btn" type="submit" (click)="editData()">Save</button>
-                </div>
-                <div class="col" id="button-col-2">
-                  <button class="btn" type="button">Cancal</button>
-                </div>
-              </div>
-
-
           </form>
         </section>
+
       </div>
     </div>
 

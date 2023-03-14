@@ -12,5 +12,4 @@ export interface Student{
     phoneNumber: number;
     guardianAddress: string;
     cnic: number;
-
 }
