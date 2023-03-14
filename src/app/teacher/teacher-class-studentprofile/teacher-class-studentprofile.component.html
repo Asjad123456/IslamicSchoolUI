@@ -212,7 +212,7 @@
 
             <div class="row" id="button-row">
                 <div class="col" id="button-col-1">
-                  <button class="btn" type="submit">Save</button>
+                  <button class="btn" type="submit" (click)="editData()">Save</button>
                 </div>
                 <div class="col" id="button-col-2">
                   <button class="btn" type="button">Cancal</button>
@@ -311,7 +311,7 @@
               <div class="col" id="Guardain-detail-col-2">
                 <div class="col">
                   <h1>Contact #</h1>
-                  <p>{{ item.guardianContactNumber }}</p>
+                  <p>{{ item.phoneNumber }}</p>
                 </div>
               </div>
               <div class="col" id="Guardain-detail-col-3">

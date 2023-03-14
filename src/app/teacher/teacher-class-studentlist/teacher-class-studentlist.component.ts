@@ -38,7 +38,7 @@ export class TeacherClassStudentlistComponent {
       const branchIdValue = res[0].branchId;
       const classIdValue = res[0].id;
       this.addStudentForm.get('branchId').setValue(branchIdValue);
-      this.addStudentForm.get('studyClassId').setValue(branchIdValue);
+      this.addStudentForm.get('studyClassId').setValue(classIdValue);
     });
     console.log(+this.route.snapshot.params['id']);
     this.getClassDetail();

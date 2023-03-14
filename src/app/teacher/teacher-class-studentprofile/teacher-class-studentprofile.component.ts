@@ -29,7 +29,7 @@ export class TeacherClassStudentprofileComponent {
       guardianFatherName: new FormControl('', Validators.required),
       cnic: new FormControl('', Validators.required),
       guardianAddress: new FormControl('', Validators.required),
-      guardianContactNumber: new FormControl('', Validators.required),
+      phoneNumber: new FormControl('', Validators.required),
       branchId: new FormControl('', Validators.required),
       studyClassId: new FormControl('', Validators.required)
     });
@@ -56,7 +56,7 @@ export class TeacherClassStudentprofileComponent {
         this.editStudentForm.controls['guardianName'].setValue(res[0]?.guardianName);
         this.editStudentForm.controls['guardianFatherName'].setValue(res[0]?.guardianFatherName);
         this.editStudentForm.controls['cnic'].setValue(res[0]?.cnic);
-        this.editStudentForm.controls['guardianContactNumber'].setValue(res[0]?.guardianContactNumber);
+        this.editStudentForm.controls['phoneNumber'].setValue(res[0]?.phoneNumber);
         this.editStudentForm.controls['guardianAddress'].setValue(res[0]?.guardianAddress);
       console.warn(res)
     })

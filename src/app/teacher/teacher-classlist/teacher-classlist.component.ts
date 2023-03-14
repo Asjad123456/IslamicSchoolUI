@@ -34,6 +34,7 @@ export class TeacherClasslistComponent {
       this.teacher = res;
       console.log(res);
       this.router.navigate(['teacher-panel/' + teacherId + '/classlist/classprofile/' + id]);
+      localStorage.setItem('teacherid', teacherId);
     })
   }
   onSearchTextChanged(){
@@ -45,5 +46,9 @@ export class TeacherClasslistComponent {
     this.service.getTeacherClassesCount(teacherID).subscribe((res) =>{
       this.studyClassCount = res;
     })
+  }
+  onBack(){
+    const teacherId = this.route.snapshot.params['id'];
+    this.router.navigate(['teacher-panel/' + teacherId]);
   }
 }
