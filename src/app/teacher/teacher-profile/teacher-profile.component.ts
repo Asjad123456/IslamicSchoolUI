@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/Models/user';
 import { TeacherService } from 'src/Services/teacher.service';
 
@@ -13,7 +13,7 @@ export class TeacherProfileComponent {
   teacher: User[];
   editProfileForm: FormGroup;
 
-  constructor(private route: ActivatedRoute, private service: TeacherService, private fb:FormBuilder){}
+  constructor(private route: ActivatedRoute, private service: TeacherService, private fb:FormBuilder, private router: Router){}
 
   ngOnInit(): void{
     this.editProfileForm= this.fb.group({
@@ -52,5 +52,9 @@ export class TeacherProfileComponent {
       this.populateEditForm();
       console.warn('done');
     })
+  }
+  onBack(){
+    const teacherId = this.route.snapshot.params['id'];
+    this.router.navigate(['teacher-panel/' + teacherId]);
   }
 }

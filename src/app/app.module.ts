@@ -18,7 +18,6 @@ import { AdminBrancheslistComponent } from './Admin/Branch/admin-brancheslist/ad
 import { WaitingComponent } from './waiting/waiting.component';
 import { SupervisorPanelComponent } from './supervisor/supervisor-panel/supervisor-panel.component';
 import { TeacherPanelComponent } from './teacher/teacher-panel/teacher-panel.component';
-import { RoleGuard } from 'src/guards/role.guard';
 import { SearchComponent } from './search/search.component';
 import { AdminBranchprofileComponent } from './Admin/Branch/admin-branchprofile/admin-branchprofile.component';
 import { AdminBranchClasslistComponent } from './Admin/Branch/admin-branch-classlist/admin-branch-classlist.component';
@@ -58,7 +57,8 @@ import { SearchSupervisorPipe } from 'src/pipes/supervisorsearch.pipe';
 import { SupervisorBranchClassStudentlistComponent } from './supervisor/supervisor-branch-class-studentlist/supervisor-branch-class-studentlist.component';
 import { TeacherClassStudentlistComponent } from './teacher/teacher-class-studentlist/teacher-class-studentlist.component';
 import { AdminSupervisorBranchprofileComponent } from './Admin/Supervisor/admin-supervisor-branchprofile/admin-supervisor-branchprofile.component';
-
+import { TeacherClassAttendancelistComponent } from './teacher/teacher-class-attendancelist/teacher-class-attendancelist.component';
+import { TeacherClassMarkattendanceComponent } from './teacher/teacher-class-markattendance/teacher-class-markattendance.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -107,6 +107,8 @@ import { AdminSupervisorBranchprofileComponent } from './Admin/Supervisor/admin-
     SupervisorBranchClassStudentlistComponent,
     TeacherClassStudentlistComponent,
     AdminSupervisorBranchprofileComponent,
+    TeacherClassAttendancelistComponent,
+    TeacherClassMarkattendanceComponent
     ],
   imports: [
     BrowserModule,
@@ -122,7 +124,6 @@ import { AdminSupervisorBranchprofileComponent } from './Admin/Supervisor/admin-
   ],
   providers: [
     { provide: FaIconLibrary, useValue: faBinoculars },
-    RoleGuard
   ],
   bootstrap: [AppComponent]
 })

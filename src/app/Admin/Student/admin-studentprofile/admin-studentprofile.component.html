@@ -2,7 +2,7 @@
   <section id="parent-section">
     <div class="row" id="top-back-btn">
       <div class="col">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        <i class="fa fa-arrow-left" aria-hidden="true" (click)="onBack()"></i>
       </div>
     </div>
 
@@ -111,7 +111,7 @@
             <div class="col" id="Guardain-detail-col-2">
               <div class="col">
                 <h1>Contact #</h1>
-                <p>{{ item.guardianContactNumber }}</p>
+                <p>{{ item.phoneNumber }}</p>
               </div>
             </div>
             <div class="col" id="Guardain-detail-col-3">

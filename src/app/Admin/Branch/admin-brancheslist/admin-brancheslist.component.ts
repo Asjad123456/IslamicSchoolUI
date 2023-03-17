@@ -15,11 +15,12 @@ export class AdminBrancheslistComponent implements OnInit{
 
   branch: Branches[];
   branchsupervisors: User[];
-  searchText: string = '';
   addBranchForm: FormGroup;
   supName: string;
   branchescount: number;
   previousUrl: string;
+  enteredSearchValue: string = '';
+  searchText: string = '';
 
   constructor(private service:AdminService, private router: Router, private location: Location, private route: ActivatedRoute){}
 
@@ -99,5 +100,9 @@ export class AdminBrancheslistComponent implements OnInit{
     this.service.getBranchesCount().subscribe((res) =>{
       this.branchescount = res;
     })
+  }
+  onSearchTextChanged(){
+    this.searchText = this.enteredSearchValue.toLowerCase();
+    console.log(this.searchText)
   }
 }

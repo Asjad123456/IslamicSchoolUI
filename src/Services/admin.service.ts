@@ -8,6 +8,7 @@ import { Student } from 'src/Models/students';
 import { StudyClass } from 'src/Models/StudyClass';
 import { Teacher } from 'src/Models/teacher';
 import { User } from 'src/Models/user';
+import { UserWithRoles } from 'src/Models/userwithroles';
 import { EnvironmenturlService } from './environmenturl.service';
 
 @Injectable({
@@ -18,6 +19,9 @@ export class AdminService {
 
 constructor(private http: HttpClient, private envUrl: EnvironmenturlService) { }
 
+getUserByIdwithroles(id: string): Observable<UserWithRoles[]>{
+  return this.http.get<UserWithRoles[]>(this.baseUrl + 'User/roles/' + id);
+}
 getUserWithRoles(){
   return this.http.get<Partial<User[]>>(this.baseUrl + 'Dean/users-with-roles');
 }

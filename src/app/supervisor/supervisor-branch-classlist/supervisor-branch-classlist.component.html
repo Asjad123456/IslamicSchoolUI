@@ -84,7 +84,9 @@
             </div>
           </div>
           <div class="col" id="offcanvas-main-col-3">
-            <button type="submit" class="btn">Add Class</button>
+            <button type="submit" class="btn"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close">Add Class</button>
           </div>
         </form>
       </div>
@@ -112,14 +114,13 @@
           <div
             class="row"
             id="list-row"
-            (click)="toClassProfile(studyClass.id)"
           >
-            <div class="col" id="list-inner-col">
+            <div class="col" id="list-inner-col" (click)="toClassProfile(studyClass.id)">
               <h1>{{ studyClass.className }}</h1>
               <p>{{ studyClass.classTime }}</p>
             </div>
             <div class="col" id="main-list-icon-col">
-              <i class="fa fa-trash" aria-hidden="true"></i>
+              <i class="fa fa-trash" aria-hidden="true" (click)="deleteClass(studyClass.id)"></i>
             </div>
           </div>
         </div>

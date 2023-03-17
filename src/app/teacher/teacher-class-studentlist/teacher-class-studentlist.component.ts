@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { StudyClass } from 'src/Models/StudyClass';
 import { TeacherService } from 'src/Services/teacher.service';
 
@@ -38,7 +39,7 @@ export class TeacherClassStudentlistComponent {
       const branchIdValue = res[0].branchId;
       const classIdValue = res[0].id;
       this.addStudentForm.get('branchId').setValue(branchIdValue);
-      this.addStudentForm.get('studyClassId').setValue(branchIdValue);
+      this.addStudentForm.get('studyClassId').setValue(classIdValue);
     });
     console.log(+this.route.snapshot.params['id']);
     this.getClassDetail();
@@ -57,6 +58,16 @@ export class TeacherClassStudentlistComponent {
     this.service.addStudent(this.addStudentForm.value).subscribe((res) =>{
       console.log(res);
     })
+  }
+  deleteStudent(id: number){
+    this.service.deleteStudent(id)
+    .subscribe(
+      response =>{
+        this.getClassDetail();
+      },error =>{
+        console.error(error)
+      }
+    )
   }
   getClassDetail(){
     const classId = +this.route.snapshot.params['id'];

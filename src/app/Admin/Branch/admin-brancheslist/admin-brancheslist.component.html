@@ -139,16 +139,18 @@
                               <div class="accordion-body">
                                 <div class="row" id="accordion-search-bar">
                                   <div class="col">
-                                    <input type="search" />
+                                    <!-- <input type="search"
+                                    [(ngModel)]="enteredSearchValue"
+                                    (input)="onSearchTextChanged()"/>
                                     <label for=""
                                       ><i class="fas fa-search"></i
-                                    ></label>
+                                    ></label> -->
                                   </div>
                                 </div>
                                 <div
                                   class="row"
                                   id="accordion-sec-row"
-                                  *ngFor="let item of branchsupervisors"
+                                  *ngFor="let item of branchsupervisors | SearchSupervisorPipe: searchText"
                                   data-bs-toggle="collapse"
                                   data-bs-target="#flush-collapseOne"
                                   aria-expanded="false"

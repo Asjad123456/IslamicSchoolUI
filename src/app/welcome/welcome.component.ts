@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router} from '@angular/router';
-import { RoleGuard } from 'src/guards/role.guard';
 import { UserForLogin } from 'src/Models/userforlogin';
 import { AccountService } from 'src/Services/account.service';
 
@@ -18,7 +17,7 @@ export class WelcomeComponent implements OnInit {
   user: UserForLogin;
   errorMessage!: string;
 
-  constructor(private accountsService: AccountService, private roleGuard: RoleGuard,
+  constructor(private accountsService: AccountService,
     private route: ActivatedRoute, private router: Router, private snackBar: MatSnackBar) { }
   model: any = {};
 
@@ -47,6 +46,8 @@ export class WelcomeComponent implements OnInit {
       } else {
         console.log('local storage not supported  $$$ ');
       }
+      const loggedInUserId = this.user.appUser.id;
+      localStorage.setItem('loggedInUserId', loggedInUserId);
     },error =>{
       console.error(error);
       this.snackBar.open('An error occurred, Try Again!', 'Close', {

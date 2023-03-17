@@ -9,8 +9,7 @@ export interface Student{
     guardianId: number;
     guardianName: string;
     guardianFatherName:string;
-    guardianContactNumber: number;
+    phoneNumber: number;
     guardianAddress: string;
     cnic: number;
-
 }

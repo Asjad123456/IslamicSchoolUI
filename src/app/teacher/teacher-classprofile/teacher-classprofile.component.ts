@@ -77,4 +77,9 @@ export class TeacherClassprofileComponent {
     const classid = +this.route.snapshot.params['id'];
     this.router.navigate(['teacher-panel/classlist/classprofile/' + classid +'/studentlist']);
   }
+  onBack(){
+    const teacherId = localStorage.getItem('teacherid');
+    this.router.navigate(['teacher-panel/'+ teacherId + '/classlist']);
+    localStorage.removeItem('teacherid');
+  }
 }
