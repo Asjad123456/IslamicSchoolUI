@@ -1,41 +1,35 @@
 <body>
   <section id="parent-section">
-    <section>
-      <div class="row" id="top-back-btn">
-        <div class="col">
-          <i class="fa fa-arrow-left" aria-hidden="true"></i>
-        </div>
+    <div class="row" id="top-back-btn">
+      <div class="col">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
       </div>
-    </section>
+    </div>
 
-    <section>
-      <div class="row" id="main-img-row">
-        <div class="col">
-          <img src="/assets/student.png" alt="" />
-        </div>
+    <div class="row" id="main-img-row">
+      <div class="col">
+        <img src="/assets/student.png" alt="" />
       </div>
-    </section>
+    </div>
 
-    <section>
-      <div class="row" id="teacher-info-row">
-        <div class="col" id="teacher-info-col" *ngFor="let item of student">
-          <h2>Student</h2>
-          <abbr>{{ item.name }}</abbr>
-          <p>{{ item.rollNumber }}</p>
-        </div>
-        <div class="col" id="teacher-btn-col">
-          <button
-            class="btn"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasRight"
-            aria-controls="offcanvasRight"
-          >
-            <i class="fa fa-edit" aria-hidden="true"></i>
-          </button>
-        </div>
+    <div class="row" id="teacher-info-row">
+      <div class="col" id="teacher-info-col" *ngFor="let item of student">
+        <h2>Student</h2>
+        <abbr>{{ item.name }}</abbr>
+        <p>{{ item.rollNumber }}</p>
       </div>
-    </section>
+      <div class="col" id="teacher-btn-col">
+        <button
+          class="btn"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight"
+        >
+          <i class="fa fa-edit" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
 
     <div
       class="offcanvas offcanvas-end"
@@ -209,138 +203,130 @@
               </div>
             </div>
 
-
             <div class="row" id="button-row">
-                <div class="col" id="button-col-1">
-                  <button class="btn" type="submit">Save</button>
-                </div>
-                <div class="col" id="button-col-2">
-                  <button class="btn" type="button">Cancal</button>
-                </div>
+              <div class="col" id="button-col-1">
+                <button class="btn" type="submit">Save</button>
               </div>
-
-
+              <div class="col" id="button-col-2">
+                <button class="btn" type="button">Cancal</button>
+              </div>
+            </div>
           </form>
         </section>
       </div>
     </div>
 
-    <section>
-      <div class="row" id="teacher-details-row" *ngFor="let item of student">
-        <div class="col" id="teacher-details-col-1">
-          <h2>Father name</h2>
-          <p>{{ item.fatherName }}</p>
-        </div>
-        <div class="col" id="teacher-details-col-2">
-          <h2>Contact #</h2>
-          <p>{{ item.contactNumber }}</p>
-        </div>
-        <div class="col" id="teacher-details-col-3">
-          <h2>Registration #</h2>
-          <p>{{ item.regNumber }}</p>
-        </div>
-        <div class="col" id="teacher-details-col-4">
-          <h2>Address</h2>
-          <p>{{ item.address }}</p>
-        </div>
+    <div class="row" id="teacher-details-row" *ngFor="let item of student">
+      <div class="col" id="teacher-details-col-1">
+        <h2>Father name</h2>
+        <p>{{ item.fatherName }}</p>
       </div>
-    </section>
-
-    <section>
-      <div class="row" id="footer-btn-row">
-        <div class="col" id="footer-btn-col">
-          <button
-            class="btn"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasTop"
-            aria-controls="offcanvasTop"
-          >
-            View Gaurdain
-            <i class="fa fa-angle-down"></i>
-          </button>
-        </div>
+      <div class="col" id="teacher-details-col-2">
+        <h2>Contact #</h2>
+        <p>{{ item.contactNumber }}</p>
       </div>
-      <!-- Offcanvas for Gaurdain data start here -->
-      <div
-        class="offcanvas offcanvas-top"
-        tabindex="-1"
-        id="offcanvasTop"
-        aria-labelledby="offcanvasTopLabel"
-      >
-        <div class="offcanvas-header">
-          <!-- <h5 id="offcanvasTopLabel">Offcanvas top</h5> -->
-          <button
-            id="btn-close"
-            type="button"
-            class="btn-close text-reset"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-          ></button>
-        </div>
+      <div class="col" id="teacher-details-col-3">
+        <h2>Registration #</h2>
+        <p>{{ item.regNumber }}</p>
+      </div>
+      <div class="col" id="teacher-details-col-4">
+        <h2>Address</h2>
+        <p>{{ item.address }}</p>
+      </div>
+    </div>
 
-        <div class="offcanvas-body">
-          <section id="profile-section">
-            <div class="row" id="profile-img-row">
-              <div class="col" id="profile-img-col-1">
-                <img src="/assets/headmaster.png" alt="" />
-              </div>
-              <div
-                class="col"
-                id="profile-img-col-2"
-                *ngFor="let item of student"
-              >
-                <h1>{{ item.guardianName }}</h1>
-              </div>
-              <hr id="hr" />
+    <div class="row" id="footer-btn-row">
+      <div class="col" id="footer-btn-col">
+        <button
+          
+          class="btn"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasTop"
+          aria-controls="offcanvasTop"
+        >
+          View Guardian
+          <i class="fa fa-angle-down"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Offcanvas for Gaurdain data start here -->
+    <div
+      class="offcanvas offcanvas-top"
+      tabindex="-1"
+      id="offcanvasTop"
+      aria-labelledby="offcanvasTopLabel"
+    >
+      <div class="offcanvas-header" >
+        <!-- <h5 id="offcanvasTopLabel">Offcanvas top</h5> -->
+        <button
+          id="btn-close"
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="offcanvas-body" >
+          <div class="row" id="profile-img-row" >
+            <div class="col-4" id="profile-img-col-1" >
+              <img src="/assets/headmaster.png" alt="" />
             </div>
-          </section>
-
-          <section id="Guardain-detail-section">
             <div
-              class="row"
-              id="Guardain-detail-row"
+              class="col-8" 
+              id="profile-img-col-2"
               *ngFor="let item of student"
             >
-              <div class="col" id="Guardain-detail-col-1">
-                <div class="col">
-                  <h1>Father's Name</h1>
-                  <p>{{ item.guardianFatherName }}</p>
-                </div>
-              </div>
-              <div class="col" id="Guardain-detail-col-2">
-                <div class="col">
-                  <h1>Contact #</h1>
-                  <p>{{ item.guardianContactNumber }}</p>
-                </div>
-              </div>
-              <div class="col" id="Guardain-detail-col-3">
-                <div class="col">
-                  <h1>Address</h1>
-                  <p>{{ item.guardianAddress }}</p>
-                </div>
-              </div>
-              <div class="col" id="Guardain-detail-col-4">
-                <div class="col">
-                  <h1>CNIC #</h1>
-                  <p>{{ item.cnic }}</p>
-                </div>
-              </div>
+              <h1>{{ item.guardianName }}</h1>
             </div>
-          </section>
+            <!-- <hr id="hr" /> -->
+          </div>
 
-          <!-- footer img section start here -->
-          <section id="footer-img-section">
-            <div class="row" id="footer-img-row">
+        <section id="Guardain-detail-section">
+          <div
+            class="row"
+            id="Guardain-detail-row"
+            *ngFor="let item of student"
+          >
+            <div class="col" id="Guardain-detail-col-1">
               <div class="col">
-                <img src="/assets/home2_Flower.png" alt="" />
+                <h1>Father's Name</h1>
+                <p>{{ item.guardianFatherName }}</p>
               </div>
             </div>
-          </section>
-          <!-- footer img section start here -->
-        </div>
+            <div class="col" id="Guardain-detail-col-2">
+              <div class="col">
+                <h1>Contact #</h1>
+                <p>{{ item.guardianContactNumber }}</p>
+              </div>
+            </div>
+            <div class="col" id="Guardain-detail-col-3">
+              <div class="col">
+                <h1>Address</h1>
+                <p>{{ item.guardianAddress }}</p>
+              </div>
+            </div>
+            <div class="col" id="Guardain-detail-col-4">
+              <div class="col">
+                <h1>CNIC #</h1>
+                <p>{{ item.cnic }}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- footer img section start here -->
+        <section id="footer-img-section">
+          <div class="row" id="footer-img-row">
+            <div class="col">
+              <!-- <img src="/assets/home2_Flower.png" alt="" /> -->
+            </div>
+          </div>
+        </section>
+        <!-- footer img section start here -->
       </div>
-      <!-- Offcanvas for Gaurdain data ends here -->
-    </section>
+    </div>
+    <!-- Offcanvas for Gaurdain data ends here -->
   </section>
 </body>
