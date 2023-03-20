@@ -1,4 +1,3 @@
-import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
@@ -19,8 +18,7 @@ export class TeacherClassAttendancelistComponent {
   constructor(
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
-    private service: TeacherService,
-     private datePipe: DatePipe
+    private service: TeacherService
   ) {}
 
   ngOnInit(): void {
@@ -39,17 +37,10 @@ export class TeacherClassAttendancelistComponent {
   getAllAttendance(){
     const classId = +this.route.snapshot.paramMap.get('id');
     this.service.getAllAttendance(classId).subscribe((res) =>{
-      this.attendance = res.map(a => ({
-        studentName: a.studentName,
-        isPresent: a.isPresent,
-        date: this.datePipe.transform(new Date(a.date), 'dd-MM-yyyy')
-      }));
+      this.attendance = res;
       console.log(res);
     })
   }
-
-  
-  
   private getAttendance(classId: number, date: Date): void {
     this.service.getAttendance(classId, date).subscribe(
       response => this.attendance = response,

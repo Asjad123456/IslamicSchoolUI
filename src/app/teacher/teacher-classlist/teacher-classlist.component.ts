@@ -34,7 +34,8 @@ export class TeacherClasslistComponent {
       this.teacher = res;
       console.log(res);
       this.router.navigate(['teacher-panel/' + teacherId + '/classlist/classprofile/' + id]);
-      localStorage.setItem('teacherid', teacherId);
+      const currentRoute = this.router.url;
+      localStorage.setItem('previousUrl', currentRoute);
     })
   }
   onSearchTextChanged(){

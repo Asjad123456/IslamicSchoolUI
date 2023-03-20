@@ -136,7 +136,12 @@
 
     <!-- Footer Watch Section starts -->
     <div class="row" id="footer">
-      <div class="col" *ngFor="let item of class">
+      <div class="col-1">
+        <h1 (click)="toAttendance()">Attendance</h1>
+        <!-- <i class="fa-solid"></i> -->
+        
+      </div>
+      <div class="col-2" *ngFor="let item of class">
         <h1>Class Time - {{ item.classTime }}</h1>
         <i class="fa-solid fa-clock"></i>
       </div>

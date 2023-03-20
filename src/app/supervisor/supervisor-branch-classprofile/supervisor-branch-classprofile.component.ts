@@ -74,9 +74,8 @@ export class SupervisorBranchClassprofileComponent {
     this.router.navigate(['supervisor-panel/supervisor-branchprofile/classprofile/'+ classId +'/studentlist']);
   }
   onback(){
-    const teacherid = localStorage.getItem('teacherid');
-    const branchid = localStorage.getItem('branchid');
-    this.router.navigate(['supervisor-panel/supervisor-branchprofile/'+ branchid +'/classlist']);
-    localStorage.removeItem('teacherid');
+    const previousUrl = localStorage.getItem('previousUrl');
+    this.router.navigateByUrl(previousUrl);
+    localStorage.removeItem('previousUrl');
   }
 }

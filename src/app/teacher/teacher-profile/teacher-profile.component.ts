@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/Models/user';
 import { TeacherService } from 'src/Services/teacher.service';
@@ -13,7 +14,7 @@ export class TeacherProfileComponent {
   teacher: User[];
   editProfileForm: FormGroup;
 
-  constructor(private route: ActivatedRoute, private service: TeacherService, private fb:FormBuilder, private router: Router){}
+  constructor(private route: ActivatedRoute, private service: TeacherService, private fb:FormBuilder, private router: Router, private snackBar: MatSnackBar){}
 
   ngOnInit(): void{
     this.editProfileForm= this.fb.group({
@@ -51,6 +52,10 @@ export class TeacherProfileComponent {
       this.getTeacherData();
       this.populateEditForm();
       console.warn('done');
+      this.snackBar.open('Profile Updated Sucessfully!', 'Close', {
+        duration: 3000,
+        panelClass: 'error-snackbar',
+      });
     })
   }
   onBack(){

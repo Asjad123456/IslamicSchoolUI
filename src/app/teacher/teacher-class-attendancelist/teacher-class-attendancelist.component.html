@@ -1,19 +1,41 @@
-<form [formGroup]="attendanceform" (ngSubmit)="onSubmit()">
-  <input type="date" formControlName="date">
-  <button type="submit">Submit</button>
-</form>
-
-<table>
-  <thead>
-    <tr>
-      <th>Student Name</th>
-      <th>Present?</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let record of attendance">
-      <td>{{ record.studentName }}</td>
-      <td>{{ record.isPresent ? 'Yes' : 'No' }}</td>
-    </tr>
-  </tbody>
-</table>
+<body>
+	<div class="container">
+		<h1>Attendance Form</h1>
+		<form class="form-group" [formGroup]="attendanceform" (ngSubmit)="onSubmit()">
+			<label for="date">Date:</label>
+			<input type="date" formControlName="date" id="date">
+			<button type="submit">Submit</button>
+		</form>
+		<div *ngFor="let item of attendance">
+			<div class="accordion" id="accordionExample">
+				<div class="accordion-item">
+				  <h2 class="accordion-header" id="headingOne">
+					<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+					  Attendance on {{item.date}}
+					</button>
+				  </h2>
+				  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						<table>
+							<thead>
+								<tr>
+									<th>Student Name</th>
+									<th>Present?</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let record of attendance">
+									<td>{{ record.studentName }}</td>
+									<td [ngClass]="{'yes': record.isPresent, 'no': !record.isPresent}">
+										{{ record.isPresent ? 'Yes' : 'No' }}
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				  </div>
+				</div>
+			  </div>
+		</div>
+	</div>
+</body>

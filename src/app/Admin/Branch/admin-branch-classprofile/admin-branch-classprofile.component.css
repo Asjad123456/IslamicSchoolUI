@@ -154,30 +154,53 @@ body {
 /* footer section styling starts */
 #footer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 10px;
 }
-#footer .col {
+#footer .col-1 {
+  width: 50vw;
+  height: 10vh;
+  /* background-color: #d2f9a7; */
+  /* max-width: -moz-fit-content;
+  max-width: fit-content; */
+  text-align: inherit;
+  padding: 14px;
+  border-radius: 24px;
+  box-shadow: rgb(0 0 0 / 5%) 0px 0px 0px 1px, rgb(199 243 150 / 50%) 0px 0px 0px 1px inset;
+}
+#footer .col-1 h1 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #dba100;
+  margin: 0;
+}
+#footer .col-1 i {
+  font-size: 29px;
+  font-weight: 400;
+  color: #dba100;
+}
+#footer .col-2 {
+  width: 45vw;
+  height: 12vh;
   background-color: #d2f9a7;
+  max-width: -moz-fit-content;
   max-width: fit-content;
   text-align: center;
   padding: 14px;
   border-radius: 24px;
-  box-shadow: rgb(0 0 0 / 5%) 0px 0px 0px 1px,
-    rgb(199 243 150 / 50%) 0px 0px 0px 1px inset;
+  box-shadow: rgb(0 0 0 / 5%) 0px 0px 0px 1px, rgb(199 243 150 / 50%) 0px 0px 0px 1px inset;
 }
-#footer .col h1 {
+#footer .col-2 h1 {
   font-size: 14px;
   font-weight: 400;
   color: #586e6b;
   margin: 0;
 }
-#footer .col i {
+#footer .col-2 i {
   font-size: 29px;
   font-weight: 400;
   color: #dba100;
 }
-
 /*View Teacher profile offcanvas start here */
 .offcanvas {
   background: linear-gradient(0deg, var(--box-color) 0%, #9baf9a 100%);

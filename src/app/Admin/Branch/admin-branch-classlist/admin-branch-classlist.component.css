@@ -161,3 +161,54 @@ input[placeholder] {
   align-content: center;
   color: var(--golden);
 }
+.no-classes-found {
+  background: none;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
+#list-parent-col-no {
+  display: grid;
+  align-content: baseline;
+  row-gap: 25px;
+  overflow: scroll;
+  padding: 6px;
+}
+#list-row-no {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  align-items: center;
+  /* background-color: #d2f9a7; */
+  height: 30vh;
+  width: 95vw;
+  border-radius: 5px;
+}
+#list-inner-col-no {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  padding: 11px;
+  color: var(--medium);
+}
+#list-inner-col-no h1 {
+  font-size: 25px;
+  font-weight: 700;
+  margin: 0;
+}
+#list-inner-col-no p {
+  margin: 0;
+  
+}
+
+
+/* ng stlyes */
+.no-bg {
+  background-color: none;
+}
+#list-row, #list-row.no-bg {
+  /* other styles */
+  background-color:none;
+  padding: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}

@@ -3,7 +3,8 @@
 
   <div class="row" id="header-row" >
     <div class="col" >
-      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      <i class="fa-solid fa-right-from-bracket
+      " (click)="Logout()"></i>
     </div>
   </div>
 
@@ -27,7 +28,7 @@
 
     <div class="row" id="your-branch-row" (click)="toclassesList()">
       <div class="col-10" id="your-branch-col-1">
-        <h1>Your CLasses</h1>
+        <h1>Your Classes</h1>
       </div>
       <div class="col-2" id="your-branch-col-2">
         <i class="fa-solid fa-arrow-right"></i>
@@ -44,7 +45,7 @@
     </div>
 
     <div class="row" id="footer-box-row" >
-      <div class="row" id="main-sec-first-row" >
+      <div class="row" id="main-sec-first-row" (click)="onMessagesClick()">
         <!-- <div class="col" id="message-board-col">
           <div class="row"> -->
         <div class="col" id="message-inner-col-1">
@@ -56,11 +57,11 @@
         <!-- </div>
         </div> -->
       </div>
-      <div class="row" id="main-sec-second-row" >
+      <div class="row" id="main-sec-second-row" (click)="onTaskBoardClick()">
         <!-- <div class="col" id="branch-profile-col" type="button">
           <div class="row"> -->
         <div class="col" id="branch-inner-col-1">
-          <h1>Branch Profile</h1>
+          <h1>Task Board</h1>
         </div>
         <div class="col" id="branch-inner-col-2">
           <i class="fa-solid fa-angle-right"></i>

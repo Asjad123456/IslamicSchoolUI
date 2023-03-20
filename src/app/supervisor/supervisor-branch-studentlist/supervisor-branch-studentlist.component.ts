@@ -20,7 +20,7 @@ export class SupervisorBranchStudentlistComponent {
   ngOnInit(): void{
     console.log(+this.route.snapshot.params['id']);
     this.getStudentDetails();
-    this.getStudentCount();
+    this.getStudentsCount();
   }
   getStudentDetails(){
     const branchId = +this.route.snapshot.params['id'];
@@ -41,18 +41,15 @@ export class SupervisorBranchStudentlistComponent {
     this.router.navigate(['supervisor-panel/supervisor-branchprofile/'+branchid+'/studentlist/studentprofile/' + id]);
     localStorage.setItem('branchid', branchid.toString());
   }
-  getStudentCount(){
-    const classid = +this.route.snapshot.params['id'];
-    this.service.getStudentsCountForclassprofile(classid).subscribe((res) =>{
+  getStudentsCount(){
+    const branchId = +this.route.snapshot.params['id'];
+    this.service.getStudentsCountforBranch(branchId).subscribe((res) =>{
       this.studentcount = res;
-      console.log('hello', res);
-      console.log(classid);
     })
   }
   onBack(){
-    const branchid = +this.route.snapshot.params['id'];
-    const supervisorId = localStorage.getItem('supervisorid');
-    this.router.navigate(['supervisor-panel/' + supervisorId +'/supervisor-branchprofile/' + branchid]);
-    localStorage.removeItem('supervisorid');
+    const previousUrl = localStorage.getItem('previousUrl');
+    this.router.navigateByUrl(previousUrl);
+    localStorage.removeItem('previousUrl');
   }
 }

@@ -21,7 +21,7 @@ export class TeacherGuard implements CanActivate {
       const loggedInUserId = localStorage.getItem('loggedInUserId');
       this.service.getUserByIdwithroles(loggedInUserId).subscribe((res) =>{
         this.user = res;
-        if(this.user[0].roles.includes('TEACHER')){
+        if(this.user[0].roles.includes('TEACHER') || this.user[0].roles.includes('DEAN')){
           resolve(true);
         }else{
           this.router.navigate(['/login']);

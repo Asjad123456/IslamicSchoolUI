@@ -323,6 +323,40 @@ input[type="text"] {
   box-shadow: rgb(129 120 22 / 25%) 0px 1px 1px,
     rgb(237 255 168 / 8%) 0px 0px 1px 1px;
 }
+#main-sec-box1-no {
+  font-family: var(--main-family);
+  display: grid;
+  align-items: center;
+  text-align: left;
+  padding: 10px;
+}
+#main-sec-box1-no {
+  display: grid;
+  gap: 10px;
+  overflow: scroll;
+  align-items: baseline;
+}
+#main-sec-box1-no .row {
+  border-radius: 5px;
+  height: 10vh;
+  display: flex;
+  align-content: center;
+}
+#branch-name-col-no {
+  padding: 10px;
+}
+#branch-name-col-no h3 {
+  color: var(--font-color);
+  font-size: 30px;
+  font-weight: 900;
+  font-variant: petite-caps;
+  margin: 0;
+}
+#branch-name-col-no p {
+  font-size: 20px;
+  margin: 0;
+  color: goldenrod;
+}
 #branch-name-col {
   padding: 10px;
 }
@@ -343,4 +377,7 @@ input[type="text"] {
   align-items: center;
   justify-content: center;
   color: goldenrod;
+}
+.no-supervisor{
+  font-size: 20px; color: #586e6b; font-weight: bold;
 }

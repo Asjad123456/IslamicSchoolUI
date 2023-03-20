@@ -54,4 +54,8 @@ export class SupervisorProfileComponent {
       console.warn(res)
     })
   }
+  onback(){
+    const supervisorId = this.route.snapshot.params['id'];
+    this.router.navigate(['supervisor-panel/' + supervisorId]);
+  }
 }

@@ -1,10 +1,12 @@
 <body>
   <section id="parent-section">
-    <div class="row" id="top-back-btn">
-      <div class="col">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    <section>
+      <div class="row" id="top-back-btn">
+        <div class="col">
+          <i class="fa fa-arrow-left" aria-hidden="true" (click)="onBack()"></i>
+        </div>
       </div>
-    </div>
+    </section>
 
     <div class="row" id="main-img-row">
       <div class="col">
@@ -309,6 +311,35 @@
               <div class="col">
                 <h1>Father's Name</h1>
                 <p>{{ item.guardianFatherName }}</p>
+          <section id="Guardain-detail-section">
+            <div
+              class="row"
+              id="Guardain-detail-row"
+              *ngFor="let item of student"
+            >
+              <div class="col" id="Guardain-detail-col-1">
+                <div class="col">
+                  <h1>Father's Name</h1>
+                  <p>{{ item.guardianFatherName }}</p>
+                </div>
+              </div>
+              <div class="col" id="Guardain-detail-col-2">
+                <div class="col">
+                  <h1>Contact #</h1>
+                  <p>{{ item.phoneNumber }}</p>
+                </div>
+              </div>
+              <div class="col" id="Guardain-detail-col-3">
+                <div class="col">
+                  <h1>Address</h1>
+                  <p>{{ item.guardianAddress }}</p>
+                </div>
+              </div>
+              <div class="col" id="Guardain-detail-col-4">
+                <div class="col">
+                  <h1>CNIC #</h1>
+                  <p>{{ item.cnic }}</p>
+                </div>
               </div>
             </div>
             <div class="col" id="Guardain-detail-col-2">

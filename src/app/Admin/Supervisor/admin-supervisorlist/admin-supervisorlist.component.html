@@ -36,15 +36,15 @@
       </div>
 
       <!-- main section list start here -->
-      <div class="row" id="main-list-row" >
+      <div class="row" id="main-list-row" *ngIf="user?.length > 0">
         <div
           class="col"
           id="list-parent-col"
-          >
+          *ngFor="let item of user | SearchSupervisorPipe : searchText"
+        >
           <div
             class="row"
             id="list-row"
-            *ngFor="let item of user | SearchSupervisorPipe : searchText"
             (click)="toSupervisorprofileProfile(item.id)"
           >
             <div class="col" id="list-inner-col">
@@ -52,11 +52,15 @@
               <p>{{ item.email }}</p>
             </div>
             <div class="col" id="main-list-icon-col">
-              <i class="fas fa-long-arrow-alt-right
-              " aria-hidden="true"></i>
-
+              <i class="fas fa-long-arrow-alt-right" aria-hidden="true"></i>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="row" id="list-row" *ngIf="user?.length == 0">
+        <div class="col" id="list-inner-col">
+          <h1>No Supervisors Found.</h1>
+          <p>Register a user as a supervisor.</p>
         </div>
       </div>
     </section>

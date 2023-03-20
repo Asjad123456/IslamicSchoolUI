@@ -43,7 +43,10 @@ export class AdminBranchClassStudentlistComponent {
     );
   }
   onBack(){
-    this.location.back();
+    const previousUrl = localStorage.getItem('previousUrl');
+    this.router.navigateByUrl(previousUrl);
+    localStorage.removeItem('previousUrl');
+
   }
   onSearchTextChanged(){
     this.searchText = this.enteredSearchValue.toLowerCase();

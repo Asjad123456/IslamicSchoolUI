@@ -37,31 +37,31 @@
 
       <!-- main section list start here -->
       <div class="row" id="main-list-row" *ngFor="let item of studyclass">
-        <div
-          class="col"
-          id="list-parent-col"
-          *ngFor="let student of item.students | SearchStudentPipe : searchText"
-        >
+        <div *ngIf="item.students.length > 0">
           <div
-            class="row"
-            id="list-row"
-            (click)="toStudentProfile(student.id)"
+            class="col"
+            id="list-parent-col"
+            *ngFor="let student of item.students | SearchStudentPipe : searchText"
           >
-            <div class="col" id="list-inner-col">
-              <h1>{{ student.name }}</h1>
-              <p>{{ student.rollNumber }}</p>
-            </div>
-            <div class="col" id="main-list-icon-col">
-              <i class="fas fa-long-arrow-alt-right
-              " aria-hidden="true"></i>
-
+            <div class="row" id="list-row" (click)="toStudentProfile(student.id)">
+              <div class="col" id="list-inner-col">
+                <h1>{{ student.name }}</h1>
+                <p>{{ student.rollNumber }}</p>
+              </div>
+              <div class="col" id="main-list-icon-col">
+                <i class="fas fa-long-arrow-alt-right" aria-hidden="true"></i>
+              </div>
             </div>
           </div>
-
-
-
         </div>
-
+        <div class="col" id="list-parent-col-no" *ngIf="item.students.length == 0">
+          <div class="row" id="list-row-no">
+            <div class="col" id="list-inner-col-no">
+              <h1>No students Found.</h1>
+              <p>Ask Class Teacher to add students.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>

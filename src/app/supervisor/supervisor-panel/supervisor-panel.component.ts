@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/Models/user';
 import { SupervisorService } from 'src/Services/supervisor.service';
@@ -9,7 +10,7 @@ import { SupervisorService } from 'src/Services/supervisor.service';
   styleUrls: ['./supervisor-panel.component.css']
 })
 export class SupervisorPanelComponent {
-  constructor(private route: ActivatedRoute, private service: SupervisorService, private router: Router){}
+  constructor(private route: ActivatedRoute, private service: SupervisorService, private router: Router, private snackBar: MatSnackBar){}
   user: User[];
   userforredirect: User;
 
@@ -35,6 +36,22 @@ export class SupervisorPanelComponent {
       this.router.navigate(['supervisor-panel/' + supervisorId + '/supervisor-branchprofile/' + this.userforredirect.branchId]);
       const currenturl = this.router.url;
       localStorage.setItem('previousUrl', currenturl);
+    });
+  }
+  onLogout(){
+    this.router.navigate(['welcome']);
+    localStorage.clear();
+  }
+  onMessagesClick(){
+    this.snackBar.open('Messages not added yet', 'Close', {
+      duration: 3000,
+      panelClass: 'error-snackbar',
+    });
+  }
+  onTaskBoardClick(){
+    this.snackBar.open('TaskBoard Not Added Yet', 'Close', {
+      duration: 3000,
+      panelClass: 'error-snackbar',
     });
   }
 }

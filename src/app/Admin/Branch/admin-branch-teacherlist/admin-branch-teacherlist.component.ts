@@ -38,8 +38,8 @@ export class AdminBranchTeacherlistComponent {
     localStorage.setItem('brnachid', branchid);
   }
   onBack(){
-    const branchid = +this.route.snapshot.params['id'];
-    this.router.navigate(['admin-branchprofile/' + branchid]);
+    const branchId = +this.route.snapshot.params['id'];
+    this.router.navigate(['admin-branchprofile/' + branchId]);
   }
   teachersCount(){
     this.service.getTeachersCount().subscribe((res) =>{

@@ -28,8 +28,8 @@ export class SupervisorBranchTeacherprofileComponent {
   toClassProfile(id: number){
     const branchid = localStorage.getItem('branchid');
     this.router.navigate(['supervisor-panel/supervisor-branchprofile/'+ branchid +'/classprofile/' + id]);
-    const teacherid = this.route.snapshot.params['id'];
-    localStorage.setItem('teacherid', teacherid);
+    const currentRoute = this.router.url;
+    localStorage.setItem('previousUrl', currentRoute);
   }
   onSearchTextChanged(){
     this.searchText = this.enteredSearchValue.toLowerCase();

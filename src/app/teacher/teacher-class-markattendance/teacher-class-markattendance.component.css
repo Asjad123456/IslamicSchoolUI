@@ -1,0 +1,79 @@
+:host {
+    --light-green: #cceccc;
+    --dark-green: #71c650;
+    --font-color: #586e6b;
+    --golden: #bc9c00;
+    --main-family: "Rubik", sans-serif;
+  }
+  
+h1 {
+    color: var(--font-color);
+    font-family: var(--main-family);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    color: var(--font-color);
+    font-family: var(--main-family);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="date"] {
+    border: 2px solid var(--dark-green);
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    color: var(--font-color);
+    font-family: var(--main-family);
+  }
+  
+  input[type="date"]:focus {
+    outline: none;
+    border-color: var(--golden);
+  }
+  
+  .class-container {
+    margin-top: 20px;
+  }
+  
+  .class {
+    border: 1px solid var(--dark-green);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .student {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .name {
+    color: var(--font-color);
+    font-family: var(--main-family);
+    font-size: 16px;
+  }
+  
+  .btn-present {
+    background-color: var(--light-green);
+    border: 2px solid var(--dark-green);
+    color: var(--dark-green);
+  }
+  
+  .btn-absent {
+    background-color: var(--golden);
+    border: 2px solid var(--golden);
+    color: var(--font-color);
+  }
+  
+  .submit-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }

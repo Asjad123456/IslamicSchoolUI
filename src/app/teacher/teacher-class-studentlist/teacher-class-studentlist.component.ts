@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { StudyClass } from 'src/Models/StudyClass';
@@ -17,7 +18,7 @@ export class TeacherClassStudentlistComponent {
   studentcount: number;
   searchText: string = '';
 
-  constructor(private route: ActivatedRoute, private router: Router, private service: TeacherService){}
+  constructor(private route: ActivatedRoute, private router: Router, private service: TeacherService, private snackBar: MatSnackBar){}
 
   ngOnInit(): void{
     this.addStudentForm = new FormGroup({
@@ -57,6 +58,12 @@ export class TeacherClassStudentlistComponent {
   addStudent(){
     this.service.addStudent(this.addStudentForm.value).subscribe((res) =>{
       console.log(res);
+      this.getClassDetail();
+      this.getStudentCount();
+      this.snackBar.open('Student Added succesfully!', 'Close', {
+        duration: 3000,
+        panelClass: 'error-snackbar',
+      });
     })
   }
   deleteStudent(id: number){
@@ -64,6 +71,11 @@ export class TeacherClassStudentlistComponent {
     .subscribe(
       response =>{
         this.getClassDetail();
+        this.getStudentCount();
+        this.snackBar.open('An error occurred, Try Again!', 'Close', {
+          duration: 3000,
+          panelClass: 'error-snackbar',
+        });
       },error =>{
         console.error(error)
       }
@@ -83,6 +95,13 @@ export class TeacherClassStudentlistComponent {
   toStudentProfile(id: number){
     const classID = +this.route.snapshot.params['id'];
     this.router.navigate(['teacher-panel/classlist/classprofile/' + classID + '/studentprofile/' + id]);
+    localStorage.setItem('classId', classID.toString()  );
     console.log(id);
   }
+  onBack(){
+    const teacherId = localStorage.getItem('loggedInUserId');
+    const classId = +this.route.snapshot.params['id'];
+    this.router.navigate(['teacher-panel/'+ teacherId +'/classlist/classprofile/' + classId]);
+    localStorage.setItem('classId', classId.toString());
+  } 
 }
