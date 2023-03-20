@@ -46,6 +46,8 @@ export class AdminSupervisorprofileComponent {
   }
   toSupervisorBranch(id: number){
     this.router.navigate(['admin-supervisor-branchprofile/' + id]);
+    const supervisorId = this.route.snapshot.params['id'];
+    localStorage.setItem('supervisorId', supervisorId);
   }
   onback(){
     this.router.navigate(['admin-supervisorlist']);

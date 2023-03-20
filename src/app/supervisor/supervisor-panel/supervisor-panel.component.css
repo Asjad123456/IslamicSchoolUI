@@ -24,8 +24,13 @@ body {
 }
 
 /* Header section styling start here */
+#header-row {
+  display: flex;
+  justify-content: flex-end;
+}
 #header-row .col {
-  padding: 10px;
+  padding: 17px;
+  height: 8vh;
 }
 #header-row .col i {
   font-size: 24px;

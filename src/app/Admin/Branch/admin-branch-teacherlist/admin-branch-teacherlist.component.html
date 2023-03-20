@@ -37,31 +37,31 @@
 
       <!-- main section list start here -->
       <div class="row" id="main-list-row" *ngFor="let item of branch">
-        <div
-          class="col"
-          id="list-parent-col"
-          *ngFor="let teacher of item.appUsers | SearchTeacherPipe : searchText"
-        >
+        <div *ngIf="item.appUsers.length > 0">
           <div
-            class="row"
-            id="list-row"
-            (click)="toTeacherProfile(teacher.id)"
+            class="col"
+            id="list-parent-col"
+            *ngFor="let teacher of item.appUsers | SearchTeacherPipe : searchText"
           >
-            <div class="col" id="list-inner-col">
-              <h1>{{ teacher.userName }}</h1>
-              <p>{{ teacher.email }}</p>
-            </div>
-            <div class="col" id="main-list-icon-col">
-              <i class="fas fa-long-arrow-alt-right
-              " aria-hidden="true"></i>
-
+            <div class="row" id="list-row" (click)="toTeacherProfile(teacher.id)">
+              <div class="col" id="list-inner-col">
+                <h1>{{ teacher.userName }}</h1>
+                <p>{{ teacher.email }}</p>
+              </div>
+              <div class="col" id="main-list-icon-col">
+                <i class="fas fa-long-arrow-alt-right" aria-hidden="true"></i>
+              </div>
             </div>
           </div>
-
-
-
         </div>
-
+        <div class="col" id="list-parent-col-no" *ngIf="item.appUsers.length == 0">
+          <div class="row" id="list-row-no">
+            <div class="col" id="list-inner-col-no">
+              <h1>No Teachers Found.</h1>
+              <p>Assign a user as teacher.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>

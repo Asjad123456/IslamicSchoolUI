@@ -59,6 +59,9 @@ import { TeacherClassStudentlistComponent } from './teacher/teacher-class-studen
 import { AdminSupervisorBranchprofileComponent } from './Admin/Supervisor/admin-supervisor-branchprofile/admin-supervisor-branchprofile.component';
 import { TeacherClassAttendancelistComponent } from './teacher/teacher-class-attendancelist/teacher-class-attendancelist.component';
 import { TeacherClassMarkattendanceComponent } from './teacher/teacher-class-markattendance/teacher-class-markattendance.component';
+import { AdminBranchClassattendanceComponent } from './Admin/Branch/admin-branch-classattendance/admin-branch-classattendance.component';
+import { DatePipe } from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -108,7 +111,8 @@ import { TeacherClassMarkattendanceComponent } from './teacher/teacher-class-mar
     TeacherClassStudentlistComponent,
     AdminSupervisorBranchprofileComponent,
     TeacherClassAttendancelistComponent,
-    TeacherClassMarkattendanceComponent
+    TeacherClassMarkattendanceComponent,
+    AdminBranchClassattendanceComponent
     ],
   imports: [
     BrowserModule,
@@ -124,6 +128,7 @@ import { TeacherClassMarkattendanceComponent } from './teacher/teacher-class-mar
   ],
   providers: [
     { provide: FaIconLibrary, useValue: faBinoculars },
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

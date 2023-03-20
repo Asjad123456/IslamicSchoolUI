@@ -78,8 +78,8 @@ export class TeacherClassprofileComponent {
     this.router.navigate(['teacher-panel/classlist/classprofile/' + classid +'/studentlist']);
   }
   onBack(){
-    const teacherId = localStorage.getItem('teacherid');
-    this.router.navigate(['teacher-panel/'+ teacherId + '/classlist']);
-    localStorage.removeItem('teacherid');
+    const previousUrl = localStorage.getItem('previousUrl');
+    this.router.navigateByUrl(previousUrl);
+    localStorage.removeItem('previousUrl');
   }
 }

@@ -49,12 +49,9 @@ export class SupervisorBranchClasslistComponent {
     this.getTeachersList();
   }
   toClassProfile(id:number){
-    this.service.getClassById(id).subscribe(
-      (response) =>{
-        this.studyclass = response[0];
         this.router.navigate(['supervisor-panel/supervisor-branchprofile/'+ this.branchId + '/classprofile/' + id]);
-      }
-    );
+        const currentRoute = this.router.url;
+        localStorage.setItem('previousUrl', currentRoute);
   }
   getbranchdetails(){
     const id = +this.route.snapshot.params['id'];
@@ -67,6 +64,7 @@ export class SupervisorBranchClasslistComponent {
     this.service.getTeachersforlist().subscribe((res) =>{
       console.log(res);
       this.teacher = res;
+      console.log(res);
     })
   }
   deleteClass(id: number){
@@ -89,6 +87,7 @@ export class SupervisorBranchClasslistComponent {
     this.service.addClass(this.addClassForm.value).subscribe((res) =>{
       console.log(res);
       this.getbranchdetails();
+      this.getClassCount();
       this.addClassForm.reset();
       this.snackBar.open('Class Added!', 'Close', {
         duration: 3000,

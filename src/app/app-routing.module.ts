@@ -44,6 +44,8 @@ import { DeanGuard } from 'src/guards/dean.guard';
 import { AdminGuard } from 'src/guards/admin.guard';
 import { TeacherGuard } from 'src/guards/teacher.guard';
 import { TeacherClassAttendancelistComponent } from './teacher/teacher-class-attendancelist/teacher-class-attendancelist.component';
+import { TeacherClassMarkattendanceComponent } from './teacher/teacher-class-markattendance/teacher-class-markattendance.component';
+import { AdminBranchClassattendanceComponent } from './Admin/Branch/admin-branch-classattendance/admin-branch-classattendance.component';
 
 const routes: Routes = [
   {path:'welcome', component:WelcomeComponent},                     //90% Done
@@ -60,7 +62,8 @@ const routes: Routes = [
   {path:'admin-branchprofile/:id/teachers-list',component:AdminBranchTeacherlistComponent,canActivate: [DeanGuard]}, //Copy/paste
   {path:'admin-branchprofile/:id/teacher-profile/:id',component:AdminBranchTeacherprofileComponent,canActivate: [DeanGuard]},//work in progress
   {path:'admin-branchprofile/teacher-profile/class-profile/:id', component:AdminTeacherClassprofileComponent,canActivate: [DeanGuard]},
-  {path:'admin-branchprofile/teacher-profile/:id/class-profile/:id',component:AdminBranchClassprofileComponent,canActivate: [DeanGuard]},//Full incomplete
+  {path:'admin-branchprofile/teacher-profile/:id/class-profile/:id',component:AdminBranchClassprofileComponent,canActivate: [DeanGuard]},
+  {path:'admin-branchprofile/teacher-profile/class-profile/:id/attendance',component:AdminBranchClassattendanceComponent,canActivate: [DeanGuard]},//Full incomplete
   {path:'admin-branchprofile/:id/class-list',component:AdminBranchClasslistComponent,canActivate: [DeanGuard]},       //work in progress
   {path:'admin-branchprofile/:id/class-list/class-profile/:id',component:AdminBranchClassprofileComponent,canActivate: [DeanGuard]},     //Full incomplete
   {path:'admin-branchprofile/class-list/class-profile/:id/student-list',component:AdminBranchClassStudentlistComponent,canActivate: [DeanGuard]}, //Copy/paste
@@ -96,6 +99,7 @@ const routes: Routes = [
   {path:'teacher-panel/:id/classlist', component:TeacherClasslistComponent,canActivate: [TeacherGuard]},//work in progress
   {path:'teacher-panel/:id/classlist/classprofile/:id', component:TeacherClassprofileComponent,canActivate: [TeacherGuard]},//work in progress
   {path:'teacher-panel/classlist/classprofile/:id/attendancelist', component:TeacherClassAttendancelistComponent},
+  {path:'teacher-panel/classlist/classprofile/:id/markattendance', component:TeacherClassMarkattendanceComponent},
   {path:'teacher-panel/classlist/classprofile/:id/studentlist', component:TeacherClassStudentlistComponent,canActivate: [TeacherGuard]},
   {path:'teacher-panel/classlist/classprofile/:id/studentprofile/:id', component:TeacherClassStudentprofileComponent,canActivate: [TeacherGuard]},//work in progress
 ];

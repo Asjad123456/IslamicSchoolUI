@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Student } from 'src/Models/students';
 import { Teacher } from 'src/Models/teacher';
 import { SupervisorService } from 'src/Services/supervisor.service';
@@ -16,7 +17,7 @@ export class TeacherClassStudentprofileComponent {
   editStudentForm: FormGroup;
   editGuardianForm: FormGroup;
 
-  constructor(private route: ActivatedRoute, private service: TeacherService){}
+  constructor(private route: ActivatedRoute, private service: TeacherService, private router: Router, private snackBar: MatSnackBar){}
 
   ngOnInit(): void{
     this.editStudentForm = new FormGroup({
@@ -57,6 +58,7 @@ export class TeacherClassStudentprofileComponent {
         this.editStudentForm.controls['regNumber'].setValue(res[0]?.regNumber);
         this.editStudentForm.controls['rollNumber'].setValue(res[0]?.rollNumber);
         this.editStudentForm.controls['contactNumber'].setValue(res[0]?.contactNumber);
+        this.editStudentForm.controls['address'].setValue(res[0]?.address);
       console.warn(res)
     })
   }
@@ -66,7 +68,7 @@ export class TeacherClassStudentprofileComponent {
         this.editGuardianForm.controls['name'].setValue(res[0]?.name);
         this.editGuardianForm.controls['fatherName'].setValue(res[0]?.fatherName);
         this.editGuardianForm.controls['cnic'].setValue(res[0]?.cnic);
-        this.editGuardianForm.controls['contactNumber'].setValue(res[0]?.phoneNumber);
+        this.editGuardianForm.controls['phoneNumber'].setValue(res[0]?.phoneNumber);
         this.editGuardianForm.controls['address'].setValue(res[0]?.address);
       console.warn(res)
     })
@@ -76,6 +78,10 @@ export class TeacherClassStudentprofileComponent {
     this.service.updateStudent(studentId, this.editStudentForm.value).subscribe((res) =>{
       console.log(res);
       this.getStudentDetail();
+      this.snackBar.open('An error occurred, Try Again!', 'Close', {
+        duration: 3000,
+        panelClass: 'error-snackbar',
+      });
     },error =>{
       console.error(error);
     })
@@ -87,10 +93,19 @@ export class TeacherClassStudentprofileComponent {
       this.service.updateGuardian(this.student[0].guardianId, this.editGuardianForm.value).subscribe((res) =>{
         console.log(res);
         this.getStudentDetail();
+        this.snackBar.open('An error occurred, Try Again!', 'Close', {
+          duration: 3000,
+          panelClass: 'error-snackbar',
+        });
       },error =>{
         console.error(error);
       })
       console.log(res);
     })
+  }
+  onBack(){
+    const classId = localStorage.getItem('classId');
+    this.router.navigate(['teacher-panel/classlist/classprofile/' + classId +'/studentlist']);
+    localStorage.removeItem('classId');
   }
 }

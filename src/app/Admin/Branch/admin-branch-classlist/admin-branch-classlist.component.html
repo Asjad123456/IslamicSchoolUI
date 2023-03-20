@@ -37,11 +37,13 @@
 
       <!-- main section list start here -->
       <div class="row" id="main-list-row" *ngFor="let item of branch">
-        <div
+        <div *ngIf="item.studyClasses.length > 0">
+          <div
           class="col"
           id="list-parent-col"
+          
           *ngFor="let studyClass of item.studyClasses | SearchPipe : searchText"
-        >
+        > 
           <div
             class="row"
             id="list-row"
@@ -52,16 +54,19 @@
               <p>{{ studyClass.classTime }}</p>
             </div>
             <div class="col" id="main-list-icon-col">
-              <i class="fas fa-long-arrow-alt-right
-              " aria-hidden="true"></i>
-
+              <i class="fas fa-long-arrow-alt-right" aria-hidden="true"></i>
             </div>
           </div>
-
-
-
         </div>
-
+        </div>
+        <div class="col" id="list-parent-col-no" *ngIf="item.studyClasses.length == 0">
+          <div class="row" id="list-row-no">
+            <div class="col" id="list-inner-col-no">
+              <h1>No classes Found.</h1>
+              <p>Ask branch supervisor to add class.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>

@@ -1,10 +1,11 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Attendance } from 'src/Models/Attendance';
 import { AttendanceResponse } from 'src/Models/AttendanceResponse';
 import { GuardianForUpdate } from 'src/Models/guardianForUpdate';
+import { MarkAttendance } from 'src/Models/markAttendance';
 import { StudentForUpdate } from 'src/Models/studentForUpdate';
 import { Student } from 'src/Models/students';
 import { StudyClass } from 'src/Models/StudyClass';
@@ -86,12 +87,11 @@ getAttendanceForClassAndDate(classId: number, date: Date): Observable<Attendance
 
 getAttendance(classId: number, date: Date): Observable<AttendanceResponse[]> {
   const formattedDate = date.toLocaleDateString('en-GB').replace(/\//g, '-'); // Format date as dd-mm-yyyy
-  const url = `${this.baseUrl}class/${classId}/attendance/attendance?date=${formattedDate}`;
+  const url = `${this.baseUrl}attendance/attendance?date=${formattedDate}`;
   return this.http.get<AttendanceResponse[]>(url);
 }
-getAllAttendance(classId: number): Observable<AttendanceResponse[]> {
- const url = `${this.baseUrl}class/${classId}/attendance`;
-  return this.http.get<AttendanceResponse[]>(url);
+getAllAttendance(classId: number) {
+  return this.http.get<any[]>(this.baseUrl + 'attendance?classId=' + classId);
 }
 public formatDate(date: Date): string {
   if (!(date instanceof Date) || isNaN(date.getTime())) {
@@ -102,5 +102,17 @@ public formatDate(date: Date): string {
   const month = date.getMonth() + 1;
   const day = date.getDate();
   return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+}
+// postAttendance(classId: number, date: Date, attendanceList: MarkAttendance[]): Observable<any> {
+//   const url = `${this.baseUrl}class/${classId}/attendance/attendance`;
+//   return this.http.post<any>(url, { classId, date, attendanceList });
+// }
+postAttendance(attendance: MarkAttendance[]):Observable<MarkAttendance[]>{
+  const url = `${this.baseUrl}attendance/attendance`;
+  return this.http.post<MarkAttendance[]>(url, attendance);
+}
+addAttendance(classId: number, attendance: MarkAttendance): Observable<void> {
+  const url = `${this.baseUrl}/class/${classId}/attendance/attendance`;
+  return this.http.post<void>(url, attendance);
 }
 }

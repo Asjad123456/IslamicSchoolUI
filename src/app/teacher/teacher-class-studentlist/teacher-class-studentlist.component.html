@@ -4,7 +4,7 @@
       <!--header-section start-->
       <div class="row" id="header-row">
         <div class="col" id="first-icon-col">
-          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+          <i class="fa fa-arrow-left" aria-hidden="true" (click)="onBack()"></i>
         </div>
       </div>
     </section>
@@ -14,7 +14,7 @@
       <!-- Hero-Section start-->
       <div class="row" id="hero-row">
         <div class="col" id="hero-heading">
-          <h1>Branches</h1>
+          <h1>Students</h1>
           <h5>
             Currently {{ studentcount }}<span>Students in this class</span>
           </h5>
@@ -230,10 +230,12 @@
 
                       <div class="row" id="button-row">
                         <div class="col" id="button-col-1">
-                          <button class="btn" type="submit">Save</button>
+                          <button class="btn" type="submit" data-bs-dismiss="offcanvas"
+                          aria-label="Close">Save</button>
                         </div>
                         <div class="col" id="button-col-2">
-                          <button class="btn" type="button">Cancal</button>
+                          <button class="btn" type="button" data-bs-dismiss="offcanvas"
+                          aria-label="Close">Cancal</button>
                         </div>
                       </div>
                     </form>

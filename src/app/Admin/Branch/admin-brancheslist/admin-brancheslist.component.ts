@@ -5,6 +5,7 @@ import { Branches } from 'src/Models/branches';
 import { User } from 'src/Models/user';
 import { AdminService } from 'src/Services/admin.service';
 import { Location } from '@angular/common';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-admin-brancheslist',
@@ -22,7 +23,7 @@ export class AdminBrancheslistComponent implements OnInit{
   enteredSearchValue: string = '';
   searchText: string = '';
 
-  constructor(private service:AdminService, private router: Router, private location: Location, private route: ActivatedRoute){}
+  constructor(private service:AdminService, private router: Router, private location: Location, private route: ActivatedRoute, private snackBar: MatSnackBar){}
 
 
   ngOnInit(): void {
@@ -49,9 +50,15 @@ export class AdminBrancheslistComponent implements OnInit{
     this.service.addBracnh(this.addBranchForm.value).subscribe(
       response => {
         this.getbranches();
+        this.branchesCount();
+        this.getUsersforSupervisors();
         console.log(response);
         console.log("done");
         this.addBranchForm.reset();
+        this.snackBar.open('Branch Added SuccessFully!', 'Close', {
+          duration: 3000,
+          panelClass: 'success-snackbar'
+        });
       },
       (error) => {
         console.log(error);
@@ -64,6 +71,10 @@ export class AdminBrancheslistComponent implements OnInit{
       response =>{
         this.getbranches();
         this.getUsersforSupervisors();
+        this.snackBar.open('Branch Deleted SuccessFully!', 'Close', {
+          duration: 3000,
+          panelClass: 'success-snackbar'
+        });
       },error =>{
         console.error(error)
       }

@@ -32,11 +32,9 @@ export class AdminBranchClasslistComponent {
     })
   }
   toClassProfile(id:number){
-    this.service.getClassById(id).subscribe(
-      response =>{
         this.router.navigate(['admin-branchprofile/' + this.branchid + '/class-list/class-profile/'+ id])
-      }
-    );
+        const branchId = +this.route.snapshot.params['id'];
+        localStorage.setItem('branchId', branchId.toString());
   }
   classcount(){
     this.service.gwtStudyClassCountForBranch(this.branchid).subscribe((res) =>{

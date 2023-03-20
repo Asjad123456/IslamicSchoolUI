@@ -63,9 +63,11 @@ export class SupervisorBranchprofileComponent {
   toStudentsList(){
     const branchId = +this.route.snapshot.params['id'];
     this.router.navigate(['supervisor-panel/supervisor-branchprofile/'+ branchId +'/studentlist']);
+    const currentRoute = this.router.url;
+    localStorage.setItem('previousUrl', currentRoute);
   }
   onback(){
-    const previousUrl = localStorage.getItem('previousUrl');
-    this.router.navigateByUrl(previousUrl);
+    const supervisorId = localStorage.getItem('loggedInUserId');
+    this.router.navigate(['supervisor-panel/' + supervisorId]); 
     }
 }

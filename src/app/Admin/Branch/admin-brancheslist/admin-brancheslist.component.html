@@ -66,7 +66,7 @@
                   <!-- hero section -->
                   <div class="row" id="offcanvas-hero-row">
                     <div class="col" id="offcanvas-hero-col">
-                      <h2>Add New Class</h2>
+                      <h2>Add New Branch.</h2>
                     </div>
                   </div>
 
@@ -147,20 +147,9 @@
                                     ></label> -->
                                   </div>
                                 </div>
-                                <div
-                                  class="row"
-                                  id="accordion-sec-row"
-                                  *ngFor="let item of branchsupervisors | SearchSupervisorPipe: searchText"
-                                  data-bs-toggle="collapse"
-                                  data-bs-target="#flush-collapseOne"
-                                  aria-expanded="false"
-                                  aria-controls="flush-collapseOne"
-                                >
-                                  <div
-                                    class="col"
-                                    id="accordion-sec-col"
-                                    (click)="selectSupervisor(item)"
-                                  >
+                                <div *ngIf="branchsupervisors?.length === 0" class="no-superviosr">All current supervisors are already on work.<br> <span>Register more superviosrs</span></div>
+                                <div class="row" id="accordion-sec-row" *ngFor="let item of branchsupervisors | SearchSupervisorPipe: searchText" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                  <div class="col" id="accordion-sec-col" (click)="selectSupervisor(item)">
                                     <div class="col" id="col-1">
                                       <img src="/assets/boy.png" alt="" />
                                     </div>
@@ -173,6 +162,7 @@
                                     </div>
                                   </div>
                                 </div>
+                                
                               </div>
                             </div>
                           </div>
@@ -206,26 +196,26 @@
       <!--------Sort-by section start ---------->
 
       <!--------Main Section branch-list start here--------->
-      <section id="main-sec-box1" *ngFor="let item of branch">
-        <div
-          class="row"
-          *ngIf="
-            searchText === '' ||
-            item.branchName.toLowerCase().includes(searchText)
-          "
-        >
-          <div
-            class="col-9"
-            id="branch-name-col"
-            (click)="toBranchProfile(item.id)"
-          >
-            <h3>{{ item.branchName }}</h3>
-            <p>{{item.address}}</p>
+      <section>
+        <div id="main-sec-box1" *ngFor="let item of branch">
+          <div class="row" *ngIf="searchText === '' || item.branchName.toLowerCase().includes(searchText)">
+            <div class="col-9" id="branch-name-col" (click)="toBranchProfile(item.id)" *ngIf="branch?.length > 0">
+              <h3>{{ item.branchName }}</h3>
+              <p>{{item.address}}</p>
+            </div>
+            <div class="col-3" id="branch-icon-col">
+              <a (click)="deleteBranch(item.id)">
+                <i class="fa-solid fa-trash"></i>
+              </a>
+            </div>
           </div>
-          <div class="col-3" id="branch-icon-col">
-            <a (click)="deleteBranch(item.id)"
-              ><i class="fa-solid fa-trash"></i
-            ></a>
+        </div>
+        <div id="main-sec-box1-no" *ngIf="branch?.length == 0">
+          <div class="row">
+            <div class="col-9" id="branch-name-col-no">
+              <h3>No Branches Found</h3>
+              <p>Add a branch from the +</p>
+            </div>
           </div>
         </div>
       </section>

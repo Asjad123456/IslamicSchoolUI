@@ -49,6 +49,7 @@
 .main-section {
   height: 90vh;
   padding: 20px;
+  overflow: auto;
 }
 #main-section-row {
   background-color: var(--mainHalfGreen);

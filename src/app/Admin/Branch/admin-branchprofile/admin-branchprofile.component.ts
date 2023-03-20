@@ -91,6 +91,8 @@ export class AdminBranchprofileComponent {
   toTeacherList(){
     const branchId = +this.route.snapshot.params['id'];
     this.router.navigate(['admin-branchprofile/' + branchId + '/class-list']);
+    const currentroute = this.router.url;
+    localStorage.setItem('previousUrl', currentroute);
   }
   toTeachersList(){
     const branchId = +this.route.snapshot.params['id'];

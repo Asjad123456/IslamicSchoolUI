@@ -58,13 +58,19 @@ export class AdminSupervisorBranchprofileComponent {
   }
   toTeachersList(){
     const branchId = +this.route.snapshot.params['id'];
-    this.router.navigate(['supervisor-panel/supervisor-branchprofile/'+ branchId+'/teacherlist']);
+    this.router.navigate(['admin-branchprofile/'+ branchId +'/teachers-list']);
+    const currentRoute = this.router.url;
+    localStorage.setItem('previousUrl', currentRoute);
   }
   toStudentsList(){
     const branchId = +this.route.snapshot.params['id'];
     this.router.navigate(['supervisor-panel/supervisor-branchprofile/'+ branchId +'/studentlist']);
+    const currentRoute = this.router.url;
+    localStorage.setItem('previousUrl', currentRoute);
   }
   onback(){
-    window.history.back();
+    const supervisorId = localStorage.getItem('supervisorId');
+    this.router.navigate(['admin-supervisorprofile/' + supervisorId]);
+    localStorage.removeItem('supervisorId');
   }
 }

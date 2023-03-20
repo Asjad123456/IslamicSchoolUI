@@ -48,9 +48,13 @@ export class AdminBranchClassprofileComponent {
   toStudentList(){
     const classid = +this.route.snapshot.params['id'];
     this.router.navigate(['admin-branchprofile/class-list/class-profile/' + classid +'/student-list']);
+    const currentRoute = this.router.url;
+    localStorage.setItem('previousUrl', currentRoute);
   }
   onBack(){
-    this.location.back();
+    const branchId = localStorage.getItem('branchId');
+    this.router.navigate(['admin-branchprofile/'+ branchId +'/class-list']);
+    localStorage.removeItem('branchId');
   }
   getStudentCount(){
     const classid = +this.route.snapshot.params['id'];
@@ -59,5 +63,9 @@ export class AdminBranchClassprofileComponent {
       console.log('hello', res);
       console.log(classid);
     })
+  }
+  toAttendance(){
+    const classId = +this.route.snapshot.params['id'];
+    this.router.navigate(['admin-branchprofile/teacher-profile/class-profile/'+ classId +'/attendance']);
   }
 }
