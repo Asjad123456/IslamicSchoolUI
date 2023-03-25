@@ -267,14 +267,10 @@ body {
   color: var(--color);
 }
 #Edit-branch-ofcanvas .offcanvas-header{
-  border: 1px solid red;
   width: 97vw;
 }
 .offcanvas-header h5{
   font-size: 20px;
-}
-#Edit-branch-ofcanvas .offcanvas-body{
-  border: 1px solid red;
 }
 #input-field-row {
   display: grid;
@@ -360,6 +356,39 @@ p {
   border: none;
   border-radius: 7px;
 }
+select.form-control {
+  appearance: none;
+  background-color: var(--background);
+  border: 2px solid var(--color);
+  border-radius: 5px;
+  color: var(--color);
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+select.form-control:focus {
+  outline: none;
+  border-color: var(--color-1);
+  box-shadow: 0px 0px 5px 0px var(--color-1);
+}
+
+select.form-control option:first-child {
+  color: var(--color);
+}
+
+select.form-control option {
+  color: var(--color);
+  background-color: var(--background);
+}
+#footer-btn-section{
+  display: grid;
+  column-gap: 4px;
+  position: absolute;
+  top: 37vh;
+  left: 28vw;
+}  
 a {
   color: inherit;
 }
