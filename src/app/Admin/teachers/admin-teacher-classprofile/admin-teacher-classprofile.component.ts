@@ -60,4 +60,12 @@ export class AdminTeacherClassprofileComponent {
     this.router.navigateByUrl(lastRoute);
     localStorage.removeItem('lastRoute');
   }
+  logout(){
+    this.router.navigate(['welcome']);
+    localStorage.clear();
+  }
+  ToAdminPanel(){
+    const adminId = localStorage.getItem('loggedInUserId');
+    this.router.navigate(['admin-panel/' + adminId]);
+  }
 }

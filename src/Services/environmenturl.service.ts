@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class EnvironmenturlService {
-  urlAddress: string = environment.ApiUrl;
+  urlAddress: string = 'https://localhost:7174/api/';
 
 
   constructor() { }

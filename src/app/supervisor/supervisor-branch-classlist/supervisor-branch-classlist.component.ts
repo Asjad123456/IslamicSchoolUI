@@ -110,4 +110,12 @@ export class SupervisorBranchClasslistComponent {
     const branchId = +this.route.snapshot.params['id'];
     this.router.navigate(['supervisor-panel/'+ supervisorId+'/supervisor-branchprofile/' + branchId]);
   }
+  logout(){
+    this.router.navigate(['welcome']);
+    localStorage.clear();
+  }
+  ToAdminPanel(){
+    const adminId = localStorage.getItem('loggedInUserId');
+    this.router.navigate(['admin-panel/' + adminId]);
+  }
 }

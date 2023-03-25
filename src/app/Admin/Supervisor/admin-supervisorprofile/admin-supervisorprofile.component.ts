@@ -52,4 +52,12 @@ export class AdminSupervisorprofileComponent {
   onback(){
     this.router.navigate(['admin-supervisorlist']);
   }
+  logout(){
+    this.router.navigate(['welcome']);
+    localStorage.clear();
+  }
+  ToAdminPanel(){
+    const adminId = localStorage.getItem('loggedInUserId');
+    this.router.navigate(['admin-panel/' + adminId]);
+  }
 }

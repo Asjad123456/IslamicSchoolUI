@@ -39,4 +39,12 @@ export class SupervisorBranchTeacherprofileComponent {
     const branchid = localStorage.getItem('branchid');
     this.router.navigate(['supervisor-panel/supervisor-branchprofile/'+ branchid +'/teacherlist']);
   }
+  logout(){
+    this.router.navigate(['welcome']);
+    localStorage.clear();
+  }
+  ToAdminPanel(){
+    const adminId = localStorage.getItem('loggedInUserId');
+    this.router.navigate(['admin-panel/' + adminId]);
+  }
 }

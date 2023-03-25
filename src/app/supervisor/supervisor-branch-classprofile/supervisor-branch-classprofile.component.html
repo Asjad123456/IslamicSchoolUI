@@ -4,48 +4,102 @@
     <div class="col" id="back-btn-col">
       <i class="fa fa-arrow-left" aria-hidden="true" (click)="onback()"></i>
     </div>
+    <div class="col">
+      <nav class="menu">
+        <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+        <label class="menu-open-button" for="menu-open">
+         <span class="lines line-1"></span>
+         <span class="lines line-2"></span>
+         <span class="lines line-3"></span>
+       </label>
+     
+        <a href="#" class="menu-item blue" style="display: none;"> <i class="fa fa-anchor"></i> </a>
+        <a href="#" class="menu-item green" style="display: none;"> <i class="fa fa-coffee"></i> </a>
+        <a href="#" class="menu-item red" style="display: none;"> <i class="fa fa-heart"></i> </a>
+        <a (click)="logout()" class="menu-item purple"> <i class="fa-solid fa-right-from-bracket"></i> </a>
+        <a (click)="ToAdminPanel()" class="menu-item orange"> <i class="fa-solid fa-home"></i> </a>
+        <a href="#" class="menu-item lightblue" style="display: none;"> <i class="fa-solid fa-home"></i> </a>
+     </nav>
+    </div>
   </div>
 
   <section id="hero-section">
     <!-- hero section start here -->
     <div class="row" id="hero-section-row" *ngFor="let item of studyclass">
       <div class="col" id="hero-section-col">
-        <h1 type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">{{ item.className }}</h1>
+        <h1 type="button" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">{{ item.className }}</h1>
         <p>Teacher: {{ item.userName }}</p>
       </div>
     </div>
   </section>
 
   <!--Edit branch off canvas starts here-->
+  <section id="Edit-branch-ofcanvas">
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Edit Class</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <form [formGroup]="editClassForm" (ngSubmit)="editClassData()">
+          <div class="row" id="input-field-row" >
+            <div class="col" id="name-col">
+              <p>Name</p>
+              <input type="text" formControlName="className" />
+            </div>
+            <div class="col" id="offcanvas-main-col-2">
+              <div class="ngx-timepicker-field-example">
+                <ngx-timepicker-field
+                  formControlName="classTime"
+                ></ngx-timepicker-field>
+              </div>
+            </div>
+            <div class="col" id="offcanvas-main-col-2">
+              <label></label>
+              <select class="form-control" formControlName="AppUserId">
+                <option value="">Select teacher</option>
+                <option *ngFor="let item of teacher" value="{{ item.id }}">
+                  {{ item.userName }}
+                </option>
+              </select>
+            </div>
+            <!-- <div class="col" id="address-col">
+              <p>Father name</p>
+              <input type="text" formControlName="fatherName" />
+            </div> -->
+          </div>
 
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-    <form [formGroup]="editClassForm" (ngSubmit)="editClassData()" >
-      <div class="row" id="offcanvas-input-row">
-        <div class="col" id="edit-branch-name-col">
-          <label for="">
-            <p>CLass Name</p>
-          </label>
-          <input type="text" formControlName="className" />
-        </div>
-        <div class="ngx-timepicker-field-example">
-          <ngx-timepicker-field formControlName="classTime"></ngx-timepicker-field>
-        </div>
+          <section id="footer-btn-section">
+            <div class="row" id="footer-btn-row">
+              <div class="col" id="footer-btn-col-1">
+                <button
+                  class="btn"
+                  type="button"
+                  class="text-reset"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                >
+                  cancel
+                </button>
+              </div>
+              <div class="col" id="footer-btn-col-2">
+                <button
+                  class="btn"
+                  type="submit"
+                  class="text-reset"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </section>
+        </form>
       </div>
-      <div class="row" id="branch-offcanvas-btn">
-        <div class="col">
-          <button
-            type="submit"
-            id="btn-close"
-            class="text-reset"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-          >
-            Submit
-          </button>
-        </div>
-      </div>
-    </form>
-  </div>
+    </div>  
+  </section>
+` 
 
   <!--Edit branch off canvas ends here-->
 

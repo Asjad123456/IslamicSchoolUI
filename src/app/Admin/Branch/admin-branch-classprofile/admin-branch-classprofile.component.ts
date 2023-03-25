@@ -68,4 +68,12 @@ export class AdminBranchClassprofileComponent {
     const classId = +this.route.snapshot.params['id'];
     this.router.navigate(['admin-branchprofile/teacher-profile/class-profile/'+ classId +'/attendance']);
   }
+  logout(){
+    this.router.navigate(['welcome']);
+    localStorage.clear();
+  }
+  ToAdminPanel(){
+    const adminId = localStorage.getItem('loggedInUserId');
+    this.router.navigate(['admin-panel/' + adminId]);
+  }
 }

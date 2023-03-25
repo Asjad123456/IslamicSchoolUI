@@ -17,7 +17,7 @@ import { User } from 'src/Models/user';
   providedIn: 'root'
 })
 export class TeacherService {
-  baseUrl = environment.ApiUrl;
+  baseUrl = 'https://localhost:7174/api/';
 
 constructor(private http: HttpClient) { }
 

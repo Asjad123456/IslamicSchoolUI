@@ -3,7 +3,10 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StudyClass } from 'src/Models/StudyClass';
+import { User } from 'src/Models/user';
 import { SupervisorService } from 'src/Services/supervisor.service';
+import { DatePipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-supervisor-branch-classprofile',
@@ -15,18 +18,21 @@ export class SupervisorBranchClassprofileComponent {
   classtostudent: StudyClass;
   editClassForm: FormGroup;
   studentcount: number;
+  teacher: User[];
 
-  constructor(private route: ActivatedRoute, private router: Router, private service: SupervisorService, private fb:FormBuilder){}
+  constructor(private route: ActivatedRoute, private router: Router, private service: SupervisorService, private fb:FormBuilder, private datePipe: DatePipe){}
 
   ngOnInit(): void{
     this.editClassForm= this.fb.group({
       className: [''],
-      classTime: ['']
+      classTime: [''],
+      AppUserId: ['']
   })
     console.log(+this.route.snapshot.params['id']);
     this.getClassDetail();
     this.editClass();
     this.getStudentCount();
+    this.getTeachers();
   }
   getClassDetail(){
     const classId = +this.route.snapshot.params['id'];
@@ -53,7 +59,7 @@ export class SupervisorBranchClassprofileComponent {
   }
   editClassData(){
     const id =+this.route.snapshot.params['id'];
-    this.service.updateClass(id, this.editClassForm.value).subscribe(() =>{
+    this.service.updateClass(id, this.editClassForm.value, this.editClassForm.get('AppUserId').value).subscribe(() =>{
       this.getClassDetail();
       this.editClass();
       console.warn('done');
@@ -77,5 +83,18 @@ export class SupervisorBranchClassprofileComponent {
     const previousUrl = localStorage.getItem('previousUrl');
     this.router.navigateByUrl(previousUrl);
     localStorage.removeItem('previousUrl');
+  }
+  logout(){
+    this.router.navigate(['welcome']);
+    localStorage.clear();
+  }
+  ToAdminPanel(){
+    const adminId = localStorage.getItem('loggedInUserId');
+    this.router.navigate(['admin-panel/' + adminId]);
+  }
+  getTeachers(){
+    this.service.getTeachersforlist().subscribe((res) =>{
+      this.teacher = res;
+    })
   }
 }

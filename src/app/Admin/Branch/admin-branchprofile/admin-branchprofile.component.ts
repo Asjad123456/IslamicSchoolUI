@@ -5,7 +5,7 @@ import { Branches } from 'src/Models/branches';
 import { AdminService } from 'src/Services/admin.service';
 import { Location } from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { User } from 'src/Models/user';
 
 @Component({
   selector: 'app-admin-branchprofile',
@@ -15,6 +15,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class AdminBranchprofileComponent {
   public branchId: number;
   branch: Branches[];
+  supervisors: User[];
   editBranchForm: FormGroup;
   studyClassCount: number;
   teachersCount: number;
@@ -28,6 +29,7 @@ export class AdminBranchprofileComponent {
       city: [''],
       address: [''],
       branchCode: [''],
+      AppUserId: ['']
     })
     this.route.params.subscribe(params => {
       this.previousUrl = `/admin/${params['id']}/brancheslist`;
@@ -37,6 +39,7 @@ export class AdminBranchprofileComponent {
     this.editBranch();
     this.getStudyClassCount();
     this.getTeachersCount();
+    this.GetSupervisors();
   }
   getBranchDetails = () => {
     const id =+this.route.snapshot.params['id'];
@@ -57,9 +60,11 @@ export class AdminBranchprofileComponent {
   }
   editBranchData(){
     const id =+this.route.snapshot.params['id'];
-    this.service.updateBranch(id, this.editBranchForm.value).subscribe(() =>{
+    this.service.updateBranch(id, this.editBranchForm.value, this.editBranchForm.get('AppUserId').value).subscribe((res) =>{
+      console.log(res);
       this.getBranchDetails();
       this.editBranch();
+      this.GetSupervisors();
       console.warn('done');
       this.snackBar.open('Updated SuccessFully!', 'Close', {
         duration: 3000,
@@ -67,6 +72,7 @@ export class AdminBranchprofileComponent {
       });
     })
   }
+  
   onBack(){
     this.router.navigate(['admin-brancheslist']);
   }
@@ -98,5 +104,18 @@ export class AdminBranchprofileComponent {
     const branchId = +this.route.snapshot.params['id'];
     this.router.navigate(['admin-branchprofile/' + branchId + '/teachers-list']);
   }
-
+  logout(){
+    this.router.navigate(['welcome']);
+    localStorage.clear();
+  }
+  ToAdminPanel(){
+    const adminId = localStorage.getItem('loggedInUserId');
+    this.router.navigate(['admin-panel/' + adminId]);
+  }
+  GetSupervisors(){
+    this.service.getUserforbranchSupervisor().subscribe(src =>{
+      this.supervisors = src;
+      console.log(src);
+    })
+  }
 }

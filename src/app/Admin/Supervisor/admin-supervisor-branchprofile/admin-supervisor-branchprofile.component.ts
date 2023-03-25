@@ -73,4 +73,12 @@ export class AdminSupervisorBranchprofileComponent {
     this.router.navigate(['admin-supervisorprofile/' + supervisorId]);
     localStorage.removeItem('supervisorId');
   }
+  logout(){
+    this.router.navigate(['welcome']);
+    localStorage.clear();
+  }
+  ToAdminPanel(){
+    const adminId = localStorage.getItem('loggedInUserId');
+    this.router.navigate(['admin-panel/' + adminId]);
+  }
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -62,6 +63,7 @@ import { TeacherClassMarkattendanceComponent } from './teacher/teacher-class-mar
 import { AdminBranchClassattendanceComponent } from './Admin/Branch/admin-branch-classattendance/admin-branch-classattendance.component';
 import { DatePipe } from '@angular/common';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -115,6 +117,7 @@ import { DatePipe } from '@angular/common';
     AdminBranchClassattendanceComponent
     ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

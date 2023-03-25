@@ -45,4 +45,12 @@ export class AdminTeacherprofileComponent {
   onBack(){
     this.router.navigateByUrl(this.previousUrl);
   }
+  logout(){
+    this.router.navigate(['welcome']);
+    localStorage.clear();
+  }
+  ToAdminPanel(){
+    const adminId = localStorage.getItem('loggedInUserId');
+    this.router.navigate(['admin-panel/' + adminId]);
+  }
 }

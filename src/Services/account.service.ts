@@ -10,7 +10,7 @@ import { UserForLogin } from 'src/Models/userforlogin';
   providedIn: 'root'
 })
 export class AccountService {
-  baseUrl = environment.ApiUrl;
+  baseUrl = 'https://localhost:7174/api/';
   private currentUserSource = new ReplaySubject<User>(1);
   currentUser$ = this.currentUserSource.asObservable();
   user!: User[];

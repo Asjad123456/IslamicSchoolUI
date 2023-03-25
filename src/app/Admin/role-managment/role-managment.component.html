@@ -33,6 +33,7 @@
           <p>{{ user?.roles }}</p>
         </div>
         <div class="col-3" id="main-section-icon2">
+          <i class="fa-solid fa-trash" id="delete" (click)="deleteUser(user.id)"></i>
           <i
             (click)="openRolesModal(user)"
             class="fa fa-edit"

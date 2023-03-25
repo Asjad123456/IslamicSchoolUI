@@ -52,4 +52,12 @@ export class SupervisorBranchStudentlistComponent {
     this.router.navigateByUrl(previousUrl);
     localStorage.removeItem('previousUrl');
   }
+  logout(){
+    this.router.navigate(['welcome']);
+    localStorage.clear();
+  }
+  ToAdminPanel(){
+    const adminId = localStorage.getItem('loggedInUserId');
+    this.router.navigate(['admin-panel/' + adminId]);
+  }
 }

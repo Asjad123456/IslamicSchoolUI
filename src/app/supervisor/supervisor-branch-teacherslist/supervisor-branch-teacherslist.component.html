@@ -5,8 +5,22 @@
       <div class="col" id="header-col-1">
         <i class="fas fa-arrow-left" (click)="onBack()"></i>
       </div>
-      <div class="col" id="header-col-2">
-        <h5>Teachers</h5>
+      <div class="col" >
+        <nav class="menu">
+          <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+          <label class="menu-open-button" for="menu-open">
+           <span class="lines line-1"></span>
+           <span class="lines line-2"></span>
+           <span class="lines line-3"></span>
+         </label>
+       
+          <a href="#" class="menu-item blue" style="display: none;"> <i class="fa fa-anchor"></i> </a>
+          <a href="#" class="menu-item green" style="display: none;"> <i class="fa fa-coffee"></i> </a>
+          <a href="#" class="menu-item red" style="display: none;"> <i class="fa fa-heart"></i> </a>
+          <a (click)="logout()" class="menu-item purple"> <i class="fa-solid fa-right-from-bracket"></i> </a>
+          <a (click)="ToAdminPanel()" class="menu-item orange"> <i class="fa-solid fa-home"></i> </a>
+          <a href="#" class="menu-item lightblue" style="display: none;"> <i class="fa-solid fa-home"></i> </a>
+       </nav>
       </div>
     </div>
   </div>

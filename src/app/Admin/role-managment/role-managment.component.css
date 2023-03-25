@@ -4,6 +4,7 @@
 @import "~@fortawesome/fontawesome-free/css/brands.css";
 
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
 * {
   font-family: var(--main-family);
   margin: 0;
@@ -90,11 +91,11 @@
   font-size: x-small;
 }
 #main-section-icon2 {
-  width: 28%;
-  display: grid;
-  text-align: center;
-  align-content: center;
-  font-size: 17px;
-  font-family: var(--main-family);
-  color: var(--mainGreen);
+  display: flex;
+  justify-content: center; /* center the icons horizontally */
+  align-items: center; /* center the icons vertically */
+  gap: 30px; /* add some space between the icons */
+}
+#main-section-icon2 i{
+  color: goldenrod;
 }

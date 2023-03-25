@@ -104,4 +104,12 @@ export class TeacherClassStudentlistComponent {
     this.router.navigate(['teacher-panel/'+ teacherId +'/classlist/classprofile/' + classId]);
     localStorage.setItem('classId', classId.toString());
   } 
+  logout(){
+    this.router.navigate(['welcome']);
+    localStorage.clear();
+  }
+  ToAdminPanel(){
+    const adminId = localStorage.getItem('loggedInUserId');
+    this.router.navigate(['admin-panel/' + adminId]);
+  }
 }

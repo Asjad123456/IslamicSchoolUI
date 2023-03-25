@@ -13,7 +13,7 @@ import { User } from 'src/Models/user';
   providedIn: 'root'
 })
 export class SupervisorService {
-  baseUrl = environment.ApiUrl;
+  baseUrl = 'https://localhost:7174/api/';
 
 constructor(private http: HttpClient) { }
 
@@ -48,16 +48,16 @@ getStudentById(id: number) {
   const url = `${this.baseUrl}Student/${id}`;
   return this.http.get<Student[]>(url);
 }
-updateClass(id: number, studyclass: StudyClass) {
-  const url = `${this.baseUrl}StudyClass/${id}`;
-  const httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
-  };
+// updateClass(id: number, studyclass: StudyClass) {
+//   const url = `${this.baseUrl}StudyClass/${id}`;
+//   const httpOptions = {
+//     headers: new HttpHeaders({
+//       'Content-Type': 'application/json'
+//     })
+//   };
 
-  return this.http.put<StudyClass>(url, studyclass, httpOptions);
-}
+//   return this.http.put<StudyClass>(url, studyclass, httpOptions);
+// }
 gwtStudyClassCountForBranch(id: number){
   const url = `${this.baseUrl}Branch/studyclasscount/${id}`;
   return this.http.get<number>(url);
@@ -81,4 +81,11 @@ getStudentList(id: number){
 public deleteClass(id: number): Observable<StudyClass>{
   return this.http.delete<StudyClass>(this.baseUrl + 'StudyClass/' + id);
 }
+updateClass(id: number, classDto: any, adminUserId: string | null): Observable<any> {
+  let url = `${this.baseUrl}studyclass/${id}`;
+  if (adminUserId) {
+    url += `?adminUserId=${adminUserId}`;
+  }
+  return this.http.put(url, classDto);
 }
+} 

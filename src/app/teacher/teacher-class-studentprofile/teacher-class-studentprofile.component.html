@@ -7,13 +7,11 @@
         </div>
       </div>
     </section>
-
     <div class="row" id="main-img-row">
       <div class="col">
         <img src="/assets/student.png" alt="" />
       </div>
     </div>
-
     <div class="row" id="teacher-info-row">
       <div class="col" id="teacher-info-col" *ngFor="let item of student">
         <h2>Student</h2>
@@ -222,16 +220,20 @@
               </div>
             </div>
 
+
             <div class="row" id="button-row">
-              <div class="col" id="button-col-1">
-                <button class="btn" type="submit">Save</button>
+                <div class="col" id="button-col-1">
+                  <button class="btn" type="submit">Save</button>
+                </div>
+                <div class="col" id="button-col-2">
+                  <button class="btn" type="button">Cancal</button>
+                </div>
               </div>
-              <div class="col" id="button-col-2">
-                <button class="btn" type="button">Cancal</button>
-              </div>
-            </div>
+
+
           </form>
         </section>
+
       </div>
     </div>
 
@@ -257,6 +259,7 @@
     <div class="row" id="footer-btn-row">
       <div class="col" id="footer-btn-col">
         <button
+          
           class="btn"
           type="button"
           data-bs-toggle="offcanvas"
@@ -275,7 +278,7 @@
       id="offcanvasTop"
       aria-labelledby="offcanvasTopLabel"
     >
-      <div class="offcanvas-header">
+      <div class="offcanvas-header" >
         <!-- <h5 id="offcanvasTopLabel">Offcanvas top</h5> -->
         <button
           id="btn-close"
@@ -286,31 +289,21 @@
         ></button>
       </div>
 
-      <div class="offcanvas-body">
-        <div class="row" id="profile-img-row">
-          <div class="col-4" id="profile-img-col-1">
-            <img src="/assets/headmaster.png" alt="" />
+      <div class="offcanvas-body" >
+          <div class="row" id="profile-img-row" >
+            <div class="col-4" id="profile-img-col-1" >
+              <img src="/assets/headmaster.png" alt="" />
+            </div>
+            <div
+              class="col-8" 
+              id="profile-img-col-2"
+              *ngFor="let item of student"
+            >
+              <h1>{{ item.guardianName }}</h1>
+            </div>
+            <!-- <hr id="hr" /> -->
           </div>
-          <div
-            class="col-8"
-            id="profile-img-col-2"
-            *ngFor="let item of student"
-          >
-            <h1>{{ item.guardianName }}</h1>
-          </div>
-          <!-- <hr id="hr" /> -->
-        </div>
 
-        <section id="Guardain-detail-section">
-          <div
-            class="row"
-            id="Guardain-detail-row"
-            *ngFor="let item of student"
-          >
-            <div class="col" id="Guardain-detail-col-1">
-              <div class="col">
-                <h1>Father's Name</h1>
-                <p>{{ item.guardianFatherName }}</p>
           <section id="Guardain-detail-section">
             <div
               class="row"
@@ -342,26 +335,7 @@
                 </div>
               </div>
             </div>
-            <div class="col" id="Guardain-detail-col-2">
-              <div class="col">
-                <h1>Contact #</h1>
-                <p>vv</p>
-              </div>
-            </div>
-            <div class="col" id="Guardain-detail-col-3">
-              <div class="col">
-                <h1>Address</h1>
-                <p>{{ item.guardianAddress }}</p>
-              </div>
-            </div>
-            <div class="col" id="Guardain-detail-col-4">
-              <div class="col">
-                <h1>CNIC #</h1>
-                <p>{{ item.cnic }}</p>
-              </div>
-            </div>
-          </div>
-        </section>
+          </section>
 
         <!-- footer img section start here -->
         <section id="footer-img-section">

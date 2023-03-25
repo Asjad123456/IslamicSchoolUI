@@ -5,6 +5,7 @@ import { User } from 'src/Models/user';
 import { AdminService } from 'src/Services/admin.service';
 import { RoleModalComponent } from '../role-modal/role-modal.component';
 import { Location } from '@angular/common';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-role-managment',
@@ -17,7 +18,7 @@ export class RoleManagmentComponent implements OnInit {
   searchText: string = '';
 
   constructor(private router: Router, private adminService: AdminService, private modalService: BsModalService,
-     private location: Location, private route: ActivatedRoute){}
+     private location: Location, private route: ActivatedRoute, private snackBar: MatSnackBar){}
 
   ngOnInit(): void {
     this.getUsersWithRoles();
@@ -84,5 +85,14 @@ export class RoleManagmentComponent implements OnInit {
   onSearchTextEntered(searchValue: string){
     this.searchText = searchValue;
     console.log(this.searchText);
+  }
+  deleteUser(id: string){
+    this.adminService.deleteUser(id).subscribe(() =>{
+      this.getUsersWithRoles();
+      this.snackBar.open('User Deleted Make sure to check the changes', 'Close', {
+        duration: 3000,
+        panelClass: 'error-snackbar',
+      });
+    })
   }
 }

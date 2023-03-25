@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, switchMap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { AdminForEdit } from 'src/Models/AdminForEdit';
 import { Branches } from 'src/Models/branches';
@@ -15,7 +15,7 @@ import { EnvironmenturlService } from './environmenturl.service';
   providedIn: 'root'
 })
 export class AdminService {
-  baseUrl = environment.ApiUrl
+  baseUrl = 'https://localhost:7174/api/';
 
 constructor(private http: HttpClient, private envUrl: EnvironmenturlService) { }
 
@@ -98,16 +98,14 @@ AddBranchForSupervisor(id: string, user: User) {
 
   return this.http.put<Branches>(url, user, httpOptions);
 }
-updateBranch(id: number, branch: Branches) {
-  const url = `${this.baseUrl}Branch/${id}`;
-  const httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
-  };
-
-  return this.http.put<Branches>(url, branch, httpOptions);
+updateBranch(id: number, branchDto: any, adminUserId: string | null): Observable<any> {
+  let url = `${this.baseUrl}Branch/${id}`;
+  if (adminUserId) {
+    url += `?adminUserId=${adminUserId}`;
+  }
+  return this.http.put(url, branchDto);
 }
+
 updateClass(id: number, studyclass: StudyClass) {
   const url = `${this.baseUrl}StudyClass/${id}`;
   const httpOptions = {
@@ -175,5 +173,8 @@ public deleteStudyClass(id: number): Observable<StudyClass>{
 getStudentsCountForclassprofile(id: number){
   const url = `${this.baseUrl}StudyClass/studentcount/${id}`;
   return this.http.get<number>(url);
+}
+public deleteUser(id: string): Observable<User>{
+  return this.http.delete<User>(this.baseUrl + 'User/' + id);
 }
 }

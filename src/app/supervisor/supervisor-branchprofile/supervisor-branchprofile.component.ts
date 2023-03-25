@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Branches } from 'src/Models/branches';
 import { SupervisorService } from 'src/Services/supervisor.service';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-supervisor-branchprofile',
