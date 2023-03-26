@@ -1,20 +1,20 @@
 <h1>Mark Attendance</h1>
 
-<form [formGroup]="AddAttendanceForm" (ngSubmit)="markAttendance()">
+<form [formGroup]="attendanceForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label for="date">Date:</label>
     <input type="date" class="form-control" id="date" formControlName="date">
   </div>
 
   <div class="class-container">
-    <div *ngFor="let item of class" class="class">
+    <div *ngFor="let item of getclass" class="class">
       <div *ngFor="let student of item.students" class="student">
         <div class="name">
           {{student.name}}
         </div>
         <div class="btn-group">
-          <button class="btn btn-present" type="button" (click)="AddAttendanceForm.patchValue({isPresent: true, studentId: student.id})">Present</button>
-          <button class="btn btn-absent" type="button" (click)="AddAttendanceForm.patchValue({isPresent: false, studentId: student.id})">Absent</button>
+          <button class="btn btn-present" type="button" (click)="attendanceForm.patchValue({isPresent: true, studentId: student.id})">Present</button>
+          <button class="btn btn-absent" type="button" (click)="attendanceForm.patchValue({isPresent: false, studentId: student.id})">Absent</button>
         </div>
       </div>
     </div>

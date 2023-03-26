@@ -11,12 +11,12 @@
         class="form-check-input"
         [checked]="role.checked"
         value="role.name"
-        (change)="role.checked = !role.checked"
+        (click)="uncheckAllExcept($event, role)"
         [disabled]="role.name === 'DEAN' && user.userName === 'UserA'"
-      >
+        >
       <label>{{role.name}}</label>
     </div>
-  </form>
+  </form> 
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">Cancel</button>

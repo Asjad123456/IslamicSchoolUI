@@ -39,9 +39,9 @@ export class RoleManagmentComponent implements OnInit {
       }
     }
     this.bsModalRef = this.modalService.show(RoleModalComponent, config);
-    this.bsModalRef.content.updateSelectedRoles.subscribe((values: any) =>{
+    this.bsModalRef.content.updateSelectedRoles?.subscribe((values: any) =>{
       const rolesToUpdate = {
-        roles: [...values.filter((el: { checked: boolean; }) => el.checked === true).map((el: { name: any; }) => el.name)]
+        roles: [...values]
       };
       if (rolesToUpdate) {
         this.adminService.updateUserRoles(user.userName,rolesToUpdate.roles).subscribe(() =>{
@@ -49,6 +49,7 @@ export class RoleManagmentComponent implements OnInit {
         })
       }
     })
+    
 
   }
   private getRolesArray(user: User){

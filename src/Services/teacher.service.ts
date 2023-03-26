@@ -2,16 +2,20 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Attendance } from 'src/Models/Attendance';
-import { AttendanceResponse } from 'src/Models/AttendanceResponse';
 import { GuardianForUpdate } from 'src/Models/guardianForUpdate';
 import { MarkAttendance } from 'src/Models/markAttendance';
+import { StudentAttendance } from 'src/Models/StudentAttendance ';
 import { StudentForUpdate } from 'src/Models/studentForUpdate';
 import { Student } from 'src/Models/students';
 import { StudyClass } from 'src/Models/StudyClass';
 import { Teacher } from 'src/Models/teacher';
 import { TeacherForEdit } from 'src/Models/teacherforedit';
 import { User } from 'src/Models/user';
+import { format } from 'date-fns';
+import { parseISO } from 'date-fns';
+import { DateTime } from 'luxon';
+import { Attendance } from 'src/Models/Attendance ';
+
 
 @Injectable({
   providedIn: 'root'
@@ -80,39 +84,50 @@ getStudentsCountForclassprofile(id: number){
 public deleteStudent(id: number): Observable<Student>{
   return this.http.delete<Student>(this.baseUrl + 'Student/' + id);
 }
-getAttendanceForClassAndDate(classId: number, date: Date): Observable<Attendance[]> {
-  const formattedDate = this.formatDate(date);
-  return this.http.get<Attendance[]>(`${this.baseUrl}studyclasses/${classId}/attendance?date=${formattedDate}`);
+addAttendance(classId: number, date: string, attendanceRecords: StudentAttendance[]): Observable<any> {
+  console.log(attendanceRecords);
+  const formattedDate = DateTime.fromISO(date).toFormat('dd-MM-yyyy');
+  const url = `${this.baseUrl}attendance/${classId}/${formattedDate}`;
+  return this.http.post<any>(url, attendanceRecords);
 }
-
-getAttendance(classId: number, date: Date): Observable<AttendanceResponse[]> {
-  const formattedDate = date.toLocaleDateString('en-GB').replace(/\//g, '-'); // Format date as dd-mm-yyyy
-  const url = `${this.baseUrl}attendance/attendance?date=${formattedDate}`;
-  return this.http.get<AttendanceResponse[]>(url);
+getAttendance(classId: number, date: string): Observable<Attendance> {
+  const formattedDate = DateTime.fromISO(date).toFormat('dd-MM-yyyy');
+  const endpoint = `${this.baseUrl}attendance/${classId}/${formattedDate}`;
+  return this.http.get<Attendance>(endpoint);
 }
-getAllAttendance(classId: number) {
-  return this.http.get<any[]>(this.baseUrl + 'attendance?classId=' + classId);
-}
-public formatDate(date: Date): string {
-  if (!(date instanceof Date) || isNaN(date.getTime())) {
-    return null;
-  }
-
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
-  return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
-}
-// postAttendance(classId: number, date: Date, attendanceList: MarkAttendance[]): Observable<any> {
-//   const url = `${this.baseUrl}class/${classId}/attendance/attendance`;
-//   return this.http.post<any>(url, { classId, date, attendanceList });
+// getAttendanceForClassAndDate(classId: number, date: Date): Observable<Attendance[]> {
+//   const formattedDate = this.formatDate(date);
+//   return this.http.get<Attendance[]>(`${this.baseUrl}studyclasses/${classId}/attendance?date=${formattedDate}`);
 // }
-postAttendance(attendance: MarkAttendance[]):Observable<MarkAttendance[]>{
-  const url = `${this.baseUrl}attendance/attendance`;
-  return this.http.post<MarkAttendance[]>(url, attendance);
-}
-addAttendance(classId: number, attendance: MarkAttendance): Observable<void> {
-  const url = `${this.baseUrl}/class/${classId}/attendance/attendance`;
-  return this.http.post<void>(url, attendance);
-}
+
+// getAttendance(classId: number, date: Date): Observable<AttendanceResponse[]> {
+//   const formattedDate = date.toLocaleDateString('en-GB').replace(/\//g, '-'); // Format date as dd-mm-yyyy
+//   const url = `${this.baseUrl}attendance/attendance?date=${formattedDate}`;
+//   return this.http.get<AttendanceResponse[]>(url);
+// }
+// getAllAttendance(classId: number) {
+//   return this.http.get<any[]>(this.baseUrl + 'attendance?classId=' + classId);
+// }
+// public formatDate(date: Date): string {
+//   if (!(date instanceof Date) || isNaN(date.getTime())) {
+//     return null;
+//   }
+
+//   const year = date.getFullYear();
+//   const month = date.getMonth() + 1;
+//   const day = date.getDate();
+//   return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+// }
+// // postAttendance(classId: number, date: Date, attendanceList: MarkAttendance[]): Observable<any> {
+// //   const url = `${this.baseUrl}class/${classId}/attendance/attendance`;
+// //   return this.http.post<any>(url, { classId, date, attendanceList });
+// // }
+// postAttendance(attendance: MarkAttendance[]):Observable<MarkAttendance[]>{
+//   const url = `${this.baseUrl}attendance/attendance`;
+//   return this.http.post<MarkAttendance[]>(url, attendance);
+// }
+// addAttendance(classId: number, attendance: MarkAttendance): Observable<void> {
+//   const url = `${this.baseUrl}/class/${classId}/attendance/attendance`;
+//   return this.http.post<void>(url, attendance);
+// }
 }

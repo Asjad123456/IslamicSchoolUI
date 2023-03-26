@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { MarkAttendance } from 'src/Models/markAttendance';
 import { StudyClass } from 'src/Models/StudyClass';
 import { TeacherService } from 'src/Services/teacher.service';
-import { format } from 'date-fns';
+import { Student } from 'src/Models/students';
+import { StudentAttendance } from 'src/Models/StudentAttendance ';
 
 
 @Component({
@@ -13,44 +13,54 @@ import { format } from 'date-fns';
   styleUrls: ['./teacher-class-markattendance.component.css']
 })
 export class TeacherClassMarkattendanceComponent {
-  AddAttendanceForm: FormGroup;
-  class: StudyClass[];
-  attendance: MarkAttendance;
+  class: StudyClass;
+  getclass: StudyClass[];
+  students: Student[];
+  attendanceForm: FormGroup;
+  attendanceRecords: StudentAttendance[] = [];
   classId = +this.route.snapshot.params['id'];
-
-  constructor(private service: TeacherService, private route: ActivatedRoute){}
+  constructor(
+    private fb: FormBuilder,
+    private route: ActivatedRoute,
+    private service: TeacherService
+  ) { }
 
   ngOnInit(): void {
     this.getStudents();
-    const studyclassId = +this.route.snapshot.params['id'];
-    this.AddAttendanceForm = new FormGroup({
-      date: new FormControl('', Validators.required),
-      isPresent: new FormControl('', Validators.required),
-      studentId: new FormControl('', Validators.required),
-      studyClassId: new FormControl(studyclassId, Validators.required)
-    })
-  }
-  updateAttendance(isPresent: boolean, studentId: number) {
-    this.AddAttendanceForm.controls['isPresent'].setValue(isPresent);
-    this.AddAttendanceForm.controls['studentId'].setValue(studentId);
+    this.attendanceForm = this.fb.group({
+      date: ['', Validators.required],
+      classid: [this.classId  ,Validators.required],
+      studentId: ['', Validators.required],
+      isPresent: ['', Validators.required],
+
+    });
   }
   getStudents(){
-    const classId = +this.route.snapshot.params['id'];
-    this.service.getClassById(classId).subscribe((res) =>{
-      this.class = res;
-      console.log(res);
-    }, error =>{
-      console.log(error);
+    this.service.getClassById(this.classId).subscribe((res) =>{
+      this.getclass = res;
     })
   }
-  markAttendance(){
-    const classId = +this.route.snapshot.params['id'];
-    this.service.postAttendance(this.AddAttendanceForm.value).subscribe((res) =>{
-      console.log(res);
-      console.log('hello');
-    },error =>{
+  onSubmit(): void {
+    this.attendanceRecords = []; // clear the array
+  
+    if (this.attendanceForm.invalid) {
+      return;
+    }
+  
+    this.attendanceRecords = this.getclass[0].students.map((student) => {
+      const isPresent = this.attendanceForm.get('isPresent').value;
+      const studentId = student.id;
+      return { studentId: studentId, isPresent: isPresent };
+    });
+  
+    console.log(JSON.stringify(this.attendanceRecords));
+  
+    this.service.addAttendance(this.classId, this.attendanceForm.get('date').value, this.attendanceRecords).subscribe(() => {
+      console.log('Attendance added successfully.');
+      console.log(this.attendanceRecords);
+    }, error => {
       console.log(error);
-      console.log(this.AddAttendanceForm.value);
-    })
+    });
   }
+  
 }

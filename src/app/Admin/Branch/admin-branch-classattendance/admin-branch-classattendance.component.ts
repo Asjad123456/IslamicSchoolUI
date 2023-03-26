@@ -20,7 +20,7 @@ export class AdminBranchClassattendanceComponent {
   ) {}
 
   ngOnInit(): void {
-    this.getAllAttendance();
+    // this.getAllAttendance();
     this.attendanceform = new FormGroup({
       date: new FormControl('')
     })
@@ -30,19 +30,19 @@ export class AdminBranchClassattendanceComponent {
     const classId = +this.route.snapshot.paramMap.get('id');
     const dateValue = this.attendanceform.get('date').value;
     const date = new Date(dateValue);
-    this.getAttendance(classId, date);
+    // this.getAttendance(classId, date);
   }
-  getAllAttendance(){
-    const classId = +this.route.snapshot.paramMap.get('id');
-    this.service.getAllAttendance(classId).subscribe((res) =>{
-      this.attendance = res;
-      console.log(res);
-    })
-  }
-  private getAttendance(classId: number, date: Date): void {
-    this.service.getAttendance(classId, date).subscribe(
-      response => this.attendance = response,
-      error => console.error(error)
-    );
-  }
+  // getAllAttendance(){
+  //   const classId = +this.route.snapshot.paramMap.get('id');
+  //   this.service.getAllAttendance(classId).subscribe((res) =>{
+  //     this.attendance = res;
+  //     console.log(res);
+  //   })
+  // }
+  // private getAttendance(classId: number, date: Date): void {
+  //   this.service.getAttendance(classId, date).subscribe(
+  //     response => this.attendance = response,
+  //     error => console.error(error)
+  //   );
+  // }
 }

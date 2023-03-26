@@ -1,10 +1,7 @@
-import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { Attendance } from 'src/Models/Attendance';
-import { AttendanceResponse } from 'src/Models/AttendanceResponse';
-import { Student } from 'src/Models/students';
+import { Attendance } from 'src/Models/Attendance ';
 import { TeacherService } from 'src/Services/teacher.service';
 
 @Component({
@@ -14,46 +11,26 @@ import { TeacherService } from 'src/Services/teacher.service';
 })
 export class TeacherClassAttendancelistComponent {
   attendanceform: FormGroup;
-  attendance: AttendanceResponse[] = [];
-
+  attendance: Attendance;
   constructor(
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
-    private service: TeacherService,
-     private datePipe: DatePipe
-  ) {}
+    private service: TeacherService
+    ) {}
 
   ngOnInit(): void {
-    this.getAllAttendance();
-    this.attendanceform = new FormGroup({
-      date: new FormControl('')
-    })
+    this.attendanceform = this.formBuilder.group({
+      date: ['', Validators.required]
+    });
   }
-
-  onSubmit(): void {
-    const classId = +this.route.snapshot.paramMap.get('id');
-    const dateValue = this.attendanceform.get('date').value;
-    const date = new Date(dateValue);
-    this.getAttendance(classId, date);
-  }
-  getAllAttendance(){
-    const classId = +this.route.snapshot.paramMap.get('id');
-    this.service.getAllAttendance(classId).subscribe((res) =>{
-      this.attendance = res.map(a => ({
-        studentName: a.studentName,
-        isPresent: a.isPresent,
-        date: this.datePipe.transform(new Date(a.date), 'dd-MM-yyyy')
-      }));
+  getAttendance(){
+    const classId = +this.route.snapshot.params['id'];
+    this.service.getAttendance(classId, this.attendanceform.get('date').value).subscribe((res) =>{
+      this.attendance = res;
       console.log(res);
+    },(error) =>{
+      console.error(error)
     })
-  }
-
-  
-  
-  private getAttendance(classId: number, date: Date): void {
-    this.service.getAttendance(classId, date).subscribe(
-      response => this.attendance = response,
-      error => console.error(error)
-    );
   }
 }
+ 

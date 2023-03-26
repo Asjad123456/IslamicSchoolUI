@@ -18,13 +18,29 @@ export class RoleModalComponent {
 
   ngOnInit(): void {
   }
-
   updateRoles(){
-    this.updateSelectedRoles.emit(this.roles);
+    const updatedRoles = this.roles.filter(role => role.checked).map(role => role.name);
+    this.updateSelectedRoles.emit(updatedRoles);
     this.bsModalRef.hide();
     this.snackBar.open('Roles Changed!', 'Close', {
       duration: 3000,
       panelClass: 'success-snackbar'
     });
   }
+  
+  uncheckAllExcept(event: any, selectedRole: any) {
+    event.stopPropagation();
+  
+    // Uncheck all roles except the selected role
+    this.roles.forEach(role => {
+      if (role.name !== selectedRole.name) {
+        role.checked = false;
+      }
+    });
+  
+    // Update the selected role
+    selectedRole.checked = true;
+  }
+  
+  
 }
